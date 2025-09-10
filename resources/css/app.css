@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@source "../../public";
+@source "../../public/_layouts";
+@source "../../public/_includes";
+@source not "../../public/_site";
+
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, sans-serif;
+  --font-display: Poppins, sans-serif;
+  --color-primary: #0066bb;
+  --color-secondary: #0082ee;
+  --color-tertiary: #d9e8f5;
+  --color-blue-50: #f0f7ff;
+  --color-blue-100: #e0effe;
+  --color-blue-200: #b9defe;
+  --color-blue-300: #7cc4fd;
+  --color-blue-400: #36a8fa;
+  --color-blue-500: #0c8ceb;
+  --color-blue-600: var(--color-primary);
+  --color-blue-700: #0156a3;
+  --color-blue-800: #064a86;
+  --color-blue-900: #0b3f6f;
+  --color-blue-950: #07274a;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/poppins-v23-latin-600.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/poppins-v23-latin-700.woff2) format('woff2');
+}

@@ -1,0 +1,25 @@
+title: Offerdesk
+email: info@offerdesk.com
+description: >-
+  Offerdesk website.
+baseurl: ""
+url: "https://offerdesk.github.io"
+
+# GitHub Pages safe plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Build settings
+theme: minima
+markdown: kramdown
+exclude:
+  - node_modules
+  - vendor
+  - resources
+  - package.json
+  - package-lock.json
+  - README.md
+  - .gitignore
+  - .prettierrc
+destination: docs
