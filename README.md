@@ -6,7 +6,7 @@ This repository hosts a Jekyll site for GitHub Pages.
 
 ### Prerequisites
 - Ruby and Bundler installed
-- Optional: Node.js if you want to rebuild Tailwind CSS from resources/
+- Node.js
 
 ### Install and run Jekyll
 ```bash
@@ -20,25 +20,43 @@ The site links to `/css/app.css`. Build it from the Tailwind source at `resource
 
 One-time build:
 ```bash
-npx @tailwindcss/cli -i ./resources/css/app.css -o ./css/app.css --minify
+npm run css:build
 ```
 
 While developing (watch):
 ```bash
-npx @tailwindcss/cli -i ./resources/css/app.css -o ./css/app.css --watch --minify
+npm run css:watch
 ```
 
-## Deploying with GitHub Pages (from docs/)
-There are two options:
+### JavaScript (minify to /docs/js/app.js)
+The layout includes `/js/app.js`. Build the minified JS from `resources/js/app.js`:
 
-### Option A: Build locally and commit docs/
-1. Ensure `_config.yml` has `destination: docs` (already set).
-2. Build the site locally so the output is written into `docs/`:
+One-time build:
 ```bash
-bundle exec jekyll build
+npm run js:build
 ```
-3. Commit and push the generated files under `docs/`.
-4. In repository Settings → Pages, set Source to “Deploy from a branch” and select your default branch and folder `/docs`.
 
-### Option B: Use GitHub Actions (advanced)
-If you prefer not to commit the generated files, set up a GitHub Actions workflow to run `bundle exec jekyll build` and publish the `_site` to `docs/`. (Not included by default.)
+While developing (watch):
+```bash
+npm run js:watch
+```
+
+All at once:
+```bash
+npm run build  # builds CSS and JS
+npm run watch  # watches CSS and JS in parallel
+```
+
+## Deploying with GitHub Pages (project site using /docs)
+This repository uses the /docs directory as the source for the Jekyll site. GitHub Pages will build the site from /docs automatically.
+
+- In repository Settings → Pages, set Source to “Deploy from a branch”, choose your default branch and folder `/docs`.
+- Do not set `destination:` in `_config.yml` (we removed it) to avoid generating `docs/docs`.
+- You don’t need to commit any build output. Just commit your source files under `/docs`.
+
+If you want to preview locally, run:
+```bash
+bundle install
+bundle exec jekyll serve --source docs
+# Open http://127.0.0.1:4000/
+```

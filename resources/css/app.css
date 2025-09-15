@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@source "../../public";
-@source "../../public/_layouts";
-@source "../../public/_includes";
-@source not "../../public/_site";
+@source "../../docs";
+@source "../../docs/_layouts";
+@source "../../docs/_includes";
+@source not "../../docs/_site";
 
 @theme {
   --font-sans: "Helvetica Neue", Helvetica, sans-serif;

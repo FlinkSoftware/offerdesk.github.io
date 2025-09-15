@@ -15,11 +15,12 @@ theme: minima
 markdown: kramdown
 exclude:
   - node_modules
-  - vendor
   - resources
   - package.json
   - package-lock.json
   - README.md
   - .gitignore
   - .prettierrc
-destination: docs
+  - Gemfile
+  - Gemfile.lock
+source: docs
