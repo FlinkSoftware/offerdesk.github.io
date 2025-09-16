@@ -1,33 +1,3 @@
-// Minimal disclosure toggling for FAQ
-(function(){
-  function setup() {
-    const buttons = document.querySelectorAll('button[command="--toggle"][commandfor]');
-    buttons.forEach(btn => {
-      const targetId = btn.getAttribute('commandfor');
-      const target = document.getElementById(targetId);
-      if (!target) return;
-
-      const isHidden = target.hasAttribute('hidden');
-      btn.setAttribute('aria-expanded', String(!isHidden));
-      btn.addEventListener('click', () => {
-        const currentlyHidden = target.hasAttribute('hidden');
-        if (currentlyHidden) {
-          target.removeAttribute('hidden');
-          btn.setAttribute('aria-expanded', 'true');
-        } else {
-          target.setAttribute('hidden', '');
-          btn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setup);
-  } else {
-    setup();
-  }
-})();
-
 // Typewriter effect for span#types
 (function(){
   function setupTypewriter(){
@@ -71,3 +41,28 @@
     setupTypewriter();
   }
 })();
+
+// Banner sluiten en keuze onthouden
+document.addEventListener('DOMContentLoaded', () => {
+    // Pak de bannercontainer (de brede "Promo banner"-balk bovenin)
+    const banner = document.querySelector('header > div.relative.isolate.flex.items-center');
+
+    if (!banner) return;
+
+    // Als eerder gesloten, verberg direct
+    if (localStorage.getItem('promoBannerDismissed') === '1') {
+        banner.style.display = 'none';
+        return;
+    }
+
+    // Vind de sluitknop binnen de banner (rechts)
+    const closeBtn = banner.querySelector('button');
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            banner.style.display = 'none';
+            localStorage.setItem('promoBannerDismissed', '1');
+        });
+    }
+});
+
