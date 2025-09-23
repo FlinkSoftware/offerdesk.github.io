@@ -5,22 +5,22 @@
 @source not "../../docs/_site";
 
 @theme {
-  --font-sans: Inter, "Helvetica Neue", Helvetica, sans-serif;
-  --font-display: Poppins, sans-serif;
-  --color-primary: #0066bb;
-  --color-secondary: #0082ee;
-  --color-tertiary: #d9e8f5;
-  --color-blue-50: #f0f7ff;
-  --color-blue-100: #e0effe;
-  --color-blue-200: #b9defe;
-  --color-blue-300: #7cc4fd;
-  --color-blue-400: #36a8fa;
-  --color-blue-500: #0c8ceb;
-  --color-blue-600: var(--color-primary);
-  --color-blue-700: #0156a3;
-  --color-blue-800: #064a86;
-  --color-blue-900: #0b3f6f;
-  --color-blue-950: #07274a;
+  --font-sans: Inter, sans-serif;
+  --font-display: Inter, sans-serif;
+  --color-primary: #0068ff;
+  --color-primary-hover: #0052b5;
+  --color-text: #052749;
+  --color-secondary: #39b54a;
+  --color-tertiary: #ffeea9;
+}
+
+/* Global color rules */
+body, body :where(*) {
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
 }
 
 /* Inter font faces */
@@ -65,4 +65,15 @@
   font-weight: 900;
   font-display: swap;
   src: url(../fonts/Inter_28pt-Black.ttf) format('truetype');
+}
+
+/* Ensure button text is white */
+button,
+.btn,
+a.bg-secondary,
+a.button,
+.rounded-md.bg-secondary,
+.rounded-full.bg-secondary,
+button.bg-secondary {
+  color: #fff;
 }

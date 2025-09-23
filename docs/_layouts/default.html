@@ -7,39 +7,38 @@
     {% seo %}
     <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}">
 </head>
-<body class="h-full text-gray-900 antialiased">
-<div class="bg-white dark:bg-gray-900">
+<body class="h-full text-text antialiased">
+<div class="bg-white">
     <header class="absolute inset-x-0 top-0 z-50">
 
         <!-- Banner -->
-        <div class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10">
+        <div class="relative isolate flex items-center gap-x-6 overflow-hidden bg-tertiary px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
             <div aria-hidden="true"
                  class="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl">
                 <div style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"
-                     class="aspect-577/310 w-144.25 bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30 dark:opacity-40"></div>
+                     class="aspect-577/310 w-144.25 bg-linear-to-r from-[var(--color-tertiary)] to-transparent opacity-30"></div>
             </div>
             <div aria-hidden="true"
                  class="absolute top-1/2 left-[max(45rem,calc(50%+8rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl">
                 <div style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"
-                     class="aspect-577/310 w-144.25 bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30 dark:opacity-40"></div>
+                     class="aspect-577/310 w-144.25 bg-linear-to-r from-[var(--color-tertiary)] to-transparent opacity-30"></div>
             </div>
             <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-                <p class="text-sm/6 text-gray-900 dark:text-gray-100">
-                    <strong class="font-semibold">Promo banner</strong>
+                <p class="text-sm/6 text-gray-900">
+                    <strong class="font-semibold">Speciaal early-bird aanbod</strong>
                     <svg viewBox="0 0 2 2" aria-hidden="true" class="mx-2 inline size-0.5 fill-current">
                         <circle r="1" cx="1" cy="1"/>
                     </svg>
-                    Promo text goes here.
+                    Krijg 50% korting in de eerste 3 jaar!
                 </p>
-                <a href="#"
-                   class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:bg-white/10 dark:inset-ring-white/20 dark:hover:bg-white/15 dark:focus-visible:outline-white">Register
-                    now <span aria-hidden="true">&rarr;</span></a>
+                <a href="#newsletter-section"
+                   class="flex-none rounded-full bg-secondary px-3.5 py-1 text-sm font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">Meld je nu aan!</a>
             </div>
             <div class="flex flex-1 justify-end">
                 <button type="button" class="-m-3 p-3 focus-visible:-outline-offset-4">
                     <span class="sr-only">Dismiss</span>
                     <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
-                         class="size-5 text-gray-900 dark:text-gray-100">
+                         class="size-5 text-gray-900">
                         <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/>
                     </svg>
                 </button>
@@ -52,14 +51,12 @@
                 <a href="/" class="-m-1.5 p-1.5">
                     <span class="sr-only">OfferDesk</span>
                     <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt=""
-                         class="h-8 w-auto dark:hidden"/>
-                    <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt=""
-                         class="h-8 w-auto not-dark:hidden"/>
+                         class="h-8 w-auto"/>
                 </a>
             </div>
             <div class="flex lg:hidden">
                 <button type="button" command="show-modal" commandfor="mobile-menu"
-                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200">
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
                          aria-hidden="true" class="size-6">
@@ -69,10 +66,10 @@
                 </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-                <a href="#feature-section" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Features</a>
-                <a href="#about-section" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Over OfferDesk</a>
-                <a href="#suitable-for-section" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Voor wie</a>
-                <a href="#faq-section" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Veelgestelde vragen</a>
+                <a href="#feature-section" class="text-sm/6 font-semibold text-primary">Features</a>
+                <a href="#about-section" class="text-sm/6 font-semibold text-primary">Over OfferDesk</a>
+                <a href="#suitable-for-section" class="text-sm/6 font-semibold text-primary">Voor wie</a>
+                <a href="#faq-section" class="text-sm/6 font-semibold text-primary">Veelgestelde vragen</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
             </div>
@@ -81,17 +78,15 @@
             <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
                 <div tabindex="0" class="fixed inset-0 focus:outline-none">
                     <el-dialog-panel
-                            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-gray-100/10">
+                            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div class="flex items-center justify-between">
                             <a href="#" class="-m-1.5 p-1.5">
                                 <span class="sr-only">Your Company</span>
                                 <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                                     alt="" class="h-8 w-auto dark:hidden"/>
-                                <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                                     alt="" class="h-8 w-auto not-dark:hidden"/>
+                                     alt="" class="h-8 w-auto"/>
                             </a>
                             <button type="button" command="close" commandfor="mobile-menu"
-                                    class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200">
+                                    class="-m-2.5 rounded-md p-2.5 text-gray-700">
                                 <span class="sr-only">Close menu</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      data-slot="icon" aria-hidden="true" class="size-6">
@@ -100,20 +95,20 @@
                             </button>
                         </div>
                         <div class="mt-6 flow-root">
-                            <div class="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
+                            <div class="-my-6 divide-y divide-gray-500/10">
                                 <div class="space-y-2 py-6">
                                     <a href="#"
-                                       class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Product</a>
+                                       class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-primary hover:bg-gray-50">Product</a>
                                     <a href="#"
-                                       class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Features</a>
+                                       class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-primary hover:bg-gray-50">Features</a>
                                     <a href="#"
-                                       class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Marketplace</a>
+                                       class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-primary hover:bg-gray-50">Marketplace</a>
                                     <a href="#"
-                                       class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Company</a>
+                                       class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-primary hover:bg-gray-50">Company</a>
                                 </div>
                                 <div class="py-6">
                                     <a href="#"
-                                       class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Log
+                                       class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-primary hover:bg-gray-50">Log
                                         in</a>
                                 </div>
                             </div>

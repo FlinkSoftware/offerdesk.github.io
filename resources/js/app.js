@@ -17,7 +17,7 @@
       'installateurs',
       'makelaars',
       'boekhoudkantoren',
-      'creatieve studios',
+      'creatieve studio\'s',
       'sportclubs'
     ];
     const tw = new window.Typewriter(el, {
