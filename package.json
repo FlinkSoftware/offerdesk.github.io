@@ -4,8 +4,10 @@
     "css:watch": "tailwindcss -i ./resources/css/app.css -o ./docs/css/app.css --watch --minify",
     "js:build": "terser ./resources/js/app.js -o ./docs/js/app.js -c -m",
     "js:watch": "npm run js:build && chokidar \"resources/js/*.js\" -c \"npm run js:build\"",
-    "build": "npm run css:build && npm run js:build",
-    "watch": "npm-run-all --parallel css:watch js:watch"
+    "assets:copy": "mkdir -p ./docs/fonts && cp -R ./resources/fonts/* ./docs/fonts/",
+    "fonts:watch": "npm run assets:copy && chokidar \"resources/fonts/*\" -c \"npm run assets:copy\"",
+    "build": "npm run css:build && npm run js:build && npm run assets:copy",
+    "watch": "npm-run-all --parallel css:watch js:watch fonts:watch"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.13",

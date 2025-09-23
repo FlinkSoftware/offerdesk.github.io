@@ -5,7 +5,7 @@
 @source not "../../docs/_site";
 
 @theme {
-  --font-sans: "Helvetica Neue", Helvetica, sans-serif;
+  --font-sans: Inter, "Helvetica Neue", Helvetica, sans-serif;
   --font-display: Poppins, sans-serif;
   --color-primary: #0066bb;
   --color-secondary: #0082ee;
@@ -23,18 +23,46 @@
   --color-blue-950: #07274a;
 }
 
+/* Inter font faces */
 @font-face {
-  font-family: Poppins;
+  font-family: Inter;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 100;
   font-display: swap;
-  src: url(../fonts/poppins-v23-latin-600.woff2) format('woff2');
+  src: url(../fonts/Inter_24pt-Thin.ttf) format('truetype');
 }
-
 @font-face {
-  font-family: Poppins;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/Inter_24pt-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/Inter_24pt-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: Inter;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(../fonts/poppins-v23-latin-700.woff2) format('woff2');
+  src: url(../fonts/Inter_28pt-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../fonts/Inter_28pt-ExtraBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(../fonts/Inter_28pt-Black.ttf) format('truetype');
 }
