@@ -12,11 +12,21 @@
   --color-text: #052749;
   --color-secondary: #39b54a;
   --color-tertiary: #ffeea9;
+  --color-dark-blue: #052749;
 }
 
 /* Global color rules */
-body, body :where(*) {
+body {
   color: var(--color-text);
+  background-color: white;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-primary);
+}
+
+.bg-secondary, .bg-primary {
+  color: white !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -77,3 +87,53 @@ a.button,
 button.bg-secondary {
   color: #fff;
 }
+
+/* ======================
+   Band (REM-variant)
+   ====================== */
+
+/* Bandhoogte: 143px → 8.9375rem */
+.band {
+  height: 8.9375rem;
+}
+
+/* Pill positie/afmeting (uit SVG → rem):
+   left  = 303px      → 18.9375rem
+   top   = 34px       → 2.125rem
+   width = 834.383px  → 52.14894rem
+   height= 73.32px    → 4.5825rem
+*/
+.band .band-pill {
+  left: 18.9375rem;
+  top: 2.125rem;
+  width: 52.14894rem;
+  height: 4.5825rem;
+}
+
+/* Typografisch schalen (optioneel): de hele band schaalt met viewport */
+html {
+  font-size: clamp(14px, 1.2vw + 10px, 18px);
+}
+
+/* Fallback: verzeker groene CTA achtergrondkleur ook zonder Tailwind utility */
+.bg-secondary {
+  background-color: var(--color-secondary) !important;
+  color: #fff !important;
+}
+
+details summary {
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+h2.text-tertiary,
+h2 .text-tertiary,
+span.text-tertiary {
+  color: var(--color-tertiary);
+}
+
+/* ======================
+   EINDE Band (REM-variant)
+   ====================== */

@@ -1,0 +1,53 @@
+{%- comment -%}
+  docs/_includes/components/band.html
+  Beschrijving:
+    - Eénkleurige SVG-achtergrond (kleur instelbaar via bg_color)
+    - HTML-overlay met vraag (links) + CTA-knop (rechts)
+    - Positionering met rem (geen px/%)
+
+  Params:
+    - bg_color  : string  (bijv. "#FFEEA9" of "var(--color-tertiary)"; default: var(--color-tertiary))
+    - question  : string  (de vraag/tekst links in de pill) [verplicht voor zichtbaar resultaat]
+    - cta_text  : string  (knoplabel, default: "Meld je aan!")
+    - cta_href  : string  (knoplink, default: "#")
+{%- endcomment -%}
+
+{%- assign _bg = include.bg_color | default: "var(--color-tertiary)" -%}
+{%- assign _question = include.question | default: "" -%}
+{%- assign _cta_text = include.cta_text | default: "Meld je aan!" -%}
+{%- assign _cta_href = include.cta_href | default: "#" -%}
+
+<section class="band relative w-full overflow-hidden" aria-label="Promotionele band">
+  <!-- 1) Achtergrond: inline SVG met één kleur -->
+  <svg class="absolute inset-0 size-full" viewBox="0 0 1440 143" fill="{{ _bg }}" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">
+    <!-- Gehele basisvorm in één kleur: rechthoek + rechter bolling (zelfde fill) -->
+    <path d="M0 0H1296V143H0V0Z" fill="{{ _bg }}"/>
+    <path d="M1440.5 0C1440.5 39.4779 1408.21 71.5 1368.38 71.5H1368.22C1368.25 110.978 1335.96 143 1296.13 143H1296V71.5C1296 32.0221 1328.26 0 1368.09 0H1440.5Z" fill="{{ _bg }}"/>
+    <rect x="1296" y="0" width="64.3873" height="74.1203" fill="{{ _bg }}"/>
+  </svg>
+
+  <!-- 2) Overlay: vraag + CTA -->
+  <div class="relative size-full">
+    <!-- Donkere pill op rem-coördinaten -->
+    <div class="absolute band-pill bg-[#031D36] rounded-full text-white flex items-center gap-[1rem] px-[1.5rem]">
+      <!-- Vraag -->
+      {% if _question != "" %}
+        <p class="text-[1rem] sm:text-[1.0625rem] md:text-[1.125rem] font-medium leading-tight">
+          {{ _question }}
+        </p>
+      {% else %}
+        <p class="text-[1rem] font-medium leading-tight"> </p>
+      {% endif %}
+
+      <div class="ms-auto"></div>
+
+      <!-- CTA -->
+      <a href="{{ _cta_href }}"
+         class="inline-flex items-center rounded-full bg-secondary px-[1.25rem] sm:px-[1.5rem] py-[0.625rem] sm:py-[0.75rem]
+                text-[0.9375rem] sm:text-[1rem] font-semibold shadow-sm
+                focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+        {{ _cta_text }}
+      </a>
+    </div>
+  </div>
+</section>

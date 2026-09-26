@@ -1,0 +1,11 @@
+main:
+  - label: "Features"
+    href: "#feature-section"
+  - label: "Prijzen"
+    href: "#pricing-section"
+  - label: "Over OfferDesk"
+    href: "#about-section"
+  - label: "Voor wie"
+    href: "#suitable-for-section"
+  - label: "Veelgestelde vragen"
+    href: "#faq-section"

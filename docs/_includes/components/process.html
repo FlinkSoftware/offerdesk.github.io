@@ -1,0 +1,46 @@
+<!-- Process: from lead to invoice -->
+<div id="process-section" class="bg-gray-50 py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+            <h2 class="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+                Het hele presales-proces <span class="text-dark-blue">in één lijn</span>
+            </h2>
+            <p class="mt-6 text-lg text-dark-blue">
+                Geen Excel, Word, WhatsApp of briefjes meer. OfferDesk stroomlijnt de reis van lead tot factuur —
+                en gaat door ná goedkeuring van de offerte.
+            </p>
+        </div>
+
+        <ol class="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+            {% assign steps = "Lead,Schouw,Offerte,Akkoord,Materiaal,Voorbereiding,Uitvoering,Factuur" | split: "," %}
+            {% for step in steps %}
+            <li class="relative flex flex-col items-center text-center">
+                <span
+                    class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white shadow-md">{{ forloop.index }}</span>
+                <span class="mt-3 text-sm font-bold text-dark-blue">{{ step }}</span>
+                {% unless forloop.last %}
+                <span class="absolute top-6 left-[calc(50%+1.75rem)] hidden h-px w-[calc(100%-3.5rem)] bg-primary/30 lg:block" aria-hidden="true"></span>
+                {% endunless %}
+            </li>
+            {% endfor %}
+        </ol>
+
+        <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-100">
+                <h3 class="text-xl font-bold text-dark-blue">Het probleem</h3>
+                <p class="mt-3 text-dark-blue/80">Fouten in de marge, onduidelijke materiaalbehoefte, eindeloze
+                    administratie en zoekgeraakte offertes. Dat kost winst.</p>
+            </div>
+            <div class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-100">
+                <h3 class="text-xl font-bold text-dark-blue">De oplossing</h3>
+                <p class="mt-3 text-dark-blue/80">Eén platform voor offertes, marges, goedkeuring, materialen en
+                    voorbereiding van de klus.</p>
+            </div>
+            <div class="rounded-2xl bg-primary p-8 shadow-sm">
+                <h3 class="text-xl font-bold !text-white">Het verschil</h3>
+                <p class="mt-3 text-white/90">De meeste offertesoftware stopt na het versturen van een PDF. OfferDesk
+                    helpt je werk winnen, voorbereiden, uitvoeren en winst meten.</p>
+            </div>
+        </div>
+    </div>
+</div>
