@@ -1,29 +1,18 @@
 <!-- Newsletter / Features Promo -->
-<div id="newsletter-section" class="bg-dark-blue py-16 sm:py-24">
+{% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
+{% assign i18n = site.data.i18n[lang] %}
+<div id="newsletter-section" class="bg-dark-blue py-12 sm:py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             <div class="lg:max-w-xl">
-                <h2 class="text-3xl font-bold tracking-tight !text-white sm:text-4xl text-pretty">
-                    Als eerste bij nieuwe <span class="text-tertiary">features</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight !text-white text-pretty">
+                    {{ i18n.newsletter.title }}
                 </h2>
-                <p class="mt-4 text-lg text-gray-300">Meld je aan en ontvang updates over materiaallijsten,
-                    inkooporders, planning en winstmeting.</p>
+                <p class="mt-3 sm:mt-4 text-base sm:text-lg text-gray-300">{{ i18n.newsletter.intro }}</p>
             </div>
             <div class="w-full lg:max-w-md">
-                <form id="newsletter-form" class="flex flex-col gap-4" action="mailto:info@offerdesk.com" method="post" enctype="text/plain">
-                    <label for="newsletter-email" class="sr-only">E-mailadres</label>
-                    <input id="newsletter-email" name="email" type="email" required placeholder="Voer je e-mailadres in"
-                        class="w-full rounded-full bg-white px-6 py-4 text-dark-blue focus:ring-2 focus:ring-secondary outline-none">
-                    <p id="newsletter-success" class="hidden text-tertiary font-semibold">Bedankt! We houden je op de hoogte.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <button type="submit"
-                            class="flex-1 rounded-full bg-tertiary px-6 py-4 font-bold text-dark-blue shadow-lg hover:bg-white transition-all">Houd
-                            mij op de hoogte</button>
-                        <a href="#footer-cta"
-                            class="flex-1 text-center rounded-full border-2 border-white px-6 py-4 font-bold text-white hover:bg-white hover:text-dark-blue transition-all">Ideeën
-                            of suggesties?</a>
-                    </div>
-                </form>
+                <!-- MailerLite Form Embed -->
+                <div class="ml-embedded" data-form="lB1Awv"></div>
             </div>
         </div>
     </div>

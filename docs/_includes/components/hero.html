@@ -1,85 +1,53 @@
 <!-- Hero Section -->
-<div id="hero-section" class="relative isolate overflow-hidden bg-white pt-32 sm:pt-40">
-    <div class="absolute top-0 right-0 -z-10 h-full w-1/2 opacity-10">
-        <svg viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
-            <path
-                d="M600 200C700 300 800 500 700 650C600 800 400 850 250 750C100 650 0 450 50 300C100 150 300 100 600 200Z"
-                fill="#0068ff" />
-        </svg>
-    </div>
+{% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
+{% assign i18n = site.data.i18n[lang] %}
+<div id="hero-section" class="relative isolate overflow-hidden bg-white pt-32 sm:pt-40 pb-16 sm:pb-24">
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div
             class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center">
             <div class="lg:pr-8">
                 <div class="lg:max-w-xl">
-                    <p class="text-sm font-bold uppercase tracking-wider text-secondary">Voor servicebedrijven</p>
-                    <h1 class="mt-3 text-5xl font-bold tracking-tight text-primary sm:text-7xl">
-                        Van offerte tot uitvoering
+                    <p class="text-xs font-bold uppercase tracking-wider text-secondary sm:text-sm">{{ i18n.hero.kicker }}</p>
+                    <h1 class="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-5xl lg:text-7xl">
+                        {{ i18n.hero.title }}
                     </h1>
-                    <p class="mt-6 text-xl font-semibold text-dark-blue">
-                        Slimmere offertes. Meer winst. Minder gedoe.
+                    <p class="mt-6 text-base font-semibold text-dark-blue sm:text-lg lg:text-xl">
+                        {{ i18n.hero.subtitle }}
                     </p>
-                    <p class="mt-4 text-lg text-dark-blue/80">
-                        OfferDesk helpt servicebedrijven offertes maken, marges berekenen, klussen voorbereiden,
-                        materialen bestellen en winstgevendheid volgen — in één platform.
+                    <p class="mt-4 text-base text-dark-blue/80 sm:text-lg">
+                        {{ i18n.hero.body }}
                     </p>
-                    <ul class="mt-8 space-y-4 text-lg font-medium text-dark-blue">
+                    <ul class="mt-8 space-y-4 text-base font-medium text-dark-blue sm:text-lg">
+                        {% for bullet in i18n.hero.bullets %}
                         <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24"
+                            <svg class="h-5 w-5 flex-none text-secondary sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24"
                                 stroke-width="3" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                             </svg>
-                            Offertes met materiaal, arbeid, reiskosten en opties
+                            {{ bullet }}
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24"
-                                stroke-width="3" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            Direct overzicht van inkoop, verkoop, marge en winst
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24"
-                                stroke-width="3" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            Productcatalogus één keer invoeren, altijd paraat
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-secondary" fill="none" viewBox="0 0 24 24"
-                                stroke-width="3" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            Klanten keuren online goed — OfferDesk stopt niet bij de PDF
-                        </li>
+                        {% endfor %}
                     </ul>
-                    <div class="mt-10 flex flex-wrap items-center gap-4">
-                        <a href="#newsletter-section"
-                            class="rounded-full bg-secondary px-8 py-4 text-lg font-bold text-white shadow-lg hover:bg-primary-hover transition-all">
-                            Meld je vandaag nog aan
+                    <div class="mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
+                        <a href="https://app.offerdesk.nl/sign-up"
+                            class="rounded-full bg-secondary px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white shadow-lg hover:bg-primary-hover transition-all text-center">
+                            {{ i18n.hero.cta_primary }}
                         </a>
-                        <a href="#pricing-section"
-                            class="rounded-full border-2 border-dark-blue px-8 py-4 text-lg font-bold text-dark-blue hover:bg-dark-blue hover:!text-white transition-all">
-                            Bekijk prijzen
+                        <a href="https://app.offerdesk.nl/sign-in"
+                            class="rounded-full border-2 border-dark-blue px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-dark-blue hover:bg-dark-blue hover:!text-white transition-all text-center">
+                            {{ i18n.nav.sign_in }}
                         </a>
                     </div>
                 </div>
             </div>
             <div class="relative">
-                <div class="absolute -inset-x-20 -inset-y-20 -z-10 opacity-20">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
-                        <path fill="#0068ff"
-                            d="M47.7,-63.9C61.4,-56.3,71.8,-42.6,76.5,-27.4C81.2,-12.3,80.1,4.3,74.5,19.2C68.9,34.1,58.8,47.3,45.8,56.5C32.8,65.7,16.4,70.9,0.3,70.5C-15.8,70.1,-31.6,64.2,-44.7,54.6C-57.8,45,-68.2,31.7,-72.2,16.2C-76.2,0.7,-73.8,-17,-65.4,-31.2C-57,-45.4,-42.6,-56.1,-27.9,-63.2C-13.2,-70.3,1.8,-73.8,16.8,-70.5C31.8,-67.2,33.9,-71.5,47.7,-63.9Z"
-                            transform="translate(100 100)" />
-                    </svg>
-                </div>
-                <img src="{{ '/images/offerdesk-hero-image.png' | relative_url }}" alt="OfferDesk: sneller van offerte naar uitvoering"
+                <img src="{{ '/images/offerdesk-hero-image.png' | relative_url }}" alt="{{ i18n.hero.image_alt }}"
                     class="w-full max-w-lg mx-auto">
                 <div class="mt-4 flex justify-end">
                     <a href="#process-section"
                         class="text-primary font-semibold hover:underline flex items-center gap-2">
-                        Bekijk het proces &rarr;
+                        {{ i18n.hero.process_link }}
                     </a>
                 </div>
             </div>

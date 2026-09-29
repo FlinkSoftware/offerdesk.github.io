@@ -3,6 +3,10 @@ email: info@offerdesk.com
 description: >-
   OfferDesk helpt servicebedrijven van offerte tot uitvoering: offertes, marges,
   goedkeuring, materialen en winst in één platform.
+default_lang: nl
+google_analytics_id: G-XMLKF7JVEX
+mailerlite:
+  action: "https://assets.mailerlite.com/jsonp/2670655/forms/199973805230130365/subscribe"
 baseurl: ""
 url: "https://offerdesk.github.io"
 

@@ -3,20 +3,16 @@
   function setupTypewriter(){
     const el = document.getElementById('types');
     if (!el) return;
+    const parsedTypes = (el.dataset.types || '')
+      .split(',')
+      .map((label) => label.trim())
+      .filter(Boolean);
+    const fallbackTypes = ['vloerenbedrijven','CV-installateurs','zonnepaneelinstallateurs','elektriciens','loodgieters','schilders','onderhoudsbedrijven','servicebedrijven'];
+    const labels = parsedTypes.length ? parsedTypes : fallbackTypes;
     if (typeof window.Typewriter !== 'function') {
-      el.textContent = 'installateurs';
+      el.textContent = labels[0] || 'installateurs';
       return;
     }
-    const types = [
-      'vloerenbedrijven',
-      'CV-installateurs',
-      'zonnepaneelinstallateurs',
-      'elektriciens',
-      'loodgieters',
-      'schilders',
-      'onderhoudsbedrijven',
-      'servicebedrijven'
-    ];
     const tw = new window.Typewriter(el, {
       loop: true,
       autoStart: true,
@@ -24,7 +20,7 @@
       deleteSpeed: 35,
       cursor: '|'
     });
-    types.forEach((label) => {
+    labels.forEach((label) => {
       tw.typeString(label)
         .pauseFor(1200)
         .deleteAll();
@@ -56,13 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  wireMailtoForm('newsletter-form', 'newsletter-success', (form) => {
-    const email = form.querySelector('[name="email"]')?.value || '';
-    return 'Houd mij op de hoogte.\nE-mail: ' + email;
-  });
 
   wireMailtoForm('suggestion-form', 'suggestion-success', (form) => {
-    const message = form.querySelector('[name="bericht"]')?.value || '';
-    return message;
+    return form.querySelector('[name="bericht"]')?.value || '';
   });
 });

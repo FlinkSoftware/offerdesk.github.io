@@ -1,1 +1,37 @@
-!function(){function e(){const e=document.getElementById("types");if(!e)return;if("function"!=typeof window.Typewriter)return void(e.textContent="installateurs");const t=new window.Typewriter(e,{loop:!0,autoStart:!0,delay:55,deleteSpeed:35,cursor:"|"});["vloerenbedrijven","CV-installateurs","zonnepaneelinstallateurs","elektriciens","loodgieters","schilders","onderhoudsbedrijven","servicebedrijven"].forEach(e=>{t.typeString(e).pauseFor(1200).deleteAll()}),"function"==typeof t.start&&t.start()}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e()}(),document.addEventListener("DOMContentLoaded",()=>{function e(e,t,n){const o=document.getElementById(e),r=document.getElementById(t);o&&o.addEventListener("submit",e=>{e.preventDefault();const t=n(o);window.location.href="mailto:info@offerdesk.com?subject="+encodeURIComponent("OfferDesk website")+"&body="+encodeURIComponent(t),r&&r.classList.remove("hidden"),o.reset()})}e("newsletter-form","newsletter-success",e=>"Houd mij op de hoogte.\nE-mail: "+(e.querySelector('[name="email"]')?.value||"")),e("suggestion-form","suggestion-success",e=>e.querySelector('[name="bericht"]')?.value||"")});
+// Typewriter effect for "Suitable For" section
+!function(){
+  function initTypewriter(){
+    const typesElement = document.getElementById("types");
+    if(!typesElement) return;
+
+    const types = (typesElement.dataset.types || "").split(",").map(t => t.trim()).filter(Boolean);
+    const defaultTypes = types.length ? types : ["vloerenbedrijven","CV-installateurs","zonnepaneelinstallateurs","elektriciens","loodgieters","schilders","onderhoudsbedrijven","servicebedrijven"];
+
+    if(typeof window.Typewriter !== "function") {
+      typesElement.textContent = defaultTypes[0] || "installateurs";
+      return;
+    }
+
+    const typewriter = new window.Typewriter(typesElement, {
+      loop: true,
+      autoStart: true,
+      delay: 55,
+      deleteSpeed: 35,
+      cursor: "|"
+    });
+
+    defaultTypes.forEach(type => {
+      typewriter.typeString(type).pauseFor(1200).deleteAll();
+    });
+
+    if(typeof typewriter.start === "function") {
+      typewriter.start();
+    }
+  }
+
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", initTypewriter)
+    : initTypewriter();
+}();
+
+

@@ -2,6 +2,12 @@
 
 This repository hosts a Jekyll site for GitHub Pages.
 
+## Site changes
+
+- The homepage is now bilingual: Dutch at `/` and English at `/en/`.
+- Google Analytics is enabled with `G-XMLKF7JVEX` in the shared layout.
+- The newsletter form is ready for MailerLite; set `mailerlite.action` in `_config.yml` to your MailerLite embedded form URL to activate it. If it is left blank, the form falls back to the previous mailto flow.
+
 ## Local development
 
 ### Prerequisites
@@ -60,3 +66,7 @@ bundle install
 bundle exec jekyll serve --source docs
 # Open http://127.0.0.1:4000/
 ```
+
+Then visit:
+- `http://127.0.0.1:4000/` for Dutch
+- `http://127.0.0.1:4000/en/` for English

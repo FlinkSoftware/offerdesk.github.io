@@ -1,27 +1,90 @@
 <!DOCTYPE html>
-<html lang="nl" class="h-full bg-white">
+{% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
+{% assign i18n = site.data.i18n[lang] %}
+<html lang="{{ lang }}" class="h-full bg-white">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     {% seo %}
+    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon/favicon.svg' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ '/images/favicon/favicon-96x96.png' | relative_url }}">
+    <link rel="icon" href="{{ '/images/favicon/favicon.ico' | relative_url }}" sizes="any">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/favicon/apple-touch-icon.png' | relative_url }}">
+    <link rel="manifest" href="{{ '/images/favicon/site.webmanifest' | relative_url }}">
+    <meta name="theme-color" content="#0068ff">
     <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}">
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics_id }}');
+    </script>
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2670655');
+    </script>
+    <!-- End MailerLite Universal -->
 </head>
 
 <body class="h-full text-text antialiased">
     <div class="bg-white">
-        <header class="absolute inset-x-0 top-0 z-50">
-            {% include components/top-panel.html %}
+        <header class="absolute lg:sticky top-0 inset-x-0 z-50 bg-white">
             {% include components/navigation.html %}
         </header>
         <main>
             {{ content }}
         </main>
         <footer class="bg-white border-t border-gray-100">
-            <div class="mx-auto max-w-7xl px-6 py-8 text-sm text-gray-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} — Van offerte tot uitvoering.</p>
-                <a href="mailto:{{ site.email }}" class="font-semibold text-primary hover:underline">{{ site.email }}</a>
+            <div class="mx-auto max-w-7xl px-6 py-12">
+                <div class="grid gap-10 md:grid-cols-3">
+                    <div>
+                        <a href="{{ '/' | relative_url }}" class="inline-flex items-center gap-3">
+                            <img src="{{ '/images/favicon/favicon.svg' | relative_url }}" alt="" aria-hidden="true" class="h-10 w-10 rounded-xl shadow-sm">
+                            <span class="text-xl font-bold tracking-tight text-primary">OfferDesk</span>
+                        </a>
+                        <p class="mt-4 max-w-sm text-sm leading-6 text-gray-500">{{ i18n.footer.copy }}</p>
+                        <a href="mailto:{{ site.email }}" class="mt-4 inline-flex font-semibold text-primary hover:underline">{{ site.email }}</a>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-gray-900">{{ i18n.footer.quick_links_title }}</h3>
+                        <ul class="mt-4 space-y-3 text-sm text-gray-500">
+                            {% for link in i18n.footer.quick_links %}
+                            <li>
+                                <a href="{{ link.href }}" class="hover:text-primary hover:underline">{{ link.label }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-gray-900">{{ i18n.footer.language_title }}</h3>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            {% for option in i18n.footer.languages %}
+                            <a href="{{ option.href | relative_url }}"
+                               class="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold text-dark-blue transition-colors hover:border-secondary hover:text-secondary{% if lang == 'nl' and option.href == '/' %} bg-gray-50{% elsif lang == 'en' and option.href == '/en/' %} bg-gray-50{% endif %}">
+                                <span aria-hidden="true">{{ option.flag }}</span>
+                                {{ option.label }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 border-t border-gray-100 pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500">
+                    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} — Van offerte tot uitvoering.</p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#newsletter-section" class="hover:text-primary hover:underline">Nieuwsbrief</a>
+                        <a href="#footer-cta" class="hover:text-primary hover:underline">Ideeën &amp; suggesties</a>
+                    </div>
+                </div>
             </div>
         </footer>
     </div>
