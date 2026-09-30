@@ -20,23 +20,23 @@ nl:
     suffix: "korting op de eerste 3 maanden →"
     cta: "Meld je snel aan!"
   hero:
-    kicker: "Pre-sales software voor servicebedrijven"
-    title: "Inkoopkosten in je aanbod. Marge zichtbaar."
-    subtitle: "Leveranciersinfo opgeslagen. Prijzen automatisch berekend. Klanten keuren online goed."
-    body: "OfferDesk slaat je leveranciers, producten en prijzen eenmalig op. Bij elk aanbod: selecteer product, prijs en marge berekenen automatisch. Geen Excel. Geen vergeten afspraken. Klaar voor de volgende klus."
+    kicker: "Winstgerichte offertesoftware voor vakbedrijven"
+    title: "Maak offertes met winst als uitgangspunt."
+    subtitle: "Weet wat je verdient en bewaar hoe je het hebt berekend."
+    body: "Bewaar leveranciers, producten, inkoopprijzen en marges op één plek. Zie tijdens het offreren direct wat een opdracht oplevert en weet maanden later nog steeds welke producten, leveranciers en prijzen je hebt gebruikt."
     bullets:
-      - "Inkoopkosten direct in je aanbod – geen opzoeken meer"
-      - "Marge automatisch berekend, je weet altijd wat je verdient"
-      - "Minimale afname, SKU's, contactinfo – nooit vergeten"
-      - "Klanten keuren online goed en geven feedback – geen email-pingpong"
+      - "Altijd inzicht in kostprijs, verkoopprijs en marge"
+      - "Nooit meer zoeken naar leveranciers of inkoopprijzen"
+      - "Bewaar hoe iedere offerte is opgebouwd"
+      - "Van offerte naar inkoop zonder Excel of losse notities"
     cta_primary: "Start je gratis proefperiode"
     cta_secondary: "Bekijk prijzen"
-    process_link: "Bekijk het proces →"
-    image_alt: "OfferDesk: sneller van offerte naar uitvoering"
+    process_link: "Bekijk hoe het werkt →"
+    image_alt: "OfferDesk marge- en offertebeheer"
   process:
-    title_prefix: "Het hele presales-proces"
-    title_highlight: "in één lijn"
-    body: "Geen Excel, Word, WhatsApp of briefjes meer. OfferDesk stroomlijnt de reis van lead tot factuur — en gaat door ná goedkeuring van de offerte."
+    title_prefix: "Van offerte tot uitvoering"
+    title_highlight: "zonder informatieverlies"
+    body: "OfferDesk helpt je niet alleen een offerte te maken. Leveranciers, producten, inkoopprijzen, marges en klantafspraken blijven gekoppeld terwijl je van aanvraag naar uitvoering gaat."
     steps:
       - "Lead"
       - "Schouw"
@@ -48,14 +48,14 @@ nl:
       - "Factuur"
     cards:
       problem:
-        title: "Het probleem"
-        body: "Je maakt een aanbod op basis van inkoopprijzen die je moet opzoeken. Over 2 dagen vergeet je bij welke leverancier je dit wilde bestellen, welke marge je gebruikte, of wat de minimale afname was. Fouten in de begroting kosten winst. Klanten nemen weken om goedkeuring. Niemand onthoudt afspraken."
+        title: "Drie weken later is de klant akkoord…"
+        body: "Mooi, maar dan begint vaak het zoeken. Welke leverancier had je gekozen? Welke inkoopprijs gebruikte je? Hoeveel marge zat erop? En wat moest je precies bestellen? Die informatie zit vaak in je hoofd, in Excel of ergens in een oude e-mail."
       solution:
-        title: "De oplossing"
-        body: "OfferDesk slaat je leveranciers, producten, prijzen en marges eenmalig op. Bij elk aanbod: selecteer product, prijs en marge berekenen automatisch. Alles blijft traceerbaar en aan je leveranciers gelinkt."
+        title: "OfferDesk onthoudt het voor je"
+        body: "Leg leveranciers, producten, inkoopprijzen en marges één keer vast. Iedere offerte bewaart automatisch hoe deze is opgebouwd, zodat jij, je partner of een collega later precies ziet welke keuzes zijn gemaakt."
       difference:
-        title: "Het verschil"
-        body: "Andere pre-sales software stopt na de PDF. OfferDesk onthoudt alles: leverancierinfo, marges, klantgoedkeuring, en maakt automatisch een inkooplijst per leverancier."
+        title: "Meer dan een offerteprogramma"
+        body: "De meeste offertesoftware stopt na het versturen van een PDF. OfferDesk bewaart ook de kennis achter de offerte en helpt je verder met klantfeedback, materiaalinkoop, voorbereiding en uitvoering."
   features:
     title_prefix: "Features"
     title_highlight: "die je wilt gebruiken"
