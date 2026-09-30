@@ -264,7 +264,7 @@ nl:
     button: "Verstuur je vraag, idee of suggestie"
 
   footer:
-    copy: "Van offerte tot uitvoering."
+    copy: "Weet wat je verdient voordat je aan een klus begint."
     email: "info@offerdesk.com"
     quick_links_title: "Snel naar"
     quick_links:
@@ -528,7 +528,7 @@ en:
     button: "Send your question, idea, or suggestion"
 
   footer:
-    copy: "From quote to execution."
+    copy: "Know what you will earn before starting on a job."
     email: "info@offerdesk.com"
     quick_links_title: "Quick links"
     quick_links:
