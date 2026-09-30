@@ -1,21 +1,21 @@
 <!-- FAQ Section -->
 {% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
 {% assign i18n = site.data.i18n[lang] %}
-<div id="faq-section" class="bg-gray-50 py-16 sm:py-24 lg:py-32">
+<div id="faq-section" class="bg-white py-16 sm:py-24 lg:py-32">
     <div class="mx-auto max-w-3xl px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center text-dark-blue mb-12 sm:mb-16">{{ i18n.faq.title_prefix }} <span class="text-primary">{{ i18n.faq.title_highlight }}</span> {{ i18n.faq.title_suffix }}</h2>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-dark-blue mb-16 sm:mb-20">{{ i18n.faq.title_prefix }} <span class="text-primary">{{ i18n.faq.title_highlight }}</span> {{ i18n.faq.title_suffix }}</h2>
         <div class="space-y-4">
             {% for item in i18n.faq.items %}
-            <details class="group bg-white rounded-2xl shadow-sm overflow-hidden" {% if forloop.first %}open{% endif %}>
-                <summary class="flex items-center justify-between p-4 sm:p-6 cursor-pointer list-none">
-                    <span class="text-base sm:text-lg font-bold text-dark-blue text-left">{{ item.question }}</span>
+            <details class="group bg-white rounded-lg shadow-sm border border-border overflow-hidden hover:border-primary/20 transition-colors" {% if forloop.first %}open{% endif %}>
+                <summary class="flex items-center justify-between p-6 sm:p-7 cursor-pointer list-none">
+                    <span class="text-base sm:text-lg font-semibold text-dark-blue text-left">{{ item.question }}</span>
                     <span class="transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
-                        <svg class="h-6 w-6 sm:h-8 sm:w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                        <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                         </svg>
                     </span>
                 </summary>
-                <div class="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base text-dark-blue leading-relaxed">
+                <div class="px-6 sm:px-7 pb-6 text-base text-gray-700 leading-relaxed">
                     {{ item.answer }}
                 </div>
             </details>

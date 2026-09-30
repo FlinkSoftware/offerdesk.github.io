@@ -1,31 +1,31 @@
 <!-- Pricing -->
 {% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
 {% assign i18n = site.data.i18n[lang] %}
-<div id="pricing-section" class="bg-gray-50 py-24 sm:py-32">
+<div id="pricing-section" class="bg-white py-12 sm:py-18 lg:py-28">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
-                {{ i18n.pricing.title_prefix }} <span class="text-dark-blue">{{ i18n.pricing.title_highlight }}</span>
+        <div class="text-center mb-12 sm:mb-14">
+            <h2 class="text-3xl font-bold tracking-tight text-dark-blue sm:text-4xl">
+                {{ i18n.pricing.title_prefix }} <span class="text-primary">{{ i18n.pricing.title_highlight }}</span>
             </h2>
-            <p class="mt-4 text-base text-dark-blue sm:text-lg">{{ i18n.pricing.intro }}</p>
+            <p class="mt-5 text-base text-gray-700 sm:text-lg">{{ i18n.pricing.intro }}</p>
         </div>
 
-        <div class="mt-12 sm:mt-16 grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-3 items-stretch">
+        <div class="mt-10 sm:mt-12 grid grid-cols-1 gap-7 lg:grid-cols-3">
             {% for plan in i18n.pricing.plans %}
-            <div class="flex flex-col rounded-3xl bg-white p-6 sm:p-8 {% if forloop.index == 2 %}shadow-xl ring-2 ring-primary relative{% else %}shadow-sm ring-1 ring-gray-100{% endif %}">
+            <div class="flex flex-col rounded-2xl bg-white p-6 sm:p-8 transition-all {% if forloop.index == 2 %}shadow-lg ring-2 ring-primary relative transform lg:scale-105{% else %}shadow-sm ring-1 ring-border hover:shadow-md{% endif %}">
                 {% if forloop.index == 2 %}
-                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-secondary px-4 py-1 text-xs font-bold text-white">{{ i18n.pricing.popular }}</span>
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-xs font-bold text-white uppercase tracking-wider">{{ i18n.pricing.popular }}</span>
                 {% endif %}
-                <h3 class="text-lg sm:text-xl font-bold {% if forloop.index == 2 %}text-primary{% else %}text-dark-blue{% endif %}">{{ plan.name }}</h3>
-                <p class="mt-2 text-sm sm:text-base text-dark-blue/70">{{ plan.description }}</p>
-                <p class="mt-6 text-3xl sm:text-4xl font-bold text-dark-blue">{{ plan.price }}<span class="text-sm sm:text-lg font-medium text-dark-blue/60"> {{ i18n.pricing.note_suffix }}</span></p>
-                <ul class="mt-8 flex-1 space-y-2 sm:space-y-3 text-sm sm:text-base text-dark-blue">
+                <h3 class="text-lg sm:text-xl font-bold text-dark-blue">{{ plan.name }}</h3>
+                <p class="mt-2 text-sm text-gray-700">{{ plan.description }}</p>
+                <p class="mt-6 text-3xl sm:text-4xl font-bold text-dark-blue">{{ plan.price }}<span class="text-sm font-medium text-gray-600"> {{ i18n.pricing.note_suffix }}</span></p>
+                <ul class="mt-8 flex-1 space-y-3 text-xs sm:text-sm text-gray-700">
                     {% for bullet in plan.bullets %}
-                    <li class="flex gap-2"><span class="text-secondary font-bold flex-shrink-0">✓</span> <span>{{ bullet }}{% if plan.coming_soon and forloop.last %} <span class="text-xs font-semibold uppercase tracking-wide text-primary">{{ plan.coming_soon }}</span>{% endif %}</span></li>
+                    <li class="flex gap-2 items-start"><span class="text-primary font-bold flex-shrink-0">✓</span> <span>{{ bullet }}{% if plan.coming_soon and forloop.last %} <span class="text-xs font-semibold uppercase tracking-wide text-primary block mt-0.5">{{ plan.coming_soon }}</span>{% endif %}</span></li>
                     {% endfor %}
                 </ul>
                 <a href="#newsletter-section"
-                    class="mt-8 block rounded-full px-6 py-2 sm:py-3 text-center text-sm sm:text-base font-bold text-white transition-colors {% if forloop.index == 2 %}bg-secondary hover:bg-primary-hover{% else %}bg-dark-blue hover:bg-primary{% endif %}">{{ plan.cta }}</a>
+                    class="mt-8 block rounded-lg px-5 py-2.5 sm:py-3 text-center text-sm sm:text-base font-semibold text-white transition-all {% if forloop.index == 2 %}bg-primary hover:bg-primary-hover shadow-lg{% else %}bg-gray-900 hover:bg-black{% endif %}">{{ plan.cta }}</a>
             </div>
             {% endfor %}
         </div>

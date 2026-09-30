@@ -7,30 +7,34 @@
 @theme {
   --font-sans: Inter, sans-serif;
   --font-display: Inter, sans-serif;
-  --color-primary: #0068ff;
-  --color-primary-hover: #0052b5;
+  --color-primary: #0068FF;
+  --color-primary-hover: #0052B5;
   --color-text: #052749;
-  --color-secondary: #39b54a;
-  --color-tertiary: #ffeea9;
+  --color-secondary: #39B54A;
+  --color-tertiary: #DDE5EE;
   --color-dark-blue: #052749;
+  --color-background: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-border: #DDE5EE;
 }
 
 /* Global color rules */
 body {
   color: var(--color-text);
-  background-color: white;
+  background-color: var(--color-background);
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  color: var(--color-primary);
+  color: var(--color-dark-blue);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .bg-secondary, .bg-primary {
   color: white !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--color-primary);
 }
 
 /* Inter font faces */
@@ -84,6 +88,7 @@ a.bg-secondary,
 a.button,
 .rounded-md.bg-secondary,
 .rounded-full.bg-secondary,
+.rounded-lg.bg-secondary,
 button.bg-secondary {
   color: #fff;
 }
@@ -137,3 +142,161 @@ span.text-tertiary {
 /* ======================
    EINDE Band (REM-variant)
    ====================== */
+
+/* Links and transitions */
+a {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Focus states for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Premium shadows */
+.shadow-premium {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Smooth gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+}
+
+/* Text utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Enhanced Button Styles for B2B SaaS */
+button,
+.btn,
+a[class*="bg-primary"],
+a[class*="bg-secondary"] {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved Focus States */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Card Enhancement */
+[class*="ring-border"],
+[class*="ring-1"] {
+  border-color: var(--color-border);
+  box-shadow: 0 1px 3px 0 rgba(5, 39, 73, 0.08);
+}
+
+/* Better Shadow Hierarchy */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(5, 39, 73, 0.08);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(5, 39, 73, 0.12);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(5, 39, 73, 0.15);
+}
+
+/* Link Underline on Hover */
+a:not([class*="btn"]):not([class*="bg-"]) {
+  text-decoration: none;
+}
+
+a:not([class*="btn"]):not([class*="bg-"]):hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Improved Contrast */
+.text-gray-700 {
+  color: #475569;
+}
+
+.text-gray-600 {
+  color: #475569;
+}
+
+/* Hero Mockup Dashboard Styling */
+.hero-mockup-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+  border: 1px solid var(--color-border);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-mockup-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 104, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Profit Card Special Styling */
+.hero-profit-card {
+  background: linear-gradient(135deg, rgba(57, 181, 74, 0.05) 0%, rgba(57, 181, 74, 0.02) 100%);
+  border: 1px solid rgba(57, 181, 74, 0.2);
+}
+
+.hero-profit-card:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 4px 12px rgba(57, 181, 74, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Selling Price Card Special Styling */
+.hero-price-card {
+  background: linear-gradient(135deg, rgba(0, 104, 255, 0.05) 0%, rgba(0, 104, 255, 0.02) 100%);
+  border: 1px solid rgba(0, 104, 255, 0.2);
+}
+
+.hero-price-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 104, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Margin Highlight */
+.hero-margin-highlight {
+  background: linear-gradient(135deg, rgba(57, 181, 74, 0.1) 0%, rgba(57, 181, 74, 0.05) 100%);
+  border: 1px solid rgba(57, 181, 74, 0.25);
+}
+
+/* Hero Section Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-mockup-container {
+  animation: slideUpFade 0.6s ease-out 0.2s backwards;
+}
+
+/* Feature Badge Styling */
+.hero-feature-badge {
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-feature-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 104, 255, 0.1);
+}
+

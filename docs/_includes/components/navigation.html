@@ -6,17 +6,17 @@
 {% else %}
 {% assign home_href = '/' | relative_url %}
 {% endif %}
-<nav aria-label="{{ i18n.nav.label }}" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+<nav aria-label="{{ i18n.nav.label }}" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
     <div class="flex lg:flex-1">
-        <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-3 p-1.5">
+        <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5">
             <span class="sr-only">OfferDesk</span>
-            <img src="{{ '/images/logo-v2.svg' | relative_url }}" alt="" aria-hidden="true" class="h-10 w-10 rounded-xl shadow-sm">
-            <h2 class="text-2xl font-bold tracking-tight text-primary">OfferDesk</h2>
+            <img src="{{ '/images/logo-v2.svg' | relative_url }}" alt="" aria-hidden="true" class="h-9 w-9 rounded-lg">
+            <h2 class="text-xl font-bold tracking-tight text-dark-blue">OfferDesk</h2>
         </a>
     </div>
     <div class="flex lg:hidden">
         <button type="button" command="show-modal" commandfor="mobile-menu"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-600 hover:bg-gray-100 transition-colors">
             <span class="sr-only">{{ i18n.nav.menu_open }}</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
                 aria-hidden="true" class="size-6">
@@ -24,20 +24,18 @@
             </svg>
         </button>
     </div>
-    <div class="hidden lg:flex lg:gap-x-10">
-        <a href="#feature-section" class="text-sm/6 font-semibold text-dark-blue">{{ i18n.nav.links.features }}</a>
-        <a href="#pricing-section" class="text-sm/6 font-semibold text-dark-blue">{{ i18n.nav.links.pricing }}</a>
-        <a href="#about-section" class="text-sm/6 font-semibold text-dark-blue">{{ i18n.nav.links.about }}</a>
-        <a href="#suitable-for-section" class="text-sm/6 font-semibold text-dark-blue">{{ i18n.nav.links.suitable_for }}</a>
-        <a href="#faq-section" class="text-sm/6 font-semibold text-dark-blue">{{ i18n.nav.links.faq }}</a>
+    <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#feature-section" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
+        <a href="#pricing-section" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
+        <a href="#about-section" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
     </div>
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-4">
-                        <a href="https://app.offerdesk.nl/sign-in"
-                            class="px-6 py-2 text-sm font-bold text-dark-blue hover:text-primary transition-colors">
-                            {{ i18n.nav.sign_in }}
-                        </a>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3">
+        <a href="https://app.offerdesk.nl/sign-in"
+            class="px-5 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+            {{ i18n.nav.sign_in }}
+        </a>
         <a href="https://app.offerdesk.nl/sign-up"
-            class="rounded-full bg-secondary px-6 py-2 text-sm font-bold text-white shadow-xs hover:bg-primary-hover transition-colors">
+            class="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover transition-colors">
             {{ i18n.nav.cta }}
         </a>
     </div>
@@ -46,15 +44,15 @@
     <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
         <div tabindex="0" class="fixed inset-0 focus:outline-none">
             <el-dialog-panel
-                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm shadow-lg">
                 <div class="flex items-center justify-between">
-                    <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-3 p-1.5">
+                    <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5">
                         <span class="sr-only">OfferDesk</span>
-                        <img src="{{ '/images/logo-v2.svg' | relative_url }}" alt="" aria-hidden="true" class="h-10 w-10 rounded-xl shadow-sm">
-                        <h2 class="text-2xl font-bold tracking-tight text-primary">OfferDesk</h2>
+                        <img src="{{ '/images/logo-v2.svg' | relative_url }}" alt="" aria-hidden="true" class="h-9 w-9 rounded-lg">
+                        <h2 class="text-xl font-bold tracking-tight text-dark-blue">OfferDesk</h2>
                     </a>
                     <button type="button" command="close" commandfor="mobile-menu"
-                        class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-600 hover:bg-gray-100 transition-colors">
                         <span class="sr-only">{{ i18n.nav.menu_close }}</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
                             aria-hidden="true" class="size-6">
@@ -62,26 +60,20 @@
                         </svg>
                     </button>
                 </div>
-                <div class="mt-6 flow-root">
-                    <div class="-my-6 divide-y divide-gray-500/10">
-                        <div class="space-y-2 py-6">
-                            <a href="#feature-section"
-                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-dark-blue hover:bg-gray-50">{{ i18n.nav.links.features }}</a>
-                            <a href="#pricing-section"
-                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-dark-blue hover:bg-gray-50">{{ i18n.nav.links.pricing }}</a>
-                            <a href="#about-section"
-                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-dark-blue hover:bg-gray-50">{{ i18n.nav.links.about }}</a>
-                            <a href="#suitable-for-section"
-                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-dark-blue hover:bg-gray-50">{{ i18n.nav.links.suitable_for }}</a>
-                            <a href="#faq-section"
-                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-dark-blue hover:bg-gray-50">{{ i18n.nav.links.faq }}</a>
-                        </div>
-                        <div class="py-6 space-y-3">
-                            <a href="https://app.offerdesk.nl/sign-in"
-                                class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-dark-blue hover:bg-gray-50">{{ i18n.nav.sign_in }}</a>
-                            <a href="https://app.offerdesk.nl/sign-up"
-                                class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-secondary hover:bg-gray-50">{{ i18n.nav.cta }}</a>
-                        </div>
+                <div class="mt-8 flow-root">
+                    <div class="space-y-1 py-2">
+                        <a href="#feature-section"
+                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
+                        <a href="#pricing-section"
+                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
+                        <a href="#about-section"
+                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
+                    </div>
+                    <div class="border-t border-border py-6 space-y-3">
+                        <a href="https://app.offerdesk.nl/sign-in"
+                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.sign_in }}</a>
+                        <a href="https://app.offerdesk.nl/sign-up"
+                            class="-mx-3 block rounded-lg px-3 py-3 text-center text-base font-semibold text-white bg-primary hover:bg-primary-hover transition-colors">{{ i18n.nav.cta }}</a>
                     </div>
                 </div>
             </el-dialog-panel>
