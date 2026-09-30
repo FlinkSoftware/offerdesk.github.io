@@ -48,7 +48,7 @@ nl:
       - "Factuur"
     cards:
       problem:
-        title: "Drie weken later is de klant akkoord…"
+        title: "Vier weken later is de klant akkoord…"
         body: "Mooi, maar dan begint vaak het zoeken. Welke leverancier had je gekozen? Welke inkoopprijs gebruikte je? Hoeveel marge zat erop? En wat moest je precies bestellen? Die informatie zit vaak verstrooid in je hoofd, Excel en e-mailverkeer."
       solution:
         title: "OfferDesk onthoudt het voor je"
@@ -291,7 +291,7 @@ en:
       - "Invoice"
     cards:
       problem:
-        title: "Three weeks later the customer agrees…"
+        title: "Four weeks later the customer agrees…"
         body: "Great, but then the search often starts. Which supplier did you choose? Which purchase price did you use? How much margin was on it? And what exactly did you need to order? That information is often scattered across your head, Excel and email."
       solution:
         title: "OfferDesk remembers it for you"
