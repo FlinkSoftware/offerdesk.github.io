@@ -9,16 +9,18 @@ nl:
       pricing: "Prijzen"
       about: "Over ons"
       suitable_for: "Voor wie"
-      faq: "Q&A"
+      faq: "FAQ"
     cta: "Interesse? Meld je aan"
     sign_in: "Inloggen"
     language_code: "EN"
-    language_aria: "Switch to English"
+    language_aria: "Schakel naar Engels"
+
   top_panel:
     intro: "Pak je voordeel vandaag nog"
     discount: "70%"
     suffix: "korting op de eerste 3 maanden →"
     cta: "Meld je snel aan!"
+
   hero:
     kicker: "Winstgerichte offertesoftware voor vakbedrijven"
     title: "Maak offertes met winst als uitgangspunt."
@@ -32,11 +34,12 @@ nl:
     cta_primary: "Start je gratis proefperiode"
     cta_secondary: "Bekijk prijzen"
     process_link: "Bekijk hoe het werkt →"
-    image_alt: "OfferDesk marge- en offertebeheer"
+    image_alt: "OfferDesk voor offerte-, marge- en inkoopbeheer"
+
   process:
     title_prefix: "Van offerte tot uitvoering"
     title_highlight: "zonder informatieverlies"
-    body: "OfferDesk helpt je niet alleen een offerte te maken. Leveranciers, producten, inkoopprijzen, marges en klantafspraken blijven gekoppeld terwijl je van aanvraag naar uitvoering gaat."
+    body: "OfferDesk helpt je niet alleen om een offerte te maken. Leveranciers, producten, inkoopprijzen, marges en klantafspraken blijven gekoppeld terwijl je van aanvraag naar uitvoering gaat."
     steps:
       - "Lead"
       - "Schouw"
@@ -49,13 +52,14 @@ nl:
     cards:
       problem:
         title: "Vier weken later is de klant akkoord…"
-        body: "Mooi, maar dan begint vaak het zoeken. Welke leverancier had je gekozen? Welke inkoopprijs gebruikte je? Hoeveel marge zat erop? En wat moest je precies bestellen? Die informatie zit vaak verstrooid in je hoofd, Excel en e-mailverkeer."
+        body: "Mooi, maar dan begint vaak het zoeken. Welke leverancier had je gekozen? Welke inkoopprijs gebruikte je? Hoeveel marge zat erop? En wat moest je precies bestellen? Die informatie zit vaak verspreid in je hoofd, Excel en e-mail."
       solution:
         title: "OfferDesk onthoudt het voor je"
         body: "Leg leveranciers, producten, inkoopprijzen en marges één keer vast. Iedere offerte bewaart automatisch hoe deze is opgebouwd, zodat jij, je partner of een collega later precies ziet wat je hebt berekend en welke materialen je moet bestellen."
       difference:
         title: "Meer dan een offerteprogramma"
         body: "De meeste offertesoftware stopt na het versturen van een PDF. OfferDesk bewaart ook de kennis achter de offerte en helpt je verder met klantfeedback, materiaalinkoop, voorbereiding en uitvoering."
+
   features:
     title_prefix: "Alles wat je nodig hebt voor"
     title_highlight: "winstgevend offreren"
@@ -63,31 +67,34 @@ nl:
     sections:
       - eyebrow: "Leveranciers & producten"
         title: "Leg je vakkennis één keer vast."
-        body: "Veel vakbedrijven draaien op de kennis van één persoon. Welke producten nodig zijn, waar ze worden ingekocht en welke marge daarbij hoort. Met OfferDesk leg je die kennis één keer vast, zodat je team het altijd kan gebruiken."
+        body: "Veel vakbedrijven draaien op de kennis van één persoon: welke producten nodig zijn, waar ze worden ingekocht en welke marge daarbij hoort. Met OfferDesk leg je die kennis één keer vast, zodat jij en je team deze steeds opnieuw kunnen gebruiken."
         bullets:
           - "Koppel producten aan leveranciers"
           - "Bewaar minimale afnames, SKU's en contactgegevens"
           - "Nooit meer zoeken naar prijzen of leveranciers"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
+
       - eyebrow: "Marge & winst"
         title: "Zie direct wat je verdient."
-        body: "Tijdens het offreren zie je precies wat een opdracht oplevert. Pas verkoopprijs of marge aan en zie direct de impact op je verwachte winst."
+        body: "Tijdens het offreren zie je precies wat een opdracht naar verwachting oplevert. Pas de verkoopprijs of marge aan en zie direct wat dat betekent voor je verwachte winst."
         bullets:
           - "Inzicht in kostprijs, verkoopprijs en marge"
           - "Automatische marge- en prijsberekeningen"
-          - "Zie je verwachte winst voordat je verstuurt"
+          - "Bekijk je verwachte winst voordat je de offerte verstuurt"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
+
       - eyebrow: "Online goedkeuring"
         title: "Minder wachten. Minder e-mailverkeer."
-        body: "Stuur een offerte als online voorstel. Klanten kunnen direct reageren, opmerkingen plaatsen en akkoord geven zonder eindeloze e-mailwisselingen."
+        body: "Stuur je offerte als online voorstel. Klanten kunnen direct reageren, opmerkingen plaatsen en akkoord geven zonder eindeloze e-mailwisselingen."
         bullets:
           - "Online goedkeuren zonder PDF-pingpong"
           - "Feedback direct gekoppeld aan de offerte"
-          - "Realtime inzicht in de status"
+          - "Direct inzicht in de actuele status"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
+
     bottom_cards:
       - title: "Klantendatabase"
         body: "Alle klantgegevens, contactpersonen en offertehistorie op één plek."
@@ -95,19 +102,21 @@ nl:
         body: "Gebruik bestaande producten, materialen en diensten opnieuw in iedere offerte."
       - title: "Professionele offertes"
         body: "Verstuur offertes in je eigen huisstijl als PDF of online voorstel."
+
   about:
-    title_prefix: "Wie is"
+    title_prefix: "Wat is"
     title_highlight: "OfferDesk"
     paragraphs:
       - "OfferDesk is gebouwd voor vakbedrijven die dagelijks werken met leveranciers, materialen en marges."
-      - "Veel kennis zit in het hoofd van de eigenaar. Welke leverancier gebruikt wordt, welke inkoopprijs geldt en hoeveel marge nodig is. OfferDesk zorgt ervoor dat die kennis niet verloren gaat."
-      - "Onze visie: elk vakbedrijf moet kunnen offreren met volledig inzicht in kosten, marge en winst."
+      - "Veel vakkennis zit in het hoofd van de eigenaar: welke leverancier wordt gebruikt, welke inkoopprijs geldt en hoeveel marge nodig is. OfferDesk zorgt ervoor dat die kennis wordt vastgelegd en niet verloren gaat."
+      - "Onze visie: elk vakbedrijf moet precies weten wat het verdient voordat een offerte wordt verstuurd."
     image_alt: "Technicus aan het werk op locatie"
     caption: "Win werk. Bereid voor. Voer uit. Meet winst."
+
   pricing:
     title_prefix: "Eerlijke"
     title_highlight: "prijzen"
-    intro: "Kies het plan dat past bij jouw team. Maandelijks opzegbaar."
+    intro: "Kies het plan dat past bij jouw bedrijf. Maandelijks opzegbaar."
     popular: "Meest gekozen"
     note_suffix: "/ maand"
     plans:
@@ -115,106 +124,118 @@ nl:
         description: "Voor zzp'ers die professioneel willen offreren."
         price: "€9,99"
         bullets:
-          - "Basis offreren"
+          - "Basisfunctionaliteit voor offertes"
           - "Klantenbeheer"
           - "PDF-offertes"
         cta: "Start met Starter"
+
       - name: "Professional"
-        description: "Onbeperkt offreren met grip op je marge."
+        description: "Onbeperkt offertes maken met volledig inzicht in marge en winst."
         price: "€19,99"
         bullets:
           - "Alles in Starter"
           - "Onbeperkt offertes"
           - "Margeberekeningen"
-          - "Acceptatieportaal"
-          - "Offerte-tracking"
+          - "Online acceptatieportaal"
+          - "Offertestatus en opvolging"
         cta: "Kies Professional"
+
       - name: "Business"
-        description: "Voor teams die van offerte tot uitvoering groeien."
+        description: "Voor teams die van offerte tot uitvoering willen doorgroeien."
         price: "€39,99"
         bullets:
           - "Alles in Professional"
-          - "Teams"
+          - "Samenwerken in teams"
           - "Inkooporders"
           - "Planning"
           - "Rapportages"
         cta: "Kies Business"
         coming_soon: "binnenkort"
+
   faq:
     title_prefix: "Veel"
     title_highlight: "gestelde"
     title_suffix: "vragen"
     items:
-      - question: "Waar begin ik als ik een aanbod maak?"
-        answer: "Vul eerst je productcatalogus: materialen, diensten en standaardprijzen. Daarna sleep je die posten in de aanbod-builder, voeg je arbeid en reiskosten toe en zie je meteen je marge. Verstuur de offerte en klanten keuren online goed."
-      - question: "Ik maak een aanbod, en over 2 dagen vergeet ik bij welke leverancier ik dit wilde bestellen. Hoe helpt OfferDesk?"
-        answer: "OfferDesk onthoudt alles. Je slaat je leveranciers eenmalig op met contactgegevens, minimale afnames, SKU's en inkoopkosten. Elk product is gelinkt aan die leverancier. Klik je later op die offerte, dan zie je meteen welke leverancier je moet bellen."
-      - question: "Hoeveel aanboden kan ik maken?"
-        answer: "Op Professional en Business maak je onbeperkt aanboden. Starter is bedoeld voor zzp'ers die basis-aanboden sturen. Bekijk de plannen onder Prijzen."
+      - question: "Waar begin ik als ik een offerte maak?"
+        answer: "Vul eerst je productcatalogus met materialen, diensten en standaardprijzen. Voeg deze vervolgens toe aan je offerte, pas aantallen en marges aan en zie direct wat je naar verwachting verdient. Verstuur de offerte online of als PDF en volg daarna eenvoudig de status."
+
+      - question: "Ik maak een offerte en vergeet later welke leverancier ik wilde gebruiken. Hoe helpt OfferDesk?"
+        answer: "OfferDesk onthoudt het voor je. Je slaat leveranciers eenmalig op met contactgegevens, minimale afnames, SKU's en inkoopprijzen. Elk product blijft gekoppeld aan de juiste leverancier. Open je de offerte later opnieuw, dan zie je direct welke leverancier, producten, prijzen en marges zijn gebruikt."
+
+      - question: "Hoeveel offertes kan ik maken?"
+        answer: "Met Professional en Business maak je onbeperkt offertes. Starter is bedoeld voor zzp'ers die professioneel willen offreren. Bekijk de verschillende plannen onder Prijzen."
+
       - question: "Kan ik mijn eigen logo en huisstijl gebruiken?"
-        answer: "Ja. PDF-aanboden gebruiken professionele templates met jouw bedrijfslogo en branding, zodat ze eruitzien alsof ze van jouw bedrijf komen."
-      - question: "Stopt OfferDesk na het versturen van de PDF?"
-        answer: "Nee. Klanten keuren online goed, jij volgt de status en na akkoord helpt OfferDesk met materialen, voorbereiding en — straks — planning, facturatie en winstmeting."
+        answer: "Ja. Je offertes worden gegenereerd met professionele templates in jouw bedrijfslogo en huisstijl, zodat iedere offerte herkenbaar bij jouw bedrijf past."
+
+      - question: "Stopt OfferDesk na het versturen van de offerte?"
+        answer: "Nee. Klanten kunnen online akkoord geven en feedback achterlaten. Daarna helpt OfferDesk je verder met materiaalinkoop en voorbereiding. Functionaliteiten voor planning, voorraadbeheer, facturatie en winstmeting staan op de roadmap."
+
       - question: "Voor wie is OfferDesk bedoeld?"
-        answer: "Voor servicebedrijven met werk op locatie: vloeren, HVAC/CV, zon, elektra, loodgieterij, schilders, onderhoud en andere MKB-organisaties met monteurs."
+        answer: "Voor vakbedrijven die offertes maken op basis van materialen, leveranciers en marges, zoals vloerenbedrijven, HVAC- en CV-installateurs, elektriciens, loodgieters, schilders, onderhoudsbedrijven en andere bedrijven met mensen in het veld."
+
   integrations:
     title_prefix: "Meer grip op"
     title_highlight: "winst"
-    intro: "OfferDesk groeit mee van offerteprogramma naar compleet platform voor calculatie, inkoop, uitvoering en winstmeting."
+    intro: "OfferDesk groeit mee van offertesoftware naar een compleet platform voor calculatie, inkoop, uitvoering en winstmeting."
     cards:
       - title: "Voorraadbeheer"
-        body: "Houd voorraad bij op basis van werkelijke inkoopprijzen en actuele voorraadwaarde."
+        body: "Houd voorraad bij op basis van werkelijke inkoopprijzen en krijg inzicht in de actuele voorraadwaarde."
       - title: "Inkooporders"
-        body: "Maak direct bestellingen op basis van geaccepteerde offertes."
+        body: "Maak bestellingen op basis van geaccepteerde offertes en groepeer materialen per leverancier."
       - title: "Werkplanning"
-        body: "Koppel offertes aan uitvoering en planning van medewerkers."
+        body: "Koppel geaccepteerde offertes aan de uitvoering en planning van medewerkers."
       - title: "Facturatie"
         body: "Zet goedgekeurde opdrachten eenvoudig om naar facturen."
       - title: "Winstmeting"
-        body: "Vergelijk gecalculeerde winst met werkelijke kosten."
+        body: "Vergelijk de gecalculeerde winst met de werkelijke kosten na uitvoering."
       - title: "Vergunningen & certificaten"
-        body: "Bewaar alle vereiste documenten direct bij de offerte."
+        body: "Bewaar vereiste documenten en activiteiten direct bij de offerte."
+
   suitable_for:
-    title_prefix: "OfferDesk is o.a."
+    title_prefix: "OfferDesk is onder andere"
     title_highlight: "geschikt"
     title_suffix: "voor"
-    intro: "Gebouwd voor MKB-servicebedrijven met mensen in het veld."
+    intro: "Voor vakbedrijven die offertes maken op basis van materialen, leveranciers en margecalculaties."
     types:
       - "vloerenbedrijven"
-      - "HVAC / CV-installateurs"
+      - "HVAC- en CV-installateurs"
       - "zonnepaneelinstallateurs"
       - "elektriciens"
       - "loodgieters"
       - "schilders"
       - "onderhoudsbedrijven"
-      - "MKB met monteurs"
+      - "MKB-bedrijven met monteurs"
     industries:
       - "Vloerenbedrijven"
-      - "HVAC / CV-installateurs"
+      - "HVAC- en CV-installateurs"
       - "Zonnepaneelinstallateurs"
       - "Elektriciens"
       - "Loodgieters"
       - "Schilders"
       - "Onderhoudsbedrijven"
-      - "MKB met monteurs"
+      - "MKB-bedrijven met monteurs"
+
   newsletter:
     title: "Blijf op de hoogte van nieuwe functies"
-    intro: "We bouwen OfferDesk samen met vakbedrijven. Ontvang updates over voorraadbeheer, winstmeting, planning en nieuwe functies."
+    intro: "We bouwen OfferDesk samen met vakbedrijven. Ontvang updates over voorraadbeheer, winstmeting, planning en andere nieuwe functies."
     email_label: "E-mailadres"
     email_placeholder: "Voer je e-mailadres in"
     cta_primary: "Houd mij op de hoogte"
     cta_secondary: "Ideeën of suggesties?"
     success: "Bedankt! We houden je op de hoogte."
     fallback_action: "mailto:info@offerdesk.com"
+
   footer_cta:
     title_prefix: "Weet wat je verdient."
     title_highlight: "Bewaar hoe je het hebt berekend."
     intro: "OfferDesk helpt vakbedrijven grip te houden op leveranciers, inkoopprijzen, marges en winst. Niet alleen tijdens het offreren, maar ook tijdens inkoop en uitvoering."
-    button: "Start je gratis proefperiode"
     textarea_label: "Bericht"
-    textarea_placeholder: "Typ hier je bericht..."
+    textarea_placeholder: "Typ hier je vraag, idee of suggestie..."
     success: "Bedankt, we hebben je bericht ontvangen."
     button: "Verstuur je vraag, idee of suggestie"
+
   footer:
     copy: "Van offerte tot uitvoering."
     email: "info@offerdesk.com"
@@ -254,32 +275,35 @@ en:
       suitable_for: "Who it's for"
       faq: "FAQ"
     cta: "Interested? Sign up"
-    sign_in: "Sign In"
+    sign_in: "Sign in"
     language_code: "NL"
-    language_aria: "Schakel naar Nederlands"
+    language_aria: "Switch to Dutch"
+
   top_panel:
     intro: "Claim your advantage today"
     discount: "70%"
     suffix: "off your first 3 months →"
     cta: "Sign up now!"
+
   hero:
-    kicker: "Profit-focused quoting software for service companies"
+    kicker: "Profit-focused quoting software for trade businesses"
     title: "Create quotes with profit in mind."
-    subtitle: "Know what you earn and save how you calculated it."
-    body: "Store suppliers, products, purchase prices and margins in one place. See during quoting exactly what a job will earn you, and months later still know which products, suppliers, purchase prices and margins you used."
+    subtitle: "Know what you earn and remember how you calculated it."
+    body: "Keep suppliers, products, purchase prices, and margins in one place. See what a job is expected to earn while creating the quote, and still know months later which products, suppliers, purchase prices, and margins you used."
     bullets:
-      - "Always insight into cost price, selling price and margin"
-      - "Never again search for suppliers or purchase prices"
-      - "Save how every quote was built"
-      - "From quote to purchase without Excel or loose notes"
+      - "Always see cost price, selling price, and margin"
+      - "No more searching for suppliers or purchase prices"
+      - "Remember how every quote was calculated"
+      - "Move from quote to purchasing without Excel or loose notes"
     cta_primary: "Start your free trial"
     cta_secondary: "View pricing"
     process_link: "See how it works →"
-    image_alt: "OfferDesk margin and quote management"
+    image_alt: "OfferDesk for quote, margin, and purchasing management"
+
   process:
     title_prefix: "From quote to execution"
-    title_highlight: "without information loss"
-    body: "OfferDesk doesn't just help you create a quote. Suppliers, products, purchase prices, margins and customer agreements stay linked while you move from inquiry to execution."
+    title_highlight: "without losing information"
+    body: "OfferDesk does more than help you create a quote. Suppliers, products, purchase prices, margins, and customer agreements remain connected as the job moves from inquiry to execution."
     steps:
       - "Lead"
       - "Site visit"
@@ -291,66 +315,72 @@ en:
       - "Invoice"
     cards:
       problem:
-        title: "Four weeks later the customer agrees…"
-        body: "Great, but then the search often starts. Which supplier did you choose? Which purchase price did you use? How much margin was on it? And what exactly did you need to order? That information is often scattered across your head, Excel and email."
+        title: "Four weeks later, the customer approves…"
+        body: "Great, but that is often when the search begins. Which supplier did you choose? Which purchase price did you use? What margin did you add? And what exactly did you need to order? That information is often scattered across your memory, Excel, and email."
       solution:
         title: "OfferDesk remembers it for you"
-        body: "Record suppliers, products, purchase prices and margins once. Every quote automatically saves how it was built, so you, your partner or a colleague later sees exactly what you calculated and which materials you need to order."
+        body: "Record suppliers, products, purchase prices, and margins once. Every quote automatically retains how it was calculated, so you, your partner, or a colleague can later see exactly what was calculated and which materials need to be ordered."
       difference:
         title: "More than quoting software"
-        body: "Most quoting software stops after sending a PDF. OfferDesk also saves the knowledge behind the quote and helps you further with customer feedback, material purchasing, preparation and execution."
+        body: "Most quoting software stops after sending a PDF. OfferDesk also retains the knowledge behind the quote and helps you continue with customer feedback, material purchasing, preparation, and execution."
+
   features:
     title_prefix: "Everything you need for"
     title_highlight: "profitable quoting"
-    intro: "From supplier and cost price to customer approval and purchasing. OfferDesk not only saves your quote, but also the knowledge behind it."
+    intro: "From supplier and cost price to customer approval and purchasing. OfferDesk retains not only the quote, but also the knowledge behind it."
     sections:
       - eyebrow: "Suppliers & products"
         title: "Record your expertise once."
-        body: "Many service companies run on the knowledge of one person. Which products are needed, where they are purchased and what margin goes with them. With OfferDesk you record that knowledge once, so your team can always use it."
+        body: "Many trade businesses depend on the knowledge of one person: which products are needed, where they are purchased, and which margin should be used. OfferDesk lets you record that knowledge once, so you and your team can use it again and again."
         bullets:
           - "Link products to suppliers"
-          - "Save minimum orders, SKUs and contact details"
-          - "Never again search for prices or suppliers"
+          - "Store minimum order quantities, SKUs, and contact details"
+          - "No more searching for prices or suppliers"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
+
       - eyebrow: "Margin & profit"
-        title: "See directly what you earn."
-        body: "During quoting you see exactly what a job will earn you. Adjust selling price or margin and immediately see the impact on your expected profit."
+        title: "See what you earn immediately."
+        body: "While creating a quote, you can see what a job is expected to earn. Change the selling price or margin and immediately see the effect on your expected profit."
         bullets:
-          - "Insight into cost price, selling price and margin"
+          - "See cost price, selling price, and margin"
           - "Automatic margin and price calculations"
-          - "See your expected profit before you send"
+          - "See your expected profit before sending the quote"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
+
       - eyebrow: "Online approval"
         title: "Less waiting. Less email."
-        body: "Send a quote as an online proposal. Customers can respond directly, leave comments and agree without endless email exchanges."
+        body: "Send your quote as an online proposal. Customers can respond, leave comments, and approve it without endless email exchanges."
         bullets:
           - "Online approval without PDF ping-pong"
-          - "Feedback directly linked to the quote"
-          - "Real-time insight into status"
+          - "Feedback linked directly to the quote"
+          - "Immediate visibility into the current status"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
+
     bottom_cards:
       - title: "Customer database"
-        body: "All customer data, contacts and quote history in one place."
+        body: "Keep customer details, contacts, and quote history in one place."
       - title: "Reusable catalog"
-        body: "Use existing products, materials and services again in every quote."
+        body: "Reuse existing products, materials, and services in every quote."
       - title: "Professional quotes"
-        body: "Send quotes in your own style as PDF or online proposal."
+        body: "Send quotes in your own branding as a PDF or online proposal."
+
   about:
     title_prefix: "What is"
     title_highlight: "OfferDesk"
     paragraphs:
-      - "OfferDesk is built for service companies that work daily with suppliers, materials and margins."
-      - "Much knowledge is in the owner's head. Which supplier is used, what purchase price applies and how much margin is needed. OfferDesk ensures that knowledge is not lost."
-      - "Our vision: every service company must be able to quote with complete insight into costs, margin and profit."
-    image_alt: "Technician at work on site"
+      - "OfferDesk is built for trade businesses that work with suppliers, materials, and margins every day."
+      - "A great deal of expertise often sits in the owner's head: which supplier to use, which purchase price applies, and how much margin is needed. OfferDesk records that knowledge so it does not get lost."
+      - "Our vision is simple: every trade business should know exactly what it will earn before sending a quote."
+    image_alt: "Technician working on site"
     caption: "Win work. Prepare. Execute. Measure profit."
+
   pricing:
     title_prefix: "Fair"
     title_highlight: "pricing"
-    intro: "Choose the plan that fits your team. Cancel monthly."
+    intro: "Choose the plan that fits your business. Cancel monthly."
     popular: "Most popular"
     note_suffix: "/ month"
     plans:
@@ -358,106 +388,118 @@ en:
         description: "For solo operators who want to quote professionally."
         price: "€9.99"
         bullets:
-          - "Basic quoting"
+          - "Essential quoting features"
           - "Customer management"
           - "PDF quotes"
         cta: "Start with Starter"
+
       - name: "Professional"
-        description: "Unlimited quoting with control over your margin."
+        description: "Create unlimited quotes with complete visibility into margin and profit."
         price: "€19.99"
         bullets:
           - "Everything in Starter"
           - "Unlimited quotes"
           - "Margin calculations"
-          - "Approval portal"
-          - "Quote tracking"
+          - "Online approval portal"
+          - "Quote status and tracking"
         cta: "Choose Professional"
+
       - name: "Business"
-        description: "For teams growing from quote to execution."
+        description: "For teams growing from quoting into purchasing and execution."
         price: "€39.99"
         bullets:
           - "Everything in Professional"
-          - "Teams"
+          - "Team collaboration"
           - "Purchase orders"
           - "Scheduling"
           - "Reporting"
         cta: "Choose Business"
         coming_soon: "coming soon"
+
   faq:
     title_prefix: "Frequently"
     title_highlight: "asked"
     title_suffix: "questions"
     items:
       - question: "Where do I start when creating a quote?"
-        answer: "First fill your product catalog: materials, services and standard prices. Then drag those items into the quote builder, add labor and travel costs and see your margin immediately. Send the quote and customers approve online."
-      - question: "I create a quote, and 2 days later I forget which supplier I wanted to order from. How does OfferDesk help?"
-        answer: "OfferDesk remembers everything. You save your suppliers once with contact details, minimum orders, SKUs and purchase costs. Each product is linked to that supplier. Click on that quote later and you immediately see which supplier you need to call."
+        answer: "First, fill your product catalog with materials, services, and standard prices. Add these items to the quote, adjust quantities and margins, and immediately see what you are expected to earn. Send the quote online or as a PDF and easily track its status afterward."
+
+      - question: "I create a quote and later forget which supplier I intended to use. How does OfferDesk help?"
+        answer: "OfferDesk remembers it for you. Store suppliers once with their contact details, minimum order quantities, SKUs, and purchase prices. Every product remains linked to the correct supplier. When you reopen the quote later, you can immediately see which suppliers, products, prices, and margins were used."
+
       - question: "How many quotes can I create?"
-        answer: "On Professional and Business you create unlimited quotes. Starter is for solo operators who send basic quotes. See the plans under Pricing."
+        answer: "Professional and Business include unlimited quotes. Starter is intended for solo operators who want to quote professionally. View the available plans under Pricing."
+
       - question: "Can I use my own logo and branding?"
-        answer: "Yes. PDF quotes use professional templates with your company logo and branding so they look like they come from your business."
-      - question: "Does OfferDesk stop after sending the PDF?"
-        answer: "No. Customers approve online, you track the status and after approval OfferDesk helps with materials, preparation and — soon — scheduling, invoicing and profit measurement."
+        answer: "Yes. Quotes are generated using professional templates with your company logo and branding, so every quote has a consistent appearance that matches your business."
+
+      - question: "Does OfferDesk stop after sending the quote?"
+        answer: "No. Customers can approve online and leave feedback. OfferDesk then helps you continue with material purchasing and preparation. Scheduling, inventory management, invoicing, and profit measurement are on the roadmap."
+
       - question: "Who is OfferDesk for?"
-        answer: "For service companies with work on site: flooring, HVAC/heating, solar, electrical, plumbing, painters, maintenance and other SMB organizations with technicians."
+        answer: "OfferDesk is for trade businesses that create quotes based on materials, suppliers, and margins, including flooring companies, HVAC and heating installers, electricians, plumbers, painters, maintenance companies, and other businesses with field teams."
+
   integrations:
     title_prefix: "More control over"
     title_highlight: "profit"
-    intro: "OfferDesk grows from quoting software to a complete platform for calculation, purchasing, execution and profit measurement."
+    intro: "OfferDesk is growing from quoting software into a complete platform for calculation, purchasing, execution, and profit measurement."
     cards:
       - title: "Inventory management"
-        body: "Track inventory based on actual purchase prices and current inventory value."
+        body: "Track inventory using actual purchase prices and gain insight into current inventory value."
       - title: "Purchase orders"
-        body: "Place orders directly based on approved quotes."
-      - title: "Job planning"
-        body: "Link quotes to execution and staff scheduling."
+        body: "Create orders from approved quotes and group materials by supplier."
+      - title: "Job scheduling"
+        body: "Connect approved quotes to execution and staff scheduling."
       - title: "Invoicing"
-        body: "Easily convert approved projects into invoices."
+        body: "Convert approved jobs into invoices."
       - title: "Profit measurement"
-        body: "Compare calculated profit with actual costs."
+        body: "Compare calculated profit with actual costs after execution."
       - title: "Permits & certificates"
-        body: "Save all required documents directly with the quote."
+        body: "Keep required documents and activities directly with the quote."
+
   suitable_for:
-    title_prefix: "OfferDesk is suitable for"
-    title_highlight: "service teams like"
-    title_suffix: ""
-    intro: "Built for SMB service companies with people in the field."
+    title_prefix: "OfferDesk is"
+    title_highlight: "built"
+    title_suffix: "for"
+    intro: "For trade businesses that create quotes based on materials, suppliers, and margin calculations."
     types:
       - "flooring companies"
-      - "HVAC / heating installers"
+      - "HVAC and heating installers"
       - "solar panel installers"
       - "electricians"
       - "plumbers"
       - "painters"
       - "maintenance companies"
-      - "SMBs with technicians"
+      - "SMBs with field technicians"
     industries:
       - "Flooring companies"
-      - "HVAC / heating installers"
+      - "HVAC and heating installers"
       - "Solar panel installers"
       - "Electricians"
       - "Plumbers"
       - "Painters"
       - "Maintenance companies"
-      - "SMBs with technicians"
+      - "SMBs with field technicians"
+
   newsletter:
     title: "Stay informed about new features"
-    intro: "We build OfferDesk together with service companies. Receive updates about inventory management, profit measurement, planning and new features."
+    intro: "We are building OfferDesk together with trade businesses. Receive updates about inventory management, profit measurement, scheduling, and other new features."
     email_label: "Email address"
     email_placeholder: "Enter your email address"
     cta_primary: "Keep me updated"
     cta_secondary: "Ideas or suggestions?"
-    success: "Thanks! We'll keep you posted."
+    success: "Thanks! We'll keep you updated."
     fallback_action: "mailto:info@offerdesk.com"
+
   footer_cta:
     title_prefix: "Know what you earn."
-    title_highlight: "Save how you calculated it."
-    intro: "OfferDesk helps service companies maintain control over suppliers, purchase prices, margins and profit. Not just during quoting, but also during purchasing and execution."
-    button: "Start your free trial"
+    title_highlight: "Remember how you calculated it."
+    intro: "OfferDesk helps trade businesses retain control over suppliers, purchase prices, margins, and profit. Not only while quoting, but also during purchasing and execution."
     textarea_label: "Message"
-    textarea_placeholder: "Type your message here..."
-    success: "Thanks, we received your message."
-    button: "Send your question, idea or suggestion"
+    textarea_placeholder: "Enter your question, idea, or suggestion..."
+    success: "Thanks, we have received your message."
+    button: "Send your question, idea, or suggestion"
+
   footer:
     copy: "From quote to execution."
     email: "info@offerdesk.com"
