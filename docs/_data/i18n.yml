@@ -84,13 +84,15 @@ nl:
     sections:
       - eyebrow: "Winst & marge"
         title: "Zie direct wat je verdient."
-        body: "Tijdens het maken van een offerte zie je direct kostprijs, verkoopprijs, marge en verwachte winst. Zo voorkom je verrassingen nadat het werk al is uitgevoerd."
+        body: "Tijdens het maken van een offerte zie je direct kostprijs, verkoopsprijs, marge en verwachte winst. Zo voorkom je verrassingen nadat het werk al is uitgevoerd."
         bullets:
           - "Verwachte winst direct zichtbaar"
           - "Marge automatisch berekend"
           - "Voorkom verliesgevende opdrachten"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
+        image: "/images/offerdesk/margin-profit.png"
+        image_alt: "Winst en marge berekening"
 
       - eyebrow: "Leveranciers & producten"
         title: "Nooit meer zoeken naar prijzen of leveranciers."
@@ -101,6 +103,8 @@ nl:
           - "Altijd inzicht in de herkomst van een prijs"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
+        image: "/images/offerdesk/suppliers-products.png"
+        image_alt: "Leveranciers en producten beheer"
 
       - eyebrow: "Van akkoord naar voorbereiding"
         title: "Van offerte naar inkoop."
@@ -111,6 +115,8 @@ nl:
           - "Sneller van akkoord naar uitvoering"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
+        image: "/images/offerdesk/online-approval.png"
+        image_alt: "Online goedkeuring en voorbereiding"
 
     bottom_cards:
       - title: "Klantendatabase"
@@ -372,6 +378,8 @@ en:
           - "Prevent loss-making jobs"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
+        image: "/images/offerdesk/margin-profit.png"
+        image_alt: "Winst en marge berekening"
 
       - eyebrow: "Suppliers & products"
         title: "No more searching for prices or suppliers."
@@ -382,6 +390,8 @@ en:
           - "Always see the source of a price"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
+        image: "/images/offerdesk/suppliers-products.png"
+        image_alt: "Suppliers and products management"
 
       - eyebrow: "From approval to preparation"
         title: "From quote to purchasing."
@@ -392,6 +402,8 @@ en:
           - "Faster from approval to execution"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
+        image: "/images/offerdesk/online-approval.png"
+        image_alt: "Online goedkeuring en voorbereiding"
 
     bottom_cards:
       - title: "Customer database"
