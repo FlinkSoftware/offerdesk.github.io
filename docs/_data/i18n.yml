@@ -379,7 +379,7 @@ en:
         cta_label: "Interested in this feature?"
         cta: "Sign up"
         image: "/images/offerdesk/margin-profit.png"
-        image_alt: "Winst en marge berekening"
+        image_alt: "Profit and margin calculation"
 
       - eyebrow: "Suppliers & products"
         title: "No more searching for prices or suppliers."
@@ -403,7 +403,7 @@ en:
         cta_label: "Interested in this feature?"
         cta: "Sign up"
         image: "/images/offerdesk/online-approval.png"
-        image_alt: "Online goedkeuring en voorbereiding"
+        image_alt: "Online approval and preparation"
 
     bottom_cards:
       - title: "Customer database"
