@@ -36,27 +36,6 @@ nl:
     process_link: "Bekijk hoe het werkt →"
     image_alt: "OfferDesk voor offerte-, marge- en inkoopbeheer"
 
-  why:
-    title_prefix: "Waarom kiezen voor"
-    title_highlight: "OfferDesk?"
-
-    cards:
-      - icon: "📈"
-        title: "Altijd inzicht in winst"
-        body: "Zie direct verkoopprijs, kosten, winst en marge terwijl je offertes opstelt. Geen verrassingen meer achteraf."
-
-      - icon: "💰"
-        title: "Voorkom verliesgevende offertes"
-        body: "Bereken automatisch marges en zie vooraf of een klus voldoende oplevert."
-
-      - icon: "📦"
-        title: "Leveranciers en inkoop gekoppeld"
-        body: "Bewaar leveranciers, producten en kostprijzen op één plek en gebruik ze direct in offertes."
-
-      - icon: "⚡"
-        title: "Van offerte naar uitvoering"
-        body: "Alle informatie blijft beschikbaar tijdens het hele traject, van aanvraag tot factuur."
-
   process:
     title_prefix: "Van offerte tot uitvoering"
     title_highlight: "zonder informatieverlies"
@@ -86,41 +65,35 @@ nl:
     title_highlight: "winstgevend offreren"
     intro: "Van leverancier en kostprijs tot klantgoedkeuring en inkoop. OfferDesk bewaart niet alleen je offerte, maar ook de kennis erachter."
     sections:
-       - eyebrow: "Hoeveel verdien ik?"
-         title: "Weet vooraf wat je verdient."
-         body: "Zie de winst en marge direct bij het calculeren. Geen ondercalculaties meer, geen verlieslatende projecten."
-         bullets:
-           - "Winst in real-time zichtbaar"
-           - "Marge meteen duidelijk"
-           - "Sluit alleen winstgevende klussen af"
-         cta_label: "Gratis proberen"
-         cta: "Meld je aan"
-         image: "/images/offerdesk/margin-profit.png"
-         image_alt: "Winst en marge berekening"
+      - eyebrow: "Leveranciers & producten"
+        title: "Leg je vakkennis één keer vast."
+        body: "Veel vakbedrijven draaien op de kennis van één persoon: welke producten nodig zijn, waar ze worden ingekocht en welke marge daarbij hoort. Met OfferDesk leg je die kennis één keer vast, zodat jij en je team deze steeds opnieuw kunnen gebruiken."
+        bullets:
+          - "Koppel producten aan leveranciers"
+          - "Bewaar minimale afnames, SKU's en contactgegevens"
+          - "Nooit meer zoeken naar prijzen of leveranciers"
+        cta_label: "Interesse in deze feature?"
+        cta: "Meld je aan"
 
-       - eyebrow: "Hoe voorkom ik fouten?"
-         title: "Alles gekoppeld, altijd beschikbaar."
-         body: "Leveranciers, prijzen en marges staan centraal en zijn altijd gekoppeld aan je producten. Consistentie op elke offerte."
-         bullets:
-           - "Leveranciers en producten gekoppeld"
-           - "Inkoopprijzen altijd up-to-date"
-           - "Geen fouten door verwarrende notities"
-         cta_label: "Gratis proberen"
-         cta: "Meld je aan"
-         image: "/images/offerdesk/suppliers-products.png"
-         image_alt: "Leveranciers en producten beheer"
+      - eyebrow: "Marge & winst"
+        title: "Zie direct wat je verdient."
+        body: "Tijdens het offreren zie je precies wat een opdracht naar verwachting oplevert. Pas de verkoopprijs of marge aan en zie direct wat dat betekent voor je verwachte winst."
+        bullets:
+          - "Inzicht in kostprijs, verkoopprijs en marge"
+          - "Automatische marge- en prijsberekeningen"
+          - "Bekijk je verwachte winst voordat je de offerte verstuurt"
+        cta_label: "Interesse in deze feature?"
+        cta: "Meld je aan"
 
-       - eyebrow: "Hoe bereid ik sneller voor?"
-         title: "Van goedkeuring naar inkoop."
-         body: "Goedgekeurde offertes zijn direct gekoppeld aan leveranciers en materialen. Je hoeft niets meer handmatig in te voeren. Direct naar inkoop."
-         bullets:
-           - "Automatische koppelingen"
-           - "Geen dubbel invoerwerk"
-           - "Sneller naar materiaalinkoop"
-         cta_label: "Gratis proberen"
-         cta: "Meld je aan"
-         image: "/images/offerdesk/online-approval.png"
-         image_alt: "Online goedkeuring en voorbereiding"
+      - eyebrow: "Online goedkeuring"
+        title: "Minder wachten. Minder e-mailverkeer."
+        body: "Stuur je offerte als online voorstel. Klanten kunnen direct reageren, opmerkingen plaatsen en akkoord geven zonder eindeloze e-mailwisselingen."
+        bullets:
+          - "Online goedkeuren zonder PDF-pingpong"
+          - "Feedback direct gekoppeld aan de offerte"
+          - "Direct inzicht in de actuele status"
+        cta_label: "Interesse in deze feature?"
+        cta: "Meld je aan"
 
     bottom_cards:
       - title: "Klantendatabase"
@@ -264,7 +237,7 @@ nl:
     button: "Verstuur je vraag, idee of suggestie"
 
   footer:
-    copy: "Weet wat je verdient voordat je aan een klus begint."
+    copy: "Van offerte tot uitvoering."
     email: "info@offerdesk.com"
     quick_links_title: "Snel naar"
     quick_links:
@@ -528,7 +501,7 @@ en:
     button: "Send your question, idea, or suggestion"
 
   footer:
-    copy: "Know what you will earn before starting on a job."
+    copy: "From quote to execution."
     email: "info@offerdesk.com"
     quick_links_title: "Quick links"
     quick_links:
