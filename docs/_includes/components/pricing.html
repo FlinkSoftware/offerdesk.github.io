@@ -24,8 +24,10 @@
                     <li class="flex gap-2 items-start"><span class="text-primary font-bold flex-shrink-0">✓</span> <span>{{ bullet }}{% if plan.coming_soon and forloop.last %} <span class="text-xs font-semibold uppercase tracking-wide text-primary block mt-0.5">{{ plan.coming_soon }}</span>{% endif %}</span></li>
                     {% endfor %}
                 </ul>
-                <a href="#newsletter-section"
-                    class="button-primary mt-8 block rounded-lg px-5 py-2.5 sm:py-3 text-center transition-all {% if forloop.index == 2 %}bg-primary hover:bg-primary-hover shadow-lg{% else %}bg-gray-900 hover:bg-black{% endif %}">{{ plan.cta }}</a>
+                <a href="https://app.offerdesk.nl/sign-up"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button-primary mt-8 block rounded-lg px-5 py-2.5 sm:py-3 text-center transition-all {% if forloop.index == 2 %}bg-primary hover:bg-primary-hover shadow-lg{% else %}bg-gray-900 hover:bg-black{% endif %}">Registreren</a>
             </div>
             {% endfor %}
         </div>
