@@ -11,7 +11,7 @@
         <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5">
             <span class="sr-only">OfferDesk</span>
             <img src="{{ '/images/logo-v2.svg' | relative_url }}" alt="" aria-hidden="true" class="h-9 w-9 rounded-lg">
-            <h2 class="text-xl font-bold tracking-tight text-dark-blue">OfferDesk</h2>
+            <h2 class="heading-4">OfferDesk</h2>
         </a>
     </div>
     <div class="flex lg:hidden">
@@ -25,17 +25,17 @@
         </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#feature-section" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
-        <a href="#pricing-section" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
-        <a href="#about-section" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
+        <a href="#feature-section" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
+        <a href="#pricing-section" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
+        <a href="#about-section" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3">
         <a href="https://app.offerdesk.nl/sign-in"
-            class="px-5 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+            class="px-5 py-2 body-small text-gray-700 hover:text-primary transition-colors">
             {{ i18n.nav.sign_in }}
         </a>
         <a href="https://app.offerdesk.nl/sign-up"
-            class="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover transition-colors">
+            class="button-primary rounded-lg bg-primary px-6 py-2.5 shadow-sm hover:bg-primary-hover transition-colors">
             {{ i18n.nav.cta }}
         </a>
     </div>
@@ -49,7 +49,7 @@
                     <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5">
                         <span class="sr-only">OfferDesk</span>
                         <img src="{{ '/images/logo-v2.svg' | relative_url }}" alt="" aria-hidden="true" class="h-9 w-9 rounded-lg">
-                        <h2 class="text-xl font-bold tracking-tight text-dark-blue">OfferDesk</h2>
+                        <h2 class="heading-4">OfferDesk</h2>
                     </a>
                     <button type="button" command="close" commandfor="mobile-menu"
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-600 hover:bg-gray-100 transition-colors">
@@ -63,17 +63,17 @@
                 <div class="mt-8 flow-root">
                     <div class="space-y-1 py-2">
                         <a href="#feature-section"
-                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
+                            class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
                         <a href="#pricing-section"
-                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
+                            class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
                         <a href="#about-section"
-                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
+                            class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
                     </div>
                     <div class="border-t border-border py-6 space-y-3">
                         <a href="https://app.offerdesk.nl/sign-in"
-                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.sign_in }}</a>
+                            class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.sign_in }}</a>
                         <a href="https://app.offerdesk.nl/sign-up"
-                            class="-mx-3 block rounded-lg px-3 py-3 text-center text-base font-semibold text-white bg-primary hover:bg-primary-hover transition-colors">{{ i18n.nav.cta }}</a>
+                            class="button-primary -mx-3 block rounded-lg px-3 py-3 text-center bg-primary hover:bg-primary-hover transition-colors">{{ i18n.nav.cta }}</a>
                     </div>
                 </div>
             </el-dialog-panel>
