@@ -1,0 +1,33 @@
+# SEO Robots Configuration for OfferDesk Landing Page
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /tmp/
+
+# Allow crawling of important sections
+Allow: /
+Allow: /nl/
+Allow: /en/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+
+# Sitemap location
+Sitemap: https://offerdesk.nl/sitemap.xml
+Sitemap: https://offerdesk.nl/feed.xml
+
+# Crawl delay (optional, but good practice)
+Crawl-delay: 1
+Request-rate: 30/60
+
+# Specific rules for popular bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+

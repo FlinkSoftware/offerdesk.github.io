@@ -8,7 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     {% seo %}
-    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon/favicon.svg' | relative_url }}">
+
+    <!-- OpenGraph & Social Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OfferDesk" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@offerdesk" />
+
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://app.offerdesk.nl">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="96x96" href="{{ '/images/favicon/favicon-96x96.png' | relative_url }}">
     <link rel="icon" href="{{ '/images/favicon/favicon.ico' | relative_url }}" sizes="any">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/favicon/apple-touch-icon.png' | relative_url }}">
@@ -32,6 +44,54 @@
         ml('account', '2670655');
     </script>
     <!-- End MailerLite Universal -->
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OfferDesk",
+      "description": "Slimme offertesoftware voor het MKB. Bereken marges, maak professionele offertes en beheer inkoop van offerte tot uitvoering.",
+      "url": "https://offerdesk.nl",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "EUR",
+        "url": "https://offerdesk.nl#pricing-section"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "OfferDesk",
+        "url": "https://offerdesk.nl",
+        "email": "info@offerdesk.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/offerdesk"
+        ]
+      }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "OfferDesk",
+      "url": "https://offerdesk.nl",
+      "logo": "https://offerdesk.nl/images/logo-v2.svg",
+      "description": "Offertesoftware voor bouw-, techniek- en servicebedrijven. Volledige grip op marges, inkoopprijs en winstgevendheid.",
+      "sameAs": [
+        "https://www.linkedin.com/company/offerdesk"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "info@offerdesk.com"
+      }
+    }
+    </script>
 </head>
 
 <body class="h-full text-text antialiased bg-gradient-to-br from-white via-background to-gray-100">

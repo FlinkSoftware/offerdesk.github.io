@@ -1,0 +1,20 @@
+# Redirects for SEO & User Experience
+# www.offerdesk.nl -> offerdesk.nl (remove www for canonical)
+
+# Redirect www to non-www
+http://www.offerdesk.nl/* https://offerdesk.nl/:splat 301
+
+# Old page URLs to new structure (if any)
+/prijzen /index.html#pricing-section 301
+/features /index.html#feature-section 301
+/pricing /index.html#pricing-section 301
+/contact /index.html#footer-cta 301
+
+# Ensure trailing slashes for HTML files
+/index.html / 301
+
+# Ensure app links redirect properly
+/app https://app.offerdesk.nl 301
+/login https://app.offerdesk.nl/sign-in 301
+/register https://app.offerdesk.nl/sign-up 301
+
