@@ -7,7 +7,7 @@ default_lang: nl
 google_analytics_id: G-XMLKF7JVEX
 mailerlite:
   action: "https://assets.mailerlite.com/jsonp/2670655/forms/199973805230130365/subscribe"
-baseurl: ""
+baseurl: "https://offerdesk.nl"
 url: "https://offerdesk.nl"
 
 # GitHub Pages safe plugins
