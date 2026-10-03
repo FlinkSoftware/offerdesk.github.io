@@ -8,10 +8,10 @@
 {% endif %}
 <nav aria-label="{{ i18n.nav.label }}" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
     <div class="flex lg:flex-1">
-        <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5">
+        <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5" aria-label="OfferDesk - Home">
             <span class="sr-only">OfferDesk</span>
             <img src="{{ '/images/logo-v2.svg' | relative_url }}" alt="" aria-hidden="true" class="h-9 w-9 rounded-lg">
-            <h2 class="heading-4">OfferDesk</h2>
+            <span class="heading-4">OfferDesk</span>
         </a>
     </div>
     <div class="flex lg:hidden">
@@ -48,10 +48,10 @@
             <el-dialog-panel
                 class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm shadow-lg">
                 <div class="flex items-center justify-between">
-                    <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5">
+                    <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5" aria-label="OfferDesk - Home">
                         <span class="sr-only">OfferDesk</span>
                         <img src="{{ '/images/logo-v2.svg' | relative_url }}" alt="" aria-hidden="true" class="h-9 w-9 rounded-lg">
-                        <h2 class="heading-4">OfferDesk</h2>
+                        <span class="heading-4">OfferDesk</span>
                     </a>
                     <button type="button" command="close" commandfor="mobile-menu"
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-600 hover:bg-gray-100 transition-colors">

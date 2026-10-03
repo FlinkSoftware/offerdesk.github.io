@@ -28,10 +28,16 @@
                 <div class="w-full lg:flex-[0_0_40%] lg:max-w-[40%] relative flex justify-center lg:self-stretch">
                     {% if feature.image %}
                     <img src="{{ feature.image }}" alt="{{ feature.image_alt }}"
-                        class="rounded-2xl shadow-2xl w-full max-w-xl lg:max-w-full lg:h-full object-contain">
+                        class="rounded-2xl shadow-2xl w-full max-w-xl lg:max-w-full lg:h-full object-contain"
+                        loading="lazy"
+                        width="600"
+                        height="400">
                     {% else %}
                     <img src="{{ '/images/dashboard.png' | relative_url }}" alt="{{ feature.image_alt }}"
-                        class="rounded-2xl shadow-2xl w-full max-w-xl lg:max-w-full lg:h-full object-contain">
+                        class="rounded-2xl shadow-2xl w-full max-w-xl lg:max-w-full lg:h-full object-contain"
+                        loading="lazy"
+                        width="600"
+                        height="400">
                     {% endif %}
                 </div>
             </div>

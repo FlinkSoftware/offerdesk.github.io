@@ -7,10 +7,10 @@
         <div class="space-y-4">
             {% for item in i18n.faq.items %}
             <details class="group bg-white rounded-lg shadow-sm border border-border overflow-hidden hover:border-primary/20 transition-colors" {% if forloop.first %}open{% endif %}>
-                <summary class="flex items-center justify-between p-6 sm:p-7 cursor-pointer list-none">
+                <summary class="flex items-center justify-between p-6 sm:p-7 cursor-pointer list-none" aria-expanded="false">
                     <span class="heading-5 text-left">{{ item.question }}</span>
-                    <span class="transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
-                        <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <span class="transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4" aria-hidden="true">
+                        <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="Toggle answer">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                         </svg>
                     </span>

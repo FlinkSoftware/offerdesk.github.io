@@ -28,6 +28,7 @@
     <meta name="theme-color" content="#0068FF">
     <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/typography.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/accessibility.css' | relative_url }}">
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -95,23 +96,26 @@
 </head>
 
 <body class="h-full text-text antialiased bg-gradient-to-br from-white via-background to-gray-100">
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
     <div class="bg-gradient-to-br from-white via-background to-gray-50">
         <header class="absolute lg:sticky top-0 inset-x-0 z-50 bg-white">
             {% include components/navigation.html %}
         </header>
-        <main>
+        <main id="main-content">
             {{ content }}
         </main>
         <footer class="bg-white border-t border-border">
             <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
                 <div class="grid gap-12 md:gap-16 md:grid-cols-3">
                     <div>
-                        <a href="{{ '/' | relative_url }}" class="inline-flex items-center gap-2.5">
+                        <a href="{{ '/' | relative_url }}" class="inline-flex items-center gap-2.5" aria-label="OfferDesk - Home">
                             <img src="{{ '/images/favicon/favicon.svg' | relative_url }}" alt="" aria-hidden="true" class="h-9 w-9 rounded-lg">
                             <span class="text-lg font-bold tracking-tight text-dark-blue">OfferDesk</span>
                         </a>
                         <p class="mt-4 max-w-xs text-sm leading-7 text-gray-700">{{ i18n.footer.copy }}</p>
-                        <a href="mailto:{{ site.email }}" class="mt-6 inline-flex font-semibold text-primary hover:text-primary-hover transition-colors text-sm">{{ site.email }}</a>
+                        <a href="mailto:{{ site.email }}" class="mt-6 inline-flex font-semibold text-primary hover:text-primary-hover transition-colors text-sm" aria-label="Email us at {{ site.email }}">{{ site.email }}</a>
                     </div>
 
                     <div>
