@@ -1,0 +1,328 @@
+/* ============================================
+   CONSISTENT TYPOGRAPHY SYSTEM
+   Based on hero.html design patterns
+   ============================================ */
+
+/* Font Stack */
+:root {
+  --font-family-base: "Inter", sans-serif;
+}
+
+/* ============================================
+   HEADINGS - HIERARCHICAL SCALE
+   ============================================ */
+
+/* H1 - Extra Large Hero Titles */
+.heading-1 {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 800; /* extrabold */
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--color-dark-blue);
+}
+
+@media (min-width: 640px) {
+  .heading-1 {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-1 {
+    font-size: 3.75rem; /* 60px */
+  }
+}
+
+/* H2 - Large Section Headers */
+.heading-2 {
+  font-size: 1.875rem; /* 30px */
+  font-weight: 700; /* bold */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-dark-blue);
+}
+
+@media (min-width: 640px) {
+  .heading-2 {
+    font-size: 2.25rem; /* 36px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-2 {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+/* H2 - White variant (for colored backgrounds) */
+.heading-2.text-white {
+  color: var(--color-white);
+}
+
+/* H3 - Medium Headers */
+.heading-3 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700; /* bold */
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-dark-blue);
+}
+
+@media (min-width: 640px) {
+  .heading-3 {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+/* H4 - Small Section Headers */
+.heading-4 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 700; /* bold */
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-dark-blue);
+}
+
+/* H5 - Card Titles */
+.heading-5 {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700; /* bold */
+  line-height: 1.3;
+  color: var(--color-dark-blue);
+}
+
+/* H6 - Small Titles */
+.heading-6 {
+  font-size: 1rem; /* 16px */
+  font-weight: 700; /* bold */
+  line-height: 1.4;
+  color: var(--color-dark-blue);
+}
+
+/* ============================================
+   EYEBROW / LABEL TEXT
+   ============================================ */
+
+.eyebrow {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 700; /* bold */
+  line-height: 1.5;
+  letter-spacing: 0.05em; /* tracking-wider */
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+@media (min-width: 640px) {
+  .eyebrow {
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+/* Alternative eyebrow color */
+.eyebrow.text-gray-500 {
+  color: var(--color-gray-500);
+}
+
+/* ============================================
+   BODY TEXT - MAIN CONTENT
+   ============================================ */
+
+/* Large Body Text - Main content */
+.body-large {
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  line-height: 1.625; /* relaxed */
+}
+
+@media (min-width: 640px) {
+  .body-large {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
+/* Standard Body Text */
+.body {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  line-height: 1.625; /* relaxed */
+}
+
+/* Small Body Text */
+.body-small {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .body-small {
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+/* ============================================
+   BUTTON & CTA TEXT
+   ============================================ */
+
+/* Primary Button */
+.button-primary {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600; /* semibold */
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+}
+
+@media (min-width: 640px) {
+  .button-primary {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* Secondary Button */
+.button-secondary {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600; /* semibold */
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+}
+
+@media (min-width: 640px) {
+  .button-secondary {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* ============================================
+   ACCENT TEXT - BADGES, PILLS
+   ============================================ */
+
+.badge {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 700; /* bold */
+  line-height: 1.5;
+  letter-spacing: 0.05em; /* tracking-wider */
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.badge.badge-secondary {
+  color: var(--color-secondary);
+}
+
+/* ============================================
+   EMPHASIS TEXT
+   ============================================ */
+
+/* Semibold emphasis - used within body text */
+.emphasis-semibold {
+  font-weight: 600;
+}
+
+/* Bold emphasis - stronger emphasis */
+.emphasis-bold {
+  font-weight: 700;
+}
+
+/* ============================================
+   NUMERIC / HIGHLIGHT TEXT
+   ============================================ */
+
+/* Large numbers (prices, metrics) */
+.number-large {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-dark-blue);
+}
+
+@media (min-width: 640px) {
+  .number-large {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+/* Profit/Success highlighting */
+.number-highlight {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-secondary);
+}
+
+/* Secondary metrics */
+.number-medium {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-secondary);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Tight line height for headings */
+.leading-heading {
+  line-height: 1.2;
+}
+
+/* Relaxed line height for body */
+.leading-body {
+  line-height: 1.625;
+}
+
+/* No line height for compact numbers */
+.leading-compact {
+  line-height: 1;
+}
+
+/* Tracking utilities */
+.tracking-heading {
+  letter-spacing: -0.025em;
+}
+
+.tracking-eyebrow {
+  letter-spacing: 0.05em;
+}
+
+.tracking-button {
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY SCALE
+   ============================================ */
+
+/* Scalable heading that adjusts across breakpoints */
+.heading-responsive {
+  font-size: clamp(1.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-dark-blue);
+}
+
+.heading-responsive.bold {
+  font-weight: 800;
+}
+
+/* ============================================
+   TEXT COLORS - WHITE VARIANTS
+   ============================================ */
+
+.text-white-90 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.text-white-60 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+
