@@ -54,7 +54,7 @@ npm run watch  # watches CSS and JS in parallel
 ```
 
 ## Deploying with GitHub Pages (project site using /docs)
-This repository uses the /docs directory as the source for the Jekyll site. GitHub Pages will build the site from /docs automatically.
+This repository uses the `/docs` directory as the source for the Jekyll site, configured from the root `_config.yml` via `source: docs`.
 
 - In repository Settings → Pages, set Source to “Deploy from a branch”, choose your default branch and folder `/docs`.
 - Do not set `destination:` in `_config.yml` (we removed it) to avoid generating `docs/docs`.
@@ -63,7 +63,7 @@ This repository uses the /docs directory as the source for the Jekyll site. GitH
 If you want to preview locally, run:
 ```bash
 bundle install
-bundle exec jekyll serve --source docs
+bundle exec jekyll serve
 # Open http://127.0.0.1:4000/
 ```
 
