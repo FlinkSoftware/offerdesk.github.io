@@ -6,6 +6,9 @@
 {% else %}
 {% assign home_href = '/' | relative_url %}
 {% endif %}
+{% assign feature_href = home_href | append: '#feature-section' %}
+{% assign pricing_href = home_href | append: '#pricing-section' %}
+{% assign about_href = home_href | append: '#about-section' %}
 <nav aria-label="{{ i18n.nav.label }}" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
     <div class="flex lg:flex-1">
         <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5" aria-label="OfferDesk - Home">
@@ -25,9 +28,9 @@
         </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#feature-section" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
-        <a href="#pricing-section" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
-        <a href="#about-section" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
+        <a href="{{ feature_href }}" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
+        <a href="{{ pricing_href }}" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
+        <a href="{{ about_href }}" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3">
         <a href="https://app.offerdesk.nl/sign-in"
@@ -64,11 +67,11 @@
                 </div>
                 <div class="mt-8 flow-root">
                     <div class="space-y-1 py-2">
-                        <a href="#feature-section"
+                        <a href="{{ feature_href }}"
                             class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
-                        <a href="#pricing-section"
+                        <a href="{{ pricing_href }}"
                             class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
-                        <a href="#about-section"
+                        <a href="{{ about_href }}"
                             class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
                     </div>
                     <div class="border-t border-border py-6 space-y-3">
