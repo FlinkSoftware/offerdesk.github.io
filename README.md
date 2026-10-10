@@ -53,12 +53,15 @@ npm run build  # builds CSS and JS
 npm run watch  # watches CSS and JS in parallel
 ```
 
-## Deploying with GitHub Pages (project site using /docs)
-This repository uses the `/docs` directory as the source for the Jekyll site, configured from the root `_config.yml` via `source: docs`.
+## Deploying with GitHub Pages
+This repository keeps a single root `_config.yml` and points Jekyll at `docs/` via `source: docs`.
 
-- In repository Settings → Pages, set Source to “Deploy from a branch”, choose your default branch and folder `/docs`.
-- Do not set `destination:` in `_config.yml` (we removed it) to avoid generating `docs/docs`.
-- You don’t need to commit any build output. Just commit your source files under `/docs`.
+For production, use the GitHub Actions workflow in `.github/workflows/pages.yml` so GitHub Pages builds from the repository root and picks up the root `_config.yml`.
+
+- In repository Settings → Pages, set **Source** to **GitHub Actions**.
+- Commit the workflow file and push to your default branch.
+- Do not set `destination:` in `_config.yml`; Jekyll will build into `_site/` automatically.
+- You don’t need to commit any build output. Just commit the source files.
 
 If you want to preview locally, run:
 ```bash
