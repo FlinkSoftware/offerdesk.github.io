@@ -187,6 +187,7 @@ nl:
           - "Leveranciers gekoppeld aan producten"
           - "Inkoopprijzen centraal beheerd"
           - "Altijd inzicht in de herkomst van een prijs"
+          - "Prijslijst van je groothandel in één keer importeren"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
         image: "/images/offerdesk/app-producten-leveranciers.webp"
@@ -210,7 +211,7 @@ nl:
       - title: "Herbruikbare catalogus"
         body: "Gebruik bestaande producten, materialen en diensten opnieuw in iedere offerte."
       - title: "Professionele offertes"
-        body: "Verstuur offertes in je eigen huisstijl als PDF of online voorstel."
+        body: "In je eigen huisstijl, als PDF of online met toegangscode, in het Nederlands of Engels."
 
   about:
     title_prefix: "Wat is"
@@ -222,10 +223,27 @@ nl:
     image_alt: "Het dashboard van OfferDesk met openstaande en geaccepteerde offertes en de gemiddelde marge"
     caption: "Win werk. Bereid voor. Voer uit. Meet winst."
 
+  customer_view:
+    eyebrow: "Online akkoord"
+    title_prefix: "Je klant bekijkt de offerte online"
+    title_highlight: "en geeft direct akkoord"
+    body: "Bij elke verstuurde offerte krijgt je klant een eigen pagina, beveiligd met een toegangscode uit de e-mail. Daar bekijkt hij de offerte, downloadt de PDF, stelt vragen en geeft met één klik akkoord. Jij ziet alles terug bij de offerte."
+    bullets:
+      - "Beveiligd met een toegangscode: alleen je klant opent hem"
+      - "Vragen en antwoorden bij de offerte, niet verspreid over je mail"
+      - "Akkoord of afwijzing komt direct binnen, met een melding"
+      - "Pas je de offerte aan? Elke verstuurde versie blijft bewaard"
+      - "Bekijk vooraf precies wat je klant ziet"
+    image: "/images/offerdesk/app-klantpagina.webp"
+    image_alt: "De pagina van de klant: de offerte op A4, akkoord geven, de PDF downloaden en vragen stellen"
+    image_mobile: "/images/offerdesk/app-klantpagina-mobiel.webp"
+    image_mobile_alt: "Dezelfde offerte op de telefoon van de klant"
+
   pricing:
     title_prefix: "Eerlijke"
     title_highlight: "prijzen"
     intro: "Kies het plan dat past bij jouw bedrijf. Alles exclusief btw, maandelijks opzegbaar, geen setup-kosten. Probeer 14 dagen gratis."
+    payment_note: "Veilig betalen via Mollie met iDEAL, creditcard of automatische incasso. Je kiest zelf: direct, of pas na je proefperiode."
     popular: "Meest gekozen"
     note_suffix: "/ maand"
     plans:
@@ -255,6 +273,7 @@ nl:
           - "Alles in Starter"
           - "Tot 5 gebruikers / medewerkers"
           - "Samenwerken met collega's"
+          - "Koppeling met je boekhouding (Moneybird)"
           - "Automatische herinneringen & opvolging"
           - "Inkooporders maken per leverancier"
           - "Rapportages & winstinzichten"
@@ -270,7 +289,7 @@ nl:
           - "Alles in Professional"
           - "Onbeperkt aantal gebruikers"
           - "Werkplanning & voorraadbeheer (binnenkort)"
-          - "Facturatie & winstmeting (binnenkort)"
+          - "Winstmeting (binnenkort)"
           - "API-toegang voor integraties"
           - "Directe support & persoonlijk aanspreekpunt"
         cta: "14 dagen gratis proberen"
@@ -297,11 +316,24 @@ nl:
 
       - question: "Voor wie is OfferDesk bedoeld?"
         answer: "Voor het brede MKB dat snelle grip wil op offertes, verwachte marges en inkoop. Denk aan aannemers, HVAC- en CV-installateurs, elektriciens, loodgieters, schilders, afbouwbedrijven, hoveniers, zonnepaneel-installateurs, onderhoudsbedrijven en andere vakbedrijven met medewerkers in het veld. OfferDesk is het toegankelijke, snelle alternatief voor ingewikkelde ERP-software."
+      - question: "Hoe ziet mijn klant de offerte?"
+        answer: "Je klant krijgt een e-mail met de PDF en een link met een toegangscode. Op die pagina bekijkt hij de offerte, downloadt hem, stelt vragen en geeft met zijn naam akkoord. Jij krijgt daarvan een melding, en ziet alles terug bij de offerte. Vooraf kun je zelf bekijken wat je klant te zien krijgt."
+      - question: "Werkt OfferDesk met mijn boekhouding?"
+        answer: "Met Moneybird wel: een geaccepteerde offerte wordt met één klik een conceptfactuur in je administratie. Exact Online, SnelStart en e-Boekhouden.nl staan op de roadmap."
+      - question: "Hoe betaal ik voor OfferDesk?"
+        answer: "Veilig via Mollie, met iDEAL, creditcard of automatische incasso. Je probeert OfferDesk eerst 14 dagen gratis en kiest zelf of je direct betaalt of pas na de proefperiode. Maandelijks opzegbaar."
 
   integrations:
-    title_prefix: "Meer grip op"
-    title_highlight: "marges en winstgevendheid"
-    intro: "OfferDesk groeit mee van offertesoftware naar een compleet platform voor calculatie, inkoop, uitvoering en winstmeting."
+    title_prefix: "Koppelingen en"
+    title_highlight: "wat er komt"
+    intro: "OfferDesk werkt samen met de software die je al gebruikt, en groeit mee naar een compleet platform voor calculatie, inkoop, uitvoering en winstmeting."
+    now_badge: "Beschikbaar"
+    now:
+      - title: "Factuur in Moneybird"
+        body: "Maak van een geaccepteerde offerte met één klik een conceptfactuur in Moneybird: je klant als contact, de btw per regel. Daarna staat de offerte vast."
+      - title: "Veilig betalen via Mollie"
+        body: "Je abonnement betaal je veilig via Mollie met iDEAL, creditcard of automatische incasso. Direct, of pas na je proefperiode."
+    later_title: "Op de roadmap"
     cards:
       - title: "Voorraadbeheer"
         body: "Houd voorraad bij op basis van werkelijke inkoopprijzen en krijg inzicht in de actuele voorraadwaarde."
@@ -309,8 +341,8 @@ nl:
         body: "Maak bestellingen op basis van geaccepteerde offertes en groepeer materialen per leverancier."
       - title: "Werkplanning"
         body: "Koppel geaccepteerde offertes aan de uitvoering en planning van medewerkers."
-      - title: "Facturatie"
-        body: "Zet goedgekeurde opdrachten eenvoudig om naar facturen."
+      - title: "Meer boekhoudpakketten"
+        body: "Exact Online, SnelStart en e-Boekhouden.nl, naast Moneybird."
       - title: "Winstmeting"
         body: "Vergelijk de gecalculeerde winst met de werkelijke kosten na uitvoering."
       - title: "Vergunningen & certificaten"
@@ -361,6 +393,7 @@ nl:
 
   footer:
     copy: "Weet wat je verdient. Bewaar hoe je het hebt berekend."
+    made_by: "OfferDesk is een product van Flink Software B.V."
     email: "info@offerdesk.com"
     quick_links_title: "Snel naar"
     quick_links:
@@ -575,6 +608,7 @@ en:
           - "Suppliers linked to products"
           - "Purchase prices centrally managed"
           - "Always insight into the source of a price"
+          - "Import your wholesaler's price list in one go"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
         image: "/images/offerdesk/app-producten-leveranciers.webp"
@@ -598,7 +632,7 @@ en:
       - title: "Reusable catalog"
         body: "Reuse existing products, materials, and services in every quote."
       - title: "Professional quotes"
-        body: "Send quotes in your own house style as a PDF or online proposal."
+        body: "In your own house style, as a PDF or online with an access code, in Dutch or English."
 
   about:
     title_prefix: "What is"
@@ -610,10 +644,27 @@ en:
     image_alt: "The OfferDesk dashboard with open and accepted offers and the average margin"
     caption: "Win work. Prepare. Execute. Measure profit."
 
+  customer_view:
+    eyebrow: "Online acceptance"
+    title_prefix: "Your customer views the quote online"
+    title_highlight: "and accepts it right away"
+    body: "Every quote you send gets its own page for your customer, protected by an access code from the email. There they view the quote, download the PDF, ask questions and accept with one click. You see it all on the quote."
+    bullets:
+      - "Protected by an access code: only your customer opens it"
+      - "Questions and answers on the quote, not scattered across your inbox"
+      - "Acceptance or rejection comes in straight away, with a notification"
+      - "Changed the quote? Every version you sent is kept"
+      - "Preview exactly what your customer sees"
+    image: "/images/offerdesk/app-klantpagina.webp"
+    image_alt: "The customer's page: the quote on A4, accepting, downloading the PDF and asking questions"
+    image_mobile: "/images/offerdesk/app-klantpagina-mobiel.webp"
+    image_mobile_alt: "The same quote on the customer's phone"
+
   pricing:
     title_prefix: "Fair"
     title_highlight: "pricing"
     intro: "Choose the plan that fits your business. Cancel monthly."
+    payment_note: "Pay securely through Mollie by iDEAL, credit card or direct debit. Your choice: right away, or only after your trial."
     popular: "Most popular"
     note_suffix: "/ month"
     plans:
@@ -685,11 +736,24 @@ en:
 
       - question: "Who is OfferDesk for?"
         answer: "For trade businesses that create quotes based on materials, suppliers, and margins, such as flooring companies, HVAC and heating installers, electricians, plumbers, painters, maintenance companies, and other businesses with field teams."
+      - question: "How does my customer see the quote?"
+        answer: "Your customer gets an email with the PDF and a link with an access code. On that page they view the quote, download it, ask questions and accept it with their name. You get a notification and see it all on the quote. You can preview what your customer will see beforehand."
+      - question: "Does OfferDesk work with my accounting software?"
+        answer: "With Moneybird it does: an accepted quote becomes a draft invoice in your administration in one click. Exact Online, SnelStart and e-Boekhouden.nl are on the roadmap."
+      - question: "How do I pay for OfferDesk?"
+        answer: "Securely through Mollie, by iDEAL, credit card or direct debit. You try OfferDesk free for 14 days first and choose whether to pay right away or after the trial. Cancel monthly."
 
   integrations:
-    title_prefix: "More control over"
-    title_highlight: "profit"
-    intro: "OfferDesk is growing from quoting software into a complete platform for calculation, purchasing, execution, and profit measurement."
+    title_prefix: "Integrations and"
+    title_highlight: "what's next"
+    intro: "OfferDesk works with the software you already use, and grows into a complete platform for calculation, purchasing, execution and profit measurement."
+    now_badge: "Available"
+    now:
+      - title: "Invoice in Moneybird"
+        body: "Turn an accepted quote into a draft invoice in Moneybird in one click: your customer as a contact, VAT per line. The quote is locked afterwards."
+      - title: "Secure payments via Mollie"
+        body: "Pay your subscription securely through Mollie by iDEAL, credit card or direct debit. Right away, or only after your trial."
+    later_title: "On the roadmap"
     cards:
       - title: "Inventory management"
         body: "Track inventory based on actual purchase prices and gain insight into current inventory value."
@@ -697,8 +761,8 @@ en:
         body: "Create orders from approved quotes and group materials by supplier."
       - title: "Work scheduling"
         body: "Connect approved quotes to execution and staff scheduling."
-      - title: "Invoicing"
-        body: "Easily convert approved jobs into invoices."
+      - title: "More accounting software"
+        body: "Exact Online, SnelStart and e-Boekhouden.nl, next to Moneybird."
       - title: "Profit measurement"
         body: "Compare calculated profit with actual costs after execution."
       - title: "Permits & certificates"
@@ -749,6 +813,7 @@ en:
 
   footer:
     copy: "Know what you earn. Remember how you calculated it."
+    made_by: "OfferDesk is a product of Flink Software B.V."
     email: "info@offerdesk.com"
     quick_links_title: "Quick links"
     quick_links:

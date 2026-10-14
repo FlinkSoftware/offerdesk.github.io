@@ -115,9 +115,10 @@ button.bg-secondary {
   height: 4.5825rem;
 }
 
-/* Typografisch schalen (optioneel): de hele band schaalt met viewport */
+/* Vaste basis: 16px op elk scherm. Het meeschalen (14px op een telefoon, 18px vanaf ~670px) maakte tekst op de
+   telefoon te klein en alles op desktop 12,5% groter, ook de witruimte en de breedte van de pagina (1440 i.p.v. 1280). */
 html {
-  font-size: clamp(14px, 1.2vw + 10px, 18px);
+  font-size: 16px;
 }
 
 /* Fallback: verzeker groene CTA achtergrondkleur ook zonder Tailwind utility */
