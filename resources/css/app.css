@@ -290,6 +290,13 @@ a:not([class*="btn"]):not([class*="bg-"]):hover {
   animation: slideUpFade 0.6s ease-out 0.2s backwards;
 }
 
+/* No slide for visitors who asked for less motion; switching examples then just swaps them. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-mockup-container {
+    animation: none;
+  }
+}
+
 /* Feature Badge Styling */
 .hero-feature-badge {
   transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);

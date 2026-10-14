@@ -57,3 +57,24 @@ document.addEventListener('DOMContentLoaded', () => {
     return form.querySelector('[name="bericht"]')?.value || '';
   });
 });
+
+// Hero: one example offer per trade. Without JavaScript the first shows; here a random one on every load,
+// and the trade buttons switch between them. Nothing changes by itself.
+(function(){
+  function setupHeroMocks(){
+    const tabs = Array.from(document.querySelectorAll('[data-hero-tab]'));
+    const mocks = Array.from(document.querySelectorAll('[data-hero-mock]'));
+    if (mocks.length < 2) return;
+    function show(index){
+      mocks.forEach((mock) => { mock.hidden = mock.dataset.heroMock !== String(index); });
+      tabs.forEach((tab) => tab.setAttribute('aria-pressed', String(tab.dataset.heroTab === String(index))));
+    }
+    tabs.forEach((tab) => tab.addEventListener('click', () => show(tab.dataset.heroTab)));
+    show(Math.floor(Math.random() * mocks.length));
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHeroMocks);
+  } else {
+    setupHeroMocks();
+  }
+})();
