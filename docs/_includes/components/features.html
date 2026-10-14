@@ -13,7 +13,7 @@
         <div class="space-y-14 sm:space-y-16 lg:space-y-20">
             {% for feature in i18n.features.sections %}
             <div class="flex flex-col {% if forloop.index == 2 %}lg:flex-row-reverse{% else %}lg:flex-row{% endif %} items-center lg:items-stretch gap-8 lg:gap-10 py-3 sm:py-4">
-                <div class="w-full lg:flex-[0_0_60%] lg:max-w-[60%] flex flex-col justify-center">
+                <div class="w-full lg:flex-[3_1_0%] lg:min-w-0 flex flex-col justify-center">
                     <div class="eyebrow inline-block px-4 py-1.5 bg-primary/10 rounded-full w-fit">
                         {{ feature.eyebrow }}
                     </div>
@@ -25,7 +25,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="w-full lg:flex-[0_0_40%] lg:max-w-[40%] relative flex justify-center lg:self-stretch">
+                <div class="w-full lg:flex-[2_1_0%] lg:min-w-0 relative flex justify-center lg:self-stretch">
                     {% if feature.image %}
                     <img src="{{ feature.image }}" alt="{{ feature.image_alt }}"
                         class="rounded-2xl shadow-2xl w-full max-w-xl lg:max-w-full lg:h-full object-contain"
