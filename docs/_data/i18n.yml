@@ -161,6 +161,7 @@ nl:
     note_suffix: "/ maand"
     plans:
       - name: "Starter"
+        key: "starter"
         description: "Voor zzp'ers en kleine vakbedrijven met weinig medewerkers."
         price: "€9,99"
         billing_period: "per maand ex. btw"
@@ -176,6 +177,7 @@ nl:
         cta: "14 dagen gratis proberen"
 
       - name: "Professional"
+        key: "professional"
         description: "Voor groeiende vakbedrijven met medewerkers en samenwerking."
         price: "€19,99"
         billing_period: "per maand ex. btw"
@@ -191,6 +193,7 @@ nl:
         cta: "14 dagen gratis proberen"
 
       - name: "Business"
+        key: "business"
         description: "Voor MKB-bedrijven met veel medewerkers en volledige uitvoering."
         price: "€29,99"
         billing_period: "per maand ex. btw"
@@ -477,6 +480,7 @@ en:
     note_suffix: "/ month"
     plans:
       - name: "Starter"
+        key: "starter"
         description: "For sole traders who want to quote profitably and communicate professionally."
         price: "€9.99"
         billing_period: "per month ex. VAT"
@@ -493,6 +497,7 @@ en:
         cta: "Try 14 days for free"
 
       - name: "Professional"
+        key: "professional"
         description: "For trade businesses that collaborate, follow up, and want to control their numbers."
         price: "€19.99"
         billing_period: "per month ex. VAT"
@@ -508,6 +513,7 @@ en:
         cta: "Try 14 days for free"
 
       - name: "Business"
+        key: "business"
         description: "For growing companies expanding into full execution."
         price: "€29.99"
         billing_period: "per month ex. VAT"
