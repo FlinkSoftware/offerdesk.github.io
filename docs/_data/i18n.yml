@@ -81,8 +81,8 @@ nl:
           - "Voorkom verliesgevende opdrachten"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
-        image: "/images/offerdesk/margin-profit.png"
-        image_alt: "Winst en marge berekening"
+        image: "/images/offerdesk/app-offerte-marge.webp"
+        image_alt: "Een offerte in OfferDesk met inkoop, marge en brutowinst per regel"
 
       - eyebrow: "Leveranciers & producten"
         title: "Nooit meer zoeken naar prijzen of leveranciers."
@@ -93,8 +93,8 @@ nl:
           - "Altijd inzicht in de herkomst van een prijs"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
-        image: "/images/offerdesk/suppliers-products.png"
-        image_alt: "Leveranciers en producten beheer"
+        image: "/images/offerdesk/app-producten-leveranciers.webp"
+        image_alt: "De productcatalogus in OfferDesk met leveranciers, inkoopprijzen en marges"
 
       - eyebrow: "Van akkoord naar voorbereiding"
         title: "Van offerte naar inkoop."
@@ -105,8 +105,8 @@ nl:
           - "Sneller van akkoord naar uitvoering"
         cta_label: "Interesse in deze feature?"
         cta: "Meld je aan"
-        image: "/images/offerdesk/online-approval.png"
-        image_alt: "Online goedkeuring en voorbereiding"
+        image: "/images/offerdesk/app-inkooplijst.webp"
+        image_alt: "De inkooplijst van een geaccepteerde offerte, per leverancier"
 
     bottom_cards:
       - title: "Klantendatabase"
@@ -123,7 +123,7 @@ nl:
       - "OfferDesk is gebouwd voor vakbedrijven die offertes maken op basis van materialen, leveranciers en margecalculaties."
       - "Veel vakkennis zit in het hoofd van de eigenaar. Welke leverancier wordt gebruikt, welke inkoopprijs geldt en hoeveel marge nodig is. OfferDesk zorgt ervoor dat die kennis wordt vastgelegd en beschikbaar blijft voor iedereen die offertes maakt."
       - "Onze visie: elk vakbedrijf moet precies weten wat het verdient voordat een offerte wordt verstuurd."
-    image_alt: "Technicus aan het werk op locatie"
+    image_alt: "Het dashboard van OfferDesk met openstaande en geaccepteerde offertes en de gemiddelde marge"
     caption: "Win werk. Bereid voor. Voer uit. Meet winst."
 
   pricing:
@@ -370,8 +370,8 @@ en:
           - "Prevent loss-making jobs"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
-        image: "/images/offerdesk/margin-profit.png"
-        image_alt: "Profit and margin calculation"
+        image: "/images/offerdesk/app-offerte-marge.webp"
+        image_alt: "An offer in OfferDesk with purchase price, margin and gross profit per line"
 
       - eyebrow: "Suppliers & products"
         title: "No more searching for prices or suppliers."
@@ -382,8 +382,8 @@ en:
           - "Always insight into the source of a price"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
-        image: "/images/offerdesk/suppliers-products.png"
-        image_alt: "Suppliers and products management"
+        image: "/images/offerdesk/app-producten-leveranciers.webp"
+        image_alt: "The product catalogue in OfferDesk with suppliers, purchase prices and margins"
 
       - eyebrow: "From approval to preparation"
         title: "From quote to purchasing."
@@ -394,8 +394,8 @@ en:
           - "Faster from approval to execution"
         cta_label: "Interested in this feature?"
         cta: "Sign up"
-        image: "/images/offerdesk/online-approval.png"
-        image_alt: "Online approval and preparation"
+        image: "/images/offerdesk/app-inkooplijst.webp"
+        image_alt: "The purchase list of an accepted offer, per supplier"
 
     bottom_cards:
       - title: "Customer database"
@@ -412,7 +412,7 @@ en:
       - "OfferDesk is built for trade businesses that create quotes based on materials, suppliers, and margin calculations."
       - "Much trade expertise sits in the owner's head: which supplier is used, which purchase price applies, and how much margin is needed. OfferDesk ensures that knowledge is recorded and remains available for everyone who creates quotes."
       - "Our vision: every trade business should know exactly what it earns before sending a quote."
-    image_alt: "Technician working on site"
+    image_alt: "The OfferDesk dashboard with open and accepted offers and the average margin"
     caption: "Win work. Prepare. Execute. Measure profit."
 
   pricing:
