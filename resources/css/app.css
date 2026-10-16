@@ -361,6 +361,40 @@ html {
   justify-self: center;
 }
 
+/* The ideas window in the footer: explicit styles, as the global button and ring rules in accessibility.css
+   would turn its button text white and its borders into shadows */
+#ideas-dialog .ideas-copy {
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  background: #fff;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-hover);
+  min-height: 0;
+}
+#ideas-dialog .ideas-copy:hover { border-color: var(--color-primary); }
+#ideas-dialog .ideas-secondary {
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 0.625rem 1rem;
+  color: var(--color-dark-blue);
+  text-decoration: none;
+}
+#ideas-dialog .ideas-secondary:hover { border-color: var(--color-primary); color: var(--color-primary-hover); }
+#ideas-dialog button[command="close"] { color: var(--color-gray-600); }
+/* Its trigger in the footer looks like the footer's links */
+.ideas-open {
+  color: var(--color-gray-600);
+  font-size: inherit;
+  font-weight: inherit;
+  min-height: 0;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+.ideas-open:hover { color: var(--color-primary); }
+
 /* Hero: the next trade's example fades in */
 @media (prefers-reduced-motion: no-preference) {
   [data-hero-mock]:not([hidden]) { animation: hero-mock-in 400ms ease-out; }

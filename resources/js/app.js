@@ -153,6 +153,19 @@
         else if (button.getAttribute('command') === 'close') dialog.close();
       });
     });
+    // A dialog without its own backdrop element closes on a click outside its box (the click lands on the dialog itself)
+    document.querySelectorAll('dialog:not(:has([data-dialog-backdrop]))').forEach((dialog) => {
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    });
+    // Copy buttons: the text to the clipboard, and a moment of "copied" on the button
+    document.querySelectorAll('[data-copy]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(button.dataset.copy); } catch (error) { return; }
+        const label = button.textContent;
+        button.textContent = button.dataset.copied || label;
+        setTimeout(() => { button.textContent = label; }, 2000);
+      });
+    });
     document.querySelectorAll('[data-dialog-backdrop]').forEach((backdrop) => {
       backdrop.addEventListener('click', (event) => {
         if (event.target === backdrop) backdrop.closest('dialog')?.close();

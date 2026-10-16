@@ -429,6 +429,16 @@ nl:
     copy: "Weet wat je verdient. Bewaar hoe je het hebt berekend."
     made_by: "OfferDesk is een product van Flink Software B.V."
     email: "info@offerdesk.com"
+    ideas:
+      link: "Ideeën & suggesties"
+      title: "Ideeën en suggesties"
+      text: "Mis je iets in OfferDesk, of kan iets beter? Mail het ons, we lezen alles."
+      subject: "Idee voor OfferDesk"
+      copy: "Kopieer"
+      copied: "Gekopieerd"
+      mail_app: "Open je mailprogramma"
+      gmail: "Open in Gmail"
+      close: "Sluiten"
     quick_links_title: "Snel naar"
     quick_links:
       - label: "Features"
@@ -884,6 +894,16 @@ en:
     copy: "Know what you earn. Remember how you calculated it."
     made_by: "OfferDesk is a product of Flink Software B.V."
     email: "info@offerdesk.com"
+    ideas:
+      link: "Ideas & suggestions"
+      title: "Ideas and suggestions"
+      text: "Missing something in OfferDesk, or could something be better? Email us, we read everything."
+      subject: "Idea for OfferDesk"
+      copy: "Copy"
+      copied: "Copied"
+      mail_app: "Open your mail app"
+      gmail: "Open in Gmail"
+      close: "Close"
     quick_links_title: "Quick links"
     quick_links:
       - label: "Features"

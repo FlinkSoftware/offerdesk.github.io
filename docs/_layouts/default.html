@@ -194,9 +194,32 @@
                     <p>&copy; {{ site.time | date: "%Y" }} OfferDesk · {{ i18n.footer.made_by }}</p>
                     <div class="flex flex-wrap items-center gap-6">
                         <a href="{{ footer_home }}#newsletter-section" class="hover:text-primary transition-colors">{% if lang == 'en' %}Newsletter{% else %}Nieuwsbrief{% endif %}</a>
-                        <a href="mailto:{{ site.email }}?subject={% if lang == 'en' %}Idea%20for%20OfferDesk{% else %}Idee%20voor%20OfferDesk{% endif %}" class="hover:text-primary transition-colors">{% if lang == 'en' %}Ideas &amp; suggestions{% else %}Ideeën &amp; suggesties{% endif %}</a>
+                        {% comment %}A mailto link alone does nothing for people without a mail app (webmail users): a small window
+                        shows the address to copy, the mail app and Gmail{% endcomment %}
+                        {% assign ideas = i18n.footer.ideas %}
+                        {% assign subject = ideas.subject | url_encode | replace: '+', '%20' %}
+                        <button type="button" command="show-modal" commandfor="ideas-dialog" class="ideas-open">{{ ideas.link }}</button>
                     </div>
                 </div>
+                <dialog id="ideas-dialog" aria-labelledby="ideas-title" class="m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl p-0 shadow-2xl backdrop:bg-dark-blue/40">
+                    <div class="p-6 sm:p-8">
+                        <div class="flex items-start justify-between gap-4">
+                            <h2 id="ideas-title" class="heading-4">{{ ideas.title }}</h2>
+                            <button type="button" command="close" commandfor="ideas-dialog" class="-m-2 rounded-md p-2 text-gray-600 hover:bg-gray-100" aria-label="{{ ideas.close }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-5"><path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                            </button>
+                        </div>
+                        <p class="mt-3 body text-gray-700">{{ ideas.text }}</p>
+                        <div class="mt-5 flex items-center gap-2 rounded-lg border border-border bg-gray-50 p-2 pl-4">
+                            <span class="flex-1 truncate font-semibold text-dark-blue">{{ site.email }}</span>
+                            <button type="button" data-copy="{{ site.email }}" data-copied="{{ ideas.copied }}" class="ideas-copy">{{ ideas.copy }}</button>
+                        </div>
+                        <div class="mt-5 flex flex-col gap-2">
+                            <a href="mailto:{{ site.email }}?subject={{ subject }}" class="button-primary w-full rounded-lg bg-primary px-4 py-2.5 text-center hover:bg-primary-hover">{{ ideas.mail_app }}</a>
+                            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ site.email }}&amp;su={{ subject }}" target="_blank" rel="noopener noreferrer" class="ideas-secondary button-secondary w-full">{{ ideas.gmail }}</a>
+                        </div>
+                    </div>
+                </dialog>
             </div>
         </footer>
     </div>
