@@ -307,3 +307,47 @@ a:not([class*="btn"]):not([class*="bg-"]):hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 104, 255, 0.1);
 }
+/* Navigation: the current section or page stands out, and follows as you scroll */
+/* On large screens the menu bar stays on top: leave it room when jumping to a section */
+html {
+  scroll-padding-top: 1rem;
+}
+@media (min-width: 64rem) {
+  html { scroll-padding-top: 5.5rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+.nav-link,
+.nav-link-mobile {
+  text-decoration: none !important;
+}
+.nav-link {
+  position: relative;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  color: var(--color-gray-700);
+  transition: color 200ms ease, background-color 200ms ease;
+}
+.nav-link:hover {
+  color: var(--color-primary);
+  background-color: color-mix(in oklab, var(--color-primary) 6%, transparent);
+}
+.nav-link[aria-current] {
+  color: var(--color-primary);
+  background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
+  font-weight: 600;
+}
+.nav-link-mobile {
+  color: var(--color-gray-700);
+  transition: color 200ms ease, background-color 200ms ease;
+}
+.nav-link-mobile:hover {
+  color: var(--color-primary);
+  background-color: var(--color-gray-50);
+}
+.nav-link-mobile[aria-current] {
+  color: var(--color-primary);
+  background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
+  font-weight: 600;
+}

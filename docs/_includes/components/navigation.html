@@ -9,6 +9,7 @@
 {% assign feature_href = home_href | append: '#feature-section' %}
 {% assign pricing_href = home_href | append: '#pricing-section' %}
 {% assign about_href = home_href | append: '#about-section' %}
+{% if page.url contains '/blog/' %}{% assign nav_current = 'blog' %}{% elsif page.url == home_href %}{% assign nav_current = 'home' %}{% endif %}
 <nav aria-label="{{ i18n.nav.label }}" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
     <div class="flex lg:flex-1">
         <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5" aria-label="OfferDesk - Home">
@@ -27,11 +28,12 @@
             </svg>
         </button>
     </div>
-    <div class="hidden lg:flex lg:gap-x-12">
-        <a href="{{ home_href }}" class="body-small text-gray-700 hover:text-primary transition-colors">Home</a>
-        <a href="{{ feature_href }}" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
-        <a href="{{ pricing_href }}" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
-        <a href="{{ about_href }}" class="body-small text-gray-700 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
+    <div class="hidden lg:flex lg:items-center lg:gap-x-2">
+        <a href="{{ home_href }}" data-nav="home"{% if nav_current == 'home' %} aria-current="page"{% endif %} class="nav-link body-small">Home</a>
+        <a href="{{ feature_href }}" data-nav="features"{% if nav_current == 'features' %} aria-current="page"{% endif %} class="nav-link body-small">{{ i18n.nav.links.features }}</a>
+        <a href="{{ pricing_href }}" data-nav="pricing"{% if nav_current == 'pricing' %} aria-current="page"{% endif %} class="nav-link body-small">{{ i18n.nav.links.pricing }}</a>
+        <a href="{{ about_href }}" data-nav="about"{% if nav_current == 'about' %} aria-current="page"{% endif %} class="nav-link body-small">{{ i18n.nav.links.about }}</a>
+        <a href="{{ '/blog/' | relative_url }}" data-nav="blog"{% if nav_current == 'blog' %} aria-current="page"{% endif %} class="nav-link body-small">Blog</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3">
         <a href="https://app.offerdesk.nl/sign-in"
@@ -42,7 +44,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="button-primary rounded-lg bg-primary px-6 py-2.5 shadow-sm hover:bg-primary-hover transition-colors">
-            Registreren
+            {{ i18n.nav.sign_up }}
         </a>
     </div>
 </nav>
@@ -68,14 +70,16 @@
                 </div>
                 <div class="mt-8 flow-root">
                     <div class="space-y-1 py-2">
-                        <a href="{{ home_href }}"
-                            class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Home</a>
-                        <a href="{{ feature_href }}"
-                            class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.features }}</a>
-                        <a href="{{ pricing_href }}"
-                            class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.pricing }}</a>
-                        <a href="{{ about_href }}"
-                            class="-mx-3 block rounded-lg px-3 py-2.5 body text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">{{ i18n.nav.links.about }}</a>
+                        <a href="{{ home_href }}" data-nav="home"{% if nav_current == 'home' %} aria-current="page"{% endif %}
+                            class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">Home</a>
+                        <a href="{{ feature_href }}" data-nav="features"{% if nav_current == 'features' %} aria-current="page"{% endif %}
+                            class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">{{ i18n.nav.links.features }}</a>
+                        <a href="{{ pricing_href }}" data-nav="pricing"{% if nav_current == 'pricing' %} aria-current="page"{% endif %}
+                            class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">{{ i18n.nav.links.pricing }}</a>
+                        <a href="{{ about_href }}" data-nav="about"{% if nav_current == 'about' %} aria-current="page"{% endif %}
+                            class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">{{ i18n.nav.links.about }}</a>
+                        <a href="{{ '/blog/' | relative_url }}" data-nav="blog"{% if nav_current == 'blog' %} aria-current="page"{% endif %}
+                            class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">Blog</a>
                     </div>
                     <div class="border-t border-border py-6 space-y-3">
                         <a href="https://app.offerdesk.nl/sign-in"
@@ -83,7 +87,7 @@
                         <a href="https://app.offerdesk.nl/sign-up"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="button-primary -mx-3 block rounded-lg px-3 py-3 text-center bg-primary hover:bg-primary-hover transition-colors">Registreren</a>
+                            class="button-primary -mx-3 block rounded-lg px-3 py-3 text-center bg-primary hover:bg-primary-hover transition-colors">{{ i18n.nav.sign_up }}</a>
                     </div>
                 </div>
             </el-dialog-panel>

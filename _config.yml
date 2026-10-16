@@ -29,3 +29,17 @@ exclude:
   - Gemfile
   - Gemfile.lock
 source: docs
+
+# Blog: articles live in docs/_posts. A post dated in the future stays out of the site until that day;
+# the Pages workflow builds daily, so a post written ahead appears on its date by itself.
+future: false
+feed:
+  path: blog/feed.xml
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      lang: nl
+      permalink: /blog/:title/

@@ -54,7 +54,7 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "OfferDesk",
-      "description": "Slimme offertesoftware voor het MKB. Bereken marges, maak professionele offertes en beheer inkoop van offerte tot uitvoering.",
+      "description": "{% if lang == 'en' %}Smart quoting software for small businesses. Calculate margins, send professional quotes and manage purchasing and payments, from quote to payment.{% else %}Slimme offertesoftware voor het MKB. Bereken marges, maak professionele offertes en beheer inkoop en betalingen, van offerte tot betaling.{% endif %}",
       "url": "https://offerdesk.nl",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
@@ -84,7 +84,7 @@
       "name": "OfferDesk",
       "url": "https://offerdesk.nl",
       "logo": "https://offerdesk.nl/images/logo-v2.svg",
-      "description": "Offertesoftware voor bouw-, techniek- en servicebedrijven. Volledige grip op marges, inkoopprijs en winstgevendheid.",
+      "description": "{% if lang == 'en' %}Quoting software for construction, technical and service businesses. Full control over margins, purchase prices and profitability.{% else %}Offertesoftware voor bouw-, techniek- en servicebedrijven. Volledige grip op marges, inkoopprijs en winstgevendheid.{% endif %}",
       "sameAs": [
         "https://www.linkedin.com/company/offerdesk"
       ],
@@ -108,6 +108,8 @@
         <main id="main-content">
             {{ content }}
         </main>
+        {% comment %}Footer anchors point at the home page in the page's language, so they work from the blog too{% endcomment %}
+        {% if lang == 'en' %}{% assign footer_home = '/en/' | relative_url %}{% else %}{% assign footer_home = '/' | relative_url %}{% endif %}
         <footer class="bg-white border-t border-border">
             <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
                 <div class="grid gap-12 md:gap-16 md:grid-cols-3">
@@ -124,8 +126,9 @@
                         <h3 class="text-sm font-bold uppercase tracking-wider text-gray-900">{{ i18n.footer.quick_links_title }}</h3>
                         <ul class="mt-6 space-y-3 text-sm">
                             {% for link in i18n.footer.quick_links %}
+                            {% assign first = link.href | slice: 0 %}
                             <li>
-                                <a href="{{ link.href }}" class="text-gray-700 hover:text-primary transition-colors">{{ link.label }}</a>
+                                <a href="{% if first == '#' %}{{ footer_home }}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}" class="text-gray-700 hover:text-primary transition-colors">{{ link.label }}</a>
                             </li>
                             {% endfor %}
                         </ul>
@@ -148,8 +151,8 @@
                 <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600">
                     <p>&copy; {{ site.time | date: "%Y" }} OfferDesk · {{ i18n.footer.made_by }}</p>
                     <div class="flex flex-wrap items-center gap-6">
-                        <a href="#newsletter-section" class="hover:text-primary transition-colors">{% if lang == 'en' %}Newsletter{% else %}Nieuwsbrief{% endif %}</a>
-                        <a href="#footer-cta" class="hover:text-primary transition-colors">{% if lang == 'en' %}Ideas &amp; suggestions{% else %}Ideeën &amp; suggesties{% endif %}</a>
+                        <a href="{{ footer_home }}#newsletter-section" class="hover:text-primary transition-colors">{% if lang == 'en' %}Newsletter{% else %}Nieuwsbrief{% endif %}</a>
+                        <a href="mailto:{{ site.email }}?subject={% if lang == 'en' %}Idea%20for%20OfferDesk{% else %}Idee%20voor%20OfferDesk{% endif %}" class="hover:text-primary transition-colors">{% if lang == 'en' %}Ideas &amp; suggestions{% else %}Ideeën &amp; suggesties{% endif %}</a>
                     </div>
                 </div>
             </div>

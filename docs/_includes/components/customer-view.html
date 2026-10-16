@@ -15,13 +15,11 @@
                     {% endfor %}
                 </ul>
             </div>
-            <div class="relative min-w-0 pb-10 sm:pb-12 lg:pb-0">
+            <!-- The customer's side of the page, cut out: the offer, accepting, the payment terms and the questions -->
+            <div class="min-w-0 rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 sm:p-10">
                 <img src="{{ cv.image | relative_url }}" alt="{{ cv.image_alt }}"
-                    class="w-full rounded-2xl shadow-2xl ring-1 ring-black/5"
-                    loading="lazy" width="1600" height="1075">
-                <img src="{{ cv.image_mobile | relative_url }}" alt="{{ cv.image_mobile_alt }}"
-                    class="absolute -bottom-2 right-2 w-[28%] max-w-[180px] rounded-[1.4rem] border-4 border-gray-900 shadow-2xl sm:right-4 lg:-bottom-10 lg:-right-6"
-                    loading="lazy" width="600" height="1299">
+                    class="mx-auto w-full max-w-sm rounded-xl bg-white shadow-2xl ring-1 ring-black/5"
+                    loading="lazy" width="720" height="2090">
             </div>
         </div>
     </div>

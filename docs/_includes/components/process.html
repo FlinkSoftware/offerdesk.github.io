@@ -1,7 +1,7 @@
-<!-- Process: van offerte tot uitvoering -->
+<!-- Process: van offerte tot betaling. A tinted band with lines, so it stands apart from the white features below -->
 {% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
 {% assign i18n = site.data.i18n[lang] %}
-<div id="process-section" class="bg-white py-16 sm:py-24 lg:py-32">
+<div id="process-section" class="bg-gray-50 border-y border-border py-16 sm:py-24 lg:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
     <!-- Title & Subtitle met ruimere padding/spacing -->
@@ -14,14 +14,14 @@
       </p>
     </div>
 
-    <!-- 3-Stappen Proces (Perfect gecentreerd) -->
-    <div class="mx-auto max-w-4xl mb-16 sm:mb-20">
-      <ol class="grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-3 justify-items-center">
+    <!-- De stappen, van offerte tot betaling -->
+    <div class="mx-auto max-w-5xl mb-16 sm:mb-20">
+      <ol class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 justify-items-center">
         {% for step in i18n.process.steps %}
         <li class="relative flex flex-col items-center text-center w-full max-w-xs px-4">
           <!-- Genummerde Cirkel -->
           <span
-            class="relative z-10 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-primary text-base sm:text-lg font-bold text-white shadow-md ring-4 ring-white">
+            class="relative z-10 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-primary text-base sm:text-lg font-bold text-white shadow-md ring-4 ring-gray-50">
                         {{ forloop.index }}
                     </span>
 
@@ -33,7 +33,7 @@
           <!-- Verbindingslijn op schermen groter dan mobiel -->
           {% unless forloop.last %}
           <span
-            class="absolute top-6 sm:top-7 left-[calc(50%+2rem)] hidden h-0.5 w-[calc(100%-4rem)] bg-primary/20 sm:block"
+            class="absolute top-6 sm:top-7 left-[calc(50%+2rem)] hidden h-0.5 w-[calc(100%-4rem+1.5rem)] bg-primary/20 lg:block"
             aria-hidden="true"></span>
           {% endunless %}
         </li>
@@ -45,7 +45,7 @@
     <div class="grid grid-cols-1 gap-6 md:grid-cols-3 items-stretch">
       <!-- Probleem Card -->
       <div
-        class="flex flex-col justify-between rounded-2xl bg-gray-50/80 p-6 sm:p-8 shadow-sm ring-1 ring-gray-200 hover:shadow-md transition-shadow border-t-4 border-amber-500">
+        class="flex flex-col justify-between rounded-2xl bg-white p-6 sm:p-8 shadow-sm ring-1 ring-gray-200 hover:shadow-md transition-shadow border-t-4 border-amber-500">
         <div>
           <h3 class="heading-5">{{ i18n.process.cards.problem.title }}</h3>
           <p class="mt-4 body-large text-gray-700">{{ i18n.process.cards.problem.body }}</p>
@@ -65,7 +65,7 @@
       <div
         class="flex flex-col justify-between rounded-2xl bg-primary p-6 sm:p-8 shadow-lg transition-transform hover:-translate-y-0.5">
         <div>
-          <h3 class="heading-5 text-white">{{ i18n.process.cards.difference.title }}</h3>
+          <h3 class="heading-5 text-white!">{{ i18n.process.cards.difference.title }}</h3>
           <p class="mt-4 body-large text-white/95">{{ i18n.process.cards.difference.body
             }}</p>
         </div>

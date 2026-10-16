@@ -1,10 +1,13 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
     <url>
         <loc>https://offerdesk.nl/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="nl" href="https://offerdesk.nl/" />
@@ -14,12 +17,26 @@
 
     <url>
         <loc>https://offerdesk.nl/en/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="nl" href="https://offerdesk.nl/" />
         <xhtml:link rel="alternate" hreflang="en" href="https://offerdesk.nl/en/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/" />
     </url>
-
+{% if site.posts.size > 0 %}
+    <url>
+        <loc>https://offerdesk.nl/blog/</loc>
+        <lastmod>{{ site.posts.first.date | date: "%Y-%m-%d" }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+{% for post in site.posts %}
+    <url>
+        <loc>https://offerdesk.nl{{ post.url }}</loc>
+        <lastmod>{{ post.last_modified_at | default: post.date | date: "%Y-%m-%d" }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+{% endfor %}{% endif %}
 </urlset>

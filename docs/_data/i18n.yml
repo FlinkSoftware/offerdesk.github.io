@@ -12,6 +12,7 @@ nl:
       faq: "FAQ"
     cta: "Interesse? Meld je aan"
     sign_in: "Inloggen"
+    sign_up: "Registreren"
     language_code: "EN"
     language_aria: "Schakel naar Engels"
 
@@ -128,82 +129,113 @@ nl:
         margin: "75,8% marge"
         purchase: "Inkooplijst klaar · 2 leveranciers"
 
-  why:
-    title_prefix: "Waarom kiezen voor"
-    title_highlight: "OfferDesk?"
-    cards:
-      - icon: "📈"
-        title: "Grip op je verwachte marge"
-        body: "Zie tijdens het offreren direct kostprijs, verkoopprijs en verwachte marge. Geen verrassingen meer na de offerte."
-      - icon: "💰"
-        title: "Maak slimme keuzes op basis van getallen"
-        body: "Pas prijzen of marges aan en zie direct hoe dat je grip op winstgevendheid verandert."
-      - icon: "📦"
-        title: "Geen zoeken meer naar leveranciers en prijzen"
-        body: "Bewaar leveranciers, producten en inkoopprijzen één keer. Hergebruik ze in iedere offerte."
-      - icon: "⚡"
-        title: "Alle informatie blijft gekoppeld"
-        body: "Van offerte tot inkoop: zie welke keuzes je hebt gemaakt en wat je moet bestellen."
 
   process:
-    title_prefix: "Van offerte tot uitvoering"
+    title_prefix: "Van offerte tot betaling"
     title_highlight: "zonder informatieverlies"
-    body: "OfferDesk helpt je niet alleen om een offerte te maken. Leveranciers, producten, inkoopprijzen, marges en klantafspraken blijven gekoppeld terwijl je van aanvraag naar uitvoering gaat."
+    body: "OfferDesk helpt je niet alleen een offerte te maken. Leveranciers, inkoopprijzen, marges, klantafspraken en het betaalschema blijven gekoppeld, van aanvraag tot het moment dat het geld binnen is."
     steps:
-      - "Calculeren & Offreren"
-      - "Klantakkoord"
-      - "Inkoop & Uitvoering"
+      - "Calculeren & offreren"
+      - "Akkoord & aanbetaling"
+      - "Inkoop & uitvoering"
+      - "Betaald krijgen"
     cards:
       problem:
         title: "Vier weken later is de klant akkoord…"
-        body: "Mooi nieuws. Maar dan begint vaak het zoeken. Welke leverancier had je gekozen? Welke inkoopprijs gebruikte je? Welke marge had je berekend? En wat moest je precies bestellen? Die informatie zit vaak verspreid in je hoofd, Excel en e-mail."
+        body: "Mooi nieuws. Maar dan begint het zoeken. Welke leverancier had je gekozen? Welke marge had je berekend? Wat moest je bestellen? En wanneer had je de aanbetaling ook alweer afgesproken? Het zit verspreid in je hoofd, Excel en e-mail."
       solution:
         title: "OfferDesk onthoudt het voor je"
-        body: "Leg leveranciers, producten, inkoopprijzen en marges één keer vast. Iedere offerte bewaart automatisch hoe deze is opgebouwd, zodat jij, je partner of een collega later precies ziet wat is berekend en wat besteld moet worden."
+        body: "Iedere offerte bewaart hoe hij is opgebouwd: leveranciers, inkoopprijzen en marges. Het betaalschema staat er al in, zodat de klant vooraf ziet wat hij wanneer betaalt en na akkoord meteen jouw betaalverzoek krijgt."
       difference:
-        title: "Meer dan een offerteprogramma"
-        body: "De meeste offertesoftware stopt na het versturen van een PDF. OfferDesk bewaart ook de kennis achter de offerte en helpt je verder richting inkoop, voorbereiding en uitvoering."
+        title: "Sneller je geld binnen"
+        body: "De meeste offertesoftware stopt na het versturen van een PDF. OfferDesk helpt je verder: van inkoop en uitvoering tot herinneringen voor openstaande termijnen en de laatste betaling die binnen is."
   features:
     title_prefix: "Alles wat je nodig hebt voor"
     title_highlight: "grip op je marges"
     intro: "Van leverancier en kostprijs tot klantgoedkeuring en inkoop. OfferDesk bewaart niet alleen je offerte, maar ook alle keuzes erachter."
     sections:
       - eyebrow: "Grip op marge"
-        title: "Zie direct wat je verwachte marge is."
-        body: "Tijdens het maken van een offerte zie je direct kostprijs, verkoopsprijs en verwachte marge. Zo weet je voordat je het werk start of je goed zit."
+        title: "Zie per regel wat je verdient."
+        body: "Elke regel kent zijn inkoopprijs, marge en winst. Pas je de marge aan, dan zie je de prijs meteen meebewegen, en andersom. Zo weet je voordat je verstuurt of je goed zit."
         bullets:
-          - "Verwachte marge direct zichtbaar"
-          - "Marge automatisch berekend"
-          - "Voorkom verliesgevende opdrachten"
-        cta_label: "Interesse in deze feature?"
-        cta: "Meld je aan"
-        image: "/images/offerdesk/app-offerte-marge.webp"
-        image_alt: "Een offerte in OfferDesk met inkoop, marge en brutowinst per regel"
+          - "Inkoop, marge en winst per regel"
+          - "Brutowinst en marge van de hele offerte"
+          - "Regel zonder inkoop? Sla hem in één klik op als product"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-regels.webp"
+            alt: "Offerteregels met inkoopprijs, leverancier, marge en winst per regel"
+          - src: "/images/offerdesk/crop-winst.webp"
+            alt: "Winstgevendheid van de offerte: omzet, inkoopkosten en brutowinst"
 
       - eyebrow: "Leveranciers & producten"
         title: "Nooit meer zoeken naar prijzen of leveranciers."
-        body: "Leg leveranciers, producten en inkoopprijzen één keer vast. Iedere offerte blijft gekoppeld aan de juiste leverancier en actuele prijsinformatie."
+        body: "Leg leveranciers, producten en inkoopprijzen één keer vast, of importeer de prijslijst van je groothandel. Iedere offerte blijft gekoppeld aan de juiste leverancier en prijs."
         bullets:
           - "Leveranciers gekoppeld aan producten"
-          - "Inkoopprijzen centraal beheerd"
-          - "Altijd inzicht in de herkomst van een prijs"
           - "Prijslijst van je groothandel in één keer importeren"
-        cta_label: "Interesse in deze feature?"
-        cta: "Meld je aan"
-        image: "/images/offerdesk/app-producten-leveranciers.webp"
-        image_alt: "De productcatalogus in OfferDesk met leveranciers, inkoopprijzen en marges"
+          - "Altijd inzicht in de herkomst van een prijs"
+        images:
+          - src: "/images/offerdesk/crop-producten.webp"
+            alt: "De productcatalogus met leveranciers, inkoopprijzen en marges"
 
-      - eyebrow: "Van akkoord naar voorbereiding"
-        title: "Van offerte naar inkoop."
-        body: "Zodra een klant akkoord geeft zie je direct welke materialen nodig zijn, bij welke leverancier deze horen en wat besteld moet worden."
+      - eyebrow: "Van akkoord naar inkoop"
+        title: "Weet direct wat je moet bestellen."
+        body: "Zodra een klant akkoord geeft, staat de inkooplijst klaar: per leverancier, met artikelnummers, aantallen en inkoopprijzen."
         bullets:
-          - "Materialen direct inzichtelijk"
+          - "Inkooplijst per leverancier"
           - "Geen dubbel invoerwerk"
           - "Sneller van akkoord naar uitvoering"
-        cta_label: "Interesse in deze feature?"
-        cta: "Meld je aan"
-        image: "/images/offerdesk/app-inkooplijst.webp"
-        image_alt: "De inkooplijst van een geaccepteerde offerte, per leverancier"
+        images:
+          - src: "/images/offerdesk/crop-inkoop.webp"
+            alt: "De inkooplijst van een geaccepteerde offerte, per leverancier"
+
+      - eyebrow: "Betaalschema"
+        title: "Vraag een aanbetaling, met je eigen betaallink."
+        body: "Spreek termijnen af, bijvoorbeeld 30% bij akkoord en het restant bij oplevering. Je klant krijgt per termijn een betaalverzoek met de betaallink van je eigen bank of Tikkie, en OfferDesk herinnert voor je. Het geld komt rechtstreeks bij jou binnen."
+        bullets:
+          - "Percentage, vast bedrag of restant; meerwerk komt bij het restant"
+          - "Betaalverzoek direct bij akkoord, of akkoord geven is aanbetalen"
+          - "Automatische herinneringen, en jij vinkt af wat voldaan is"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-betalingen.webp"
+            alt: "Het betaalschema van een offerte: aanbetaling gevraagd, restant bij oplevering"
+          - src: "/images/offerdesk/crop-klant-betaling.webp"
+            alt: "Wat je klant ziet: de termijnen en een knop om te betalen"
+
+      - eyebrow: "Opmaak"
+        title: "Offertes die bij je bedrijf passen."
+        body: "Kies het ontwerp dat bij jou past: klassiek en rustig, modern met een opvallende kop, of compact voor lange materiaallijsten. Met je eigen logo, en per offerte aan te passen."
+        bullets:
+          - "Drie ontwerpen voor PDF, voorbeeld en klantpagina"
+          - "Eigen opening- en slottekst met invulvelden"
+          - "In het Nederlands of Engels, in de taal van je klant"
+        layout: "row"
+        images:
+          - src: "/images/offerdesk/crop-template-classic.webp"
+            alt: "Offerte in het ontwerp Klassiek"
+            caption: "Klassiek"
+          - src: "/images/offerdesk/crop-template-modern.webp"
+            alt: "Offerte in het ontwerp Modern"
+            caption: "Modern"
+          - src: "/images/offerdesk/crop-template-compact.webp"
+            alt: "Offerte in het ontwerp Compact"
+            caption: "Compact"
+
+      - eyebrow: "Samenwerken"
+        title: "Iedereen weet wat er speelt."
+        body: "Zie wie wat aan een offerte veranderde, beantwoord vragen van je klant per vraag, en geef collega's een taak die ze terugzien onder Mijn taken."
+        bullets:
+          - "Volledige historie van elke wijziging"
+          - "Vragen van klanten op het dashboard, met een melding"
+          - "Taken voor collega's, met een e-mail"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-historie.webp"
+            alt: "De historie van een offerte: wijzigingen, verzending en betalingen"
+          - src: "/images/offerdesk/crop-vraag.webp"
+            alt: "Een vraag van de klant met het antwoord eronder, zoals de klant het ziet"
 
     bottom_cards:
       - title: "Klantendatabase"
@@ -234,8 +266,8 @@ nl:
       - "Akkoord of afwijzing komt direct binnen, met een melding"
       - "Pas je de offerte aan? Elke verstuurde versie blijft bewaard"
       - "Bekijk vooraf precies wat je klant ziet"
-    image: "/images/offerdesk/app-klantpagina.webp"
-    image_alt: "De pagina van de klant: de offerte op A4, akkoord geven, de PDF downloaden en vragen stellen"
+    image: "/images/offerdesk/crop-klant-voor.webp"
+    image_alt: "De pagina van de klant: de offerte, akkoord geven, de betaaltermijnen en vragen met antwoorden"
     image_mobile: "/images/offerdesk/app-klantpagina-mobiel.webp"
     image_mobile_alt: "Dezelfde offerte op de telefoon van de klant"
 
@@ -259,6 +291,7 @@ nl:
           - "Leveranciers, producten & inkoopprijzen opslaan"
           - "Automatische materiaallijsten per offerte"
           - "Online offerte met klantgoedkeuring"
+          - "1 offerte-ontwerp (Klassiek)"
           - "Documenten & bijlagen toevoegen"
           - "E-mail support (reactie binnen 3 werkdagen)"
         cta: "14 dagen gratis proberen"
@@ -271,6 +304,8 @@ nl:
         highlighted: true
         bullets:
           - "Alles in Starter"
+          - "Betaalschema's en betaalverzoeken met je eigen betaallink"
+          - "3 offerte-ontwerpen"
           - "Tot 5 gebruikers / medewerkers"
           - "Samenwerken met collega's"
           - "Koppeling met je boekhouding (Moneybird)"
@@ -322,6 +357,10 @@ nl:
         answer: "Met Moneybird wel: een geaccepteerde offerte wordt met één klik een conceptfactuur in je administratie. Exact Online, SnelStart en e-Boekhouden.nl staan op de roadmap."
       - question: "Hoe betaal ik voor OfferDesk?"
         answer: "Veilig via Mollie, met iDEAL, creditcard of automatische incasso. Je probeert OfferDesk eerst 14 dagen gratis en kiest zelf of je direct betaalt of pas na de proefperiode. Maandelijks opzegbaar."
+      - question: "Kan ik een aanbetaling vragen?"
+        answer: "Ja, met een betaalschema (Professional en Business): bijvoorbeeld 30% bij akkoord en het restant bij oplevering. Je klant krijgt per termijn een betaalverzoek met de betaallink van je eigen bank, Tikkie of bunq.me; het geld komt rechtstreeks bij jou binnen. OfferDesk herinnert de klant, en jij vinkt af wat betaald is."
+      - question: "Kan ik kiezen hoe mijn offerte eruitziet?"
+        answer: "Ja. Je offerte krijgt je eigen logo en je eigen teksten boven en onder de regels. In Professional en Business kies je uit drie ontwerpen: Klassiek, Modern en Compact, standaard of per offerte."
 
   integrations:
     title_prefix: "Koppelingen en"
@@ -375,21 +414,15 @@ nl:
   newsletter:
     title: "Klaar voor meer grip op je marges?"
     intro: "Probeer OfferDesk 14 dagen gratis. Geen creditcard nodig, geen technische instellingen. Begin vandaag nog."
-    email_label: "E-mailadres"
-    email_placeholder: "Voer je e-mailadres in"
-    cta_primary: "Gratis account maken"
-    cta_secondary: "Ideeën of suggesties?"
-    success: "Bedankt! We houden je op de hoogte."
-    fallback_action: "mailto:info@offerdesk.com"
+    register_prefix: "Of"
+    register_link: "registreer je meteen"
+    register_suffix: "en begin direct."
 
   footer_cta:
     title_prefix: "Weet wat je verdient."
     title_highlight: "Bewaar hoe je het hebt berekend."
     intro: "OfferDesk helpt vakbedrijven grip te houden op leveranciers, inkoopprijzen, marges en winst. Niet alleen tijdens het offreren, maar ook tijdens inkoop en uitvoering."
-    textarea_label: "Bericht"
-    textarea_placeholder: "Typ hier je vraag, idee of suggestie..."
-    success: "Bedankt, we hebben je bericht ontvangen."
-    button: "Verstuur je vraag, idee of suggestie"
+    questions: "Vragen? Stuur een e-mail naar"
 
   footer:
     copy: "Weet wat je verdient. Bewaar hoe je het hebt berekend."
@@ -407,6 +440,8 @@ nl:
         href: "#suitable-for-section"
       - label: "FAQ"
         href: "#faq-section"
+      - label: "Blog"
+        href: "/blog/"
       - label: "Nieuwsbrief"
         href: "#newsletter-section"
     language_title: "Taal"
@@ -432,6 +467,7 @@ en:
       faq: "FAQ"
     cta: "Interested? Sign up"
     sign_in: "Sign in"
+    sign_up: "Sign up"
     language_code: "NL"
     language_aria: "Switch to Dutch"
 
@@ -548,83 +584,114 @@ en:
         margin: "75.8% margin"
         purchase: "Purchase list ready · 2 suppliers"
 
-  why:
-    title_prefix: "Why choose"
-    title_highlight: "OfferDesk?"
-    cards:
-      - icon: "📈"
-        title: "No surprises afterwards"
-        body: "See cost price, selling price, margin, and expected profit immediately while quoting."
-      - icon: "💰"
-        title: "Make choices based on numbers"
-        body: "Adjust prices or margins and immediately see what that means for your expected profit."
-      - icon: "📦"
-        title: "No more searching for suppliers"
-        body: "Save suppliers, products, and purchase prices once and use them in every quote."
-      - icon: "⚡"
-        title: "All information is preserved"
-        body: "From quote to execution, it remains clear which choices were made and what needs to be ordered."
 
   process:
-    title_prefix: "From quote to execution"
+    title_prefix: "From quote to payment"
     title_highlight: "without losing information"
-    body: "OfferDesk helps you do more than just create a quote. Suppliers, products, purchase prices, margins, and customer agreements remain linked as you move from inquiry to execution."
+    body: "OfferDesk does more than create a quote. Suppliers, purchase prices, margins, customer agreements and the payment schedule stay linked, from the first request until the money is in."
     steps:
-      - "Calculation & Quoting"
-      - "Customer Approval"
-      - "Purchasing & Execution"
+      - "Calculate & quote"
+      - "Approval & deposit"
+      - "Purchasing & execution"
+      - "Getting paid"
     cards:
       problem:
         title: "Four weeks later, the customer approves…"
-        body: "Great news. But then the searching often begins. Which supplier had you chosen? Which purchase price did you use? What margin had you calculated? And what exactly did you need to order? That information is often scattered across your head, Excel, and email."
+        body: "Great news. But then the searching begins. Which supplier had you chosen? What margin had you calculated? What did you need to order? And when was the deposit due again? It is scattered across your head, Excel and email."
       solution:
         title: "OfferDesk remembers it for you"
-        body: "Record suppliers, products, purchase prices, and margins once. Every quote automatically retains how it was built, so you, your partner, or a colleague can later see exactly what was calculated and what needs to be ordered."
+        body: "Every quote keeps how it was built: suppliers, purchase prices and margins. The payment schedule is already in it, so the customer sees upfront what to pay when, and gets your payment request right after approving."
       difference:
-        title: "More than quoting software"
-        body: "Most quoting software stops after sending a PDF. OfferDesk also retains the knowledge behind the quote and helps you further towards purchasing, preparation, and execution."
+        title: "Get paid sooner"
+        body: "Most quoting software stops after sending a PDF. OfferDesk takes you further: from purchasing and execution to reminders for open instalments and the final payment coming in."
 
   features:
     title_prefix: "Everything you need for"
     title_highlight: "profitable quoting"
     intro: "From supplier and cost price to customer approval and purchasing. OfferDesk stores not only your quote, but also the knowledge behind it."
     sections:
-      - eyebrow: "Profit & margin"
-        title: "See what you earn immediately."
-        body: "While creating a quote, you immediately see cost price, selling price, margin, and expected profit. This prevents surprises after the work is already completed."
+      - eyebrow: "Margin control"
+        title: "See what you earn on every line."
+        body: "Every line knows its purchase price, margin and profit. Change the margin and the price follows at once, and the other way round. You know before you send whether it adds up."
         bullets:
-          - "Expected profit immediately visible"
-          - "Margin automatically calculated"
-          - "Prevent loss-making jobs"
-        cta_label: "Interested in this feature?"
-        cta: "Sign up"
-        image: "/images/offerdesk/app-offerte-marge.webp"
-        image_alt: "An offer in OfferDesk with purchase price, margin and gross profit per line"
+          - "Purchase, margin and profit per line"
+          - "Gross profit and margin of the whole quote"
+          - "A line without a purchase? Save it as a product in one click"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-regels.webp"
+            alt: "Quote lines with purchase price, supplier, margin and profit per line"
+          - src: "/images/offerdesk/crop-winst.webp"
+            alt: "Profitability of the quote: revenue, purchase costs and gross profit"
 
       - eyebrow: "Suppliers & products"
-        title: "No more searching for prices or suppliers."
-        body: "Record suppliers, products, and purchase prices once. Every quote remains linked to the correct supplier and current pricing information."
+        title: "Never search for prices or suppliers again."
+        body: "Record suppliers, products and purchase prices once, or import your wholesaler's price list. Every quote stays linked to the right supplier and price."
         bullets:
           - "Suppliers linked to products"
-          - "Purchase prices centrally managed"
-          - "Always insight into the source of a price"
           - "Import your wholesaler's price list in one go"
-        cta_label: "Interested in this feature?"
-        cta: "Sign up"
-        image: "/images/offerdesk/app-producten-leveranciers.webp"
-        image_alt: "The product catalogue in OfferDesk with suppliers, purchase prices and margins"
+          - "Always insight into the source of a price"
+        images:
+          - src: "/images/offerdesk/crop-producten.webp"
+            alt: "The product catalogue with suppliers, purchase prices and margins"
 
-      - eyebrow: "From approval to preparation"
-        title: "From quote to purchasing."
-        body: "As soon as a customer approves, you immediately see which materials are needed, which supplier they belong to, and what needs to be ordered."
+      - eyebrow: "From acceptance to purchasing"
+        title: "Know straight away what to order."
+        body: "As soon as a customer accepts, the purchase list is ready: per supplier, with article numbers, quantities and purchase prices."
         bullets:
-          - "Materials immediately visible"
+          - "Purchase list per supplier"
           - "No duplicate data entry"
-          - "Faster from approval to execution"
-        cta_label: "Interested in this feature?"
-        cta: "Sign up"
-        image: "/images/offerdesk/app-inkooplijst.webp"
-        image_alt: "The purchase list of an accepted offer, per supplier"
+          - "Faster from acceptance to execution"
+        images:
+          - src: "/images/offerdesk/crop-inkoop.webp"
+            alt: "The purchase list of an accepted quote, per supplier"
+
+      - eyebrow: "Payment schedule"
+        title: "Ask for a deposit, with your own payment link."
+        body: "Agree on terms, e.g. 30% on acceptance and the remainder on delivery. Your customer gets a payment request per term with your own bank's or Tikkie's payment link, and OfferDesk reminds for you. The money goes straight to you."
+        bullets:
+          - "Percentage, fixed amount or remainder; extra work goes to the remainder"
+          - "Payment request right on acceptance, or accepting is paying the deposit"
+          - "Automatic reminders, and you tick off what is paid"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-betalingen.webp"
+            alt: "The payment schedule of a quote: deposit requested, remainder on delivery"
+          - src: "/images/offerdesk/crop-klant-betaling.webp"
+            alt: "What your customer sees: the terms and a button to pay"
+
+      - eyebrow: "Design"
+        title: "Quotes that fit your company."
+        body: "Choose the design that suits you: classic and calm, modern with a striking header, or compact for long material lists. With your own logo, and adjustable per quote."
+        bullets:
+          - "Three designs for PDF, preview and customer page"
+          - "Your own opening and closing text with placeholders"
+          - "In Dutch or English, in your customer's language"
+        layout: "row"
+        images:
+          - src: "/images/offerdesk/crop-template-classic.webp"
+            alt: "A quote in the Classic design"
+            caption: "Classic"
+          - src: "/images/offerdesk/crop-template-modern.webp"
+            alt: "A quote in the Modern design"
+            caption: "Modern"
+          - src: "/images/offerdesk/crop-template-compact.webp"
+            alt: "A quote in the Compact design"
+            caption: "Compact"
+
+      - eyebrow: "Working together"
+        title: "Everyone knows what is going on."
+        body: "See who changed what in a quote, answer your customer's questions one by one, and give colleagues a task they see under My tasks."
+        bullets:
+          - "Full history of every change"
+          - "Customer questions on the dashboard, with a notification"
+          - "Tasks for colleagues, with an email"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-historie.webp"
+            alt: "The history of a quote: changes, sending and payments"
+          - src: "/images/offerdesk/crop-vraag.webp"
+            alt: "A customer's question with the answer below it"
 
     bottom_cards:
       - title: "Customer database"
@@ -655,8 +722,8 @@ en:
       - "Acceptance or rejection comes in straight away, with a notification"
       - "Changed the quote? Every version you sent is kept"
       - "Preview exactly what your customer sees"
-    image: "/images/offerdesk/app-klantpagina.webp"
-    image_alt: "The customer's page: the quote on A4, accepting, downloading the PDF and asking questions"
+    image: "/images/offerdesk/crop-klant-voor.webp"
+    image_alt: "The customer's page: the quote, accepting, the payment terms and questions with answers"
     image_mobile: "/images/offerdesk/app-klantpagina-mobiel.webp"
     image_mobile_alt: "The same quote on the customer's phone"
 
@@ -681,6 +748,7 @@ en:
           - "Automatic material lists per quote"
           - "Manage internal vs. visible activities"
           - "Online quote with customer comments & acceptance"
+          - "1 quote design (Classic)"
           - "Add documents & attachments"
           - "Email support (response within 3 business days)"
         cta: "Try 14 days for free"
@@ -693,6 +761,8 @@ en:
         highlighted: true
         bullets:
           - "Everything in Starter"
+          - "Payment schedules and payment requests with your own payment link"
+          - "3 quote designs"
           - "Collaborate with colleagues"
           - "Accounting integration (e.g., Moneybird)"
           - "Automatic reminders & follow-ups"
@@ -742,6 +812,10 @@ en:
         answer: "With Moneybird it does: an accepted quote becomes a draft invoice in your administration in one click. Exact Online, SnelStart and e-Boekhouden.nl are on the roadmap."
       - question: "How do I pay for OfferDesk?"
         answer: "Securely through Mollie, by iDEAL, credit card or direct debit. You try OfferDesk free for 14 days first and choose whether to pay right away or after the trial. Cancel monthly."
+      - question: "Can I ask for a deposit?"
+        answer: "Yes, with a payment schedule (Professional and Business): e.g. 30% on acceptance and the remainder on delivery. Your customer gets a payment request per term with your own bank's, Tikkie's or bunq.me payment link; the money goes straight to you. OfferDesk reminds the customer, and you tick off what is paid."
+      - question: "Can I choose how my quote looks?"
+        answer: "Yes. Your quote gets your own logo and your own texts above and below the lines. In Professional and Business you choose from three designs: Classic, Modern and Compact, as a standard or per quote."
 
   integrations:
     title_prefix: "Integrations and"
@@ -795,21 +869,15 @@ en:
   newsletter:
     title: "More control over profit starts here"
     intro: "Receive updates about new features such as inventory management, profit measurement, planning, and supplier integrations."
-    email_label: "Email address"
-    email_placeholder: "Enter your email address"
-    cta_primary: "Keep me updated"
-    cta_secondary: "Ideas or suggestions?"
-    success: "Thanks! We'll keep you updated."
-    fallback_action: "mailto:info@offerdesk.com"
+    register_prefix: "Or"
+    register_link: "sign up right away"
+    register_suffix: "and get started."
 
   footer_cta:
     title_prefix: "Know what you earn."
     title_highlight: "Remember how you calculated it."
     intro: "OfferDesk helps trade businesses retain control over suppliers, purchase prices, margins, and profit. Not only while quoting, but also during purchasing and execution."
-    textarea_label: "Message"
-    textarea_placeholder: "Type your question, idea, or suggestion here..."
-    success: "Thanks, we have received your message."
-    button: "Send your question, idea, or suggestion"
+    questions: "Questions? Send an email to"
 
   footer:
     copy: "Know what you earn. Remember how you calculated it."
@@ -827,6 +895,8 @@ en:
         href: "#suitable-for-section"
       - label: "FAQ"
         href: "#faq-section"
+      - label: "Blog"
+        href: "/blog/"
       - label: "Newsletter"
         href: "#newsletter-section"
     language_title: "Language"

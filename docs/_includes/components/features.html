@@ -12,8 +12,8 @@
 
         <div class="space-y-14 sm:space-y-16 lg:space-y-20">
             {% for feature in i18n.features.sections %}
-            <div class="flex flex-col {% if forloop.index == 2 %}lg:flex-row-reverse{% else %}lg:flex-row{% endif %} items-center lg:items-stretch gap-8 lg:gap-10 py-3 sm:py-4">
-                <div class="w-full lg:flex-[3_1_0%] lg:min-w-0 flex flex-col justify-center">
+            <div class="flex flex-col {% cycle 'lg:flex-row', 'lg:flex-row-reverse' %} items-center gap-8 lg:gap-12 py-3 sm:py-4">
+                <div class="w-full lg:flex-[5_1_0%] lg:min-w-0 flex flex-col justify-center">
                     <div class="eyebrow inline-block px-4 py-1.5 bg-primary/10 rounded-full w-fit">
                         {{ feature.eyebrow }}
                     </div>
@@ -25,20 +25,27 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="w-full lg:flex-[2_1_0%] lg:min-w-0 relative flex justify-center lg:self-stretch">
-                    {% if feature.image %}
-                    <img src="{{ feature.image }}" alt="{{ feature.image_alt }}"
-                        class="rounded-2xl shadow-2xl w-full max-w-xl lg:max-w-full lg:h-full object-contain"
-                        loading="lazy"
-                        width="600"
-                        height="400">
-                    {% else %}
-                    <img src="{{ '/images/offerdesk/app-dashboard.webp' | relative_url }}" alt="{{ feature.image_alt }}"
-                        class="rounded-2xl shadow-2xl w-full max-w-xl lg:max-w-full lg:h-full object-contain"
-                        loading="lazy"
-                        width="600"
-                        height="400">
-                    {% endif %}
+                <!-- A cut-out of the app on a soft panel: one image, several side by side (row), or a second card in the corner (overlap) -->
+                <div class="w-full lg:flex-[7_1_0%] lg:min-w-0">
+                    <div class="relative rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-4 sm:p-8">
+                        {% if feature.layout == 'row' %}
+                        <div class="grid grid-cols-3 gap-2 sm:gap-4">
+                            {% for image in feature.images %}
+                            <figure class="min-w-0">
+                                <img src="{{ image.src | relative_url }}" alt="{{ image.alt }}" class="w-full rounded-md sm:rounded-lg bg-white shadow-lg ring-1 ring-black/5" loading="lazy" width="800" height="650">
+                                {% if image.caption %}<figcaption class="mt-2 text-center body-small text-gray-700">{{ image.caption }}</figcaption>{% endif %}
+                            </figure>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {% assign main = feature.images | first %}
+                        <img src="{{ main.src | relative_url }}" alt="{{ main.alt }}" class="w-full {% if main.narrow %}max-w-sm mx-auto{% endif %} rounded-xl bg-white shadow-xl ring-1 ring-black/5" loading="lazy" width="1600" height="700">
+                        {% if feature.layout == 'overlap' and feature.images.size > 1 %}
+                        {% assign second = feature.images | last %}
+                        <img src="{{ second.src | relative_url }}" alt="{{ second.alt }}" class="relative -mt-12 sm:-mt-20 ml-auto mr-2 sm:-mr-4 w-[58%] sm:w-[46%] max-w-sm rounded-xl bg-white shadow-2xl ring-1 ring-black/5" loading="lazy" width="720" height="400">
+                        {% endif %}
+                        {% endif %}
+                    </div>
                 </div>
             </div>
             {% endfor %}

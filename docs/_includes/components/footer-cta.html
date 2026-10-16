@@ -17,12 +17,12 @@
                        target="_blank"
                        rel="noopener noreferrer"
                        class="button-primary rounded-lg bg-white text-primary px-8 py-3.5 font-semibold hover:bg-gray-100 transition-colors shadow-lg">
-                        Registreren
+                        {{ i18n.nav.sign_up }}
                     </a>
                 </div>
 
                 <div class="mt-8 text-white/60 text-sm">
-                    <p>Vragen? Stuur een e-mail naar <span class="font-semibold text-white/90">info@offerdesk.com</span></p>
+                    <p>{{ i18n.footer_cta.questions }} <a href="mailto:{{ site.email }}" class="font-semibold text-white/90 hover:text-white">{{ site.email }}</a></p>
                 </div>
             </div>
         </div>

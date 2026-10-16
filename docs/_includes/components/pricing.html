@@ -27,7 +27,7 @@
                 <a href="https://app.offerdesk.nl/sign-up{% if plan.key %}?plan={{ plan.key }}{% endif %}"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="button-primary mt-8 block rounded-lg px-5 py-2.5 sm:py-3 text-center transition-all {% if forloop.index == 2 %}bg-primary hover:bg-primary-hover shadow-lg{% else %}bg-gray-900 hover:bg-black{% endif %}">{{ plan.cta | default: "Registreren" }}</a>
+                    class="button-primary mt-8 block rounded-lg px-5 py-2.5 sm:py-3 text-center transition-all {% if forloop.index == 2 %}bg-primary hover:bg-primary-hover shadow-lg{% else %}bg-gray-900 hover:bg-black{% endif %}">{{ plan.cta | default: i18n.nav.sign_up }}</a>
             </div>
             {% endfor %}
         </div>

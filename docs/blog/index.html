@@ -1,0 +1,35 @@
+---
+layout: default
+lang: nl
+title: Blog
+description: Praktische uitleg voor vakbedrijven over offertes, marges, inkoop en betalingen, en hoe OfferDesk daarbij helpt.
+permalink: /blog/
+---
+<!-- The blog: one subject per article, from the basics, newest first -->
+<div class="bg-white py-12 sm:py-16 lg:py-20">
+    <div class="mx-auto max-w-5xl px-6 lg:px-8">
+        <h1 class="heading-2">Blog</h1>
+        <p class="mt-4 max-w-2xl body-large text-gray-700">{{ page.description }}</p>
+        {% if site.posts.size == 0 %}
+        <p class="mt-10 body-large text-gray-600">Binnenkort verschijnt hier het eerste artikel.</p>
+        {% else %}
+        <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {% for post in site.posts %}
+            <a href="{{ post.url | relative_url }}" class="group flex flex-col overflow-hidden rounded-2xl ring-1 ring-border hover:shadow-lg transition-shadow">
+                {% if post.image %}
+                <div class="bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-4">
+                    <img src="{{ post.image | relative_url }}" alt="" class="h-44 w-full rounded-lg bg-white object-cover object-left-top shadow ring-1 ring-black/5" loading="lazy" width="800" height="350">
+                </div>
+                {% endif %}
+                <div class="flex flex-1 flex-col p-6">
+                    {% if post.topic %}<span class="eyebrow">{{ post.topic }}</span>{% endif %}
+                    <h2 class="mt-2 heading-5 group-hover:text-primary">{{ post.title }}</h2>
+                    <p class="mt-2 body-small text-gray-700">{{ post.description }}</p>
+                    <time class="mt-auto pt-4 body-small text-gray-600" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d-%-m-%Y" }}</time>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>

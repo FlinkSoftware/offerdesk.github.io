@@ -6,6 +6,9 @@ on:
       - main
       - master
   workflow_dispatch:
+  # Daily at 06:00 UTC, so blog posts dated ahead publish on their day
+  schedule:
+    - cron: '0 6 * * *'
 
 permissions:
   contents: read
