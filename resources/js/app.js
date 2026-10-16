@@ -157,6 +157,21 @@
     document.querySelectorAll('dialog:not(:has([data-dialog-backdrop]))').forEach((dialog) => {
       dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
     });
+    // A mailto link does nothing without a mail app, and a page cannot ask whether there is one. When a mail app opens,
+    // this window loses focus; if it still has it after a moment, say so and point at copying or Gmail.
+    document.querySelectorAll('[data-mail-app]').forEach((link) => {
+      const hint = link.closest('dialog')?.querySelector('[data-no-mail-app]');
+      if (!hint) return;
+      link.addEventListener('click', () => {
+        let left = false;
+        const onBlur = () => { left = true; };
+        window.addEventListener('blur', onBlur, { once: true });
+        setTimeout(() => {
+          window.removeEventListener('blur', onBlur);
+          if (!left && document.hasFocus()) hint.hidden = false;
+        }, 1500);
+      });
+    });
     // Copy buttons: the text to the clipboard, and a moment of "copied" on the button
     document.querySelectorAll('[data-copy]').forEach((button) => {
       button.addEventListener('click', async () => {

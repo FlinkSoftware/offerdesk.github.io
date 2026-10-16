@@ -215,7 +215,8 @@
                             <button type="button" data-copy="{{ site.email }}" data-copied="{{ ideas.copied }}" class="ideas-copy">{{ ideas.copy }}</button>
                         </div>
                         <div class="mt-5 flex flex-col gap-2">
-                            <a href="mailto:{{ site.email }}?subject={{ subject }}" class="button-primary w-full rounded-lg bg-primary px-4 py-2.5 text-center hover:bg-primary-hover">{{ ideas.mail_app }}</a>
+                            <a href="mailto:{{ site.email }}?subject={{ subject }}" data-mail-app class="button-primary w-full rounded-lg bg-primary px-4 py-2.5 text-center hover:bg-primary-hover">{{ ideas.mail_app }}</a>
+                            <p data-no-mail-app hidden role="status" class="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">{{ ideas.no_mail_app }}</p>
                             <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ site.email }}&amp;su={{ subject }}" target="_blank" rel="noopener noreferrer" class="ideas-secondary button-secondary w-full">{{ ideas.gmail }}</a>
                         </div>
                     </div>

@@ -223,6 +223,18 @@ nl:
             alt: "Offerte in het ontwerp Compact"
             caption: "Compact"
 
+      - eyebrow: "Foto's en bestanden"
+        title: "Leg de situatie bij de klant vast."
+        body: "Maak foto's van de meterkast, de vloer of het dak en bewaar ze met je maten en schetsen bij de offerte. Zo zien je collega's later precies hoe de offerte tot stand kwam. Een datasheet of foto zet je met één klik zichtbaar voor je klant."
+        bullets:
+          - "Foto's direct vanaf je telefooncamera, automatisch verkleind"
+          - "Per bestand een beschrijving, en jij kiest wat de klant ziet"
+          - "Alles in de historie: wie wat toevoegde of deelde"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-bestanden.webp"
+            alt: "Het tabblad Bestanden van een offerte: foto's met beschrijving en een datasheet die de klant ziet"
+
       - eyebrow: "Samenwerken"
         title: "Iedereen weet wat er speelt."
         body: "Zie wie wat aan een offerte veranderde, beantwoord vragen van je klant per vraag, en geef collega's een taak die ze terugzien onder Mijn taken."
@@ -264,6 +276,7 @@ nl:
       - "Beveiligd met een toegangscode: alleen je klant opent hem"
       - "Vragen en antwoorden bij de offerte, niet verspreid over je mail"
       - "Akkoord of afwijzing komt direct binnen, met een melding"
+      - "Je algemene voorwaarden bij elke offerte: je klant gaat er bij het accepteren mee akkoord"
       - "Pas je de offerte aan? Elke verstuurde versie blijft bewaard"
       - "Bekijk vooraf precies wat je klant ziet"
     image: "/images/offerdesk/crop-klant-voor.webp"
@@ -290,7 +303,9 @@ nl:
           - "Marge en inkoopprijs per regel, met je eigen catalogus"
           - "Materiaallijst per leverancier na akkoord"
           - "Online offerte met klantakkoord"
+          - "Algemene voorwaarden bij elke offerte, in versies"
           - "1 offerte-ontwerp (Klassiek)"
+          - "Foto's en bestanden bij je offertes (1 GB)"
         cta: "14 dagen gratis proberen"
 
       - name: "Professional"
@@ -303,6 +318,7 @@ nl:
           - "Alles in Starter"
           - "Betaalschema's en betaalverzoeken met je eigen betaallink"
           - "3 offerte-ontwerpen"
+          - "5 GB voor foto's en bestanden"
           - "Tot 5 gebruikers / medewerkers"
           - "Samenwerken met collega's"
           - "Koppeling met je boekhouding (Moneybird)"
@@ -320,6 +336,7 @@ nl:
         bullets:
           - "Alles in Professional"
           - "Onbeperkt aantal gebruikers"
+          - "20 GB voor foto's en bestanden"
           - "Werkplanning & voorraadbeheer (binnenkort)"
           - "Winstmeting (binnenkort)"
           - "API-toegang voor integraties"
@@ -360,6 +377,10 @@ nl:
         answer: "Ja, met een betaalschema (Professional en Business): bijvoorbeeld het materiaal bij akkoord en het restant bij oplevering. OfferDesk rekent de aanbetaling voor het materiaal zelf uit uit de regels die je bij leveranciers inkoopt, zonder je eigen werk; je klant ziet alleen het bedrag. Een percentage of vast bedrag kan ook. Je klant krijgt per termijn een betaalverzoek met de betaallink van je eigen bank, Tikkie of bunq.me; het geld komt rechtstreeks bij jou binnen. OfferDesk herinnert de klant, en jij vinkt af wat betaald is."
       - question: "Wat als ik met een klant afwijkende betaaltermijnen afspreek?"
         answer: "Dat kan per offerte. Je standaardschema is alleen een startpunt: per offerte kies je zelf de termijnen, als percentage of vast bedrag, te betalen bij akkoord, bij de start van het werk, bij oplevering of op een vaste datum. De klant ziet de afspraken vooraf op de offerte, en meerwerk komt bij de laatste termijn. Betaalschema's zitten in Professional en Business."
+      - question: "Kan ik foto's en documenten bij een offerte bewaren?"
+        answer: "Ja, in elk abonnement. Op het tabblad Bestanden zet je foto's (ook direct vanaf je telefooncamera), maten, schetsen en PDF's bij de offerte, met een beschrijving. Ze zijn voor je team, tenzij je een bestand zichtbaar maakt voor de klant: dan staat het als bijlage op de offertepagina. Foto's worden automatisch verkleind, zodat je opslag lang meegaat."
+      - question: "Kan mijn klant mijn algemene voorwaarden zien?"
+        answer: "Ja. Je uploadt je algemene voorwaarden als PDF bij Instellingen › Algemene voorwaarden. Elke offerte die je verstuurt, krijgt de versie die op dat moment geldt: je klant leest die op de offertepagina en vinkt bij het accepteren aan dat hij ermee akkoord gaat. OfferDesk legt vast welke versie dat was en wanneer. Pas je je voorwaarden later aan, dan houden offertes die al verstuurd zijn hun eigen versie. In elk abonnement."
       - question: "Kan ik kiezen hoe mijn offerte eruitziet?"
         answer: "Ja. Je offerte krijgt je eigen logo en je eigen teksten boven en onder de regels. In Professional en Business kies je uit drie ontwerpen: Klassiek, Modern en Compact, standaard of per offerte."
 
@@ -438,6 +459,7 @@ nl:
       copied: "Gekopieerd"
       mail_app: "Open je mailprogramma"
       gmail: "Open in Gmail"
+      no_mail_app: "Opent er niets? Dan is er op dit apparaat geen mailprogramma ingesteld. Kopieer het adres of open Gmail."
       close: "Sluiten"
     quick_links_title: "Snel naar"
     quick_links:
@@ -690,6 +712,18 @@ en:
             alt: "A quote in the Compact design"
             caption: "Compact"
 
+      - eyebrow: "Photos and files"
+        title: "Capture the situation at the customer."
+        body: "Take photos of the meter cupboard, the floor or the roof and keep them with your measurements and sketches on the quote. Your colleagues see later exactly how the quote came about. A datasheet or photo becomes visible to your customer in one click."
+        bullets:
+          - "Photos straight from your phone camera, scaled down automatically"
+          - "A description per file, and you choose what the customer sees"
+          - "All in the history: who added or shared what"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-bestanden.webp"
+            alt: "The Files tab of a quote: photos with descriptions and a datasheet the customer sees"
+
       - eyebrow: "Working together"
         title: "Everyone knows what is going on."
         body: "See who changed what in a quote, answer your customer's questions one by one, and give colleagues a task they see under My tasks."
@@ -731,6 +765,7 @@ en:
       - "Protected by an access code: only your customer opens it"
       - "Questions and answers on the quote, not scattered across your inbox"
       - "Acceptance or rejection comes in straight away, with a notification"
+      - "Your terms and conditions with every quote: your customer agrees to them when accepting"
       - "Changed the quote? Every version you sent is kept"
       - "Preview exactly what your customer sees"
     image: "/images/offerdesk/crop-klant-voor.webp"
@@ -757,7 +792,9 @@ en:
           - "Margin and purchase price per line, with your own catalogue"
           - "Material list per supplier after approval"
           - "Online quote with customer approval"
+          - "Terms and conditions with every quote, in versions"
           - "1 quote design (Classic)"
+          - "Photos and files with your quotes (1 GB)"
         cta: "Try 14 days for free"
 
       - name: "Professional"
@@ -770,6 +807,7 @@ en:
           - "Everything in Starter"
           - "Payment schedules and payment requests with your own payment link"
           - "3 quote designs"
+          - "5 GB for photos and files"
           - "Collaborate with colleagues"
           - "Accounting integration (e.g., Moneybird)"
           - "Automatic reminders & follow-ups"
@@ -786,6 +824,7 @@ en:
         bullets:
           - "Everything in Professional"
           - "Unlimited colleagues"
+          - "20 GB for photos and files"
           - "Work scheduling (coming soon)"
           - "Inventory management (coming soon)"
           - "Direct support & personal point of contact"
@@ -825,6 +864,10 @@ en:
         answer: "Yes, with a payment schedule (Professional and Business): e.g. the materials on acceptance and the remainder on delivery. OfferDesk works out the materials deposit itself from the lines you buy from suppliers, without your own work; your customer only sees the amount. A percentage or fixed amount works too. Your customer gets a payment request per term with your own bank's, Tikkie's or bunq.me payment link; the money goes straight to you. OfferDesk reminds the customer, and you tick off what is paid."
       - question: "What if I agree different payment terms with a customer?"
         answer: "You set them per quote. Your standard schedule is only a starting point: per quote you choose the instalments yourself, as a percentage or a fixed amount, due on approval, at the start of the work, on delivery or on a fixed date. The customer sees the agreement upfront on the quote, and extra work goes into the last instalment. Payment schedules are part of Professional and Business."
+      - question: "Can I keep photos and documents with a quote?"
+        answer: "Yes, on every plan. On the Files tab you keep photos (also straight from your phone camera), measurements, sketches and PDFs with the quote, with a description. They are for your team, unless you make a file visible to the customer: then it shows as an attachment on the quote page. Photos are scaled down automatically, so your storage lasts."
+      - question: "Can my customer see my terms and conditions?"
+        answer: "Yes. You upload your terms and conditions as a PDF under Settings › Terms and conditions. Every quote you send gets the version that applies at that moment: your customer reads it on the quote page and ticks that they agree when accepting. OfferDesk records which version that was, and when. If you change your terms later, quotes already sent keep their own version. On every plan."
       - question: "Can I choose how my quote looks?"
         answer: "Yes. Your quote gets your own logo and your own texts above and below the lines. In Professional and Business you choose from three designs: Classic, Modern and Compact, as a standard or per quote."
 
@@ -903,6 +946,7 @@ en:
       copied: "Copied"
       mail_app: "Open your mail app"
       gmail: "Open in Gmail"
+      no_mail_app: "Nothing opened? Then no mail app is set up on this device. Copy the address or open Gmail."
       close: "Close"
     quick_links_title: "Quick links"
     quick_links:
