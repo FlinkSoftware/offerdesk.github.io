@@ -51,7 +51,8 @@
             </div>
 
             <!-- Rechterkolom: de kern van OfferDesk, een offerte waarvan elke regel weet waar hij vandaan komt.
-                 Een voorbeeld per vak; zonder JavaScript het eerste, anders een willekeurig, en de tabjes wisselen. -->
+                 Een voorbeeld per vak; zonder JavaScript het eerste, anders een willekeurig dat elke 10 seconden doorschuift
+                 tot de bezoeker zelf een vak kiest (zie app.js). -->
             {% assign labels = i18n.hero.mock_labels %}
             <div class="hero-mocks">
                 <div class="ml-auto mb-3 flex w-full max-w-md flex-wrap items-center gap-2" role="group" aria-label="{{ labels.trades }}">
@@ -72,7 +73,7 @@
                             <p class="text-xs font-medium text-gray-500">{{ mock.number }} · {{ mock.customer }}</p>
                             <p class="mt-1 heading-5">{{ mock.title }}</p>
                         </div>
-                        <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                        <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary-hover">
                             <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>{{ mock.status }}
                         </span>
                     </div>
@@ -94,7 +95,7 @@
                             </div>
                             <div class="shrink-0 text-right">
                                 <p class="text-sm font-semibold text-dark-blue tabular-nums">{{ line.price }}</p>
-                                {% if line.profit %}<p class="mt-1 text-xs font-medium text-secondary tabular-nums">{{ line.profit }}</p>{% endif %}
+                                {% if line.profit %}<p class="mt-1 text-xs font-medium text-emerald-700 tabular-nums">{{ line.profit }}</p>{% endif %}
                             </div>
                         </li>
                         {% endfor %}
@@ -107,8 +108,8 @@
                         <div class="flex items-center justify-between pt-1">
                             <span class="font-semibold text-dark-blue">{{ labels.profit }}</span>
                             <span class="flex items-center gap-2">
-                                <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-xs font-semibold text-secondary">{{ mock.margin }}</span>
-                                <span class="text-lg font-bold text-secondary tabular-nums">{{ mock.profit }}</span>
+                                <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-xs font-semibold text-emerald-700">{{ mock.margin }}</span>
+                                <span class="text-lg font-bold text-emerald-700 tabular-nums">{{ mock.profit }}</span>
                             </span>
                         </div>
                     </div>

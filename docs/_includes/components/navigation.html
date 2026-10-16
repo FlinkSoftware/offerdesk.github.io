@@ -48,10 +48,9 @@
         </a>
     </div>
 </nav>
-<el-dialog>
-    <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-        <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <el-dialog-panel
+<dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" data-dialog-backdrop class="fixed inset-0 focus:outline-none">
+            <div
                 class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm shadow-lg">
                 <div class="flex items-center justify-between">
                     <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5" aria-label="OfferDesk - Home">
@@ -87,10 +86,9 @@
                         <a href="https://app.offerdesk.nl/sign-up"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="button-primary -mx-3 block rounded-lg px-3 py-3 text-center bg-primary hover:bg-primary-hover transition-colors">{{ i18n.nav.sign_up }}</a>
+                            class="button-primary w-full rounded-lg px-3 py-3 text-center bg-primary hover:bg-primary-hover transition-colors">{{ i18n.nav.sign_up }}</a>
                     </div>
                 </div>
-            </el-dialog-panel>
+            </div>
         </div>
     </dialog>
-</el-dialog>

@@ -34,19 +34,38 @@
   }
 })();
 
-// Hero: one example offer per trade. Without JavaScript the first shows; here a random one on every load,
-// and the trade buttons switch between them. Nothing changes by itself.
+// Hero: one example offer per trade. Without JavaScript the first shows; here a random one on every load, and
+// every 10 seconds the next trade. It holds while the pointer or focus is on the examples or the tab is in the
+// background, stops for good once a visitor picks a trade, and never runs for people who prefer reduced motion.
 (function(){
+  const INTERVAL = 10000;
   function setupHeroMocks(){
     const tabs = Array.from(document.querySelectorAll('[data-hero-tab]'));
     const mocks = Array.from(document.querySelectorAll('[data-hero-mock]'));
     if (mocks.length < 2) return;
+    let current = 0;
     function show(index){
-      mocks.forEach((mock) => { mock.hidden = mock.dataset.heroMock !== String(index); });
-      tabs.forEach((tab) => tab.setAttribute('aria-pressed', String(tab.dataset.heroTab === String(index))));
+      current = Number(index);
+      mocks.forEach((mock) => { mock.hidden = mock.dataset.heroMock !== String(current); });
+      tabs.forEach((tab) => tab.setAttribute('aria-pressed', String(tab.dataset.heroTab === String(current))));
     }
-    tabs.forEach((tab) => tab.addEventListener('click', () => show(tab.dataset.heroTab)));
     show(Math.floor(Math.random() * mocks.length));
+
+    const area = document.querySelector('.hero-mocks');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let picked = false;
+    let held = false;
+    let timer = null;
+    tabs.forEach((tab) => tab.addEventListener('click', () => { picked = true; clearInterval(timer); show(tab.dataset.heroTab); }));
+    if (reduced || !area) return;
+    area.addEventListener('pointerenter', () => { held = true; });
+    area.addEventListener('pointerleave', () => { held = false; });
+    area.addEventListener('focusin', () => { held = true; });
+    area.addEventListener('focusout', () => { held = false; });
+    timer = setInterval(() => {
+      if (picked || held || document.hidden) return;
+      show((current + 1) % mocks.length);
+    }, INTERVAL);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', setupHeroMocks);
@@ -117,5 +136,32 @@
     document.addEventListener('DOMContentLoaded', setupNavigation);
   } else {
     setupNavigation();
+  }
+})();
+
+// Mobile menu: a native <dialog>. Buttons with command/commandfor open and close it; browsers that know
+// those attributes do it themselves, the others get this click handler. A tap beside the panel closes it.
+(function(){
+  function setupDialogs(){
+    const nativeCommands = 'command' in HTMLButtonElement.prototype;
+    document.querySelectorAll('button[commandfor]').forEach((button) => {
+      if (nativeCommands) return;
+      button.addEventListener('click', () => {
+        const dialog = document.getElementById(button.getAttribute('commandfor'));
+        if (!dialog) return;
+        if (button.getAttribute('command') === 'show-modal') dialog.showModal();
+        else if (button.getAttribute('command') === 'close') dialog.close();
+      });
+    });
+    document.querySelectorAll('[data-dialog-backdrop]').forEach((backdrop) => {
+      backdrop.addEventListener('click', (event) => {
+        if (event.target === backdrop) backdrop.closest('dialog')?.close();
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupDialogs);
+  } else {
+    setupDialogs();
   }
 })();

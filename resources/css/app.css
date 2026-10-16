@@ -37,48 +37,38 @@ body {
   color: white !important;
 }
 
-/* Inter font faces */
-@font-face {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url(../fonts/Inter_24pt-Thin.ttf) format('truetype');
-}
+/* Inter font faces: Latin subsets in WOFF2, the four weights the site uses (600 falls back to 700) */
 @font-face {
   font-family: Inter;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(../fonts/Inter_24pt-Regular.ttf) format('truetype');
+  src: url(../fonts/inter-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2199, U+2212, U+2215, U+2713, U+2715;
 }
 @font-face {
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(../fonts/Inter_24pt-Medium.ttf) format('truetype');
+  src: url(../fonts/inter-500.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2199, U+2212, U+2215, U+2713, U+2715;
 }
 @font-face {
   font-family: Inter;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(../fonts/Inter_28pt-Bold.ttf) format('truetype');
+  src: url(../fonts/inter-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2199, U+2212, U+2215, U+2713, U+2715;
 }
 @font-face {
   font-family: Inter;
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(../fonts/Inter_28pt-ExtraBold.ttf) format('truetype');
-}
-@font-face {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url(../fonts/Inter_28pt-Black.ttf) format('truetype');
+  src: url(../fonts/inter-800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2199, U+2212, U+2215, U+2713, U+2715;
 }
 
 /* Ensure button text is white */
@@ -351,3 +341,35 @@ html {
   background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
   font-weight: 600;
 }
+
+/* "Geschikt voor": the typewriter types into a slot sized by all trades stacked invisibly in one grid cell */
+.typewriter-slot {
+  display: inline-grid;
+  vertical-align: top;
+}
+.typewriter-sizer {
+  display: contents;
+}
+.typewriter-sizer > span,
+.typewriter-slot > #types {
+  grid-area: 1 / 1;
+}
+.typewriter-sizer > span {
+  visibility: hidden;
+}
+.typewriter-slot > #types {
+  justify-self: center;
+}
+
+/* Hero: the next trade's example fades in */
+@media (prefers-reduced-motion: no-preference) {
+  [data-hero-mock]:not([hidden]) { animation: hero-mock-in 400ms ease-out; }
+}
+@keyframes hero-mock-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Typography and accessibility, formerly separate stylesheets; appended so they keep their old precedence */
+@import "./typography.css";
+@import "./accessibility.css";

@@ -6,19 +6,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    {% comment %}jekyll-seo-tag writes the <title> ("Page | OfferDesk"), description, canonical, Open Graph and Twitter tags{% endcomment %}
     {% seo %}
 
-    <!-- OpenGraph & Social Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="OfferDesk" />
-    <meta property="og:locale" content="nl_NL" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@offerdesk" />
+    {% comment %}Open Graph, Twitter and canonical come from jekyll-seo-tag above (locale and image via _config.yml){% endcomment %}
+    {% if page.url == '/' or page.url == '/en/' %}
+    <link rel="alternate" hreflang="nl" href="{{ '/' | absolute_url }}">
+    <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+    {% endif %}
+    <link rel="alternate" type="application/atom+xml" title="OfferDesk blog" href="{{ '/blog/feed.xml' | relative_url }}">
 
-    <!-- DNS Prefetch & Preconnect -->
+    <!-- The two text fonts the first screen needs; the rest load when used -->
+    <link rel="preload" href="{{ '/fonts/inter-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ '/fonts/inter-800.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
     <link rel="dns-prefetch" href="https://app.offerdesk.nl">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="96x96" href="{{ '/images/favicon/favicon-96x96.png' | relative_url }}">
@@ -27,8 +29,6 @@
     <link rel="manifest" href="{{ '/images/favicon/site.webmanifest' | relative_url }}">
     <meta name="theme-color" content="#0068FF">
     <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/css/typography.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/css/accessibility.css' | relative_url }}">
     {% if site.google_analytics_id %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
     <script>
@@ -38,15 +38,28 @@
         gtag('config', '{{ site.google_analytics_id }}');
     </script>
     {% endif %}
-    <!-- MailerLite Universal -->
+    <!-- MailerLite: only on pages with the signup form, and only once it comes near the screen. Its script
+         pulls in render-blocking font stylesheets, so loading it up front slowed every page down. -->
     <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        window.ml = window.ml || function () { (window.ml.q = window.ml.q || []).push(arguments); };
         ml('account', '2670655');
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.querySelector('.ml-embedded');
+            if (!form) return;
+            function load() {
+                if (window.mlLoaded) return;
+                window.mlLoaded = true;
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://assets.mailerlite.com/js/universal.js';
+                document.head.appendChild(script);
+            }
+            if (!('IntersectionObserver' in window)) return load();
+            new IntersectionObserver(function (entries, observer) {
+                if (entries.some(function (entry) { return entry.isIntersecting; })) { observer.disconnect(); load(); }
+            }, { rootMargin: '800px 0px' }).observe(form);
+        });
     </script>
-    <!-- End MailerLite Universal -->
 
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
@@ -95,6 +108,35 @@
       }
     }
     </script>
+    {% if page.url == '/' or page.url == '/en/' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "{{ lang }}",
+      "mainEntity": [{% for item in i18n.faq.items %}
+        {
+          "@type": "Question",
+          "name": {{ item.question | strip_html | jsonify }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.answer | strip_html | jsonify }} }
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }
+    </script>
+    {% endif %}
+    {% if page.layout == 'post' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "OfferDesk", "item": "{{ '/' | absolute_url }}" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ '/blog/' | absolute_url }}" },
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }
+      ]
+    }
+    </script>
+    {% endif %}
 </head>
 
 <body class="h-full text-text antialiased bg-gradient-to-br from-white via-background to-gray-100">
@@ -139,7 +181,7 @@
                         <div class="mt-6 flex flex-wrap gap-3">
                             {% for option in i18n.footer.languages %}
                             <a href="{{ option.href | relative_url }}"
-                               class="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-dark-blue hover:border-primary hover:text-primary transition-colors{% if lang == 'nl' and option.href == '/' %} bg-gray-100 border-primary text-primary{% elsif lang == 'en' and option.href == '/en/' %} bg-gray-100 border-primary text-primary{% endif %}">
+                               class="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-dark-blue hover:border-primary hover:text-primary transition-colors{% if lang == 'nl' and option.href == '/' %} bg-gray-100 border-primary text-primary-hover{% elsif lang == 'en' and option.href == '/en/' %} bg-gray-100 border-primary text-primary-hover{% endif %}">
                                 <span aria-hidden="true">{{ option.flag }}</span>
                                 {{ option.label }}
                             </a>
@@ -158,9 +200,8 @@
             </div>
         </footer>
     </div>
-    <script src="https://unpkg.com/typewriter-effect@2.22.0/dist/core.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-    <script src="{{ '/js/app.js' | relative_url }}"></script>
+    {% if page.url == '/' or page.url == '/en/' %}<script defer src="{{ '/js/vendor/typewriter-core.js' | relative_url }}"></script>{% endif %}
+    <script defer src="{{ '/js/app.js' | relative_url }}"></script>
 </body>
 
 </html>

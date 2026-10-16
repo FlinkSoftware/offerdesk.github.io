@@ -4,6 +4,11 @@ description: >-
   OfferDesk helpt servicebedrijven van offerte tot uitvoering: offertes, marges,
   goedkeuring, materialen en winst in één platform.
 default_lang: nl
+# jekyll-seo-tag: Open Graph locale, the share image and a large Twitter card for every page (a post's own image wins)
+locale: nl_NL
+twitter:
+  username: offerdesk
+  card: summary_large_image
 google_analytics_id: G-XMLKF7JVEX
 mailerlite:
   action: "https://assets.mailerlite.com/jsonp/2670655/forms/199973805230130365/subscribe"
@@ -36,6 +41,10 @@ future: false
 feed:
   path: blog/feed.xml
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/og-image.jpg
   - scope:
       path: ""
       type: posts

@@ -4,10 +4,11 @@
     "css:watch": "tailwindcss -i ./resources/css/app.css -o ./docs/css/app.css --watch --minify",
     "js:build": "terser ./resources/js/app.js -o ./docs/js/app.js -c -m",
     "js:watch": "npm run js:build && chokidar \"resources/js/*.js\" -c \"npm run js:build\"",
-    "assets:copy": "mkdir -p ./docs/fonts ./docs/images && cp -R ./resources/fonts/* ./docs/fonts/ && cp -R ./resources/images/* ./docs/images/",
+    "assets:copy": "mkdir -p ./docs/fonts ./docs/images ./docs/js/vendor && cp ./resources/fonts/*.woff2 ./docs/fonts/ && cp -R ./resources/images/* ./docs/images/ && cp ./node_modules/typewriter-effect/dist/core.js ./docs/js/vendor/typewriter-core.js",
     "fonts:watch": "npm run assets:copy && chokidar \"resources/fonts/*\" -c \"npm run assets:copy\"",
     "build": "npm run css:build && npm run js:build && npm run assets:copy",
-    "watch": "npm-run-all --parallel css:watch js:watch fonts:watch"
+    "watch": "npm-run-all --parallel css:watch js:watch fonts:watch",
+    "fonts:subset": "for f in 400:Inter_24pt-Regular 500:Inter_24pt-Medium 700:Inter_28pt-Bold 800:Inter_28pt-ExtraBold; do pyftsubset ./resources/fonts/source/${f#*:}.ttf --unicodes='U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-2199,U+2212,U+2215,U+2713,U+2715' --layout-features='kern,liga,calt,tnum,ccmp,locl,mark,mkmk' --flavor=woff2 --output-file=./resources/fonts/inter-${f%%:*}.woff2; done"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.13",

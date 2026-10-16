@@ -4,7 +4,8 @@
 <div id="suitable-for-section" class="bg-white py-20 sm:py-32 lg:py-40">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="text-center">
-            <h2 class="heading-2">{{ i18n.suitable_for.title_prefix }} <span class="text-primary">{{ i18n.suitable_for.title_highlight }}</span> {{ i18n.suitable_for.title_suffix }} <span id="types" class="text-primary" data-types="{{ i18n.suitable_for.types | join: ',' }}"></span></h2>
+            <h2 class="heading-2">{{ i18n.suitable_for.title_prefix }} <span class="text-primary">{{ i18n.suitable_for.title_highlight }}</span> {{ i18n.suitable_for.title_suffix }} {% comment %}The typed trade sits in a slot as large as the longest trade, so the heading keeps its height while
+                words are typed and deleted, and the page below does not jump{% endcomment %}<span class="typewriter-slot text-primary"><span class="typewriter-sizer" aria-hidden="true">{% for type in i18n.suitable_for.types %}<span>{{ type }}|</span>{% endfor %}</span><span class="sr-only">{{ i18n.suitable_for.types | join: ', ' }}</span><span id="types" aria-hidden="true" data-types="{{ i18n.suitable_for.types | join: ',' }}"></span></span></h2>
             <p class="mt-6 body-large text-gray-700">{{ i18n.suitable_for.intro }}</p>
         </div>
         <div class="mt-16 sm:mt-20 grid grid-cols-2 gap-6 sm:gap-8 sm:grid-cols-3 lg:grid-cols-4">
