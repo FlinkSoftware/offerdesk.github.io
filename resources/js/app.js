@@ -351,6 +351,8 @@
         button.setAttribute('aria-label', text);
         button.setAttribute('title', text);
         button.setAttribute('aria-pressed', String(dark));
+        const visible = button.querySelector('[data-theme-label]');
+        if (visible) visible.textContent = text;
       });
     };
     toggles.forEach((button) => button.addEventListener('click', () => {
