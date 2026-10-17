@@ -17,6 +17,7 @@
     </script>
     {% comment %}jekyll-seo-tag writes the <title> ("Page | OfferDesk"), description, canonical, Open Graph and Twitter tags{% endcomment %}
     {% seo %}
+    {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
 
     {% comment %}Open Graph, Twitter and canonical come from jekyll-seo-tag above (locale and image via _config.yml){% endcomment %}
     {% if page.url == '/' or page.url == '/en/' %}
