@@ -32,17 +32,23 @@
                         <div class="grid grid-cols-3 gap-2 sm:gap-4">
                             {% for image in feature.images %}
                             <figure class="min-w-0">
-                                <img src="{{ image.src | relative_url }}" alt="{{ image.alt }}" class="w-full rounded-md sm:rounded-lg bg-white shadow-lg ring-1 ring-black/5" loading="lazy" width="800" height="650">
+                                <button type="button" class="lightbox-trigger block w-full rounded-md sm:rounded-lg" data-lightbox-src="{{ image.full | default: image.src | relative_url }}"{% if image.full_dark %} data-lightbox-src-dark="{{ image.full_dark | relative_url }}"{% endif %} data-lightbox-alt="{{ image.alt }}" aria-label="{{ i18n.features.enlarge }}: {{ image.alt }}">
+                                    <img src="{{ image.src | relative_url }}" alt="{{ image.alt }}" class="w-full rounded-md sm:rounded-lg bg-white shadow-lg ring-1 ring-black/5" loading="lazy" width="800" height="650">
+                                </button>
                                 {% if image.caption %}<figcaption class="mt-2 text-center body-small text-gray-700">{{ image.caption }}</figcaption>{% endif %}
                             </figure>
                             {% endfor %}
                         </div>
                         {% else %}
                         {% assign main = feature.images | first %}
-                        <img src="{{ main.src | relative_url }}" alt="{{ main.alt }}" class="w-full {% if main.narrow %}max-w-sm mx-auto{% endif %} rounded-xl bg-white shadow-xl ring-1 ring-black/5" loading="lazy" width="1600" height="700">
+                        <button type="button" class="lightbox-trigger block w-full {% if main.narrow %}max-w-sm mx-auto{% endif %} rounded-xl" data-lightbox-src="{{ main.full | default: main.src | relative_url }}"{% if main.full_dark %} data-lightbox-src-dark="{{ main.full_dark | relative_url }}"{% endif %} data-lightbox-alt="{{ main.alt }}" aria-label="{{ i18n.features.enlarge }}: {{ main.alt }}">
+                            <img src="{{ main.src | relative_url }}" alt="{{ main.alt }}" class="w-full rounded-xl bg-white shadow-xl ring-1 ring-black/5" loading="lazy" width="1600" height="700">
+                        </button>
                         {% if feature.layout == 'overlap' and feature.images.size > 1 %}
                         {% assign second = feature.images | last %}
-                        <img src="{{ second.src | relative_url }}" alt="{{ second.alt }}" class="relative -mt-12 sm:-mt-20 ml-auto mr-2 sm:-mr-4 w-[58%] sm:w-[46%] max-w-sm rounded-xl bg-white shadow-2xl ring-1 ring-black/5" loading="lazy" width="720" height="400">
+                        <button type="button" class="lightbox-trigger relative -mt-12 sm:-mt-20 ml-auto mr-2 sm:-mr-4 block w-[58%] sm:w-[46%] max-w-sm rounded-xl" data-lightbox-src="{{ second.full | default: second.src | relative_url }}"{% if second.full_dark %} data-lightbox-src-dark="{{ second.full_dark | relative_url }}"{% endif %} data-lightbox-alt="{{ second.alt }}" aria-label="{{ i18n.features.enlarge }}: {{ second.alt }}">
+                            <img src="{{ second.src | relative_url }}" alt="{{ second.alt }}" class="w-full rounded-xl bg-white shadow-2xl ring-1 ring-black/5" loading="lazy" width="720" height="400">
+                        </button>
                         {% endif %}
                         {% endif %}
                     </div>

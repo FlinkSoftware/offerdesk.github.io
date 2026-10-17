@@ -6,6 +6,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% comment %}Dark mode before anything paints: the visitor's choice (localStorage "theme"), else the system setting{% endcomment %}
+    <script>
+        (function () {
+            try {
+                var choice = localStorage.getItem('theme');
+                if (choice === 'dark' || (!choice && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+            } catch (e) { }
+        })();
+    </script>
     {% comment %}jekyll-seo-tag writes the <title> ("Page | OfferDesk"), description, canonical, Open Graph and Twitter tags{% endcomment %}
     {% seo %}
 
@@ -331,7 +340,19 @@
             </div>
         </footer>
     </div>
-    {% if page.url == '/' or page.url == '/en/' %}<script defer src="{{ '/js/lib/typewriter-core.js' | relative_url }}"></script>{% endif %}
+    {% if page.url == '/' or page.url == '/en/' %}
+    {% comment %}The screenshots in the features section open here at full size (app.js fills in the image).
+    Escape, the close button and a click beside the image close it; without JavaScript the screenshots stay plain images.{% endcomment %}
+    <dialog id="lightbox" aria-label="{{ i18n.features.enlarge }}" class="m-auto max-h-none max-w-none bg-transparent p-4 sm:p-8 backdrop:bg-dark-blue/85">
+        <figure class="relative mx-auto w-fit">
+            <img data-lightbox-image src="" alt="" class="mx-auto block max-h-[85vh] w-auto max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-4rem)] rounded-xl bg-white shadow-2xl">
+            <figcaption data-lightbox-caption class="mt-3 text-center text-sm text-white/90"></figcaption>
+            <button type="button" command="close" commandfor="lightbox" class="absolute -top-3 -right-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-dark-blue shadow-lg hover:bg-gray-100" aria-label="{{ i18n.features.close }}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="size-5"><path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </button>
+        </figure>
+    </dialog>
+    <script defer src="{{ '/js/lib/typewriter-core.js' | relative_url }}"></script>{% endif %}
     <script defer src="{{ '/js/app.js' | relative_url }}"></script>
 </body>
 

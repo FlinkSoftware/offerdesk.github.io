@@ -157,6 +157,23 @@
     document.querySelectorAll('dialog:not(:has([data-dialog-backdrop]))').forEach((dialog) => {
       dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
     });
+    // Lightbox: a screenshot in the features section opens full size in the one #lightbox dialog, with its
+    // alt text as the caption. The image is cleared on close, so the next one does not flash the previous.
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+      const image = lightbox.querySelector('[data-lightbox-image]');
+      const caption = lightbox.querySelector('[data-lightbox-caption]');
+      document.querySelectorAll('[data-lightbox-src]').forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          const dark = document.documentElement.classList.contains('dark') && trigger.dataset.lightboxSrcDark;
+          image.src = dark || trigger.dataset.lightboxSrc;
+          image.alt = trigger.dataset.lightboxAlt || '';
+          caption.textContent = trigger.dataset.lightboxAlt || '';
+          lightbox.showModal();
+        });
+      });
+      lightbox.addEventListener('close', () => { image.removeAttribute('src'); image.alt = ''; });
+    }
     // A mailto link does nothing without a mail app, and a page cannot ask whether there is one. When a mail app opens,
     // this window loses focus; if it still has it after a moment, say so and point at copying or Gmail.
     document.querySelectorAll('[data-mail-app]').forEach((link) => {
@@ -317,4 +334,40 @@
   } else {
     setupReferral();
   }
+})();
+
+// Light or dark: the toggle in the navigation flips the class on <html> and remembers the choice in localStorage
+// ("theme"); the layout's head applies that choice before the first paint. Without a choice the page follows the
+// system setting, and keeps following it when that changes.
+(function(){
+  function setupTheme(){
+    const root = document.documentElement;
+    const toggles = document.querySelectorAll('.theme-toggle');
+    if (!toggles.length) return;
+    const label = () => {
+      const dark = root.classList.contains('dark');
+      toggles.forEach((button) => {
+        const text = dark ? button.dataset.labelLight : button.dataset.labelDark;
+        button.setAttribute('aria-label', text);
+        button.setAttribute('title', text);
+        button.setAttribute('aria-pressed', String(dark));
+      });
+    };
+    toggles.forEach((button) => button.addEventListener('click', () => {
+      const dark = root.classList.toggle('dark');
+      try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (error) { /* private mode: the choice lasts this page */ }
+      label();
+    }));
+    const system = window.matchMedia('(prefers-color-scheme: dark)');
+    system.addEventListener('change', (event) => {
+      let choice = null;
+      try { choice = localStorage.getItem('theme'); } catch (error) { /* then follow the system */ }
+      if (choice) return;
+      root.classList.toggle('dark', event.matches);
+      label();
+    });
+    label();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupTheme);
+  else setupTheme();
 })();

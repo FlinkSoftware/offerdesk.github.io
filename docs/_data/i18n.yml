@@ -13,6 +13,8 @@ nl:
     cta: "Interesse? Meld je aan"
     sign_in: "Inloggen"
     sign_up: "Registreren"
+    theme_dark: "Donkere modus"
+    theme_light: "Lichte modus"
     language_code: "EN"
     language_aria: "Schakel naar Engels"
 
@@ -32,6 +34,10 @@ nl:
       - "Compleet: van calculatie tot inkoop alles op één plek"
     cta_primary: "Start je proefperiode"
     cta_secondary: "Bekijk hoe het werkt"
+    assurances:
+      - "14 dagen gratis"
+      - "Geen betaalgegevens nodig"
+      - "Maandelijks opzegbaar"
     mock_labels:
       trades: "Voorbeeld voor"
       revenue: "Omzet excl. btw"
@@ -150,6 +156,8 @@ nl:
         title: "Sneller je geld binnen"
         body: "De meeste programma's stoppen zodra de offerte de deur uit is. OfferDesk gaat door: bestellen, het werk, en een herinnering als de klant nog niet betaald heeft."
   features:
+    enlarge: "Vergroot"
+    close: "Sluiten"
     title_prefix: "Alles om te weten"
     title_highlight: "wat je verdient"
     intro: "Van inkoopprijs tot het ja van de klant. OfferDesk bewaart niet alleen je offerte, maar ook hoe je hem hebt opgebouwd."
@@ -164,8 +172,12 @@ nl:
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-regels.webp"
+            full: "/images/offerdesk/app-offerte-marge.webp"
+            full_dark: "/images/offerdesk/app-offerte-marge-dark.webp"
             alt: "Offerteregels met inkoopprijs, leverancier, marge en winst per regel"
           - src: "/images/offerdesk/crop-winst.webp"
+            full: "/images/offerdesk/app-offerte-marge.webp"
+            full_dark: "/images/offerdesk/app-offerte-marge-dark.webp"
             alt: "Winstgevendheid van de offerte: omzet, inkoopkosten en brutowinst"
 
       - eyebrow: "Je prijzen"
@@ -177,6 +189,8 @@ nl:
           - "Je ziet altijd waar een prijs vandaan komt"
         images:
           - src: "/images/offerdesk/crop-producten.webp"
+            full: "/images/offerdesk/app-producten-leveranciers.webp"
+            full_dark: "/images/offerdesk/app-producten-leveranciers-dark.webp"
             alt: "De productcatalogus met leveranciers, inkoopprijzen en marges"
 
       - eyebrow: "Bestellen"
@@ -188,6 +202,8 @@ nl:
           - "Sneller aan de slag"
         images:
           - src: "/images/offerdesk/crop-inkoop.webp"
+            full: "/images/offerdesk/app-inkooplijst.webp"
+            full_dark: "/images/offerdesk/app-inkooplijst-dark.webp"
             alt: "De inkooplijst van een geaccepteerde offerte, per leverancier"
 
       - eyebrow: "Aanbetaling"
@@ -200,8 +216,12 @@ nl:
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-betalingen.webp"
+            full: "/images/offerdesk/app-betalingen.webp"
+            full_dark: "/images/offerdesk/app-betalingen-dark.webp"
             alt: "Het betaalschema van een offerte: aanbetaling gevraagd, restant bij oplevering"
           - src: "/images/offerdesk/crop-klant-betaling.webp"
+            full: "/images/offerdesk/app-klantpagina.webp"
+            full_dark: "/images/offerdesk/app-klantpagina-dark.webp"
             alt: "Wat je klant ziet: de termijnen en een knop om te betalen"
 
       - eyebrow: "Opmaak"
@@ -214,12 +234,18 @@ nl:
         layout: "row"
         images:
           - src: "/images/offerdesk/crop-template-classic.webp"
+            full: "/images/offerdesk/app-voorbeeld-classic.webp"
+            full_dark: "/images/offerdesk/app-voorbeeld-classic-dark.webp"
             alt: "Offerte in het ontwerp Klassiek"
             caption: "Klassiek"
           - src: "/images/offerdesk/crop-template-modern.webp"
+            full: "/images/offerdesk/app-voorbeeld-modern.webp"
+            full_dark: "/images/offerdesk/app-voorbeeld-modern-dark.webp"
             alt: "Offerte in het ontwerp Modern"
             caption: "Modern"
           - src: "/images/offerdesk/crop-template-compact.webp"
+            full: "/images/offerdesk/app-voorbeeld-compact.webp"
+            full_dark: "/images/offerdesk/app-voorbeeld-compact-dark.webp"
             alt: "Offerte in het ontwerp Compact"
             caption: "Compact"
 
@@ -233,6 +259,8 @@ nl:
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-bestanden.webp"
+            full: "/images/offerdesk/app-bestanden.webp"
+            full_dark: "/images/offerdesk/app-bestanden-dark.webp"
             alt: "Het tabblad Bestanden van een offerte: foto's met beschrijving en een datasheet die de klant ziet"
 
       - eyebrow: "Samenwerken"
@@ -245,8 +273,12 @@ nl:
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-historie.webp"
+            full: "/images/offerdesk/app-historie.webp"
+            full_dark: "/images/offerdesk/app-historie-dark.webp"
             alt: "De historie van een offerte: wijzigingen, verzending en betalingen"
           - src: "/images/offerdesk/crop-vraag.webp"
+            full: "/images/offerdesk/app-activiteit.webp"
+            full_dark: "/images/offerdesk/app-activiteit-dark.webp"
             alt: "Een vraag van de klant met het antwoord eronder, zoals de klant het ziet"
 
     bottom_cards:
@@ -282,6 +314,8 @@ nl:
     image: "/images/offerdesk/crop-klant-voor.webp"
     image_alt: "De pagina van de klant: de offerte, akkoord geven, de betaaltermijnen en vragen met antwoorden"
     image_mobile: "/images/offerdesk/app-klantpagina-mobiel.webp"
+    image_full: "/images/offerdesk/app-klantpagina.webp"
+    image_full_dark: "/images/offerdesk/app-klantpagina-dark.webp"
     image_mobile_alt: "Dezelfde offerte op de telefoon van de klant"
 
   pricing:
@@ -531,6 +565,8 @@ en:
     cta: "Interested? Sign up"
     sign_in: "Sign in"
     sign_up: "Sign up"
+    theme_dark: "Dark mode"
+    theme_light: "Light mode"
     language_code: "NL"
     language_aria: "Switch to Dutch"
 
@@ -550,6 +586,10 @@ en:
       - "From quote to purchasing without Excel"
     cta_primary: "Start your free trial"
     cta_secondary: "See how it works"
+    assurances:
+      - "14 days free"
+      - "No payment details needed"
+      - "Cancel monthly"
     mock_labels:
       trades: "Example for"
       revenue: "Revenue excl. VAT"
@@ -669,6 +709,8 @@ en:
         body: "Most programs stop once the quote is out of the door. OfferDesk keeps going: ordering, the work, and a reminder when the customer has not paid yet."
 
   features:
+    enlarge: "Enlarge"
+    close: "Close"
     title_prefix: "Everything to know"
     title_highlight: "what you earn"
     intro: "From purchase price to the customer's yes. OfferDesk keeps not only your quote, but also how you built it."
@@ -683,8 +725,12 @@ en:
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-regels.webp"
+            full: "/images/offerdesk/app-offerte-marge.webp"
+            full_dark: "/images/offerdesk/app-offerte-marge-dark.webp"
             alt: "Quote lines with purchase price, supplier, margin and profit per line"
           - src: "/images/offerdesk/crop-winst.webp"
+            full: "/images/offerdesk/app-offerte-marge.webp"
+            full_dark: "/images/offerdesk/app-offerte-marge-dark.webp"
             alt: "Profitability of the quote: revenue, purchase costs and gross profit"
 
       - eyebrow: "Your prices"
@@ -696,6 +742,8 @@ en:
           - "You always see where a price comes from"
         images:
           - src: "/images/offerdesk/crop-producten.webp"
+            full: "/images/offerdesk/app-producten-leveranciers.webp"
+            full_dark: "/images/offerdesk/app-producten-leveranciers-dark.webp"
             alt: "The product catalogue with suppliers, purchase prices and margins"
 
       - eyebrow: "Ordering"
@@ -707,6 +755,8 @@ en:
           - "Get to work sooner"
         images:
           - src: "/images/offerdesk/crop-inkoop.webp"
+            full: "/images/offerdesk/app-inkooplijst.webp"
+            full_dark: "/images/offerdesk/app-inkooplijst-dark.webp"
             alt: "The purchase list of an accepted quote, per supplier"
 
       - eyebrow: "Deposit"
@@ -719,8 +769,12 @@ en:
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-betalingen.webp"
+            full: "/images/offerdesk/app-betalingen.webp"
+            full_dark: "/images/offerdesk/app-betalingen-dark.webp"
             alt: "The payment schedule of a quote: deposit requested, remainder on delivery"
           - src: "/images/offerdesk/crop-klant-betaling.webp"
+            full: "/images/offerdesk/app-klantpagina.webp"
+            full_dark: "/images/offerdesk/app-klantpagina-dark.webp"
             alt: "What your customer sees: the terms and a button to pay"
 
       - eyebrow: "Design"
@@ -733,12 +787,18 @@ en:
         layout: "row"
         images:
           - src: "/images/offerdesk/crop-template-classic.webp"
+            full: "/images/offerdesk/app-voorbeeld-classic.webp"
+            full_dark: "/images/offerdesk/app-voorbeeld-classic-dark.webp"
             alt: "A quote in the Classic design"
             caption: "Classic"
           - src: "/images/offerdesk/crop-template-modern.webp"
+            full: "/images/offerdesk/app-voorbeeld-modern.webp"
+            full_dark: "/images/offerdesk/app-voorbeeld-modern-dark.webp"
             alt: "A quote in the Modern design"
             caption: "Modern"
           - src: "/images/offerdesk/crop-template-compact.webp"
+            full: "/images/offerdesk/app-voorbeeld-compact.webp"
+            full_dark: "/images/offerdesk/app-voorbeeld-compact-dark.webp"
             alt: "A quote in the Compact design"
             caption: "Compact"
 
@@ -752,6 +812,8 @@ en:
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-bestanden.webp"
+            full: "/images/offerdesk/app-bestanden.webp"
+            full_dark: "/images/offerdesk/app-bestanden-dark.webp"
             alt: "The Files tab of a quote: photos with descriptions and a datasheet the customer sees"
 
       - eyebrow: "Working together"
@@ -764,8 +826,12 @@ en:
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-historie.webp"
+            full: "/images/offerdesk/app-historie.webp"
+            full_dark: "/images/offerdesk/app-historie-dark.webp"
             alt: "The history of a quote: changes, sending and payments"
           - src: "/images/offerdesk/crop-vraag.webp"
+            full: "/images/offerdesk/app-activiteit.webp"
+            full_dark: "/images/offerdesk/app-activiteit-dark.webp"
             alt: "A customer's question with the answer below it"
 
     bottom_cards:
@@ -801,6 +867,8 @@ en:
     image: "/images/offerdesk/crop-klant-voor.webp"
     image_alt: "The customer's page: the quote, accepting, the payment terms and questions with answers"
     image_mobile: "/images/offerdesk/app-klantpagina-mobiel.webp"
+    image_full: "/images/offerdesk/app-klantpagina.webp"
+    image_full_dark: "/images/offerdesk/app-klantpagina-dark.webp"
     image_mobile_alt: "The same quote on the customer's phone"
 
   pricing:

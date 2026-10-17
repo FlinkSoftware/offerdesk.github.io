@@ -243,6 +243,17 @@
   }
 }
 
+/* A plan card between md and lg: three cards side by side leave about 190px each, so the price and the
+   button keep their phone sizes there, or "/ maand" and the button text wrap. */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .pricing-card .number-large {
+    font-size: 2.25rem; /* 36px */
+  }
+  .pricing-card .button-primary {
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
 /* Profit/Success highlighting */
 .number-highlight {
   font-size: 2.25rem; /* 36px */
@@ -375,5 +386,10 @@
     background: #fff;
     box-shadow: 0 20px 25px -5px rgba(5, 39, 73, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
-.post-body figcaption { margin-top: 0.75rem; font-size: 0.9rem; color: #64748B; text-align: center; }
+.post-body figcaption { margin-top: 0.75rem; font-size: 0.9rem; color: #475569; text-align: center; } /* 4.5:1 on the light-blue figure panel */
 @media (min-width: 640px) { .post-body figure { padding: 1.5rem; } }
+/* The same article in dark mode (the class on <html>, see app.css) */
+.dark .post-body { color: var(--color-gray-700); }
+.dark .post-body blockquote { background: rgb(0 104 255 / 0.14); }
+.dark .post-body figure img { background: var(--color-card); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(255 255 255 / 0.1); }
+.dark .post-body figcaption { color: var(--color-gray-500); }

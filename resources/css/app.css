@@ -18,6 +18,76 @@
   --color-border: #DDE5EE;
 }
 
+/* Dark mode: the class "dark" on <html>, set by the toggle in the navigation (app.js) or, without a choice, by
+   the system setting (the inline script in the layout's head, so the page never flashes light first).
+   The utilities read their colours from variables, so the grey scale and the site's own tokens get dark values
+   here; "white" cannot be remapped (text-white on the blue buttons must stay white), so the few white-background
+   and gradient utilities the components use are overridden one by one. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark {
+  color-scheme: dark;
+  --color-text: #e2e8f0;
+  --color-dark-blue: #f1f5f9;
+  --color-background: #0b1220;
+  --color-card: #131c31;
+  --color-border: #243044;
+  --color-tertiary: #243044;
+  --color-gray-50: #111a2e;
+  --color-gray-100: #182338;
+  --color-gray-200: #243044;
+  --color-gray-300: #334155;
+  --color-gray-400: #64748b;
+  --color-gray-500: #94a3b8;
+  --color-gray-600: #b6c2d3;
+  --color-gray-700: #cbd5e1;
+  --color-gray-800: #e2e8f0;
+  --color-gray-900: #f1f5f9;
+  --color-emerald-50: #0f2a1f;
+  --color-emerald-200: #1f5a3f;
+  --color-emerald-600: #4ade80;
+  --color-emerald-700: #4ade80;
+  --color-emerald-800: #86efac;
+  --color-emerald-900: #bbf7d0;
+  --color-emerald-950: #dcfce7;
+  --color-amber-50: #2d2106;
+  --color-amber-900: #fde68a;
+}
+html.dark { background-color: var(--color-background); }
+.dark .bg-white { background-color: var(--color-card); }
+.dark .hover\:bg-gray-100:hover { background-color: var(--color-gray-200); }
+.dark .from-white { --tw-gradient-from: var(--color-background); }
+.dark .via-white { --tw-gradient-via: var(--color-background); }
+.dark .to-white { --tw-gradient-to: var(--color-background); }
+.dark .ring-black\/5 { --tw-ring-color: rgb(255 255 255 / 0.1); }
+.dark .ring-gray-200 { --tw-ring-color: var(--color-border); }
+.dark .shadow-sm, .dark .shadow-md, .dark .shadow-lg, .dark .shadow-xl, .dark .shadow-2xl { --tw-shadow-color: rgb(0 0 0 / 0.5); }
+.dark .bg-primary\/10 { background-color: rgb(0 104 255 / 0.18); }
+.dark .bg-primary\/5 { background-color: rgb(0 104 255 / 0.1); }
+/* Blue text on a dark surface: the brand blue (#0068FF) reads 3.6:1 on the dark card, under the 4.5:1 that
+   running text needs, so text in the brand blue gets a lighter blue; the blue buttons keep their colour,
+   white on #0068FF is 4.6:1. */
+.dark .text-primary, .dark .text-primary-hover, .dark .hover\:text-primary:hover, .dark .text-gray-700 a { color: #7ab3ff; }
+.dark .eyebrow, .dark .badge { color: #8fbfff; }
+.dark .button-secondary.text-primary { color: #8fbfff; border-color: #4d94ff; }
+/* The dark buttons under Starter and Business: the near-black of light mode would turn near-white here */
+.dark .bg-gray-900 { background-color: #334155; }
+.dark .hover\:bg-black:hover { background-color: #475569; }
+/* Secondary greys: the readable-grey rule in accessibility.css fixes these to one light-mode value */
+.dark .text-gray-700, .dark .text-gray-600 { color: var(--color-gray-700); }
+.dark .text-gray-500, .dark .text-gray-400 { color: var(--color-gray-500); }
+/* The white call-to-action buttons on the blue bands stay white, with the brand blue on them */
+.dark #newsletter-section a.bg-white, .dark #footer-cta a.bg-white { background-color: #fff; }
+.dark #newsletter-section a.text-primary, .dark #footer-cta a.text-primary { color: var(--color-primary); }
+.dark dialog::backdrop { background-color: rgb(0 0 0 / 0.75); }
+/* The screenshots of the app stay light prints on a dark page until they have dark versions of their own;
+   a slightly softer rendering keeps them from glaring. */
+.dark .lightbox-trigger img { filter: brightness(0.92); }
+/* The toggle shows the icon of the mode you would switch to */
+.theme-toggle .theme-icon-dark { display: none; }
+.dark .theme-toggle .theme-icon-dark { display: block; }
+.dark .theme-toggle .theme-icon-light { display: none; }
+
 /* Global color rules */
 body {
   color: var(--color-text);
@@ -297,6 +367,11 @@ a:not([class*="btn"]):not([class*="bg-"]):hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 104, 255, 0.1);
 }
+/* Screenshots that open in the lightbox: the magnifier says so before the click */
+.lightbox-trigger {
+  cursor: zoom-in;
+}
+
 /* Navigation: the current section or page stands out, and follows as you scroll */
 /* On large screens the menu bar stays on top: leave it room when jumping to a section */
 html {

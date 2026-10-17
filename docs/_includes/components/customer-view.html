@@ -17,9 +17,11 @@
             </div>
             <!-- The customer's side of the page, cut out: the offer, accepting, the payment terms and the questions -->
             <div class="min-w-0 rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 sm:p-10">
-                <img src="{{ cv.image | relative_url }}" alt="{{ cv.image_alt }}"
-                    class="mx-auto w-full max-w-sm rounded-xl bg-white shadow-2xl ring-1 ring-black/5"
-                    loading="lazy" width="720" height="2090">
+                <button type="button" class="lightbox-trigger mx-auto block w-full max-w-sm rounded-xl" data-lightbox-src="{{ cv.image_full | default: cv.image | relative_url }}"{% if cv.image_full_dark %} data-lightbox-src-dark="{{ cv.image_full_dark | relative_url }}"{% endif %} data-lightbox-alt="{{ cv.image_alt }}" aria-label="{{ i18n.features.enlarge }}: {{ cv.image_alt }}">
+                    <img src="{{ cv.image | relative_url }}" alt="{{ cv.image_alt }}"
+                        class="w-full rounded-xl bg-white shadow-2xl ring-1 ring-black/5"
+                        loading="lazy" width="720" height="2090">
+                </button>
             </div>
         </div>
     </div>
