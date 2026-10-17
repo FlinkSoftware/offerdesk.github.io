@@ -36,7 +36,7 @@ nl:
       trades: "Voorbeeld voor"
       revenue: "Omzet excl. btw"
       cost: "Inkoopkosten"
-      profit: "Brutowinst"
+      profit: "Verwachte marge"
       caption_strong: "Zie direct wat je verdient"
       caption: "voordat je de offerte verstuurt."
     mocks:
@@ -348,6 +348,12 @@ nl:
     title_highlight: "Veelgestelde"
     title_suffix: "vragen"
     items:
+      - question: "Wat is OfferDesk en hoe verschilt het van gewone offertesoftware?"
+        answer: "OfferDesk is project- en offertesoftware voor vakbedrijven die werk op offertebasis aannemen: aannemers, installateurs, schilders, elektriciens, hoveniers en onderhoudsbedrijven. Gewone offertesoftware is gericht op het document: een nette offerte met regels en een totaal. Wat de klus je kost en wat je eraan overhoudt, reken je ergens anders uit. OfferDesk rekent mee: achter elke regel staat een inkoopprijs en een marge, dus je ziet tijdens het maken de verwachte marge van het hele project. Leveranciers en prijzen sla je eenmalig op, en na akkoord van de klant staat de materiaallijst per leverancier klaar. Gewone software helpt je een offerte te schrijven; OfferDesk helpt je een winstgevende offerte te schrijven en die ook winstgevend uit te voeren."
+      - question: "Is OfferDesk een alternatief voor een zwaar ERP-systeem?"
+        answer: "Voor het stuk van calculatie tot inkoop wel; als volledig ERP niet, en dat is bewust. Een ERP zoals SAP, AFAS of Exact dekt het hele bedrijf (financiën, voorraad, productie, HR) en vraagt een implementatietraject, consultants en training. OfferDesk pakt het deel waar projectbedrijven geld verdienen of verliezen: de kostprijs vooraf, de marge tijdens het offreren en de inkoop na akkoord. Je begint dezelfde dag, betaalt een vast bedrag per maand en kunt maandelijks opzeggen. Je boekhouding blijft in je eigen pakket, met een koppeling naar Moneybird. Heb je voorraadbeheer over meerdere locaties, productieplanning of HR nodig, dan hoort een ERP bij je. Wil je weten wat een klus kost, wat je eraan verdient en wat je moet inkopen, dan is OfferDesk de lichtere en snellere keuze."
+      - question: "Hoe helpt OfferDesk bij de stap van offerte naar inkoop en uitvoering?"
+        answer: "De inkoop zit al in de offerte. Tijdens het offreren koppel je elke materiaalregel aan een product uit je catalogus, met leverancier, artikelnummer en inkoopprijs. Bij akkoord keurt de klant de offerte goed via een beveiligde link; dat akkoord en de vragen die hij stelde staan vast in de historie. Daarna staat de materiaallijst klaar, per leverancier, met de aantallen en prijzen uit de offerte, zodat je direct bestelt tegen de prijs waarmee je hebt gerekend. Voor de uitvoering houd je per offerte taken en historie bij, en met een betaalschema vraag je een aanbetaling bij akkoord en de rest bij oplevering, met automatische herinneringen. Zo is de marge die je vooraf berekende ook de marge waarmee je inkoopt en uitvoert."
       - question: "Waar begin ik als ik een offerte maak?"
         answer: "Vul eerst je productcatalogus met materialen, diensten en standaardprijzen. Voeg deze vervolgens toe aan je offerte, pas aantallen en marges aan en zie direct wat je naar verwachting verdient. Verstuur de offerte online of als PDF en volg daarna eenvoudig de status."
 
@@ -413,7 +419,7 @@ nl:
     title_prefix: "OfferDesk is onder andere"
     title_highlight: "geschikt"
     title_suffix: "voor"
-    intro: "Voor het brede MKB dat snelle, eenvoudige grip wil op offertes, verwachte marges en inkoop — zonder ingewikkelde ERP-software."
+    intro: "Gemaakt voor vakbedrijven in bouw, techniek, afbouw, groen en onderhoud die werk op offertebasis aannemen. Weet wat een klus kost, wat je eraan verdient en wat je moet inkopen, zonder ingewikkelde ERP-software."
     types:
       - "Aannemers & Bouwbedrijven"
       - "HVAC- en CV-installateurs"
@@ -435,10 +441,11 @@ nl:
 
   newsletter:
     title: "Klaar voor meer grip op je marges?"
-    intro: "Probeer OfferDesk 14 dagen gratis. Geen creditcard nodig, geen technische instellingen. Begin vandaag nog."
-    register_prefix: "Of"
-    register_link: "registreer je meteen"
-    register_suffix: "en begin direct."
+    intro: "Probeer OfferDesk 14 dagen gratis. Geen betaalgegevens nodig, niets te installeren. Je eerste offerte staat binnen een paar minuten."
+    cta: "Start je gratis proefperiode"
+    cta_note: "Daarna kies je zelf een pakket. Maandelijks opzegbaar."
+    lead_title: "Liever eerst meelezen?"
+    lead: "Af en toe een mail met een tip over calculeren, marge en inkopen. Geen reclame, uitschrijven kan altijd."
 
   footer_cta:
     title_prefix: "Weet wat je verdient."
@@ -547,7 +554,7 @@ en:
       trades: "Example for"
       revenue: "Revenue excl. VAT"
       cost: "Purchase cost"
-      profit: "Gross profit"
+      profit: "Expected margin"
       caption_strong: "See what you earn"
       caption: "before you send the quote."
     mocks:
@@ -858,6 +865,12 @@ en:
     title_highlight: "asked"
     title_suffix: "questions"
     items:
+      - question: "What is OfferDesk and how is it different from ordinary quoting software?"
+        answer: "OfferDesk is project and quoting software for trade businesses that take on work by quote: contractors, installers, painters, electricians, landscapers and maintenance companies. Ordinary quoting software focuses on the document: a tidy quote with lines and a total. What the job costs you and what you keep, you work out somewhere else. OfferDesk does the sums with you: every line carries a purchase price and a margin, so you see the expected margin of the whole project while you build the quote. Suppliers and prices are stored once, and after the customer approves, the material list per supplier is ready. Ordinary software helps you write a quote; OfferDesk helps you write a profitable quote and carry it out profitably too."
+      - question: "Is OfferDesk an alternative to a heavy ERP system?"
+        answer: "For the part from costing to purchasing, yes; as a full ERP, no, and that is deliberate. An ERP such as SAP, AFAS or Exact covers the whole company (finance, inventory, production, HR) and needs an implementation project, consultants and training. OfferDesk takes the part where project businesses make or lose money: the cost price up front, the margin while quoting and the purchasing after approval. You start the same day, pay a fixed amount per month and can cancel monthly. Your bookkeeping stays in your own software, with a Moneybird integration. If you need inventory across several locations, production planning or HR, an ERP is for you. If you want to know what a job costs, what you earn on it and what you need to buy, OfferDesk is the lighter and faster choice."
+      - question: "How does OfferDesk help with the step from quote to purchasing and execution?"
+        answer: "The purchasing is already in the quote. While quoting, you link every material line to a product from your catalogue, with supplier, SKU and purchase price. On approval, the customer accepts the quote through a secure link; that approval and the questions they asked are kept in the history. After that, the material list is ready, per supplier, with the quantities and prices from the quote, so you order right away at the price you calculated with. For execution you keep tasks and history per quote, and with a payment schedule you ask for a deposit on approval and the rest on delivery, with automatic reminders. So the margin you calculated up front is also the margin you buy and execute with."
       - question: "Where do I start when creating a quote?"
         answer: "First, fill your product catalog with materials, services, and standard prices. Then add these to your quote, adjust quantities and margins, and immediately see what you are expected to earn. Send the quote online or as a PDF and easily track its status afterward."
 
@@ -944,11 +957,12 @@ en:
       - "SMEs with field technicians"
 
   newsletter:
-    title: "More control over profit starts here"
-    intro: "Receive updates about new features such as inventory management, profit measurement, planning, and supplier integrations."
-    register_prefix: "Or"
-    register_link: "sign up right away"
-    register_suffix: "and get started."
+    title: "Ready for more control over your margins?"
+    intro: "Try OfferDesk free for 14 days. No payment details, nothing to install. Your first quote is ready in a few minutes."
+    cta: "Start your free trial"
+    cta_note: "Pick a plan afterwards. Cancel monthly."
+    lead_title: "Rather read along first?"
+    lead: "An occasional email with a tip on costing, margin and purchasing. No advertising, unsubscribe any time."
 
   footer_cta:
     title_prefix: "Know what you earn."

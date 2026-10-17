@@ -61,31 +61,128 @@
         });
     </script>
 
-    <!-- Structured Data (Schema.org) -->
+    <!-- Structured Data (Schema.org): the product with its three plans, and the company behind it. The plans and
+         prices are the same as in _data/i18n.yml (pricing.plans) and the app's frontend/app/utils/plans.ts. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
+      "@id": "https://offerdesk.nl/#software",
       "name": "OfferDesk",
-      "description": "{% if lang == 'en' %}Smart quoting software for small businesses. Calculate margins, send professional quotes and manage purchasing and payments, from quote to payment.{% else %}Slimme offertesoftware voor het MKB. Bereken marges, maak professionele offertes en beheer inkoop en betalingen, van offerte tot betaling.{% endif %}",
       "url": "https://offerdesk.nl",
+      "description": "{% if lang == 'en' %}Smart project and quoting software for small and medium-sized businesses. Calculate the cost price and the expected margin before you send a quote, store suppliers and purchase prices once, and get the material list for purchasing automatically after the customer approves. Without the complexity of a heavy ERP system.{% else %}Slimme project- en offertesoftware voor het MKB. Bereken de kostprijs en de verwachte marge vóór je een offerte verstuurt, sla leveranciers en inkoopprijzen eenmalig op en krijg na akkoord van de klant automatisch de materiaallijst voor inkoop. Zonder de complexiteit van een zwaar ERP-systeem.{% endif %}",
       "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "9.99",
-        "priceCurrency": "EUR",
-        "url": "https://offerdesk.nl#pricing-section"
+      "applicationSubCategory": "{% if lang == 'en' %}Quoting and costing software{% else %}Offerte- en calculatiesoftware{% endif %}",
+      "operatingSystem": "Web-based (any modern browser on desktop, tablet and phone)",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "inLanguage": ["nl-NL", "en"],
+      "availableLanguage": ["Dutch", "English"],
+      "countriesSupported": "NL",
+      "isAccessibleForFree": false,
+      "installUrl": "https://app.offerdesk.nl/sign-up",
+      "image": "{{ '/images/og-image.jpg' | absolute_url }}",
+      "screenshot": "{{ '/images/og-image.jpg' | absolute_url }}",
+      "featureList": [{% if lang == 'en' %}
+        "Expected margin up front: purchase price, mark-up and selling price per quote line, with the project margin live while you quote",
+        "Cost price calculation from materials and hours",
+        "Store suppliers and purchase prices once in a product catalogue, importable from a file",
+        "Material list for purchasing after customer approval, grouped per supplier",
+        "Share the quote online through a secure link where the customer asks questions and approves",
+        "Send quotes as PDF and by email with your own company details and terms",
+        "Payment schedules with instalments, your own payment links and automatic reminders",
+        "Tasks and history per quote",
+        "Dashboard with open quotes, approved quotes and the margin won at",
+        "Customer and supplier management",
+        "Work together with colleagues, with roles (owner, administrator, member)",
+        "Moneybird integration (accounting) and online payments through Mollie",
+        "Dutch and English, light and dark mode"
+      {% else %}
+        "Verwachte marge vooraf: inkoopprijs, opslag en verkoopprijs per offerteregel, met de projectmarge live in beeld tijdens het offreren",
+        "Kostprijsberekening op basis van materiaal en uren",
+        "Leveranciers en inkoopprijzen eenmalig opslaan in een productcatalogus, te importeren uit een bestand",
+        "Materiaallijst voor inkoop na akkoord van de klant, gegroepeerd per leverancier",
+        "Offerte online delen via een beveiligde link waarmee de klant vragen stelt en akkoord geeft",
+        "Offertes als PDF en per e-mail versturen met eigen bedrijfsgegevens en voorwaarden",
+        "Betaalschema's met termijnen, eigen betaallinks en automatische herinneringen",
+        "Taken en historie per offerte",
+        "Dashboard met openstaande offertes, goedgekeurde offertes en de marge waarop je wint",
+        "Klanten- en leveranciersbeheer",
+        "Samenwerken met collega's, met rollen (eigenaar, beheerder, lid)",
+        "Koppeling met Moneybird (boekhouding) en online betalingen via Mollie",
+        "Nederlands en Engels, lichte en donkere weergave"
+      {% endif %}],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "{% if lang == 'en' %}Small and medium-sized project businesses in construction, installation, finishing, landscaping and service/maintenance (contractors, installers, electricians, plumbers, painters, plasterers, landscapers, maintenance companies){% else %}MKB-projectbedrijven in bouw, techniek, afbouw, hoveniers en service/onderhoud (aannemers, installateurs, elektriciens, loodgieters, schilders, stukadoors, hoveniers, onderhoudsbedrijven){% endif %}",
+        "geographicArea": { "@type": "Country", "name": "Nederland" }
       },
-      "author": {
-        "@type": "Organization",
-        "name": "OfferDesk",
-        "url": "https://offerdesk.nl",
-        "email": "info@offerdesk.com",
-        "sameAs": [
-          "https://www.linkedin.com/company/offerdesk"
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "9.99",
+        "highPrice": "29.99",
+        "offerCount": 3,
+        "url": "{{ page.url | absolute_url }}#pricing-section",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Starter",
+            "description": "{% if lang == 'en' %}For 1 user. Unlimited quotes, customers, products and suppliers. 14-day free trial, cancel monthly.{% else %}Voor 1 gebruiker. Onbeperkt offertes, klanten, producten en leveranciers. 14 dagen gratis proberen, maandelijks opzegbaar.{% endif %}",
+            "price": "9.99",
+            "priceCurrency": "EUR",
+            "url": "https://app.offerdesk.nl/sign-up?plan=starter",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "9.99",
+              "priceCurrency": "EUR",
+              "valueAddedTaxIncluded": false,
+              "billingDuration": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" },
+              "unitText": "{% if lang == 'en' %}per month{% else %}per maand{% endif %}"
+            },
+            "eligibleQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "{% if lang == 'en' %}user{% else %}gebruiker{% endif %}" }
+          },
+          {
+            "@type": "Offer",
+            "name": "Professional",
+            "description": "{% if lang == 'en' %}Up to 5 users. Everything in Starter, plus payment schedules, Moneybird integration, purchase orders per supplier and working together with colleagues. 14-day free trial, cancel monthly.{% else %}Tot 5 gebruikers. Alles in Starter, plus betaalschema's, Moneybird-koppeling, inkooporders per leverancier en samenwerken met collega's. 14 dagen gratis proberen, maandelijks opzegbaar.{% endif %}",
+            "price": "19.99",
+            "priceCurrency": "EUR",
+            "url": "https://app.offerdesk.nl/sign-up?plan=professional",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "19.99",
+              "priceCurrency": "EUR",
+              "valueAddedTaxIncluded": false,
+              "billingDuration": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" },
+              "unitText": "{% if lang == 'en' %}per month{% else %}per maand{% endif %}"
+            },
+            "eligibleQuantity": { "@type": "QuantitativeValue", "maxValue": 5, "unitText": "{% if lang == 'en' %}users{% else %}gebruikers{% endif %}" }
+          },
+          {
+            "@type": "Offer",
+            "name": "Business",
+            "description": "{% if lang == 'en' %}Unlimited users. Everything in Professional, plus more storage and direct support with a personal contact. 14-day free trial, cancel monthly.{% else %}Onbeperkt gebruikers. Alles in Professional, plus meer opslag en directe support met een persoonlijk aanspreekpunt. 14 dagen gratis proberen, maandelijks opzegbaar.{% endif %}",
+            "price": "29.99",
+            "priceCurrency": "EUR",
+            "url": "https://app.offerdesk.nl/sign-up?plan=business",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "29.99",
+              "priceCurrency": "EUR",
+              "valueAddedTaxIncluded": false,
+              "billingDuration": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" },
+              "unitText": "{% if lang == 'en' %}per month{% else %}per maand{% endif %}"
+            }
+          }
         ]
-      }
+      },
+      "publisher": { "@id": "https://offerdesk.nl/#organization" },
+      "provider": { "@id": "https://offerdesk.nl/#organization" },
+      "softwareHelp": { "@type": "WebPage", "url": "{{ page.url | absolute_url }}#faq-section" },
+      "keywords": "{% if lang == 'en' %}quoting software, costing software, cost price calculation, margin control, purchase list, project software SME, ERP alternative, contractors, installers, painters, electricians, landscapers{% else %}offertesoftware, calculatiesoftware, kostprijsberekening, margebewaking, inkooplijst, projectsoftware MKB, ERP-alternatief, aannemers, installateurs, schilders, elektriciens, hoveniers{% endif %}"
     }
     </script>
 
@@ -94,10 +191,13 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://offerdesk.nl/#organization",
       "name": "OfferDesk",
+      "legalName": "Flink Software B.V.",
       "url": "https://offerdesk.nl",
       "logo": "https://offerdesk.nl/images/logo-v2.svg",
       "description": "{% if lang == 'en' %}Quoting software for construction, technical and service businesses. Full control over margins, purchase prices and profitability.{% else %}Offertesoftware voor bouw-, techniek- en servicebedrijven. Volledige grip op marges, inkoopprijs en winstgevendheid.{% endif %}",
+      "address": { "@type": "PostalAddress", "addressCountry": "NL" },
       "sameAs": [
         "https://www.linkedin.com/company/offerdesk"
       ],

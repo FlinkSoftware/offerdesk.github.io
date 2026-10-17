@@ -1,4 +1,5 @@
-<!-- Newsletter / Features Promo -->
+<!-- Second call to action, after the features: start the trial. The newsletter form sits underneath for
+     visitors who would rather read along first; its own texts live in MailerLite (form lB1Awv). -->
 {% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
 {% assign i18n = site.data.i18n[lang] %}
 <div id="newsletter-section" class="bg-gradient-to-r from-primary to-primary/90 py-16 sm:py-20 lg:py-32">
@@ -9,11 +10,21 @@
                     {{ i18n.newsletter.title }}
                 </h2>
                 <p class="mt-6 body-large text-white/90">{{ i18n.newsletter.intro }}</p>
-                <p class="mt-4 body-large text-white/80">{{ i18n.newsletter.register_prefix }} <a href="https://app.offerdesk.nl/sign-up" target="_blank" rel="noopener noreferrer" class="underline hover:text-white font-semibold transition-colors">{{ i18n.newsletter.register_link }}</a> {{ i18n.newsletter.register_suffix }}</p>
+                <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <a href="https://app.offerdesk.nl/sign-up"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="rounded-lg bg-white px-8 py-3.5 text-sm font-semibold tracking-tight text-primary shadow-lg transition-colors hover:bg-gray-100 sm:text-base inline-flex items-center justify-center">
+                        {{ i18n.newsletter.cta }}
+                    </a>
+                    <p class="text-sm text-white/80">{{ i18n.newsletter.cta_note }}</p>
+                </div>
             </div>
             <div class="w-full lg:max-w-md flex-shrink-0">
+                <p class="text-sm font-semibold uppercase tracking-wider text-white/90">{{ i18n.newsletter.lead_title }}</p>
+                <p class="mt-2 text-sm leading-6 text-white/80">{{ i18n.newsletter.lead }}</p>
                 <!-- MailerLite Form Embed -->
-                <div class="ml-embedded" data-form="lB1Awv"></div>
+                <div class="ml-embedded mt-4" data-form="lB1Awv"></div>
             </div>
         </div>
     </div>
