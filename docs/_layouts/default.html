@@ -27,8 +27,10 @@
     {% endif %}
     <link rel="alternate" type="application/atom+xml" title="OfferDesk blog" href="{{ '/blog/feed.xml' | relative_url }}">
 
-    <!-- The two text fonts the first screen needs; the rest load when used -->
+    <!-- The four text weights of the first screen (body, eyebrow, buttons, headings), so none waits behind the stylesheet -->
     <link rel="preload" href="{{ '/fonts/inter-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ '/fonts/inter-500.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ '/fonts/inter-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ '/fonts/inter-800.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
     <link rel="dns-prefetch" href="https://app.offerdesk.nl">
 
@@ -38,14 +40,32 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/favicon/apple-touch-icon.png' | relative_url }}">
     <link rel="manifest" href="{{ '/images/favicon/site.webmanifest' | relative_url }}">
     <meta name="theme-color" content="#0068FF">
-    <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}">
+    {% comment %}The whole stylesheet (12 KB) inline: one request less before the first paint. css:build writes the copy.{% endcomment %}
+    <style>{% include app.min.css %}</style>
     {% if site.google_analytics_id %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
+    <!-- Google Tag only after the visitor's first scroll, tap or key, or after three seconds: it is the heaviest
+         thing on the page and nothing of it is needed for what the visitor sees. The queue below keeps the
+         page view and the config until it loads. -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', '{{ site.google_analytics_id }}');
+        (function () {
+            var loaded = false;
+            function load() {
+                if (loaded) return;
+                loaded = true;
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}';
+                document.head.appendChild(script);
+            }
+            ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (type) {
+                window.addEventListener(type, load, { once: true, passive: true });
+            });
+            setTimeout(load, 3000);
+        })();
     </script>
     {% endif %}
     <!-- MailerLite: only on pages with the signup form, and only once it comes near the screen. Its script

@@ -33,7 +33,7 @@
                             {% for image in feature.images %}
                             <figure class="min-w-0">
                                 <button type="button" class="lightbox-trigger block w-full rounded-md sm:rounded-lg" data-lightbox-src="{{ image.full | default: image.src | relative_url }}"{% if image.full_dark %} data-lightbox-src-dark="{{ image.full_dark | relative_url }}"{% endif %} data-lightbox-alt="{{ image.alt }}" aria-label="{{ i18n.features.enlarge }}: {{ image.alt }}">
-                                    <img src="{{ image.src | relative_url }}"{% if image.src_dark %} data-src-dark="{{ image.src_dark | relative_url }}"{% endif %} alt="{{ image.alt }}" class="w-full rounded-md sm:rounded-lg bg-white shadow-lg ring-1 ring-black/5" loading="lazy" width="800" height="650">
+                                    <img src="{{ image.src | relative_url }}" srcset="{{ image.src | replace: '.webp', '-800.webp' | relative_url }} 800w, {{ image.src | relative_url }} 1600w"{% if image.src_dark %} data-src-dark="{{ image.src_dark | relative_url }}" data-srcset-dark="{{ image.src_dark | replace: '.webp', '-800.webp' | relative_url }} 800w, {{ image.src_dark | relative_url }} 1600w"{% endif %} sizes="(min-width: 1024px) 230px, 30vw" alt="{{ image.alt }}" class="w-full rounded-md sm:rounded-lg bg-white shadow-lg ring-1 ring-black/5" loading="lazy" width="800" height="650">
                                 </button>
                                 {% if image.caption %}<figcaption class="mt-2 text-center body-small text-gray-700">{{ image.caption }}</figcaption>{% endif %}
                             </figure>
@@ -42,12 +42,12 @@
                         {% else %}
                         {% assign main = feature.images | first %}
                         <button type="button" class="lightbox-trigger block w-full {% if main.narrow %}max-w-sm mx-auto{% endif %} rounded-xl" data-lightbox-src="{{ main.full | default: main.src | relative_url }}"{% if main.full_dark %} data-lightbox-src-dark="{{ main.full_dark | relative_url }}"{% endif %} data-lightbox-alt="{{ main.alt }}" aria-label="{{ i18n.features.enlarge }}: {{ main.alt }}">
-                            <img src="{{ main.src | relative_url }}"{% if main.src_dark %} data-src-dark="{{ main.src_dark | relative_url }}"{% endif %} alt="{{ main.alt }}" class="w-full rounded-xl bg-white shadow-xl ring-1 ring-black/5" loading="lazy" width="1600" height="700">
+                            <img src="{{ main.src | relative_url }}" srcset="{{ main.src | replace: '.webp', '-800.webp' | relative_url }} 800w, {{ main.src | relative_url }} 1600w"{% if main.src_dark %} data-src-dark="{{ main.src_dark | relative_url }}" data-srcset-dark="{{ main.src_dark | replace: '.webp', '-800.webp' | relative_url }} 800w, {{ main.src_dark | relative_url }} 1600w"{% endif %} sizes="{% if main.narrow %}384px{% else %}(min-width: 1024px) 680px, calc(100vw - 80px){% endif %}" alt="{{ main.alt }}" class="w-full rounded-xl bg-white shadow-xl ring-1 ring-black/5" loading="lazy" width="1600" height="700">
                         </button>
                         {% if feature.layout == 'overlap' and feature.images.size > 1 %}
                         {% assign second = feature.images | last %}
                         <button type="button" class="lightbox-trigger relative -mt-12 sm:-mt-20 ml-auto mr-2 sm:-mr-4 block w-[58%] sm:w-[46%] max-w-sm rounded-xl" data-lightbox-src="{{ second.full | default: second.src | relative_url }}"{% if second.full_dark %} data-lightbox-src-dark="{{ second.full_dark | relative_url }}"{% endif %} data-lightbox-alt="{{ second.alt }}" aria-label="{{ i18n.features.enlarge }}: {{ second.alt }}">
-                            <img src="{{ second.src | relative_url }}"{% if second.src_dark %} data-src-dark="{{ second.src_dark | relative_url }}"{% endif %} alt="{{ second.alt }}" class="w-full rounded-xl bg-white shadow-2xl ring-1 ring-black/5" loading="lazy" width="720" height="400">
+                            <img src="{{ second.src | relative_url }}" srcset="{{ second.src | replace: '.webp', '-800.webp' | relative_url }} 800w, {{ second.src | relative_url }} 1600w"{% if second.src_dark %} data-src-dark="{{ second.src_dark | relative_url }}" data-srcset-dark="{{ second.src_dark | replace: '.webp', '-800.webp' | relative_url }} 800w, {{ second.src_dark | relative_url }} 1600w"{% endif %} sizes="(min-width: 1024px) 320px, 46vw" alt="{{ second.alt }}" class="w-full rounded-xl bg-white shadow-2xl ring-1 ring-black/5" loading="lazy" width="720" height="400">
                         </button>
                         {% endif %}
                         {% endif %}

@@ -372,9 +372,13 @@
     const syncImages = () => {
       const dark = root.classList.contains('dark');
       document.querySelectorAll('img[data-src-dark]').forEach((img) => {
-        if (!img.dataset.srcLight) img.dataset.srcLight = img.getAttribute('src');
+        if (!img.dataset.srcLight) { img.dataset.srcLight = img.getAttribute('src'); img.dataset.srcsetLight = img.getAttribute('srcset') || ''; }
         const wanted = dark ? img.dataset.srcDark : img.dataset.srcLight;
-        if (img.getAttribute('src') !== wanted) img.setAttribute('src', wanted);
+        const wantedSet = dark ? (img.dataset.srcsetDark || '') : img.dataset.srcsetLight;
+        if (img.getAttribute('src') !== wanted) {
+          if (wantedSet) img.setAttribute('srcset', wantedSet); else img.removeAttribute('srcset');
+          img.setAttribute('src', wanted);
+        }
       });
     };
     syncImages();

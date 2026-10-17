@@ -394,12 +394,13 @@ html {
   color: var(--color-gray-700);
   transition: color 200ms ease, background-color 200ms ease;
 }
+/* The darker brand blue on the light-blue pill: the brand blue itself reads 4.3:1 there, this 6.3:1 */
 .nav-link:hover {
-  color: var(--color-primary);
+  color: var(--color-primary-hover);
   background-color: color-mix(in oklab, var(--color-primary) 6%, transparent);
 }
 .nav-link[aria-current] {
-  color: var(--color-primary);
+  color: var(--color-primary-hover);
   background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
   font-weight: 600;
 }
@@ -408,14 +409,17 @@ html {
   transition: color 200ms ease, background-color 200ms ease;
 }
 .nav-link-mobile:hover {
-  color: var(--color-primary);
+  color: var(--color-primary-hover);
   background-color: var(--color-gray-50);
 }
 .nav-link-mobile[aria-current] {
-  color: var(--color-primary);
+  color: var(--color-primary-hover);
   background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
   font-weight: 600;
 }
+/* In dark mode the same links get the light blue the other brand-blue text has there */
+.dark .nav-link:hover, .dark .nav-link[aria-current],
+.dark .nav-link-mobile:hover, .dark .nav-link-mobile[aria-current] { color: #7ab3ff; }
 
 /* "Geschikt voor": the typewriter types into a slot sized by all trades stacked invisibly in one grid cell */
 .typewriter-slot {

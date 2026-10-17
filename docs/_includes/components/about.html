@@ -14,7 +14,8 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <button type="button" class="lightbox-trigger block w-full rounded-2xl" data-lightbox-src="{{ '/images/offerdesk/app-dashboard.webp' | relative_url }}" data-lightbox-src-dark="{{ '/images/offerdesk/app-dashboard-dark.webp' | relative_url }}" data-lightbox-alt="{{ i18n.about.image_alt }}" aria-label="{{ i18n.features.enlarge }}: {{ i18n.about.image_alt }}">
-                    <img src="{{ '/images/offerdesk/app-dashboard.webp' | relative_url }}" data-src-dark="{{ '/images/offerdesk/app-dashboard-dark.webp' | relative_url }}"
+                    <img src="{{ '/images/offerdesk/app-dashboard.webp' | relative_url }}" srcset="{{ '/images/offerdesk/app-dashboard-800.webp' | relative_url }} 800w, {{ '/images/offerdesk/app-dashboard.webp' | relative_url }} 1600w" sizes="(min-width: 1024px) 600px, calc(100vw - 48px)"
+                        data-src-dark="{{ '/images/offerdesk/app-dashboard-dark.webp' | relative_url }}" data-srcset-dark="{{ '/images/offerdesk/app-dashboard-dark-800.webp' | relative_url }} 800w, {{ '/images/offerdesk/app-dashboard-dark.webp' | relative_url }} 1600w"
                         alt="{{ i18n.about.image_alt }}"
                         class="rounded-2xl shadow-2xl w-full"
                         loading="lazy"
