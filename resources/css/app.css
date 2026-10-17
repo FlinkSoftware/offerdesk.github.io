@@ -80,11 +80,11 @@ html.dark { background-color: var(--color-background); }
 .dark #newsletter-section a.bg-white, .dark #footer-cta a.bg-white { background-color: #fff; }
 .dark #newsletter-section a.text-primary, .dark #footer-cta a.text-primary { color: var(--color-primary); }
 .dark dialog::backdrop { background-color: rgb(0 0 0 / 0.75); }
-/* The screenshots of the app stay light prints on a dark page until they have dark versions of their own;
-   a slightly softer rendering keeps them from glaring. */
-.dark .lightbox-trigger img { filter: brightness(0.92); }
 /* The toggle shows the icon of the mode you would switch to */
 .theme-toggle .theme-icon-dark { display: none; }
+/* The light/dark switch under the lightbox image: two pills on the dark backdrop */
+.lightbox-mode { padding: 0.25rem 0.75rem; border-radius: 9999px; border: 1px solid rgb(255 255 255 / 0.3); color: #fff; font-size: 0.875rem; font-weight: 600; }
+.lightbox-mode[aria-pressed="true"] { background: #fff; color: #052749; border-color: #fff; }
 .dark .theme-toggle .theme-icon-dark { display: block; }
 .dark .theme-toggle .theme-icon-light { display: none; }
 
@@ -505,6 +505,11 @@ html {
   background: color-mix(in oklab, var(--color-primary) 6%, #fff);
 }
 .share .share-copy { padding: 0 0.625rem; }
+/* Dark mode: the white circles become cards with a light icon, so the buttons and the copied note stay readable */
+.dark .share .share-btn,
+.dark .share .share-native { background: var(--color-card); color: var(--color-gray-700); border-color: var(--color-border); }
+.dark .share .share-btn:hover,
+.dark .share .share-native:hover { background: var(--color-gray-200); color: #7ab3ff; border-color: #4d94ff; }
 .share [hidden] { display: none; }
 .share .share-copied { font-size: 0.875rem; font-weight: 600; }
 

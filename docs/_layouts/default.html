@@ -347,6 +347,11 @@
         <figure class="relative mx-auto w-fit">
             <img data-lightbox-image src="" alt="" class="mx-auto block max-h-[85vh] w-auto max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-4rem)] rounded-xl bg-white shadow-2xl">
             <figcaption data-lightbox-caption class="mt-3 text-center text-sm text-white/90"></figcaption>
+            {% comment %}Light or dark print of the same screen: the page's mode to start with, a click shows the other{% endcomment %}
+            <div data-lightbox-modes role="group" aria-label="{{ i18n.nav.theme_dark }}" class="mt-3 flex justify-center gap-1" hidden>
+                <button type="button" data-lightbox-mode="light" class="lightbox-mode" aria-pressed="false">{{ i18n.nav.lightbox_light }}</button>
+                <button type="button" data-lightbox-mode="dark" class="lightbox-mode" aria-pressed="false">{{ i18n.nav.lightbox_dark }}</button>
+            </div>
             <button type="button" command="close" commandfor="lightbox" class="absolute -top-3 -right-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-dark-blue shadow-lg hover:bg-gray-100" aria-label="{{ i18n.features.close }}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="size-5"><path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </button>

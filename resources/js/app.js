@@ -167,12 +167,25 @@
         trigger.addEventListener('click', () => {
           const dark = document.documentElement.classList.contains('dark') && trigger.dataset.lightboxSrcDark;
           image.src = dark || trigger.dataset.lightboxSrc;
+          // The switch under the image, for a screen that has both prints
+          const modes = lightbox.querySelector('[data-lightbox-modes]');
+          if (modes) {
+            modes.hidden = !trigger.dataset.lightboxSrcDark;
+            lightbox.dataset.srcLight = trigger.dataset.lightboxSrc;
+            lightbox.dataset.srcDark = trigger.dataset.lightboxSrcDark || '';
+            modes.querySelectorAll('[data-lightbox-mode]').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.lightboxMode === 'dark') === Boolean(dark))));
+          }
           image.alt = trigger.dataset.lightboxAlt || '';
           caption.textContent = trigger.dataset.lightboxAlt || '';
           lightbox.showModal();
         });
       });
       lightbox.addEventListener('close', () => { image.removeAttribute('src'); image.alt = ''; });
+      lightbox.querySelectorAll('[data-lightbox-mode]').forEach((button) => button.addEventListener('click', () => {
+        const dark = button.dataset.lightboxMode === 'dark';
+        image.src = dark ? lightbox.dataset.srcDark : lightbox.dataset.srcLight;
+        lightbox.querySelectorAll('[data-lightbox-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+      }));
     }
     // A mailto link does nothing without a mail app, and a page cannot ask whether there is one. When a mail app opens,
     // this window loses focus; if it still has it after a moment, say so and point at copying or Gmail.
@@ -355,8 +368,19 @@
         if (visible) visible.textContent = text;
       });
     };
+    // The screenshots on the page follow the mode: each img[data-src-dark] swaps between its two sources
+    const syncImages = () => {
+      const dark = root.classList.contains('dark');
+      document.querySelectorAll('img[data-src-dark]').forEach((img) => {
+        if (!img.dataset.srcLight) img.dataset.srcLight = img.getAttribute('src');
+        const wanted = dark ? img.dataset.srcDark : img.dataset.srcLight;
+        if (img.getAttribute('src') !== wanted) img.setAttribute('src', wanted);
+      });
+    };
+    syncImages();
     toggles.forEach((button) => button.addEventListener('click', () => {
       const dark = root.classList.toggle('dark');
+      syncImages();
       try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (error) { /* private mode: the choice lasts this page */ }
       label();
     }));
@@ -366,6 +390,7 @@
       try { choice = localStorage.getItem('theme'); } catch (error) { /* then follow the system */ }
       if (choice) return;
       root.classList.toggle('dark', event.matches);
+      syncImages();
       label();
     });
     label();
