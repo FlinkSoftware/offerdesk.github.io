@@ -18,6 +18,7 @@ layout: default
         <p class="mt-4 body-small text-gray-600">
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d-%-m-%Y" }}</time> · {{ minutes }} min lezen
         </p>
+        <div class="mt-4">{% include components/share.html url=page.url text=page.title %}</div>
         {% if page.image %}
         <div class="mt-8 rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-4 sm:p-8">
             <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" class="w-full rounded-xl bg-white shadow-xl ring-1 ring-black/5">
@@ -26,6 +27,15 @@ layout: default
         <div class="post-body mt-10">
             {{ content }}
         </div>
+
+        {% assign share = site.data.i18n[lang].share %}
+        <section class="mt-12 flex flex-col gap-4 border-y border-border py-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+                <h2 class="heading-5">{{ share.post_title }}</h2>
+                <p class="mt-1 body-small text-gray-600">{{ share.post_text }}</p>
+            </div>
+            {% include components/share.html url=page.url text=page.title %}
+        </section>
 
         <aside class="mt-14 rounded-3xl bg-primary/5 p-8 ring-1 ring-primary/20">
             <h2 class="heading-4">Probeer het zelf, 14 dagen gratis</h2>

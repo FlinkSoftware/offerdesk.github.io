@@ -395,6 +395,73 @@ html {
 }
 .ideas-open:hover { color: var(--color-primary); }
 
+/* Share buttons (components/share.html): round icon buttons, explicit colours as the global button rules in
+   accessibility.css would make their icons white */
+.share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.share .share-btn,
+.share .share-native {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  background: #fff;
+  color: var(--color-dark-blue);
+  text-decoration: none;
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+}
+.share .share-native {
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.share .share-btn:hover,
+.share .share-native:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
+  background: color-mix(in oklab, var(--color-primary) 6%, #fff);
+}
+.share .share-copy { padding: 0 0.625rem; }
+.share [hidden] { display: none; }
+.share .share-copied { font-size: 0.875rem; font-weight: 600; }
+
+/* Share band: phrases typed into a slot sized by all of them, then crossed out with a line drawn left to right */
+.typed-slot {
+  display: inline-grid;
+  vertical-align: top;
+}
+.typed-slot > * { grid-area: 1 / 1; }
+.typed-slot > .typed-sizer { visibility: hidden; }
+.typed-slot > .typed-text { justify-self: center; }
+.typed-text {
+  background-image: linear-gradient(var(--color-dark-blue), var(--color-dark-blue));
+  background-repeat: no-repeat;
+  background-position: 0 58%;
+  background-size: 0% 0.12em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.typed-text.is-struck {
+  background-size: 100% 0.12em;
+  color: color-mix(in oklab, var(--color-primary) 55%, #fff);
+  transition: background-size 450ms ease-out, color 450ms ease-out;
+}
+.typed-text.is-typing::after {
+  content: '|';
+  color: var(--color-primary);
+  font-weight: 400;
+  animation: typed-caret 1s steps(1) infinite;
+}
+@keyframes typed-caret { 50% { opacity: 0; } }
+
 /* Hero: the next trade's example fades in */
 @media (prefers-reduced-motion: no-preference) {
   [data-hero-mock]:not([hidden]) { animation: hero-mock-in 400ms ease-out; }

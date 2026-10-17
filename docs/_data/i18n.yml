@@ -446,6 +446,29 @@ nl:
     intro: "OfferDesk helpt vakbedrijven grip te houden op leveranciers, inkoopprijzen, marges en winst. Niet alleen tijdens het offreren, maar ook tijdens inkoop en uitvoering."
     questions: "Vragen? Stuur een e-mail naar"
 
+  referral:
+    banner: "Je bent uitgenodigd door een andere ondernemer: je eerste betaalde maand is voor de halve prijs."
+    banner_action: "Probeer 14 dagen gratis"
+
+  share:
+    label: "Delen"
+    native: "Delen…"
+    via: "Delen via"
+    email: "e-mail"
+    copy: "Link kopiëren"
+    copied: "Gekopieerd"
+    band_title: "Ken je een ondernemer die hier iets aan heeft?"
+    band_prefix: "Ken je een ondernemer die"
+    # Typed one after the other; all but the last are crossed out. The last one stays, with a wink.
+    band_phrases:
+      - "hier iets aan heeft?"
+      - "meer verdient? ❤️"
+      - "meer uitgeeft dan er binnenkomt? 😉"
+    band_text: "Een collega, je installateur of een vriend met een eigen zaak: stuur OfferDesk door. Zo weten ze ook wat ze aan een klus verdienen."
+    band_share_text: "OfferDesk: offertes met je eigen inkoopprijzen en marges, online akkoord en een aanbetaling met je eigen betaallink."
+    post_title: "Iets voor een collega?"
+    post_text: "Deel dit artikel met iemand die er wat aan heeft."
+
   footer:
     copy: "Weet wat je verdient. Bewaar hoe je het hebt berekend."
     made_by: "OfferDesk is een product van Flink Software B.V."
@@ -932,6 +955,28 @@ en:
     title_highlight: "Remember how you calculated it."
     intro: "OfferDesk helps trade businesses retain control over suppliers, purchase prices, margins, and profit. Not only while quoting, but also during purchasing and execution."
     questions: "Questions? Send an email to"
+
+  referral:
+    banner: "You were invited by another business owner: your first paid month is half price."
+    banner_action: "Try free for 14 days"
+
+  share:
+    label: "Share"
+    native: "Share…"
+    via: "Share via"
+    email: "email"
+    copy: "Copy link"
+    copied: "Copied"
+    band_title: "Know a business owner who could use this?"
+    band_prefix: "Know a business owner who"
+    band_phrases:
+      - "could use this?"
+      - "deserves more? ❤️"
+      - "spends more than comes in? 😉"
+    band_text: "A colleague, your installer or a friend with their own business: pass OfferDesk on. Then they know what they earn on a job too."
+    band_share_text: "OfferDesk: quotes with your own purchase prices and margins, online approval and a deposit with your own payment link."
+    post_title: "Something for a colleague?"
+    post_text: "Share this article with someone who could use it."
 
   footer:
     copy: "Know what you earn. Remember how you calculated it."

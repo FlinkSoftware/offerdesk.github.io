@@ -147,6 +147,13 @@
         <header class="absolute lg:sticky top-0 inset-x-0 z-50 bg-white">
             {% include components/navigation.html %}
         </header>
+        {% comment %}Shown by app.js when the visitor came through a referral link (?ref=…){% endcomment %}
+        <div data-referral-banner hidden class="border-b border-emerald-200 bg-emerald-50">
+            <div class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-6 py-3 text-center sm:flex-row lg:px-8">
+                <p class="text-sm font-medium text-emerald-900">🎁 {{ i18n.referral.banner }}</p>
+                <a href="https://app.offerdesk.nl/sign-up" class="text-sm font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-950">{{ i18n.referral.banner_action }}</a>
+            </div>
+        </div>
         <main id="main-content">
             {{ content }}
         </main>

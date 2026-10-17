@@ -1,0 +1,35 @@
+{% comment %}
+  Share buttons: WhatsApp, LinkedIn, Facebook, X, email and copy link, plus the phone's own share sheet where the
+  browser has one. Each network's link carries utm_source, so Analytics shows which shares bring visitors.
+  Parameters: url (absolute, without query), text (the line that goes with it), label (for screen readers).
+{% endcomment %}
+{% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
+{% assign t = site.data.i18n[lang].share %}
+{% assign share_url = include.url | absolute_url %}
+{% assign share_text = include.text | strip_html | strip %}
+{% capture whatsapp %}{{ share_text }} {{ share_url }}?utm_source=whatsapp&utm_medium=share{% endcapture %}
+<div class="share" role="group" aria-label="{{ include.label | default: t.label }}" data-share-url="{{ share_url }}" data-share-text="{{ share_text }}">
+    <button type="button" class="share-native" data-share-native hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="size-4"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>{{ t.native }}</span>
+    </button>
+    <a class="share-btn" href="https://wa.me/?text={{ whatsapp | url_encode | replace: '+', '%20' }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.via }} WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="size-5"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+    </a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | append: '?utm_source=linkedin&utm_medium=share' | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.via }} LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="size-5"><path fill="currentColor" d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6ZM8 19H5V9.5h3V19ZM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5ZM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.8v1.3h.1c.4-.7 1.4-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5V19Z"/></svg>
+    </a>
+    <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | append: '?utm_source=facebook&utm_medium=share' | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.via }} Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="size-5"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+    </a>
+    <a class="share-btn" href="https://x.com/intent/tweet?text={{ share_text | url_encode | replace: '+', '%20' }}&amp;url={{ share_url | append: '?utm_source=x&utm_medium=share' | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.via }} X" title="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="size-4"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L2 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z"/></svg>
+    </a>
+    <a class="share-btn" href="mailto:?subject={{ share_text | url_encode | replace: '+', '%20' }}&amp;body={{ share_url | append: '?utm_source=email&utm_medium=share' | url_encode | replace: '+', '%20' }}" aria-label="{{ t.via }} {{ t.email }}" title="{{ t.email }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="size-5"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z"/><path d="m3.5 6 8.5 7 8.5-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button type="button" class="share-btn share-copy" data-copy="{{ share_url }}?utm_source=link&amp;utm_medium=share" data-copied="{{ t.copied }}" aria-label="{{ t.copy }}" title="{{ t.copy }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="size-5"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="share-copied" hidden>{{ t.copied }}</span>
+    </button>
+</div>

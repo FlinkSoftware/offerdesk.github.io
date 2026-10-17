@@ -176,6 +176,13 @@
     document.querySelectorAll('[data-copy]').forEach((button) => {
       button.addEventListener('click', async () => {
         try { await navigator.clipboard.writeText(button.dataset.copy); } catch (error) { return; }
+        // An icon button shows its "copied" label next to the icon; a text button swaps its text
+        const note = button.querySelector('.share-copied');
+        if (note) {
+          note.hidden = false;
+          setTimeout(() => { note.hidden = true; }, 2000);
+          return;
+        }
         const label = button.textContent;
         button.textContent = button.dataset.copied || label;
         setTimeout(() => { button.textContent = label; }, 2000);
@@ -191,5 +198,123 @@
     document.addEventListener('DOMContentLoaded', setupDialogs);
   } else {
     setupDialogs();
+  }
+})();
+
+// Share: on phones (and browsers with a share sheet) one "Share…" button opens the device's own sheet, with all
+// the apps the visitor has; the network buttons stay for everyone else.
+(function(){
+  function setupShare(){
+    if (typeof navigator.share !== 'function') return;
+    document.querySelectorAll('[data-share-native]').forEach((button) => {
+      const box = button.closest('[data-share-url]');
+      if (!box) return;
+      button.hidden = false;
+      button.addEventListener('click', () => {
+        navigator.share({ title: document.title, text: box.dataset.shareText, url: box.dataset.shareUrl + '?utm_source=native&utm_medium=share' })
+          .catch(() => {});
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupShare);
+  } else {
+    setupShare();
+  }
+})();
+
+// Share band: "Ken je een ondernemer die …" types a phrase, crosses it out, and types the next; the last one stays
+// (with a wink), and after a while it starts over. Runs only while the band is on screen; with reduced motion the
+// last phrase stays as the page shows it.
+(function(){
+  const TYPE = 45, DELETE = 22, READ = 1100, STRUCK = 900, END = 5000;
+  function setupStrikeTyping(){
+    const el = document.querySelector('[data-strike-phrases]');
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let phrases;
+    try { phrases = JSON.parse(el.dataset.strikePhrases); } catch (error) { return; }
+    if (!Array.isArray(phrases) || phrases.length < 2) return;
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    let visible = false;
+    const shown = () => new Promise((resolve) => {
+      if (visible && !document.hidden) return resolve();
+      const check = setInterval(() => { if (visible && !document.hidden) { clearInterval(check); resolve(); } }, 300);
+    });
+    new IntersectionObserver((entries) => { visible = entries.some((entry) => entry.isIntersecting); }).observe(el);
+
+    async function type(text){
+      el.classList.add('is-typing');
+      const chars = Array.from(text);
+      for (let i = 1; i <= chars.length; i++) { el.textContent = chars.slice(0, i).join(''); await wait(TYPE); }
+      el.classList.remove('is-typing');
+    }
+    async function erase(){
+      el.classList.add('is-typing');
+      el.classList.remove('is-struck');
+      const chars = Array.from(el.textContent);
+      for (let i = chars.length - 1; i >= 0; i--) { el.textContent = chars.slice(0, i).join(''); await wait(DELETE); }
+    }
+    async function run(){
+      el.textContent = '';
+      for (;;) {
+        for (let i = 0; i < phrases.length; i++) {
+          await shown();
+          await type(phrases[i]);
+          const last = i === phrases.length - 1;
+          await wait(last ? END : READ);
+          if (!last) { el.classList.add('is-struck'); await wait(STRUCK); }
+          await erase();
+        }
+      }
+    }
+    run();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupStrikeTyping);
+  } else {
+    setupStrikeTyping();
+  }
+})();
+
+// Referrals and where visitors come from. A referral code (?ref=K7M2Q) is kept for 30 days; the first source
+// (utm_source, else the site that linked here) is kept for good, first touch wins. Both go along on every sign-up
+// link, so the new company knows who sent it (half price for its first month) and how it found OfferDesk.
+(function(){
+  const REF = 'od-ref', SOURCE = 'od-source', REF_DAYS = 30;
+  function read(key){
+    try {
+      const value = JSON.parse(localStorage.getItem(key));
+      return value && (!value.until || value.until > Date.now()) ? value : null;
+    } catch (error) { return null; }
+  }
+  function write(key, value){ try { localStorage.setItem(key, JSON.stringify(value)); } catch (error) { /* private mode */ } }
+  function setupReferral(){
+    const params = new URLSearchParams(window.location.search);
+    const ref = (params.get('ref') || '').trim().toUpperCase();
+    if (/^[A-Z0-9]{4,16}$/.test(ref)) write(REF, { value: ref, until: Date.now() + REF_DAYS * 864e5 });
+    if (!read(SOURCE)) {
+      let source = params.get('utm_source');
+      if (!source && document.referrer) {
+        try {
+          const host = new URL(document.referrer).hostname.replace(/^www\./, '');
+          if (host && host !== window.location.hostname) source = host;
+        } catch (error) { /* no usable referrer */ }
+      }
+      if (source) write(SOURCE, { value: source.trim().toLowerCase().slice(0, 64) });
+    }
+    const referral = read(REF);
+    const first = read(SOURCE);
+    document.querySelectorAll('a[href^="https://app.offerdesk.nl/sign-up"]').forEach((link) => {
+      const url = new URL(link.href);
+      if (referral) url.searchParams.set('ref', referral.value);
+      if (first) url.searchParams.set('source', first.value);
+      link.href = url.toString();
+    });
+    if (referral) document.querySelectorAll('[data-referral-banner]').forEach((banner) => { banner.hidden = false; });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupReferral);
+  } else {
+    setupReferral();
   }
 })();
