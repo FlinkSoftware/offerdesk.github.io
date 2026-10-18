@@ -402,3 +402,16 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupTheme);
   else setupTheme();
 })();
+
+// Signed in to the app: the app sets the cookie "offerdesk-signed-in" on the parent domain while someone is signed
+// in there, and clears it at sign-out. With it, the menu offers the app instead of signing in or up.
+(function(){
+  function setupSignedIn(){
+    const signedIn = /(?:^|;\s*)offerdesk-signed-in=1(?:;|$)/.test(document.cookie);
+    if (!signedIn) return;
+    document.querySelectorAll('[data-when-signed-out]').forEach((el) => { el.hidden = true; });
+    document.querySelectorAll('[data-when-signed-in]').forEach((el) => { el.hidden = false; });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupSignedIn);
+  else setupSignedIn();
+})();
