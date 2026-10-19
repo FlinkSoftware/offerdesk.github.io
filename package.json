@@ -2,7 +2,7 @@
   "scripts": {
     "css:build": "tailwindcss -i ./resources/css/app.css -o ./docs/css/app.css --minify && cp ./docs/css/app.css ./docs/_includes/app.min.css",
     "css:watch": "tailwindcss -i ./resources/css/app.css -o ./docs/_includes/app.min.css --watch --minify",
-    "js:build": "terser ./resources/js/app.js -o ./docs/js/app.js -c -m",
+    "js:build": "terser ./resources/js/app.js -o ./docs/js/app.js -c -m && terser ./resources/js/example-offer.js -o ./docs/js/example-offer.js -c -m",
     "js:watch": "npm run js:build && chokidar \"resources/js/*.js\" -c \"npm run js:build\"",
     "assets:copy": "mkdir -p ./docs/fonts ./docs/images ./docs/js/lib && cp ./resources/fonts/*.woff2 ./docs/fonts/ && cp -R ./resources/images/* ./docs/images/ && cp ./node_modules/typewriter-effect/dist/core.js ./docs/js/lib/typewriter-core.js",
     "fonts:watch": "npm run assets:copy && chokidar \"resources/fonts/*\" -c \"npm run assets:copy\"",

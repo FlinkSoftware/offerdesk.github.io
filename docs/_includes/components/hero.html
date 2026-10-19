@@ -51,6 +51,13 @@
                         </a>
                     </div>
 
+                    <!-- Before signing up: what does my customer get to see? The example quote shows it -->
+                    {% if lang == 'en' %}{% assign example_href = '/en/example-quote/' %}{% else %}{% assign example_href = '/voorbeeld-offerte/' %}{% endif %}
+                    <a href="{{ example_href | relative_url }}" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover">
+                        {{ i18n.hero.example_link }}
+                        <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5l5 5-5 5"/></svg>
+                    </a>
+
                     <!-- What someone wonders right before clicking "start": no risk, no card, no lock-in -->
                     <ul class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-600">
                         {% for item in i18n.hero.assurances %}

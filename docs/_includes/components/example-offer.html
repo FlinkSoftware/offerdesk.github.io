@@ -1,0 +1,247 @@
+<!-- The example quote: the customer's page of OfferDesk, rebuilt with the same texts and the real quote (rendered once
+     by the app's own template, see /voorbeeld/). Everything a customer does here (the code, a question, accepting with
+     the terms, paying the deposit) happens in this browser only: nothing is sent and nothing is paid. Beside it, what
+     the business sees of each step in OfferDesk. example-offer.js brings it to life; without JavaScript the quote and
+     the PDF are still there. -->
+{% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
+{% assign i18n = site.data.i18n[lang] %}
+{% assign xo = i18n.example_offer %}
+{% capture signup %}https://app.offerdesk.nl/sign-up{% endcapture %}
+<section class="xo pt-28 pb-16 sm:pb-24 lg:pt-14" data-example-offer data-lang="{{ lang }}">
+    <script type="application/json" data-xo-texts>{{ xo | jsonify }}</script>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+            <div class="eyebrow inline-block px-4 py-1.5 bg-primary/10 rounded-full w-fit">{{ xo.eyebrow }}</div>
+            <h1 class="mt-3 heading-2">{{ xo.title_prefix }} <span class="text-primary">{{ xo.title_highlight }}</span></h1>
+            <p class="mt-5 body-large text-gray-700">{{ xo.intro }}</p>
+        </div>
+
+        <!-- The four things the customer does; each is ticked off as it happens -->
+        <ol class="xo-steps mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-2 sm:grid-cols-4" aria-label="{{ xo.steps_label }}">
+            {% for step in xo.steps %}
+            <li class="xo-step" data-xo-step="{{ forloop.index0 }}">
+                <span class="xo-step-mark" aria-hidden="true">{{ forloop.index }}</span>
+                <span>{{ step }}</span>
+            </li>
+            {% endfor %}
+        </ol>
+
+        <!-- The customer's page, in a browser window -->
+        <div class="xo-window mt-10">
+            <div class="xo-window-bar" aria-hidden="true">
+                <span class="xo-dot"></span><span class="xo-dot"></span><span class="xo-dot"></span>
+                <span class="xo-address">app.offerdesk.nl/offerte/…</span>
+            </div>
+            <div class="xo-banner">
+                <span>{{ xo.banner }}</span>
+                <button type="button" class="xo-link-button" data-xo-restart hidden>{{ xo.restart }}</button>
+            </div>
+
+            <div class="xo-page">
+                <!-- 1. The access code from the email -->
+                <div class="flex justify-center px-4 py-12 sm:py-16" data-xo-stage="code">
+                    <form class="xo-card flex w-full max-w-[400px] flex-col gap-6 p-6 sm:p-8" novalidate data-xo-code-form>
+                        <div class="flex flex-col items-center gap-4 text-center">
+                            <span class="xo-mark xo-mark-lg" aria-hidden="true">VD</span>
+                            <div class="flex flex-col gap-2">
+                                <h2 class="text-xl font-bold text-dark-blue">{{ xo.welcome }}</h2>
+                                <p class="text-sm text-gray-700">{{ xo.from_before }}<strong class="font-semibold text-dark-blue">{{ xo.company }}</strong>{{ xo.from_after }}</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="xo-code" class="xo-label">{{ xo.code_label }}</label>
+                            <input id="xo-code" class="xo-input" value="{{ xo.code }}" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="xo-code-hint">
+                            <p id="xo-code-hint" class="text-xs text-gray-600">{{ xo.code_hint }}</p>
+                            <p class="xo-error" role="alert" data-xo-code-error hidden>{{ xo.code_wrong }}</p>
+                        </div>
+                        <button type="submit" class="xo-btn xo-btn-primary">{{ xo.open }}</button>
+                    </form>
+                </div>
+
+                <!-- 2. The quote -->
+                <div class="mx-auto flex flex-col gap-6 px-3 py-6 sm:px-6 lg:py-8" data-xo-stage="offer" hidden>
+                    <header class="flex items-center gap-4">
+                        <span class="xo-mark" aria-hidden="true">VD</span>
+                        <div class="flex min-w-0 flex-col">
+                            <span class="truncate text-base font-bold text-dark-blue">{{ xo.company }}</span>
+                            <span class="truncate text-sm text-gray-600">{{ xo.company_contact }}</span>
+                        </div>
+                    </header>
+
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+                        <!-- The quote as sent: the real template on an A4 sheet -->
+                        <div class="xo-card order-2 flex min-w-0 flex-col gap-3 p-3 sm:p-6 lg:order-1">
+                            <p class="xo-version-line">
+                                <span class="font-semibold text-dark-blue">{{ xo.version_label }}</span>
+                                <span>·</span>
+                                <span data-xo-sent-on></span>
+                            </p>
+                            <div data-xo-sheet class="xo-sheet">
+                                <iframe data-xo-sheet-frame title="{{ xo.title_full }}" sandbox="allow-same-origin" tabindex="-1"></iframe>
+                            </div>
+                        </div>
+
+                        <aside class="order-1 flex flex-col gap-4 lg:sticky lg:top-24 lg:order-2">
+                            <section class="xo-card flex flex-col gap-4 p-5">
+                                <div class="flex items-start justify-between gap-3">
+                                    <div class="flex min-w-0 flex-col">
+                                        <h2 class="text-lg font-bold text-dark-blue">{{ xo.title_full }}</h2>
+                                        <span class="text-sm text-gray-600">{{ xo.reference }}</span>
+                                    </div>
+                                    <span class="xo-pill" data-xo-status>{{ xo.status_open }}</span>
+                                </div>
+                                <dl class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                                    <dt class="text-gray-600">{{ xo.date }}</dt>
+                                    <dd class="text-right text-dark-blue" data-xo-date></dd>
+                                    <dt class="text-gray-600">{{ xo.valid_until }}</dt>
+                                    <dd class="text-right text-dark-blue" data-xo-expiry></dd>
+                                    <dt class="text-gray-600">{{ xo.version }}</dt>
+                                    <dd class="text-right text-dark-blue" data-xo-version></dd>
+                                    <dt class="text-gray-600">{{ xo.total_excl }}</dt>
+                                    <dd class="text-right text-dark-blue" data-xo-total-excl></dd>
+                                    <dt class="font-semibold text-dark-blue">{{ xo.total_incl }}</dt>
+                                    <dd class="text-right font-bold text-dark-blue" data-xo-total-incl></dd>
+                                </dl>
+
+                                <p class="xo-alert" data-xo-status-note hidden></p>
+
+                                <div class="flex flex-col gap-2">
+                                    <div class="flex flex-col gap-2" data-xo-respond>
+                                        <button type="button" class="xo-btn xo-btn-primary" data-xo-open-accept>
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="size-5" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            {{ xo.accept }}
+                                        </button>
+                                        <button type="button" class="xo-btn xo-btn-secondary" data-xo-open-decline>{{ xo.decline }}</button>
+                                    </div>
+                                    <a href="{{ xo.pdf_file | relative_url }}" download class="xo-btn xo-btn-ghost">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="size-5" aria-hidden="true"><path d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        {{ xo.download }}
+                                    </a>
+                                    <div class="flex flex-col items-center gap-0.5 pt-1 text-center">
+                                        <a href="{{ xo.terms_file | relative_url }}" target="_blank" rel="noopener" class="xo-text-link">{{ xo.terms_link }}</a>
+                                        <span class="text-xs text-gray-500">{{ xo.terms_version }}</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- The payment schedule -->
+                            <section class="xo-card flex flex-col gap-3 p-5">
+                                <h2 class="text-base font-bold text-dark-blue">{{ xo.payments_title }}</h2>
+                                <ul class="flex flex-col" data-xo-terms></ul>
+                                <p class="text-xs text-gray-500">{{ xo.payments_note }}</p>
+                            </section>
+
+                            <!-- Questions and answers -->
+                            <section class="xo-card flex flex-col gap-4 p-5">
+                                <h2 class="text-base font-bold text-dark-blue">{{ xo.questions_title }}</h2>
+                                <ol class="flex flex-col gap-3" data-xo-messages aria-live="polite"></ol>
+                                <form class="flex flex-col gap-2" data-xo-question-form>
+                                    <textarea class="xo-input" rows="3" maxlength="4000" placeholder="{{ xo.question_placeholder }}" aria-label="{{ xo.question_label }}" data-xo-question></textarea>
+                                    <div class="flex flex-wrap items-center gap-2 text-xs text-gray-600" data-xo-suggestions>
+                                        <span>{{ xo.suggestion_label }}</span>
+                                        <button type="button" class="xo-chip" data-xo-suggestion>{{ xo.suggestion }}</button>
+                                    </div>
+                                    <button type="submit" class="xo-btn xo-btn-secondary" data-xo-send disabled>{{ xo.send }}</button>
+                                </form>
+                            </section>
+                        </aside>
+                    </div>
+                    <p class="text-center text-xs text-gray-500">{{ xo.powered_by }} <strong class="font-semibold text-gray-700">OfferDesk</strong> · Flink Software B.V.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- What the business sees of each step, in order -->
+        <div class="mx-auto mt-10 max-w-3xl">
+            <h2 class="heading-4 text-center">{{ xo.note_title }}</h2>
+            <ol class="mt-5 flex flex-col gap-3" data-xo-log>
+                <li class="xo-note" data-xo-note="start">{{ xo.notes.start }}</li>
+            </ol>
+        </div>
+
+        <!-- The end: the go-ahead and the deposit are in -->
+        <div class="xo-done mx-auto mt-10 max-w-3xl p-8 text-center sm:p-10" data-xo-done hidden>
+            <h2 class="heading-3 text-white">{{ xo.done_title }}</h2>
+            <p class="mt-4 text-white/90">{{ xo.done_text }}</p>
+            <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+                <a href="{{ signup }}" target="_blank" rel="noopener noreferrer" class="xo-btn xo-btn-white sm:w-auto">{{ xo.done_cta }}</a>
+                <button type="button" class="xo-btn xo-btn-outline-white sm:w-auto" data-xo-restart>{{ xo.done_again }}</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The note for the business, beside the step that caused it -->
+    <div class="xo-toast" role="status" aria-live="polite" data-xo-toast hidden>
+        <p class="xo-toast-title">{{ xo.note_title }}</p>
+        <p data-xo-toast-text></p>
+        <button type="button" class="xo-toast-close" aria-label="{{ xo.cancel }}" data-xo-toast-close>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="size-4"><path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+    </div>
+
+    <!-- Accepting: the name, and agreeing to the terms -->
+    <dialog class="xo-dialog" aria-labelledby="xo-accept-title" data-xo-accept-dialog>
+        <form method="dialog" class="flex flex-col gap-5 p-6" novalidate data-xo-accept-form>
+            <div class="flex flex-col gap-2">
+                <h2 id="xo-accept-title" class="text-lg font-bold text-dark-blue">{{ xo.accept_title }}</h2>
+                <p class="text-sm text-gray-700" data-xo-accept-description></p>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <label for="xo-name" class="xo-label">{{ xo.name_label }} <span class="text-red-600" aria-hidden="true">*</span></label>
+                <input id="xo-name" class="xo-input" value="{{ xo.customer }}" autocomplete="off" data-xo-name>
+                <p class="xo-error" role="alert" data-xo-name-error hidden>{{ xo.name_required }}</p>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <label class="xo-check">
+                    <input type="checkbox" data-xo-terms-agree>
+                    <span>{{ xo.terms_agree }}</span>
+                </label>
+                <a href="{{ xo.terms_file | relative_url }}" target="_blank" rel="noopener" class="xo-text-link ml-7 w-fit">{{ xo.terms_link }} · {{ xo.terms_version }}</a>
+                <p class="xo-error ml-7" role="alert" data-xo-terms-error hidden>{{ xo.terms_required }}</p>
+            </div>
+            <div class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+                <button type="button" class="xo-btn xo-btn-secondary sm:w-auto" data-xo-close>{{ xo.cancel }}</button>
+                <button type="submit" class="xo-btn xo-btn-primary sm:w-auto">{{ xo.accept_confirm }}</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Declining, with a reason -->
+    <dialog class="xo-dialog" aria-labelledby="xo-decline-title" data-xo-decline-dialog>
+        <form method="dialog" class="flex flex-col gap-5 p-6" data-xo-decline-form>
+            <div class="flex flex-col gap-2">
+                <h2 id="xo-decline-title" class="text-lg font-bold text-dark-blue">{{ xo.decline_title }}</h2>
+                <p class="text-sm text-gray-700">{{ xo.decline_description }}</p>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <label for="xo-reason" class="xo-label">{{ xo.reason_label }}</label>
+                <textarea id="xo-reason" class="xo-input" rows="3" maxlength="2000"></textarea>
+            </div>
+            <div class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+                <button type="button" class="xo-btn xo-btn-secondary sm:w-auto" data-xo-close>{{ xo.cancel }}</button>
+                <button type="submit" class="xo-btn xo-btn-danger sm:w-auto">{{ xo.decline_confirm }}</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- The company's payment link, as an example -->
+    <dialog class="xo-dialog" aria-labelledby="xo-pay-title" data-xo-pay-dialog>
+        <form method="dialog" class="flex flex-col gap-5 p-6" data-xo-pay-form>
+            <div class="flex flex-col gap-2">
+                <h2 id="xo-pay-title" class="text-lg font-bold text-dark-blue">{{ xo.pay_title }}</h2>
+                <p class="text-sm text-gray-700">{{ xo.pay_text }}</p>
+            </div>
+            <div class="xo-pay-amount">
+                <span class="text-sm text-gray-600">{{ xo.company }}</span>
+                <span class="text-3xl font-extrabold text-dark-blue" data-xo-pay-amount></span>
+                <span class="text-sm text-gray-600" data-xo-pay-for></span>
+            </div>
+            <p class="xo-alert xo-alert-success" data-xo-pay-done hidden>{{ xo.paid_done }}</p>
+            <div class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end" data-xo-pay-actions>
+                <button type="button" class="xo-btn xo-btn-secondary sm:w-auto" data-xo-close>{{ xo.cancel }}</button>
+                <button type="submit" class="xo-btn xo-btn-primary sm:w-auto" data-xo-pay-confirm>{{ xo.pay_confirm }}</button>
+            </div>
+        </form>
+    </dialog>
+</section>

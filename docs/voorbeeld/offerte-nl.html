@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!--
+  The offer as a PDF (Flying Saucer, CSS 2.1 with paged media) and as the app's preview (a browser).
+  Figma: Hi-fi › F1 · Offerte-PDF (A4). Three designs (PdfTemplate), a class on the body: template-classic (F1),
+  template-modern (a dark letterhead band, a striped table, a bold total) and template-compact (tight, many lines
+  to a page). Each design only overrides the classic styles below. Fixed light colours, the app's primitives: a document has no dark
+  mode. Layout with tables, which both renderers draw alike. The labels come from messages*.properties in
+  the offer's language; everything else is the offer's and the company's own text.
+-->
+<html lang="nl">
+<head><meta name="robots" content="noindex"/>
+    <meta charset="UTF-8"/>
+    <title>Offerte 2026-0142</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 17mm 19mm 24mm 19mm;
+            @bottom-center { content: element(page-footer); }
+        }
+        @media screen {
+            body { position: relative; width: 210mm; min-height: 297mm; padding: 17mm 19mm 32mm; box-sizing: border-box; background: #ffffff; }
+            .page-footer { position: absolute; left: 19mm; right: 19mm; bottom: 14mm; }
+            .page-number span { display: none; }
+        }
+        body {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 9pt;
+            line-height: 1.45;
+            color: #111827;
+        }
+        table { border-collapse: collapse; width: 100%; }
+        td, th { padding: 0; vertical-align: top; }
+        .muted { color: #6b7280; }
+        .secondary { color: #4b5563; }
+        .right { text-align: right; }
+        .label {
+            font-size: 6.5pt;
+            font-weight: bold;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #6b7280;
+        }
+
+        /* Letterhead */
+        .letterhead { margin-bottom: 21pt; }
+        .mark {
+            width: 24pt; height: 24pt;
+            background: #111827; color: #ffffff;
+            border-radius: 5pt;
+            font-size: 8pt; font-weight: bold; text-align: center; line-height: 24pt;
+        }
+        .logo { max-height: 28pt; max-width: 120pt; }
+        .company { font-size: 12pt; font-weight: bold; padding-left: 7pt; vertical-align: middle; }
+        .company-details { padding-top: 6pt; font-size: 7.5pt; line-height: 1.6; }
+        .document-label { font-size: 7pt; font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; color: #0068ff; }
+        .document-number { font-size: 15pt; font-weight: bold; margin-top: 2pt; }
+
+        /* Addresses and details */
+        .addresses { margin-bottom: 21pt; }
+        .customer-name { font-size: 10pt; font-weight: bold; margin-top: 3pt; }
+        .details td { font-size: 7.5pt; padding-bottom: 4pt; }
+        .details td.value { text-align: right; color: #111827; }
+
+        .text { margin-bottom: 21pt; font-size: 9pt; line-height: 1.6; color: #4b5563; }
+
+        /* Lines */
+        .lines { margin-bottom: 21pt; }
+        .lines th {
+            padding: 0 0 7pt 0;
+            border-bottom: 1.2pt solid #111827;
+            font-size: 6.5pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase;
+            color: #6b7280; text-align: left;
+        }
+        .lines td { padding: 7pt 0; border-bottom: 0.6pt solid #e5e7eb; }
+        .lines tr { page-break-inside: avoid; }
+        .lines .number { text-align: right; white-space: nowrap; }
+        .lines .gap { padding-left: 9pt; }
+
+        /* Totals */
+        .totals-wrap { margin-bottom: 21pt; }
+        .totals { width: 210pt; }
+        .totals td { padding: 2pt 9pt; font-size: 8pt; }
+        .totals .grand td { padding: 9pt; background: #eef4ff; font-size: 9.5pt; font-weight: bold; }
+        .totals .grand .amount { color: #0068ff; font-size: 13pt; }
+
+        .closing { margin-bottom: 21pt; font-size: 7.5pt; line-height: 1.6; color: #6b7280; }
+        .terms { margin-bottom: 14pt; font-size: 7.5pt; line-height: 1.6; color: #6b7280; }
+
+        /* Signatures */
+        .signatures td { width: 50%; font-size: 8pt; color: #4b5563; }
+        .signature-line { height: 30pt; border-bottom: 0.6pt solid #d1d5db; }
+
+        /* Page footer, at the bottom of every page */
+        .page-footer { position: running(page-footer); }
+        .page-footer table { border-top: 0.6pt solid #e5e7eb; }
+        .page-footer td { padding-top: 7pt; font-size: 6.5pt; color: #6b7280; }
+        .page::after { content: counter(page); }
+        .pages::after { content: counter(pages); }
+
+        /* ===== Modern: a dark band on top, a striped table, a bold total ===== */
+        .template-modern .letterhead { background: #0f2747; border-radius: 6pt; }
+        .template-modern .lh-main { padding: 16pt 0 16pt 18pt; }
+        .template-modern .lh-number { padding: 16pt 18pt 16pt 0; vertical-align: middle; }
+        .template-modern .company { color: #ffffff; }
+        .template-modern .company-details { color: #c3cfe2; }
+        .template-modern .mark { background: #ffffff; color: #0f2747; }
+        .template-modern .logo-cell { background: #ffffff; border-radius: 4pt; padding: 4pt; }
+        .template-modern .document-label { color: #8fb8ff; }
+        .template-modern .document-number { color: #ffffff; font-size: 18pt; }
+        .template-modern .addr-customer { background: #f3f6fb; border-radius: 5pt; padding: 10pt 12pt; }
+        .template-modern .addr-details { padding-left: 16pt; }
+        .template-modern .lines th { background: #0f2747; color: #ffffff; border-bottom: none; padding: 6pt 6pt; }
+        .template-modern .lines td { padding: 7pt 6pt; border-bottom: none; }
+        .template-modern .lines tr.even td { background: #f5f7fb; }
+        .template-modern .lines .gap { padding-left: 9pt; }
+        .template-modern .totals .grand td { background: #0f2747; color: #ffffff; }
+        .template-modern .totals .grand .amount { color: #ffffff; font-size: 14pt; }
+        .template-modern .text { color: #374151; }
+
+        /* ===== Compact: small and tight, long material lists on fewer pages ===== */
+        .template-compact { font-size: 7.8pt; line-height: 1.3; }
+        .template-compact .letterhead { margin-bottom: 10pt; }
+        .template-compact .company { font-size: 10pt; }
+        .template-compact .company-details { padding-top: 3pt; font-size: 6.8pt; line-height: 1.4; }
+        .template-compact .mark { width: 18pt; height: 18pt; line-height: 18pt; font-size: 6.5pt; }
+        .template-compact .logo { max-height: 20pt; }
+        .template-compact .document-number { font-size: 12pt; }
+        .template-compact .addresses { margin-bottom: 10pt; }
+        .template-compact .customer-name { font-size: 8.5pt; margin-top: 1pt; }
+        .template-compact .details td { font-size: 6.8pt; padding-bottom: 2pt; }
+        .template-compact .text { margin-bottom: 10pt; font-size: 7.8pt; line-height: 1.4; }
+        .template-compact .lines { margin-bottom: 10pt; }
+        .template-compact .lines th { padding: 0 0 4pt 0; font-size: 6pt; border-bottom-width: 0.8pt; }
+        .template-compact .lines td { padding: 3pt 0; border-bottom: 0.4pt solid #eceef2; }
+        .template-compact .totals-wrap { margin-bottom: 10pt; }
+        .template-compact .totals td { padding: 1.5pt 6pt; font-size: 7.4pt; }
+        .template-compact .totals .grand td { background: none; border-top: 1pt solid #111827; padding: 5pt 6pt; font-size: 8.5pt; }
+        .template-compact .totals .grand .amount { color: #111827; font-size: 11pt; }
+        .template-compact .closing { margin-bottom: 10pt; font-size: 6.8pt; }
+        .template-compact .signatures td { font-size: 7pt; }
+        .template-compact .signature-line { height: 22pt; }
+    </style>
+    
+</head>
+<body class="template-classic">
+
+<div class="page-footer">
+    <table>
+        <tr>
+            <td><span>IBAN NL91 ABNA 0417 1643 00</span></td>
+            <td style="text-align: center;"><span>Btw NL001234567B01</span></td>
+            <td style="text-align: center;"><span>KvK 12345678</span></td>
+            <td class="right page-number"><span>Pagina</span> <span class="page"></span> <span>van</span> <span class="pages"></span></td>
+        </tr>
+    </table>
+</div>
+
+<table class="letterhead">
+    <tr>
+        <td class="lh-main">
+            <table style="width: auto;">
+                <tr>
+                    
+                    <td style="vertical-align: middle;">
+                        <div class="mark">VD</div>
+                    </td>
+                    <td class="company">Van Dijk Installatietechniek</td>
+                </tr>
+            </table>
+            <div class="company-details muted">
+                <div>Industrieweg 14 · 3542 AD Utrecht</div>
+                <div>info@vandijk-installatie.nl · 030 765 43 21</div>
+            </div>
+        </td>
+        <td class="right lh-number" style="width: 40%;">
+            <div class="document-label">Offerte</div>
+            <div class="document-number">2026-0142</div>
+        </td>
+    </tr>
+</table>
+
+<table class="addresses">
+    <tr>
+        <td class="addr-customer" style="width: 56%;">
+            <div class="label">Offerte voor</div>
+            <div class="customer-name">Familie de Vries</div>
+            <div class="secondary">Lindelaan 12</div>
+            <div class="secondary">3581 KN Utrecht</div>
+        </td>
+        <td class="addr-details">
+            <table class="details">
+                <tr>
+                    <td class="muted">Offertedatum</td>
+                    <td class="value">%%DATE%%</td>
+                </tr>
+                <tr>
+                    <td class="muted">Geldig tot</td>
+                    <td class="value">%%EXPIRY%%</td>
+                </tr>
+                <tr>
+                    <td class="muted">Kenmerk</td>
+                    <td class="value">Nieuwe badkamer</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<div class="text">Beste familie De Vries,<br/><br/>Bedankt voor het prettige gesprek bij jullie thuis. Zoals afgesproken sturen we jullie hierbij de offerte voor de nieuwe badkamer op de eerste verdieping. We rekenen op ongeveer tien werkdagen.</div>
+
+<table class="lines">
+    <thead>
+    <tr>
+        <th style="width: 9%;">Aantal</th>
+        <th class="gap">Omschrijving</th>
+        <th class="number gap" style="width: 11%; text-align: right;">Eenheid</th>
+        <th class="number gap" style="width: 14%; text-align: right;">Prijs</th>
+        <th class="number gap" style="width: 8%; text-align: right;">Btw</th>
+        <th class="number gap" style="width: 15%; text-align: right;">Totaal</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+        <td>1</td>
+        <td class="gap">Bestaande badkamer slopen en puin afvoeren</td>
+        <td class="number gap">post</td>
+        <td class="number gap">€ 650,00</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 650,00</td>
+    </tr>
+    <tr class="even">
+        <td>1</td>
+        <td class="gap">Inloopdouche 90 x 200 cm, glaswand mat zwart, met regendouche</td>
+        <td class="number gap">stuk</td>
+        <td class="number gap">€ 1.245,00</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 1.245,00</td>
+    </tr>
+    <tr class="odd">
+        <td>1</td>
+        <td class="gap">Badmeubel 100 cm met wastafel en spiegelkast</td>
+        <td class="number gap">stuk</td>
+        <td class="number gap">€ 895,00</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 895,00</td>
+    </tr>
+    <tr class="even">
+        <td>1</td>
+        <td class="gap">Hangtoilet met inbouwreservoir en bedieningsplaat</td>
+        <td class="number gap">stuk</td>
+        <td class="number gap">€ 545,00</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 545,00</td>
+    </tr>
+    <tr class="odd">
+        <td>24</td>
+        <td class="gap">Wandtegels 30 x 60 cm, leveren en zetten</td>
+        <td class="number gap">m²</td>
+        <td class="number gap">€ 68,00</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 1.632,00</td>
+    </tr>
+    <tr class="even">
+        <td>6</td>
+        <td class="gap">Vloertegels 60 x 60 cm, leveren en leggen</td>
+        <td class="number gap">m²</td>
+        <td class="number gap">€ 95,00</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 570,00</td>
+    </tr>
+    <tr class="odd">
+        <td>1</td>
+        <td class="gap">Elektrische vloerverwarming met thermostaat</td>
+        <td class="number gap">set</td>
+        <td class="number gap">€ 425,00</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 425,00</td>
+    </tr>
+    <tr class="even">
+        <td>8</td>
+        <td class="gap">Leidingwerk water en afvoer aanpassen</td>
+        <td class="number gap">uur</td>
+        <td class="number gap">€ 62,50</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 500,00</td>
+    </tr>
+    <tr class="odd">
+        <td>24</td>
+        <td class="gap">Montage en afwerking</td>
+        <td class="number gap">uur</td>
+        <td class="number gap">€ 58,00</td>
+        <td class="number gap">21%</td>
+        <td class="number gap">€ 1.392,00</td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="totals-wrap">
+    <tr>
+        <td></td>
+        <td style="width: 210pt;">
+            <table class="totals">
+                <tr>
+                    <td class="muted">Subtotaal excl. btw</td>
+                    <td class="right">€ 7.854,00</td>
+                </tr>
+                <tr>
+                    <td class="muted">Btw 21%</td>
+                    <td class="right">€ 1.649,34</td>
+                </tr>
+                <tr class="grand">
+                    <td>Totaal incl. btw</td>
+                    <td class="right amount">€ 9.503,34</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<div class="closing">De prijzen zijn inclusief materiaal, montage en het afvoeren van puin. Vragen? Stel ze gerust bij deze offerte, of bel ons op 030 765 43 21.<br/><br/>Met vriendelijke groet,<br/>Mark van Dijk</div>
+
+<div class="terms">Op deze offerte zijn onze algemene voorwaarden van toepassing (versie van 1 september 2026).</div>
+
+<table class="signatures">
+    <tr>
+        <td style="padding-right: 18pt;">
+            <div>Voor akkoord (naam, datum, handtekening)</div>
+            <div class="signature-line"></div>
+        </td>
+        <td style="padding-left: 18pt;">
+            <div>Met vriendelijke groet,</div>
+            <div>Van Dijk Installatietechniek</div>
+            <div class="signature-line" style="height: 16pt;"></div>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

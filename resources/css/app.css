@@ -555,6 +555,112 @@ html {
   to { opacity: 1; transform: none; }
 }
 
+/* ======================
+   Example quote (/voorbeeld-offerte/): the customer's page of the app, in a browser window. Its own classes, with
+   ".xo" in front where the site's global rules for button, input and label (here and in accessibility.css) would
+   otherwise win over the utilities.
+   ====================== */
+.xo-steps { list-style: none; }
+.xo-step { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 0.75rem; border: 1px solid var(--color-border); background: var(--color-card); font-size: 0.875rem; font-weight: 500; color: var(--color-dark-blue); }
+.xo-step-mark { display: inline-flex; flex-shrink: 0; width: 1.5rem; height: 1.5rem; align-items: center; justify-content: center; border-radius: 9999px; background: var(--color-gray-100); color: var(--color-gray-700); font-size: 0.75rem; font-weight: 700; }
+.xo-step.is-done { border-color: color-mix(in oklab, var(--color-secondary) 50%, transparent); }
+.xo-step.is-done .xo-step-mark { background: var(--color-secondary); color: #fff; font-size: 0; }
+.xo-step.is-done .xo-step-mark::after { content: '\2713'; font-size: 0.8rem; }
+
+.xo-window { scroll-margin-top: 5.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-card); box-shadow: 0 25px 50px -12px rgb(5 39 73 / 0.25); }
+.xo-window-bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1rem; background: var(--color-gray-100); border-bottom: 1px solid var(--color-border); }
+.xo-dot { width: 0.65rem; height: 0.65rem; border-radius: 9999px; background: var(--color-gray-300); }
+.xo-address { margin-left: 0.75rem; flex: 1; max-width: 26rem; padding: 0.2rem 0.75rem; border-radius: 9999px; background: var(--color-card); color: var(--color-gray-600); font-size: 0.75rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.xo-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.25rem 1rem; padding: 0.5rem 1rem; background: var(--color-primary); color: #fff; font-size: 0.875rem; font-weight: 500; text-align: center; }
+.xo-page { background: var(--color-gray-50); }
+
+.xo-card { border-radius: 0.75rem; border: 1px solid var(--color-border); background: var(--color-card); }
+.xo-mark { display: inline-flex; flex-shrink: 0; width: 2.75rem; height: 2.75rem; align-items: center; justify-content: center; border-radius: 0.6rem; background: var(--color-dark-blue); color: var(--color-card); font-weight: 800; letter-spacing: 0.02em; }
+.xo-mark-lg { width: 3.25rem; height: 3.25rem; font-size: 1.1rem; }
+.xo-version-line { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem 0.5rem; padding: 0.5rem 0.75rem; border-radius: 0.5rem; background: var(--color-gray-50); color: var(--color-gray-600); font-size: 0.875rem; text-align: center; }
+.xo-sheet { overflow: hidden; }
+.xo-sheet iframe { display: block; border: 0; background: #fff; transform-origin: top left; box-shadow: 0 10px 15px -3px rgb(5 39 73 / 0.15); }
+
+.xo-pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.15rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; background: var(--color-gray-100); color: var(--color-gray-700); }
+.xo-pill::before { content: ''; width: 0.4rem; height: 0.4rem; border-radius: 9999px; background: currentColor; }
+.xo-pill.is-brand { background: color-mix(in oklab, var(--color-primary) 12%, transparent); color: var(--color-primary-hover); }
+.xo-pill.is-success { background: color-mix(in oklab, var(--color-secondary) 15%, transparent); color: #1d7a2b; }
+.xo-pill.is-warning { background: #fef3c7; color: #92400e; }
+.dark .xo-pill.is-brand { color: #8fbfff; }
+.dark .xo-pill.is-success { color: #86efac; }
+.dark .xo-pill.is-warning { background: #3b2a06; color: #fcd34d; }
+
+.xo-alert { padding: 0.65rem 0.85rem; border-radius: 0.5rem; font-size: 0.875rem; line-height: 1.45; }
+.xo-alert-success { background: color-mix(in oklab, var(--color-secondary) 12%, transparent); color: #14532d; }
+.xo-alert-info { background: var(--color-gray-100); color: var(--color-gray-800); }
+.dark .xo-alert-success { color: #bbf7d0; }
+
+.xo-term { display: flex; flex-direction: column; gap: 0.6rem; padding: 0.65rem 0; border-bottom: 1px solid var(--color-border); }
+.xo-term:last-child { border-bottom: 0; }
+
+.xo-message { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.75rem; border-radius: 0.6rem; font-size: 0.875rem; color: var(--color-dark-blue); }
+.xo-message p { white-space: pre-line; }
+.xo-message.is-question { margin-left: 1.5rem; background: var(--color-gray-100); }
+.xo-message.is-answer { margin-right: 1.5rem; background: color-mix(in oklab, var(--color-primary) 9%, var(--color-card)); }
+.xo-message-meta { font-size: 0.75rem; color: var(--color-gray-600); }
+.xo-typing { flex-direction: row; width: fit-content; gap: 0.3rem; padding: 0.85rem 1rem; }
+.xo-typing span { width: 0.4rem; height: 0.4rem; border-radius: 9999px; background: var(--color-gray-500); animation: xo-typing 1s infinite ease-in-out; }
+.xo-typing span:nth-child(2) { animation-delay: 0.15s; }
+.xo-typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes xo-typing { 0%, 80%, 100% { opacity: 0.3; } 40% { opacity: 1; } }
+
+.xo .xo-btn { display: inline-flex; width: 100%; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.6rem 1rem; border-radius: 0.5rem; border: 1px solid transparent; font-size: 0.9rem; font-weight: 600; line-height: 1.2; cursor: pointer; text-decoration: none; }
+.xo .xo-btn-primary { background: var(--color-primary); color: #fff; }
+.xo .xo-btn-primary:hover:not(:disabled) { background: var(--color-primary-hover); }
+.xo .xo-btn-secondary { background: var(--color-card); border-color: var(--color-border); color: var(--color-dark-blue); }
+.xo .xo-btn-secondary:hover:not(:disabled) { background: var(--color-gray-50); border-color: var(--color-gray-300); }
+.xo .xo-btn-ghost { background: transparent; color: var(--color-dark-blue); }
+.xo .xo-btn-ghost:hover { background: var(--color-gray-100); text-decoration: none; }
+.xo .xo-btn-danger { background: #dc2626; color: #fff; }
+.xo .xo-btn-danger:hover { background: #b91c1c; }
+.xo .xo-btn-white { background: #fff; color: var(--color-primary); }
+.xo .xo-btn-white:hover { background: #eef5ff; text-decoration: none; }
+.xo .xo-btn-outline-white { background: transparent; border-color: rgb(255 255 255 / 0.6); color: #fff; }
+.xo .xo-btn-outline-white:hover { background: rgb(255 255 255 / 0.12); }
+.xo .xo-link-button { background: transparent; color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.xo .xo-chip { padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid var(--color-border); background: var(--color-card); color: var(--color-dark-blue); font-size: 0.75rem; font-weight: 500; }
+.xo .xo-chip:hover { border-color: var(--color-primary); color: var(--color-primary-hover); }
+.xo .xo-text-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--color-primary); font-size: 0.875rem; font-weight: 600; }
+.dark .xo .xo-text-link { color: #7ab3ff; }
+@media (prefers-reduced-motion: no-preference) {
+  .xo .xo-pulse { animation: xo-pulse 1.8s ease-out 3; }
+}
+@keyframes xo-pulse { 0% { box-shadow: 0 0 0 0 rgb(0 104 255 / 0.45); } 100% { box-shadow: 0 0 0 12px rgb(0 104 255 / 0); } }
+
+.xo .xo-label { margin: 0; font-size: 0.875rem; font-weight: 600; color: var(--color-dark-blue); }
+.xo .xo-input { width: 100%; padding: 0.55rem 0.75rem; border: 1px solid var(--color-border); border-radius: 0.5rem; background: var(--color-card); color: var(--color-dark-blue); font-size: 0.95rem; }
+.xo .xo-input:focus { border-color: var(--color-primary); outline: 2px solid color-mix(in oklab, var(--color-primary) 25%, transparent); outline-offset: 0; }
+.xo .xo-check { display: flex; align-items: flex-start; gap: 0.6rem; margin: 0; font-size: 0.875rem; font-weight: 500; color: var(--color-dark-blue); cursor: pointer; }
+.xo .xo-check input { flex-shrink: 0; width: 1.05rem; height: 1.05rem; margin-top: 0.15rem; padding: 0; border: 1px solid var(--color-gray-400); accent-color: var(--color-primary); }
+.xo-error { font-size: 0.8rem; color: #dc2626; }
+.dark .xo-error { color: #fca5a5; }
+
+.xo-dialog { margin: auto; width: calc(100% - 2rem); max-width: 28rem; padding: 0; border: 0; border-radius: 1rem; background: var(--color-card); color: var(--color-text); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.35); }
+.xo-dialog::backdrop { background: rgb(5 39 73 / 0.45); }
+.xo-pay-amount { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 1.25rem; border-radius: 0.75rem; background: var(--color-gray-50); text-align: center; }
+
+.xo-note { position: relative; padding: 0.9rem 1rem 0.9rem 2.75rem; border-radius: 0.75rem; border: 1px solid var(--color-border); background: var(--color-card); color: var(--color-gray-700); font-size: 0.95rem; line-height: 1.55; list-style: none; }
+.xo-note::before { content: '\2713'; position: absolute; left: 0.9rem; top: 0.85rem; display: inline-flex; width: 1.25rem; height: 1.25rem; align-items: center; justify-content: center; border-radius: 9999px; background: color-mix(in oklab, var(--color-primary) 12%, transparent); color: var(--color-primary); font-size: 0.7rem; font-weight: 700; }
+
+.xo-toast { position: fixed; z-index: 60; left: 1rem; right: 1rem; bottom: 1rem; max-width: 26rem; margin-left: auto; padding: 1rem 2.5rem 1rem 1rem; border-radius: 0.9rem; background: var(--color-dark-blue); color: var(--color-card); font-size: 0.9rem; line-height: 1.5; box-shadow: 0 20px 40px -10px rgb(5 39 73 / 0.45); }
+.dark .xo-toast { background: #1e293b; color: #f1f5f9; border: 1px solid var(--color-border); }
+.xo-toast[hidden] { display: none; }
+.xo-toast-title { margin-bottom: 0.25rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.75; }
+.xo .xo-toast-close { position: absolute; top: 0.6rem; right: 0.6rem; padding: 0.35rem; border-radius: 0.4rem; background: transparent; color: inherit; opacity: 0.75; }
+.xo .xo-toast-close:hover { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .xo-toast.is-in { animation: xo-toast-in 300ms ease-out; }
+}
+@keyframes xo-toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.xo-done { border-radius: 1.25rem; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%); color: #fff; }
+.xo-done .heading-3 { color: #fff; }
+
 /* Typography and accessibility, formerly separate stylesheets; appended so they keep their old precedence */
 @import "./typography.css";
 @import "./accessibility.css";

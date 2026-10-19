@@ -14,6 +14,11 @@
                     <li class="flex items-start gap-3"><span class="text-primary font-bold flex-shrink-0 mt-0.5">✓</span> <span>{{ bullet }}</span></li>
                     {% endfor %}
                 </ul>
+                {% if lang == 'en' %}{% assign example_href = '/en/example-quote/' %}{% else %}{% assign example_href = '/voorbeeld-offerte/' %}{% endif %}
+                <a href="{{ example_href | relative_url }}" class="button-primary mt-8 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3.5 shadow-md hover:bg-primary-hover transition-all sm:w-auto">
+                    {{ cv.example_cta }}
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5l5 5-5 5"/></svg>
+                </a>
             </div>
             <!-- The customer's side of the page, cut out: the offer, accepting, the payment terms and the questions -->
             <div class="min-w-0 rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 sm:p-10">

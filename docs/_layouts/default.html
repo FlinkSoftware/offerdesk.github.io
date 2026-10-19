@@ -25,6 +25,11 @@
     <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
     <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
     {% endif %}
+    {% if page.example_offer %}
+    <link rel="alternate" hreflang="nl" href="{{ '/voorbeeld-offerte/' | absolute_url }}">
+    <link rel="alternate" hreflang="en" href="{{ '/en/example-quote/' | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ '/voorbeeld-offerte/' | absolute_url }}">
+    {% endif %}
     <link rel="alternate" type="application/atom+xml" title="OfferDesk blog" href="{{ '/blog/feed.xml' | relative_url }}">
 
     <!-- The four text weights of the first screen (body, eyebrow, buttons, headings), so none waits behind the stylesheet -->
@@ -380,6 +385,7 @@
     </dialog>
     <script defer src="{{ '/js/lib/typewriter-core.js' | relative_url }}"></script>{% endif %}
     <script defer src="{{ '/js/app.js' | relative_url }}"></script>
+    {% if page.example_offer %}<script defer src="{{ '/js/example-offer.js' | relative_url }}"></script>{% endif %}
 </body>
 
 </html>

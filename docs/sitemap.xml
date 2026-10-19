@@ -24,6 +24,27 @@ layout: null
         <xhtml:link rel="alternate" hreflang="en" href="https://offerdesk.nl/en/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/" />
     </url>
+
+    <url>
+        <loc>https://offerdesk.nl/voorbeeld-offerte/</loc>
+        <lastmod>2026-10-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://offerdesk.nl/voorbeeld-offerte/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://offerdesk.nl/en/example-quote/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/voorbeeld-offerte/" />
+    </url>
+
+    <url>
+        <loc>https://offerdesk.nl/en/example-quote/</loc>
+        <lastmod>2026-10-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://offerdesk.nl/voorbeeld-offerte/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://offerdesk.nl/en/example-quote/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/voorbeeld-offerte/" />
+    </url>
+
 {% if site.posts.size > 0 %}
     <url>
         <loc>https://offerdesk.nl/blog/</loc>
