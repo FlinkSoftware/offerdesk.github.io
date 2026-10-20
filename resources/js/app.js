@@ -253,11 +253,11 @@
   }
 })();
 
-// Share band: "Ken je een ondernemer die …" types a phrase, crosses it out, and types the next; the last one stays
-// (with a wink), and after a while it starts over. Runs only while the band is on screen; with reduced motion the
-// last phrase stays as the page shows it.
+// Share band: "Ken je een ondernemer die …" types a phrase, leaves it to read, crosses it out, and types the next;
+// every phrase gets the same time, the last one (with a wink) included, then it all starts over. Runs only while the
+// band is on screen; with reduced motion the last phrase stays as the page shows it.
 (function(){
-  const TYPE = 45, DELETE = 22, READ = 1100, STRUCK = 900, END = 5000;
+  const TYPE = 45, DELETE = 22, READ = 1800, STRUCK = 900;
   function setupStrikeTyping(){
     const el = document.querySelector('[data-strike-phrases]');
     if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -290,9 +290,9 @@
         for (let i = 0; i < phrases.length; i++) {
           await shown();
           await type(phrases[i]);
-          const last = i === phrases.length - 1;
-          await wait(last ? END : READ);
-          if (!last) { el.classList.add('is-struck'); await wait(STRUCK); }
+          await wait(READ);
+          el.classList.add('is-struck');
+          await wait(STRUCK);
           await erase();
         }
       }
