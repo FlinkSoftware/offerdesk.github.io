@@ -112,7 +112,14 @@ for (const mode of ['light', 'dark']) {
   await shot('betalingen', mode, await boxOf('Betalen in delen'))
 
   await open(`${base}/files`)
-  await shot('bestanden', mode, await boxOf("Foto's"))
+  // Only the photo cards: the grid has room for four, and its empty column made the crop too wide on the site
+  await shot('bestanden', mode, await page.evaluate(() => {
+    // each photo's card: the largest ancestor that holds no other photo
+    const rs = [...document.querySelectorAll('main img')].map(c => { while (c.parentElement.querySelectorAll('img').length === 1) c = c.parentElement; return c.getBoundingClientRect() })
+    if (!rs.length) return null
+    const left = Math.min(...rs.map(r => r.left)), top = Math.min(...rs.map(r => r.top)), right = Math.max(...rs.map(r => r.right)), bottom = Math.max(...rs.map(r => r.bottom))
+    return { x: left - 16, y: top + scrollY - 16, width: right - left + 32, height: bottom - top + 32 }
+  }))
 
   await open(`${base}/history`)
   await shot('historie', mode, await page.evaluate(() => {

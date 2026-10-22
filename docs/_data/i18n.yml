@@ -140,7 +140,7 @@ nl:
     title: "Herken je dit?"
     intro: "Vijf momenten uit een gewone werkweek."
     payoff:
-      title: "Herken je er drie of meer?"
+      title: "Herken je dit?"
       text: "Dan is OfferDesk voor jou gemaakt: je weet wat je overhoudt, en wanneer je geld binnenkomt. Probeer het 14 dagen gratis, zonder te betalen."
       cta: "Start gratis"
     items:
@@ -155,9 +155,9 @@ nl:
         answer: "Ze gaan vanzelf mee. De klant vinkt af dat hij ze gelezen heeft."
       - lead: "Weet de klant dat hij eerst moet betalen?"
         questions: "Jij denkt van wel. Hij denkt: dat komt bij de factuur."
-        answer: "Hij ziet het bij de offerte. Na zijn ja krijgt hij meteen jouw betaallink, en een herinnering als het uitblijft."
+        answer: "Hij ziet de betaalafspraken bij de offerte, nog voordat hij ja zegt. Lekker duidelijk. Daarna krijgt hij meteen jouw betaallink, en een herinnering als het uitblijft."
       - lead: "De klant belt. Jij staat op een dak."
-        questions: "\"Kan die batterij ook in de garage?\" Wat was ook alweer de afspraak?"
+        questions: "\"Kan die batterij ook in de garage?\" Hoeveel meter extra kabel was dat ook alweer?"
         answer: "Hij stelt zijn vraag bij de offerte. Jij antwoordt als het uitkomt, en het antwoord blijft erbij staan."
 
   features:
@@ -208,7 +208,7 @@ nl:
         bullets:
           - "Elk product weet bij welke groothandel het hoort"
           - "Prijslijst van je groothandel in één keer inlezen"
-          - "Je ziet altijd waar een prijs vandaan komt"
+          - "Meer winst op wat je het vaakst verkoopt, of een vaste winst % per groothandel"
         images:
           - src: "/images/offerdesk/crop-producten.webp"
             src_dark: "/images/offerdesk/crop-producten-dark.webp"
@@ -642,7 +642,7 @@ nl:
 
   footer_cta:
     title_prefix: "Weet wat je overhoudt."
-    title_highlight: "Bewaar hoe je het hebt gerekend."
+    title_highlight: "Bewaar hoe je het hebt berekend."
     intro: "OfferDesk houdt bij waar je koopt, wat je betaalt en wat je op een klus overhoudt. Niet alleen bij het offreren, ook bij het bestellen en het werk zelf."
     example_cta: "Eerst kijken als klant"
     questions: "Vragen? Stuur een e-mail naar"
@@ -672,7 +672,7 @@ nl:
     post_text: "Deel dit artikel met iemand die er wat aan heeft."
 
   footer:
-    copy: "Weet wat je overhoudt. Bewaar hoe je het hebt gerekend."
+    copy: "Weet wat je overhoudt. Bewaar hoe je het hebt berekend."
     made_by: "OfferDesk is een product van Flink Software B.V."
     email: "info@offerdesk.com"
     ideas:
@@ -856,7 +856,7 @@ en:
     title: "Sound familiar?"
     intro: "Five moments from an ordinary working week."
     payoff:
-      title: "Recognise three or more?"
+      title: "Sound familiar?"
       text: "Then OfferDesk was made for you: you know what you keep, and when your money comes in. Try it free for 14 days, without paying."
       cta: "Start for free"
     items:
@@ -871,9 +871,9 @@ en:
         answer: "They go along by themselves. The customer ticks that he has read them."
       - lead: "Does the customer know he pays first?"
         questions: "You think so. He thinks: that comes with the invoice."
-        answer: "He sees it on the quote. After his yes he gets your payment link right away, and a reminder if it stays out."
+        answer: "He sees the payment terms on the quote, before he says yes. Nice and clear. Then he gets your payment link right away, and a reminder if it stays out."
       - lead: "The customer calls. You are on a roof."
-        questions: "\"Can that battery go in the garage?\" What was the agreement again?"
+        questions: "\"Can that battery go in the garage?\" How many metres of extra cable was that again?"
         answer: "He asks on the quote itself. You answer when it suits you, and the answer stays there."
 
   features:
@@ -924,7 +924,7 @@ en:
         bullets:
           - "Every product knows its wholesaler"
           - "Load your wholesaler's price list in one go"
-          - "You always see where a price comes from"
+          - "More profit on what you sell most, or a fixed profit % per wholesaler"
         images:
           - src: "/images/offerdesk/crop-producten.webp"
             src_dark: "/images/offerdesk/crop-producten-dark.webp"
