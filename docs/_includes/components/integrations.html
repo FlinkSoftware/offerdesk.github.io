@@ -1,14 +1,20 @@
-<!-- Roadmap / integrations -->
+<!-- Integrations (home) and, with part='later', the page with what is coming -->
 {% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
 {% assign i18n = site.data.i18n[lang] %}
+{% if lang == 'en' %}{% assign roadmap_href = '/en/whats-coming/' | relative_url %}{% else %}{% assign roadmap_href = '/wat-eraan-komt/' | relative_url %}{% endif %}
 <div id="integrations-section" class="bg-white py-16 sm:py-24 lg:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="rounded-3xl bg-white p-5 sm:p-10 lg:p-16 shadow-lg ring-1 ring-border">
             <div class="max-w-3xl">
+                {% if include.part == 'later' %}
+                <h1 class="heading-2">{{ i18n.integrations.roadmap_title }}</h1>
+                <p class="mt-6 body-large text-gray-700">{{ i18n.integrations.roadmap_intro }}</p>
+                {% else %}
                 <h2 class="heading-2">{{ i18n.integrations.title_prefix }} <span class="text-primary">{{ i18n.integrations.title_highlight }}</span></h2>
                 <p class="mt-6 body-large text-gray-700">{{ i18n.integrations.intro }}</p>
+                {% endif %}
             </div>
-            {% if i18n.integrations.now %}
+            {% if include.part != 'later' %}
             <div class="mt-10 sm:mt-14 grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-2">
                 {% for card in i18n.integrations.now %}
                 <div class="rounded-2xl bg-primary/5 p-5 sm:p-8 ring-1 ring-primary/30">
@@ -18,9 +24,9 @@
                 </div>
                 {% endfor %}
             </div>
-            <h3 class="mt-12 sm:mt-14 eyebrow text-gray-600">{{ i18n.integrations.later_title }}</h3>
-            {% endif %}
-            <div class="mt-6 grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <p class="mt-10"><a href="{{ roadmap_href }}" class="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary-hover transition-colors">{{ i18n.integrations.roadmap_link }}<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 0 1 .02-1.06L11.168 10 7.23 6.29a.75.75 0 1 1 1.04-1.08l4.5 4.25a.75.75 0 0 1 0 1.08l-4.5 4.25a.75.75 0 0 1-1.06-.02Z" clip-rule="evenodd"/></svg></a></p>
+            {% else %}
+            <div class="mt-10 sm:mt-14 grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {% for card in i18n.integrations.cards %}
                 <div class="rounded-2xl bg-white p-5 sm:p-8 ring-1 ring-border hover:shadow-md transition-shadow">
                     <h3 class="heading-5">{{ card.title }}</h3>
@@ -28,6 +34,7 @@
                 </div>
                 {% endfor %}
             </div>
+            {% endif %}
         </div>
     </div>
 </div>

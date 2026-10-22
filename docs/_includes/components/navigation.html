@@ -8,8 +8,8 @@
 {% endif %}
 {% assign feature_href = home_href | append: '#feature-section' %}
 {% assign pricing_href = home_href | append: '#pricing-section' %}
-{% assign about_href = home_href | append: '#about-section' %}
-{% if page.url contains '/blog/' %}{% assign nav_current = 'blog' %}{% elsif page.url == home_href %}{% assign nav_current = 'home' %}{% endif %}
+{% if lang == 'en' %}{% assign example_href = '/en/example-quote/' | relative_url %}{% else %}{% assign example_href = '/voorbeeld-offerte/' | relative_url %}{% endif %}
+{% if page.url contains '/blog/' %}{% assign nav_current = 'blog' %}{% elsif page.url contains 'voorbeeld-offerte' or page.url contains 'example-quote' %}{% assign nav_current = 'example' %}{% elsif page.url == home_href %}{% assign nav_current = 'home' %}{% endif %}
 <nav aria-label="{{ i18n.nav.label }}" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
     <div class="flex lg:flex-1">
         <a href="{{ home_href }}" class="-m-1.5 flex items-center gap-2.5 p-1.5" aria-label="OfferDesk - Home">
@@ -32,7 +32,7 @@
         <a href="{{ home_href }}" data-nav="home"{% if nav_current == 'home' %} aria-current="page"{% endif %} class="nav-link body-small">Home</a>
         <a href="{{ feature_href }}" data-nav="features"{% if nav_current == 'features' %} aria-current="page"{% endif %} class="nav-link body-small">{{ i18n.nav.links.features }}</a>
         <a href="{{ pricing_href }}" data-nav="pricing"{% if nav_current == 'pricing' %} aria-current="page"{% endif %} class="nav-link body-small">{{ i18n.nav.links.pricing }}</a>
-        <a href="{{ about_href }}" data-nav="about"{% if nav_current == 'about' %} aria-current="page"{% endif %} class="nav-link body-small">{{ i18n.nav.links.about }}</a>
+        <a href="{{ example_href }}" data-nav="example"{% if nav_current == 'example' %} aria-current="page"{% endif %} class="nav-link body-small">{{ i18n.nav.links.example }}</a>
         <a href="{{ '/blog/' | relative_url }}" data-nav="blog"{% if nav_current == 'blog' %} aria-current="page"{% endif %} class="nav-link body-small">Blog</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-3">
@@ -82,8 +82,8 @@
                             class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">{{ i18n.nav.links.features }}</a>
                         <a href="{{ pricing_href }}" data-nav="pricing"{% if nav_current == 'pricing' %} aria-current="page"{% endif %}
                             class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">{{ i18n.nav.links.pricing }}</a>
-                        <a href="{{ about_href }}" data-nav="about"{% if nav_current == 'about' %} aria-current="page"{% endif %}
-                            class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">{{ i18n.nav.links.about }}</a>
+                        <a href="{{ example_href }}" data-nav="example"{% if nav_current == 'example' %} aria-current="page"{% endif %}
+                            class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">{{ i18n.nav.links.example }}</a>
                         <a href="{{ '/blog/' | relative_url }}" data-nav="blog"{% if nav_current == 'blog' %} aria-current="page"{% endif %}
                             class="nav-link-mobile -mx-3 block rounded-lg px-3 py-2.5 body">Blog</a>
                     </div>

@@ -58,8 +58,10 @@
         gtag('config', '{{ site.google_analytics_id }}');
         (function () {
             var loaded = false;
+            // Not while the site runs on this machine (jekyll serve, a preview): those visits are our own.
+            var local = /^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)$|\.(localhost|local|test)$/.test(location.hostname);
             function load() {
-                if (loaded) return;
+                if (loaded || local) return;
                 loaded = true;
                 var script = document.createElement('script');
                 script.async = true;
@@ -105,9 +107,9 @@
       "@id": "https://offerdesk.nl/#software",
       "name": "OfferDesk",
       "url": "https://offerdesk.nl",
-      "description": "{% if lang == 'en' %}Smart project and quoting software for small and medium-sized businesses. Calculate the cost price and the expected margin before you send a quote, store suppliers and purchase prices once, and get the material list for purchasing automatically after the customer approves. Without the complexity of a heavy ERP system.{% else %}Slimme project- en offertesoftware voor het MKB. Bereken de kostprijs en de verwachte marge vóór je een offerte verstuurt, sla leveranciers en inkoopprijzen eenmalig op en krijg na akkoord van de klant automatisch de materiaallijst voor inkoop. Zonder de complexiteit van een zwaar ERP-systeem.{% endif %}",
+      "description": "{% if lang == 'en' %}Quoting software for trade businesses: contractors, installers, painters, landscapers. Put your wholesalers and purchase prices in once, see per line what a job leaves you, the customer says yes on their phone and your order list per wholesaler is ready. Without a heavy system.{% else %}Offertesoftware voor vakbedrijven: aannemers, installateurs, schilders, hoveniers. Zet je groothandels en inkoopprijzen er één keer in, zie per regel wat je aan een klus overhoudt, de klant zegt ja op zijn telefoon en je bestellijst per groothandel staat klaar. Zonder zwaar systeem.{% endif %}",
       "applicationCategory": "BusinessApplication",
-      "applicationSubCategory": "{% if lang == 'en' %}Quoting and costing software{% else %}Offerte- en calculatiesoftware{% endif %}",
+      "applicationSubCategory": "{% if lang == 'en' %}Quoting software{% else %}Offertesoftware{% endif %}",
       "operatingSystem": "Web-based (any modern browser on desktop, tablet and phone)",
       "browserRequirements": "Requires JavaScript. Requires HTML5.",
       "inLanguage": ["nl-NL", "en"],
@@ -115,40 +117,40 @@
       "countriesSupported": "NL",
       "isAccessibleForFree": false,
       "installUrl": "https://app.offerdesk.nl/sign-up",
-      "image": "{{ '/images/og-image.jpg' | absolute_url }}",
-      "screenshot": "{{ '/images/og-image.jpg' | absolute_url }}",
+      "image": "{% if lang == 'en' %}{{ '/images/og-image-en.jpg' | absolute_url }}{% else %}{{ '/images/og-image.jpg' | absolute_url }}{% endif %}",
+      "screenshot": "{{ '/images/og-dashboard.jpg' | absolute_url }}",
       "featureList": [{% if lang == 'en' %}
-        "Expected margin up front: purchase price, mark-up and selling price per quote line, with the project margin live while you quote",
-        "Cost price calculation from materials and hours",
-        "Store suppliers and purchase prices once in a product catalogue, importable from a file",
-        "Material list for purchasing after customer approval, grouped per supplier",
-        "Share the quote online through a secure link where the customer asks questions and approves",
-        "Send quotes as PDF and by email with your own company details and terms",
-        "Payment schedules with instalments, your own payment links and automatic reminders",
-        "Tasks and history per quote",
-        "Dashboard with open quotes, approved quotes and the margin won at",
-        "Customer and supplier management",
+        "Purchase price, selling price and what you keep per quote line, with what the whole job leaves you in view while you quote",
+        "What a job costs you, from materials and hours",
+        "Your wholesalers and purchase prices in once, in your own price list, loadable from a file",
+        "Order list per wholesaler when the customer says yes",
+        "The customer reads the quote on their phone, asks questions and says yes, with a code from the email",
+        "Quotes as PDF and by email, with your own logo, details and terms",
+        "Deposit and payments in parts, with your own payment link and reminders that go by themselves",
+        "Tasks and everything that happened, per quote",
+        "Overview with open quotes, quotes that got a yes and what you keep on average",
+        "Customers and wholesalers in one place",
         "Work together with colleagues, with roles (owner, administrator, member)",
-        "Moneybird integration (accounting) and online payments through Mollie",
-        "Dutch and English, light and dark mode"
+        "Invoice in Moneybird with one tap, subscription paid through Mollie",
+        "Dutch and English, light and dark"
       {% else %}
-        "Verwachte marge vooraf: inkoopprijs, opslag en verkoopprijs per offerteregel, met de projectmarge live in beeld tijdens het offreren",
-        "Kostprijsberekening op basis van materiaal en uren",
-        "Leveranciers en inkoopprijzen eenmalig opslaan in een productcatalogus, te importeren uit een bestand",
-        "Materiaallijst voor inkoop na akkoord van de klant, gegroepeerd per leverancier",
-        "Offerte online delen via een beveiligde link waarmee de klant vragen stelt en akkoord geeft",
-        "Offertes als PDF en per e-mail versturen met eigen bedrijfsgegevens en voorwaarden",
-        "Betaalschema's met termijnen, eigen betaallinks en automatische herinneringen",
-        "Taken en historie per offerte",
-        "Dashboard met openstaande offertes, goedgekeurde offertes en de marge waarop je wint",
-        "Klanten- en leveranciersbeheer",
+        "Inkoopprijs, verkoopprijs en wat je overhoudt per offerteregel, met wat de hele klus je oplevert in beeld terwijl je de offerte maakt",
+        "Wat een klus je kost, uit materiaal en uren",
+        "Je groothandels en inkoopprijzen één keer erin, in je eigen prijslijst, in te lezen uit een bestand",
+        "Bestellijst per groothandel als de klant ja zegt",
+        "De klant leest de offerte op zijn telefoon, stelt vragen en zegt ja, met een code uit de mail",
+        "Offertes als PDF en per e-mail, met je eigen logo, gegevens en voorwaarden",
+        "Aanbetaling en betalen in delen, met je eigen betaallink en herinneringen die vanzelf gaan",
+        "Taken en alles wat er gebeurde, per offerte",
+        "Overzicht met openstaande offertes, offertes die ja kregen en wat je gemiddeld overhoudt",
+        "Klanten en groothandels op één plek",
         "Samenwerken met collega's, met rollen (eigenaar, beheerder, lid)",
-        "Koppeling met Moneybird (boekhouding) en online betalingen via Mollie",
-        "Nederlands en Engels, lichte en donkere weergave"
+        "Factuur in Moneybird met één tik, abonnement betalen via Mollie",
+        "Nederlands en Engels, licht en donker"
       {% endif %}],
       "audience": {
         "@type": "BusinessAudience",
-        "audienceType": "{% if lang == 'en' %}Small and medium-sized project businesses in construction, installation, finishing, landscaping and service/maintenance (contractors, installers, electricians, plumbers, painters, plasterers, landscapers, maintenance companies){% else %}MKB-projectbedrijven in bouw, techniek, afbouw, hoveniers en service/onderhoud (aannemers, installateurs, elektriciens, loodgieters, schilders, stukadoors, hoveniers, onderhoudsbedrijven){% endif %}",
+        "audienceType": "{% if lang == 'en' %}Trade businesses of one to five people in construction, installation, finishing, gardens and maintenance (contractors, installers, electricians, plumbers, painters, plasterers, landscapers, maintenance companies){% else %}Vakbedrijven van één tot vijf man in bouw, installatie, afbouw, tuin en onderhoud (aannemers, installateurs, elektriciens, loodgieters, schilders, stukadoors, hoveniers, onderhoudsbedrijven){% endif %}",
         "geographicArea": { "@type": "Country", "name": "Nederland" }
       },
       "offers": {
@@ -162,7 +164,7 @@
           {
             "@type": "Offer",
             "name": "Starter",
-            "description": "{% if lang == 'en' %}For 1 user. Unlimited quotes, customers, products and suppliers. 14-day free trial, cancel monthly.{% else %}Voor 1 gebruiker. Onbeperkt offertes, klanten, producten en leveranciers. 14 dagen gratis proberen, maandelijks opzegbaar.{% endif %}",
+            "description": "{% if lang == 'en' %}For 1 user. Unlimited quotes, customers, products and wholesalers. 14-day free trial, cancel monthly.{% else %}Voor 1 gebruiker. Onbeperkt offertes, klanten, producten en groothandels. 14 dagen gratis proberen, maandelijks opzegbaar.{% endif %}",
             "price": "9.99",
             "priceCurrency": "EUR",
             "url": "https://app.offerdesk.nl/sign-up?plan=starter",
@@ -180,7 +182,7 @@
           {
             "@type": "Offer",
             "name": "Professional",
-            "description": "{% if lang == 'en' %}Up to 5 users. Everything in Starter, plus payment schedules, Moneybird integration, purchase orders per supplier and working together with colleagues. 14-day free trial, cancel monthly.{% else %}Tot 5 gebruikers. Alles in Starter, plus betaalschema's, Moneybird-koppeling, inkooporders per leverancier en samenwerken met collega's. 14 dagen gratis proberen, maandelijks opzegbaar.{% endif %}",
+            "description": "{% if lang == 'en' %}Up to 5 users. Everything in Starter, plus paying in parts, Moneybird integration, order list per wholesaler and working together with colleagues. 14-day free trial, cancel monthly.{% else %}Tot 5 gebruikers. Alles in Starter, plus betalen in delen, Moneybird-koppeling, bestellijst per groothandel en samenwerken met collega's. 14 dagen gratis proberen, maandelijks opzegbaar.{% endif %}",
             "price": "19.99",
             "priceCurrency": "EUR",
             "url": "https://app.offerdesk.nl/sign-up?plan=professional",
@@ -216,7 +218,7 @@
       },
       "publisher": { "@id": "https://offerdesk.nl/#organization" },
       "provider": { "@id": "https://offerdesk.nl/#organization" },
-      "softwareHelp": { "@type": "WebPage", "url": "{{ page.url | absolute_url }}#faq-section" },
+      "softwareHelp": { "@type": "WebPage", "url": "{% if lang == 'en' %}{{ '/en/faq/' | absolute_url }}{% else %}{{ '/veelgestelde-vragen/' | absolute_url }}{% endif %}" },
       "keywords": "{% if lang == 'en' %}quoting software, costing software, cost price calculation, margin control, purchase list, project software SME, ERP alternative, contractors, installers, painters, electricians, landscapers{% else %}offertesoftware, calculatiesoftware, kostprijsberekening, margebewaking, inkooplijst, projectsoftware MKB, ERP-alternatief, aannemers, installateurs, schilders, elektriciens, hoveniers{% endif %}"
     }
     </script>
@@ -231,7 +233,7 @@
       "legalName": "Flink Software B.V.",
       "url": "https://offerdesk.nl",
       "logo": "https://offerdesk.nl/images/logo-v2.svg",
-      "description": "{% if lang == 'en' %}Quoting software for construction, technical and service businesses. Full control over margins, purchase prices and profitability.{% else %}Offertesoftware voor bouw-, techniek- en servicebedrijven. Volledige grip op marges, inkoopprijs en winstgevendheid.{% endif %}",
+      "description": "{% if lang == 'en' %}Quoting software for trade businesses. You know what a job leaves you before you send the quote.{% else %}Offertesoftware voor vakbedrijven. Je weet wat je aan een klus overhoudt vóórdat je de offerte verstuurt.{% endif %}",
       "address": { "@type": "PostalAddress", "addressCountry": "NL" },
       "sameAs": [
         "https://www.linkedin.com/company/offerdesk"
@@ -243,13 +245,14 @@
       }
     }
     </script>
-    {% if page.url == '/' or page.url == '/en/' %}
+    {% comment %}Only on pages that show questions: home (faq: home, the eight shown there) and the FAQ page (faq: all){% endcomment %}
+    {% if page.faq %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "inLanguage": "{{ lang }}",
-      "mainEntity": [{% for item in i18n.faq.items %}
+      "mainEntity": [{% if page.faq == 'all' %}{% assign faq_items = i18n.faq.items %}{% else %}{% assign faq_items = i18n.faq.items | where: 'home', true %}{% endif %}{% for item in faq_items %}
         {
           "@type": "Question",
           "name": {{ item.question | strip_html | jsonify }},
@@ -296,7 +299,7 @@
         {% if lang == 'en' %}{% assign footer_home = '/en/' | relative_url %}{% else %}{% assign footer_home = '/' | relative_url %}{% endif %}
         <footer class="bg-white border-t border-border">
             <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
-                <div class="grid gap-12 md:gap-16 md:grid-cols-3">
+                <div class="grid gap-12 md:gap-x-16 md:gap-y-12 md:grid-cols-2 lg:grid-cols-4">
                     <div>
                         <a href="{{ '/' | relative_url }}" class="inline-flex items-center gap-2.5" aria-label="OfferDesk - Home">
                             <img src="{{ '/images/favicon/favicon.svg' | relative_url }}" alt="" aria-hidden="true" class="h-9 w-9 rounded-lg">
@@ -304,6 +307,16 @@
                         </a>
                         <p class="mt-4 max-w-xs text-sm leading-7 text-gray-700">{{ i18n.footer.copy }}</p>
                         <a href="mailto:{{ site.email }}" class="mt-6 inline-flex font-semibold text-primary hover:text-primary-hover transition-colors text-sm" aria-label="Email us at {{ site.email }}">{{ site.email }}</a>
+                        <h3 class="mt-8 text-sm font-bold uppercase tracking-wider text-gray-900">{{ i18n.footer.language_title }}</h3>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            {% for option in i18n.footer.languages %}
+                            <a href="{{ option.href | relative_url }}"
+                               class="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-dark-blue hover:border-primary hover:text-primary transition-colors{% if lang == 'nl' and option.href == '/' %} bg-gray-100 border-primary text-primary-hover{% elsif lang == 'en' and option.href == '/en/' %} bg-gray-100 border-primary text-primary-hover{% endif %}">
+                                <span aria-hidden="true">{{ option.flag }}</span>
+                                {{ option.label }}
+                            </a>
+                            {% endfor %}
+                        </div>
                     </div>
 
                     <div>
@@ -318,24 +331,18 @@
                         </ul>
                     </div>
 
-                    <div>
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-gray-900">{{ i18n.footer.language_title }}</h3>
-                        <div class="mt-6 flex flex-wrap gap-3">
-                            {% for option in i18n.footer.languages %}
-                            <a href="{{ option.href | relative_url }}"
-                               class="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-dark-blue hover:border-primary hover:text-primary transition-colors{% if lang == 'nl' and option.href == '/' %} bg-gray-100 border-primary text-primary-hover{% elsif lang == 'en' and option.href == '/en/' %} bg-gray-100 border-primary text-primary-hover{% endif %}">
-                                <span aria-hidden="true">{{ option.flag }}</span>
-                                {{ option.label }}
-                            </a>
-                            {% endfor %}
-                        </div>
+                    <div id="newsletter-section" class="md:col-span-2">
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-gray-900">{{ i18n.footer.newsletter_title }}</h3>
+                        <p class="mt-6 max-w-md text-sm leading-7 text-gray-700">{{ i18n.footer.newsletter_text }}</p>
+                        <!-- MailerLite form (its texts live in MailerLite, form lB1Awv); the script loads when the footer comes near -->
+                        <div class="ml-embedded mt-4" data-form="lB1Awv"></div>
                     </div>
+
                 </div>
 
                 <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600">
                     <p>&copy; {{ site.time | date: "%Y" }} OfferDesk · {{ i18n.footer.made_by }}</p>
                     <div class="flex flex-wrap items-center gap-6">
-                        <a href="{{ footer_home }}#newsletter-section" class="hover:text-primary transition-colors">{% if lang == 'en' %}Newsletter{% else %}Nieuwsbrief{% endif %}</a>
                         {% comment %}A mailto link alone does nothing for people without a mail app (webmail users): a small window
                         shows the address to copy, the mail app and Gmail{% endcomment %}
                         {% assign ideas = i18n.footer.ideas %}

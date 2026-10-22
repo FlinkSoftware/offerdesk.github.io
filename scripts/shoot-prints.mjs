@@ -21,7 +21,7 @@ const env = Object.fromEntries(
 const browser = await puppeteer.launch({
   executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   headless: true,
-  args: ['--no-first-run', '--hide-scrollbars', '--force-device-scale-factor=2'],
+  args: ['--no-first-run', '--hide-scrollbars', '--force-device-scale-factor=2', '--lang=nl-NL'],
 })
 const page = await browser.newPage()
 // 1840 wide: the app's sidebar takes 240, which leaves the content area the 1600 the other prints have
@@ -32,11 +32,15 @@ const sleep = ms => new Promise(r => setTimeout(r, ms))
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a)
 
 // Sign in: the auth-server's form, then the app's dashboard
-await page.goto(APP + '/', { waitUntil: 'networkidle0' })
+// The login page opens on "a code by mail" (its own form comes first), so ask for the password form and
+// press that form's button; the app follows Accept-Language, so Dutch is set on the page
+await page.setExtraHTTPHeaders({ 'Accept-Language': 'nl-NL,nl;q=0.9' })
+await page.goto(APP + '/auth/login?method=password', { waitUntil: 'networkidle0' })
 await page.waitForSelector('#username', { timeout: 20000 })
 await page.type('#username', env.TEST3_EMAIL)
 await page.type('#password', env.TEST3_PASSWORD)
-await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 30000 }), page.click('button[type=submit]')])
+await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 30000 }),
+  page.evaluate(() => document.querySelector('#password').closest('form').querySelector('button[type=submit]').click())])
 await page.waitForSelector('main', { timeout: 30000 })
 log('signed in at', page.url())
 
@@ -106,10 +110,10 @@ for (const mode of ['light', 'dark']) {
   await open(`${base}/payments`, 'main'); await shot('betalingen', mode, 'main')
   await open(`${base}/files`, 'main'); await shot('bestanden', mode, 'main')
   await open(`${base}/history`, 'main'); await shot('historie', mode, 'main')
-  // Activities without the system entries: the question and the answer are what this print is about
+  // Activities without OfferDesk's own entries: the question and the answer are what this print is about
   await open(`${base}/activities`, 'main')
   await page.evaluate(() => {
-    const label = [...document.querySelectorAll('span,label,p')].find(e => e.childElementCount === 0 && e.textContent.trim() === 'Systeemactiviteiten')
+    const label = [...document.querySelectorAll('span,label,p')].find(e => e.childElementCount === 0 && e.textContent.trim() === 'Ook wat OfferDesk zelf deed')
     const sw = label?.parentElement?.querySelector('button[role=switch],input[type=checkbox],button')
     if (sw) sw.click()
   })

@@ -22,7 +22,7 @@ const env = Object.fromEntries(
 const browser = await puppeteer.launch({
   executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   headless: true,
-  args: ['--no-first-run', '--hide-scrollbars', '--force-device-scale-factor=2'],
+  args: ['--no-first-run', '--hide-scrollbars', '--force-device-scale-factor=2', '--lang=nl-NL'],
 })
 const page = await browser.newPage()
 await page.setViewport({ width: 1840, height: 1400, deviceScaleFactor: 2 })
@@ -30,11 +30,15 @@ await page.setCookie({ name: 'cookie-consent', value: 'declined', domain: 'local
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a)
 
-await page.goto(APP + '/', { waitUntil: 'networkidle0' })
+// The login page opens on "a code by mail" (its own form comes first), so ask for the password form and
+// press that form's button; the app follows Accept-Language, so Dutch is set on the page
+await page.setExtraHTTPHeaders({ 'Accept-Language': 'nl-NL,nl;q=0.9' })
+await page.goto(APP + '/auth/login?method=password', { waitUntil: 'networkidle0' })
 await page.waitForSelector('#username', { timeout: 20000 })
 await page.type('#username', env.TEST3_EMAIL)
 await page.type('#password', env.TEST3_PASSWORD)
-await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 30000 }), page.click('button[type=submit]')])
+await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 30000 }),
+  page.evaluate(() => document.querySelector('#password').closest('form').querySelector('button[type=submit]').click())])
 await page.waitForSelector('main', { timeout: 30000 })
 log('signed in')
 
@@ -91,7 +95,7 @@ for (const mode of ['light', 'dark']) {
 
   await open(base)
   await shot('regels', mode, await boxOf('Regels'))
-  await shot('winst', mode, await boxOf('Winstgevendheid'))
+  await shot('winst', mode, await boxOf('Wat je overhoudt'))
 
   await open(`${APP}/products`)
   await shot('producten', mode, await boxOf('Producten', 'table') || await page.evaluate(() => { const t = document.querySelector('main table'); const r = t?.getBoundingClientRect(); return r ? { x: r.left, y: r.top + scrollY, width: r.width, height: r.height } : null }))
@@ -105,10 +109,10 @@ for (const mode of ['light', 'dark']) {
   }))
 
   await open(`${base}/payments`)
-  await shot('betalingen', mode, await boxOf('Betaalschema'))
+  await shot('betalingen', mode, await boxOf('Betalen in delen'))
 
   await open(`${base}/files`)
-  await shot('bestanden', mode, await boxOf('Bestanden'))
+  await shot('bestanden', mode, await boxOf("Foto's"))
 
   await open(`${base}/history`)
   await shot('historie', mode, await page.evaluate(() => {

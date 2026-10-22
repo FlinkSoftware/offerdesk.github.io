@@ -39,5 +39,9 @@
             <span>{{ i18n.pricing.payment_note }}</span>
         </p>
         {% endif %}
+        {% if i18n.pricing.soon_note %}
+        {% if lang == 'en' %}{% assign roadmap_href = '/en/whats-coming/' | relative_url %}{% else %}{% assign roadmap_href = '/wat-eraan-komt/' | relative_url %}{% endif %}
+        <p class="mt-3 text-center body-small text-gray-700"><a href="{{ roadmap_href }}" class="font-semibold text-primary hover:text-primary-hover transition-colors">{{ i18n.pricing.soon_note }}</a></p>
+        {% endif %}
     </div>
 </div>

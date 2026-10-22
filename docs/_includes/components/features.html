@@ -1,17 +1,25 @@
 <!-- Features Section -->
 {% assign lang = page.lang | default: site.default_lang | default: 'nl' %}
 {% assign i18n = site.data.i18n[lang] %}
+{% comment %}Home shows the blocks of the job; "only='more'" (the unpublished page /mogelijkheden/) shows the
+sections marked page: more in i18n.yml{% endcomment %}
+{% if include.only == 'more' %}{% assign sections = i18n.features.sections | where: 'page', 'more' %}{% else %}{% assign sections = i18n.features.sections | where_exp: 's', 's.page != "more"' %}{% endif %}
 <div id="feature-section" class="bg-white py-16 sm:py-24 lg:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="text-center mb-12 sm:mb-14">
+            {% if include.only == 'more' %}
+            <h1 class="heading-2">{{ i18n.features.more_title }}</h1>
+            <p class="mx-auto mt-5 max-w-2xl body-large text-gray-700">{{ i18n.features.more_intro }}</p>
+            {% else %}
             <h2 class="heading-2">
                 {{ i18n.features.title_prefix }} <span class="text-primary">{{ i18n.features.title_highlight }}</span>
             </h2>
             <p class="mx-auto mt-5 max-w-2xl body-large text-gray-700">{{ i18n.features.intro }}</p>
+            {% endif %}
         </div>
 
         <div class="space-y-14 sm:space-y-16 lg:space-y-20">
-            {% for feature in i18n.features.sections %}
+            {% for feature in sections %}
             <div class="flex flex-col {% cycle 'lg:flex-row', 'lg:flex-row-reverse' %} items-center gap-8 lg:gap-12 py-3 sm:py-4">
                 <div class="w-full lg:flex-[5_1_0%] lg:min-w-0 flex flex-col justify-center">
                     <div class="eyebrow inline-block px-4 py-1.5 bg-primary/10 rounded-full w-fit">

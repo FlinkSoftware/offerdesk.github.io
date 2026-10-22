@@ -9,8 +9,8 @@
             <div class="absolute -bottom-32 -right-32 h-80 w-80 bg-secondary/10 rounded-full blur-3xl"></div>
 
             <div class="relative z-10">
-                <h2 class="heading-2 text-white">{{ i18n.footer_cta.title_prefix }} <span class="text-white/90">{{ i18n.footer_cta.title_highlight }}</span></h2>
-                <p class="mt-6 body-large text-white/90 max-w-2xl mx-auto">{{ i18n.footer_cta.intro }}</p>
+                <h2 class="heading-2 text-white">{{ i18n.footer_cta.title_prefix }} <span class="text-white">{{ i18n.footer_cta.title_highlight }}</span></h2>
+                <p class="mt-6 body-large text-white max-w-2xl mx-auto">{{ i18n.footer_cta.intro }}</p>
 
                 <div class="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="https://app.offerdesk.nl/sign-up"
@@ -19,10 +19,15 @@
                        class="rounded-lg bg-white px-8 py-3.5 text-sm font-semibold tracking-tight text-primary shadow-lg transition-colors hover:bg-gray-100 sm:text-base">
                         {{ i18n.nav.sign_up }}
                     </a>
+                    {% if lang == 'en' %}{% assign example_href = '/en/example-quote/' %}{% else %}{% assign example_href = '/voorbeeld-offerte/' %}{% endif %}
+                    <a href="{{ example_href | relative_url }}"
+                       class="rounded-lg border-2 border-white px-8 py-3 text-sm font-semibold tracking-tight text-white transition-colors hover:bg-white hover:text-primary sm:text-base">
+                        {{ i18n.footer_cta.example_cta }}
+                    </a>
                 </div>
 
-                <div class="mt-8 text-white/60 text-sm">
-                    <p>{{ i18n.footer_cta.questions }} <a href="mailto:{{ site.email }}" class="font-semibold text-white/90 hover:text-white">{{ site.email }}</a></p>
+                <div class="mt-8 text-white text-sm">
+                    <p>{{ i18n.footer_cta.questions }} <a href="mailto:{{ site.email }}" class="font-semibold text-white hover:text-white">{{ site.email }}</a></p>
                 </div>
             </div>
         </div>

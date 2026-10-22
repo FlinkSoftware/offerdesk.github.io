@@ -25,16 +25,6 @@
                         {{ i18n.hero.subtitle }}
                     </p>
 
-                    <!-- Bullets -->
-                    <ul class="mt-6 space-y-3 body-large text-gray-700">
-                        {% for bullet in i18n.hero.bullets %}
-                        <li class="flex items-center gap-3">
-                            <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-xs">✓</span>
-                            <span>{{ bullet }}</span>
-                        </li>
-                        {% endfor %}
-                    </ul>
-
                     <!-- CTA Buttons: stacked and full width on phones, side by side from sm. The second one scrolls
                          down to "how it works" (smooth, see app.css), so it carries a chevron that says so. -->
                     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -44,19 +34,14 @@
                            class="button-primary w-full sm:w-auto rounded-lg bg-primary px-6 py-3.5 shadow-md hover:bg-primary-hover transition-all inline-flex items-center justify-center">
                             {{ i18n.hero.cta_primary }}
                         </a>
-                        <a href="#process-section"
+                        <!-- Before signing up: what does my customer get to see? The example quote shows it, without an account -->
+                        {% if lang == 'en' %}{% assign example_href = '/en/example-quote/' %}{% else %}{% assign example_href = '/voorbeeld-offerte/' %}{% endif %}
+                        <a href="{{ example_href | relative_url }}"
                            class="button-secondary w-full sm:w-auto rounded-lg border-2 border-primary px-6 py-3.5 text-primary hover:bg-primary hover:text-white hover:border-primary transition-all inline-flex items-center justify-center gap-2">
                             {{ i18n.hero.cta_secondary }}
-                            <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>
+                            <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5l5 5-5 5"/></svg>
                         </a>
                     </div>
-
-                    <!-- Before signing up: what does my customer get to see? The example quote shows it -->
-                    {% if lang == 'en' %}{% assign example_href = '/en/example-quote/' %}{% else %}{% assign example_href = '/voorbeeld-offerte/' %}{% endif %}
-                    <a href="{{ example_href | relative_url }}" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover">
-                        {{ i18n.hero.example_link }}
-                        <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5l5 5-5 5"/></svg>
-                    </a>
 
                     <!-- What someone wonders right before clicking "start": no risk, no card, no lock-in -->
                     <ul class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-600">

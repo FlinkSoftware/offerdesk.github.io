@@ -1,6 +1,6 @@
 # OfferDesk
 
-> OfferDesk is slimme project- en offertesoftware voor het MKB: kostprijs berekenen, marge bewaken, offertes maken en inkopen in één pakket, zonder de complexiteit van een zwaar ERP-systeem. Gemaakt voor projectbedrijven in de bouw, techniek, afbouw, hoveniers en service/onderhoud. Vanaf € 9,99 per maand, 14 dagen gratis proberen, maandelijks opzegbaar.
+> OfferDesk is offertesoftware voor vakbedrijven van één tot vijf man: aannemers, installateurs, elektriciens, loodgieters, schilders, hoveniers, onderhoudsbedrijven. Je zet je groothandels en inkoopprijzen er één keer in, ziet per regel wat je aan een klus overhoudt, de klant zegt ja op zijn telefoon en je bestellijst per groothandel staat klaar. Vanaf € 9,99 per maand, 14 dagen gratis, zonder te betalen, maandelijks opzegbaar.
 
 Website: https://offerdesk.nl (Nederlands), https://offerdesk.nl/en/ (English)
 App: https://app.offerdesk.nl
@@ -8,76 +8,82 @@ Maker: Flink Software B.V., Nederland. Contact: info@offerdesk.com
 
 ## Wat is OfferDesk
 
-OfferDesk is een online (SaaS) applicatie waarmee een bedrijf een offerte opbouwt uit materiaal en uren met inkoopprijzen erachter. Daardoor weet je vóór het versturen wat de klus kost, wat je eraan verdient en wat je na akkoord moet inkopen. Je werkt in de browser; er is niets te installeren.
+OfferDesk is een online programma (werkt in de browser, niets te installeren) waarmee een vakbedrijf een offerte opbouwt uit materiaal en uren, met de inkoopprijzen erachter. Daardoor weet je vóór het versturen wat de klus je kost, wat je eraan overhoudt en wat je moet bestellen als de klant ja zegt.
 
-Het verschil met gewone offertesoftware: een gewone offertetool helpt je een nette offerte te schrijven. OfferDesk rekent mee. Elke regel kent een inkoopprijs en een marge, dus je ziet de verwachte marge van een project terwijl je de offerte maakt, en de inkooplijst volgt vanzelf uit wat de klant goedkeurt.
+Het verschil met gewone offertesoftware: die maakt een net document. OfferDesk rekent mee. Bij elke regel staat wat je inkoopt en wat je overhoudt, en de bestellijst volgt vanzelf uit wat de klant goedkeurt.
 
-Het verschil met een ERP-systeem (zoals SAP, Exact of AFAS): OfferDesk doet alleen het stuk van offerte tot inkoop en bewaakt daarbij de marge. Geen implementatietraject, geen consultants, geen modules die je niet gebruikt. Je kunt dezelfde dag beginnen. Facturen en boekhouding blijven in je eigen boekhoudpakket.
+Het verschil met een zwaar systeem (SAP, AFAS, Exact): OfferDesk doet alleen het stuk van offerte tot bestellen. Geen maandenlange invoering, geen consultants, geen modules die je niet gebruikt. Je begint vandaag. Facturen en boekhouding blijven in je eigen boekhoudpakket.
 
 ## Voor wie
 
-Kleine en middelgrote projectbedrijven die werk op offertebasis aannemen, van zzp'er tot bedrijf met meerdere calculators en planners:
+Vakbedrijven die werk aannemen op offerte, van één man met een bus tot een ploeg van vijf:
 
 - Bouw: aannemers, verbouwers, timmerbedrijven, dakdekkers
-- Techniek: installateurs, elektriciens, loodgieters, verwarmings- en klimaattechniek, zonnepanelen
-- Afbouw: schilders, stukadoors, tegelzetters, vloerenleggers, interieurbouwers
-- Hoveniers en groenvoorziening
-- Service en onderhoud: onderhoudsbedrijven, storingsdiensten, montagebedrijven
+- Installatie: cv- en warmtepompinstallateurs, elektriciens, loodgieters, zonnepanelenleggers
+- Afbouw: schilders, stukadoors, tegelzetters, vloerenleggers
+- Hoveniers
+- Onderhoud: onderhoudsbedrijven, storingsdiensten, montagebedrijven
 
-Niet bedoeld voor: grote ondernemingen die een volledig ERP nodig hebben (voorraadbeheer over meerdere vestigingen, productieplanning, HR, uitgebreide financiële administratie).
+Niet bedoeld voor grote bedrijven die een compleet bedrijfssysteem nodig hebben (voorraad over meerdere vestigingen, productieplanning, personeelszaken, volledige boekhouding).
 
-## Belangrijkste functies
+## Wat erin zit
 
-- Verwachte marge vooraf: per offerteregel inkoopprijs, opslag en verkoopprijs; de totale marge van het project staat live in beeld tijdens het maken.
-- Leveranciers en prijzen eenmalig opslaan: een productcatalogus met inkoopprijs per leverancier en artikelnummer, te importeren uit een bestand. Een prijs die je eens vastlegt gebruik je in elke volgende offerte.
-- Van akkoord naar inkoop: zodra de klant de offerte goedkeurt, staat de materiaallijst klaar, gegroepeerd per leverancier, zodat je direct kunt bestellen.
-- Offerte online delen: de klant opent de offerte via een beveiligde link met toegangscode, kan vragen stellen en akkoord geven. Je ziet wanneer de offerte is bekeken en wat de klant heeft gevraagd.
-- Offerte als PDF en per e-mail versturen, met je eigen logo, teksten en algemene voorwaarden (in versies).
-- Betaalschema's: termijnen (bijvoorbeeld aanbetaling bij akkoord, rest bij oplevering) met je eigen betaallink en automatische herinneringen.
-- Taken en historie per offerte: wie heeft wat wanneer gedaan en wat moet nog gebeuren.
-- Foto's en bestanden bij een offerte, ook direct vanaf de telefoon.
-- Dashboard: openstaande offertes, wat er de laatste 30 dagen is goedgekeurd, de marge waarop je wint, meest geoffreerde producten.
-- Klanten en leveranciers beheren.
-- Samenwerken: collega's uitnodigen met rollen (eigenaar, beheerder, lid).
-- Koppelingen: Moneybird (een geaccepteerde offerte wordt met één klik een conceptfactuur) en betalen voor het abonnement via Mollie.
-- Nederlands en Engels, lichte en donkere weergave, werkt op desktop, tablet en telefoon.
+- Foto's en bestanden bij een klus, ook rechtstreeks vanaf je telefoon, met een korte tekst erbij. Jij bepaalt wat de klant ziet.
+- Per regel: inkoopprijs, verkoopprijs en wat je overhoudt. Wat je aan de hele klus overhoudt staat in beeld terwijl je de offerte maakt.
+- Je groothandels en inkoopprijzen één keer erin, in je eigen prijslijst, ook in te lezen uit een bestand. Elk product weet bij welke groothandel het hoort.
+- Aanbetaling: OfferDesk rekent het materiaal uit, de klant ziet alleen het bedrag. Betaalverzoek met je eigen betaallink (bank, Tikkie, bunq) en herinneringen die vanzelf gaan. Betalen in delen kan ook, per offerte anders.
+- Zegt de klant ja, dan staat de bestellijst klaar: per groothandel, met artikelnummers, aantallen en prijzen.
+- De klant krijgt een eigen pagina met een code uit de mail: offerte lezen, PDF pakken, vraag stellen, ja zeggen met zijn naam. Jij krijgt een melding. Elke verstuurde versie blijft bewaard.
+- Je voorwaarden gaan als PDF mee; de klant vinkt aan dat hij ermee akkoord gaat, en OfferDesk bewaart welke versie dat was.
+- Offerte als PDF en per e-mail, met je eigen logo en tekst, in drie opmaken (Klassiek, Modern, Compact), in het Nederlands of Engels.
+- Samenwerken met collega's (rollen: eigenaar, beheerder, lid), taken, en alles wat er met een offerte gebeurde.
+- Overzicht: openstaande offertes, wat er de laatste 30 dagen ja kreeg, wat je gemiddeld overhoudt.
+- Koppelingen: Moneybird (een offerte waar de klant ja op zei wordt met één tik een conceptfactuur) en betalen voor het abonnement via Mollie.
+- Lichte en donkere weergave, werkt op desktop, tablet en telefoon.
 
 ## Prijzen
 
-Alle prijzen per maand, exclusief btw, maandelijks opzegbaar, geen setup-kosten. Elk pakket begint met 14 dagen gratis proberen; je kiest zelf of je direct betaalt of pas na de proefperiode. Overstappen kan altijd.
+Per maand, zonder btw, maandelijks opzegbaar, geen kosten vooraf. Elk pakket begint met 14 dagen gratis, zonder te betalen; daarna kies je zelf. Overstappen kan altijd.
 
-| Pakket       | Prijs per maand | Gebruikers        | Voor wie                                                   |
-|--------------|-----------------|-------------------|------------------------------------------------------------|
-| Starter      | € 9,99          | 1 gebruiker       | Zzp'er of klein vakbedrijf                                 |
-| Professional | € 19,99         | Tot 5 gebruikers  | Groeiend vakbedrijf dat samenwerkt en betaalschema's wil   |
-| Business     | € 29,99         | Onbeperkt         | MKB-bedrijf met veel medewerkers, directe support          |
+| Pakket       | Prijs per maand | Gebruikers        | Voor wie                              |
+|--------------|-----------------|-------------------|---------------------------------------|
+| Starter      | € 9,99          | 1                 | Wie alleen werkt                      |
+| Professional | € 19,99         | Tot 5             | Een bedrijf met een paar man          |
+| Business     | € 29,99         | Zoveel je wilt    | Een bedrijf met een ploeg             |
 
-- Starter: 1 gebruiker, onbeperkt offertes, marge en inkoopprijs per regel met eigen catalogus, materiaallijst per leverancier na akkoord, online offerte met klantakkoord, algemene voorwaarden in versies, 1 offerte-ontwerp, 1 GB voor foto's en bestanden.
-- Professional: alles in Starter, plus betaalschema's en betaalverzoeken met eigen betaallink, 3 offerte-ontwerpen, 5 GB opslag, tot 5 gebruikers, samenwerken met collega's, Moneybird-koppeling, automatische herinneringen, inkooporders per leverancier, rapportages, prioriteits-support.
-- Business: alles in Professional, plus onbeperkt gebruikers, 20 GB opslag, directe support met een persoonlijk aanspreekpunt. Werkplanning, voorraadbeheer en winstmeting staan op de roadmap.
+- Starter: 1 gebruiker, zoveel offertes als je wilt, inkoopprijs en wat je overhoudt per regel met je eigen prijslijst, bestellijst per groothandel, de klant zegt ja op zijn telefoon, je voorwaarden bij elke offerte, 1 opmaak, 1 GB voor foto's en bestanden.
+- Professional: alles van Starter, plus aanbetaling vragen met je eigen betaallink, 3 opmaken, 5 GB, tot 5 gebruikers, samen aan dezelfde offertes werken, factuur in Moneybird met één tik, herinneringen die vanzelf gaan, cijfers over wat je wint en overhoudt, hulp binnen 1 werkdag.
+- Business: alles van Professional, plus zoveel gebruikers als je wilt, 20 GB, rechtstreeks hulp van een vast aanspreekpunt. Planning, voorraad en nacalculatie komen eraan.
+
+## Wat eraan komt
+
+Voorraad, bestellen rechtstreeks bij de groothandel, planning, meer boekhoudpakketten (Exact Online, SnelStart, e-Boekhouden.nl), nacalculatie (wat je dacht te verdienen naast wat de klus echt opleverde), vergunningen en certificaten bij een klus.
 
 ## Veelgestelde vragen (kort)
 
-- Is OfferDesk een ERP? Nee. Het is het offerte-, calculatie- en inkoopdeel, zonder de rest van een ERP. Boekhouding en facturen blijven in je eigen pakket (bijvoorbeeld via de Moneybird-koppeling).
+- Is OfferDesk zo'n zwaar systeem als SAP of AFAS? Nee. Het doet alleen het stuk van offerte tot bestellen. Boekhouding en facturen blijven in je eigen pakket (bijvoorbeeld via Moneybird).
 - Moet ik iets installeren? Nee, OfferDesk werkt in de browser op elk apparaat.
-- Kan ik mijn bestaande prijslijsten gebruiken? Ja, producten met inkoopprijzen importeer je uit een bestand.
-- Hoe ziet mijn klant de offerte? Via een e-mail met de PDF en een link met toegangscode; daar leest hij de offerte, stelt vragen en geeft met zijn naam akkoord.
-- Wat gebeurt er na de proefperiode? Je kiest zelf een pakket. Je zit nergens aan vast en kunt maandelijks opzeggen.
+- Kan ik mijn eigen prijslijst gebruiken? Ja, producten met inkoopprijzen lees je in uit een bestand.
+- Hoe ziet mijn klant de offerte? Hij krijgt een mail met de PDF en een link met een code; daar leest hij de offerte, stelt een vraag en zegt ja met zijn naam.
+- Wat gebeurt er na de proefperiode? Je kiest zelf een pakket. Je zit nergens aan vast en kunt elke maand opzeggen.
 - Zijn mijn gegevens gescheiden van die van andere bedrijven? Ja, elk bedrijf heeft een eigen afgeschermde omgeving.
 
 ## Links
 
 - [Homepage](https://offerdesk.nl/): wat OfferDesk is en voor wie
-- [Hoe het werkt](https://offerdesk.nl/#process-section): van calculatie tot inkoop in stappen
-- [Functies](https://offerdesk.nl/#feature-section): wat er in OfferDesk zit
+- [Herken je dit?](https://offerdesk.nl/#process-section): vijf momenten uit een gewone werkweek
+- [Alles bij de klus](https://offerdesk.nl/#feature-section): wat er in OfferDesk zit
 - [Prijzen](https://offerdesk.nl/#pricing-section): de drie pakketten en wat erin zit
-- [Veelgestelde vragen](https://offerdesk.nl/#faq-section): antwoorden over offertes, marge, inkoop, betalen en koppelingen
-- [Blog](https://offerdesk.nl/blog/): uitleg over calculeren, marge en inkopen voor vakbedrijven
-- [Gratis proberen](https://app.offerdesk.nl/sign-up): 14 dagen, zonder betaalgegevens
+- [Veelgestelde vragen](https://offerdesk.nl/veelgestelde-vragen/): alle vragen en antwoorden
+- [Wat eraan komt](https://offerdesk.nl/wat-eraan-komt/): wat we hierna bouwen
+- [Voorbeeldofferte](https://offerdesk.nl/voorbeeld-offerte/): een offerte zoals je klant hem ziet
+- [Blog](https://offerdesk.nl/blog/): uitleg over prijzen, wat je overhoudt en bestellen, voor vakbedrijven
+- [Gratis proberen](https://app.offerdesk.nl/sign-up): 14 dagen, zonder te betalen
 - [Inloggen](https://app.offerdesk.nl/sign-in)
 
 ## Optional
 
 - [English homepage](https://offerdesk.nl/en/)
+- [English FAQ](https://offerdesk.nl/en/faq/)
 - [Marge berekenen op een offerte](https://offerdesk.nl/blog/marge-berekenen-op-een-offerte/): blogartikel
 - [Blogfeed](https://offerdesk.nl/blog/feed.xml)

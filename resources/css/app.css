@@ -77,8 +77,8 @@ html.dark { background-color: var(--color-background); }
 .dark .text-gray-700, .dark .text-gray-600 { color: var(--color-gray-700); }
 .dark .text-gray-500, .dark .text-gray-400 { color: var(--color-gray-500); }
 /* The white call-to-action buttons on the blue bands stay white, with the brand blue on them */
-.dark #newsletter-section a.bg-white, .dark #footer-cta a.bg-white { background-color: #fff; }
-.dark #newsletter-section a.text-primary, .dark #footer-cta a.text-primary { color: var(--color-primary); }
+.dark #newsletter-section a.bg-white, .dark #footer-cta a.bg-white, .dark #process-section a.bg-white { background-color: #fff; }
+.dark #newsletter-section a.text-primary, .dark #footer-cta a.text-primary, .dark #process-section a.text-primary { color: var(--color-primary); }
 .dark dialog::backdrop { background-color: rgb(0 0 0 / 0.75); }
 /* The toggle shows the icon of the mode you would switch to */
 .theme-toggle .theme-icon-dark { display: none; }
@@ -664,3 +664,65 @@ html {
 /* Typography and accessibility, formerly separate stylesheets; appended so they keep their old precedence */
 @import "./typography.css";
 @import "./accessibility.css";
+
+/* The MailerLite form in the footer, in the site's own style: its own heading, text, grey box and black button are
+   MailerLite's defaults and would sit next to our texts. The field labels and the button text come from MailerLite
+   (form lB1Awv) and are set there. The selectors carry the form's own id, as its stylesheet does, so they win. */
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper {
+  background: transparent !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+  max-width: 32rem !important;
+  display: block !important;
+}
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedBody,
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-successBody {
+  padding: 0 !important;
+}
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedContent { display: none !important; }
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-successContent h4,
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-successContent p {
+  font-family: var(--font-family-base) !important;
+  color: var(--color-gray-700) !important;
+  text-align: left !important;
+}
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow { margin: 0 0 0.75rem !important; }
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-field-group label {
+  font-family: var(--font-family-base) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  color: var(--color-gray-700) !important;
+}
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-field-group input {
+  font-family: var(--font-family-base) !important;
+  font-size: 0.9375rem !important;
+  height: 2.75rem !important;
+  padding: 0 0.875rem !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 0.5rem !important;
+  background: var(--color-card, #fff) !important;
+  color: var(--color-dark-blue) !important;
+}
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-field-group input:focus {
+  border-color: var(--color-primary) !important;
+  outline: 2px solid var(--color-primary) !important;
+  outline-offset: 1px;
+}
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-recaptcha { margin: 0 0 0.75rem !important; }
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { margin: 0 !important; }
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+  font-family: var(--font-family-base) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  height: 2.75rem !important;
+  border-radius: 0.5rem !important;
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  transition: background-color 0.2s;
+}
+footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background: var(--color-primary-hover) !important; }
+/* Wide enough: the fields side by side, the button under them */
+@media (min-width: 40rem) {
+  footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent { display: flex; flex-wrap: wrap; gap: 0 0.75rem; }
+  footer #newsletter-section [id^="mlb2-"].ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow { flex: 1 1 12rem; }
+}

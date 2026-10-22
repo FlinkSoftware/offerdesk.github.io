@@ -80,9 +80,8 @@
 (function(){
   const GROUPS = [
     ['home', ['hero-section', 'process-section']],
-    ['features', ['feature-section', 'customer-view-section', 'newsletter-section']],
-    ['about', ['about-section', 'suitable-for-section']],
-    ['pricing', ['pricing-section', 'integrations-section', 'faq-section']],
+    ['features', ['feature-section', 'customer-view-section', 'suitable-for-section']],
+    ['pricing', ['pricing-section', 'integrations-section', 'faq-section', 'share-section']],
   ];
 
   function setupNavigation(){
