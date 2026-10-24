@@ -1,6 +1,6 @@
 # OfferDesk
 
-> OfferDesk is offertesoftware voor vakbedrijven van één tot vijf man: aannemers, installateurs, elektriciens, loodgieters, schilders, hoveniers, onderhoudsbedrijven. Je zet je groothandels en inkoopprijzen er één keer in, ziet per regel wat je aan een klus overhoudt, de klant zegt ja op zijn telefoon en je bestellijst per groothandel staat klaar. Vanaf € 9,99 per maand, 14 dagen gratis, zonder te betalen, maandelijks opzegbaar.
+> OfferDesk is offertesoftware voor vakbedrijven van één tot vijf man: aannemers, installateurs, elektriciens, loodgieters, schilders, hoveniers, onderhoudsbedrijven. Je zet je leveranciers en inkoopprijzen er één keer in, ziet per regel wat je aan een klus overhoudt, de klant zegt ja op zijn telefoon en je bestellijst per leverancier staat klaar. Vanaf € 9,99 per maand, 14 dagen gratis, zonder te betalen, maandelijks opzegbaar.
 
 Website: https://offerdesk.nl (Nederlands), https://offerdesk.nl/en/ (English)
 App: https://app.offerdesk.nl
@@ -30,9 +30,9 @@ Niet bedoeld voor grote bedrijven die een compleet bedrijfssysteem nodig hebben 
 
 - Foto's en bestanden bij een klus, ook rechtstreeks vanaf je telefoon, met een korte tekst erbij. Jij bepaalt wat de klant ziet.
 - Per regel: inkoopprijs, verkoopprijs en wat je overhoudt. Wat je aan de hele klus overhoudt staat in beeld terwijl je de offerte maakt.
-- Je groothandels en inkoopprijzen één keer erin, in je eigen prijslijst, ook in te lezen uit een bestand. Elk product weet bij welke groothandel het hoort.
+- Je leveranciers en inkoopprijzen één keer erin, in je eigen prijslijst, ook in te lezen uit een bestand. Elk product weet bij welke leverancier het hoort.
 - Aanbetaling: OfferDesk rekent het materiaal uit, de klant ziet alleen het bedrag. Betaalverzoek met je eigen betaallink (bank, Tikkie, bunq) en herinneringen die vanzelf gaan. Betalen in delen kan ook, per offerte anders.
-- Zegt de klant ja, dan staat de bestellijst klaar: per groothandel, met artikelnummers, aantallen en prijzen.
+- Zegt de klant ja, dan staat de bestellijst klaar: per leverancier, met artikelnummers, aantallen en prijzen.
 - De klant krijgt een eigen pagina met een code uit de mail: offerte lezen, PDF pakken, vraag stellen, ja zeggen met zijn naam. Jij krijgt een melding. Elke verstuurde versie blijft bewaard.
 - Je voorwaarden gaan als PDF mee; de klant vinkt aan dat hij ermee akkoord gaat, en OfferDesk bewaart welke versie dat was.
 - Offerte als PDF en per e-mail, met je eigen logo en tekst, in drie opmaken (Klassiek, Modern, Compact), in het Nederlands of Engels.
@@ -51,13 +51,13 @@ Per maand, zonder btw, maandelijks opzegbaar, geen kosten vooraf. Elk pakket beg
 | Professional | € 19,99         | Tot 5             | Een bedrijf met een paar man          |
 | Business     | € 29,99         | Zoveel je wilt    | Een bedrijf met een ploeg             |
 
-- Starter: 1 gebruiker, zoveel offertes als je wilt, inkoopprijs en wat je overhoudt per regel met je eigen prijslijst, bestellijst per groothandel, de klant zegt ja op zijn telefoon, je voorwaarden bij elke offerte, 1 opmaak, 1 GB voor foto's en bestanden.
+- Starter: 1 gebruiker, zoveel offertes als je wilt, inkoopprijs en wat je overhoudt per regel met je eigen prijslijst, bestellijst per leverancier, de klant zegt ja op zijn telefoon, je voorwaarden bij elke offerte, 1 opmaak, 1 GB voor foto's en bestanden.
 - Professional: alles van Starter, plus aanbetaling vragen met je eigen betaallink, 3 opmaken, 5 GB, tot 5 gebruikers, samen aan dezelfde offertes werken, factuur in Moneybird met één tik, herinneringen die vanzelf gaan, cijfers over wat je wint en overhoudt, hulp binnen 1 werkdag.
 - Business: alles van Professional, plus zoveel gebruikers als je wilt, 20 GB, rechtstreeks hulp van een vast aanspreekpunt. Planning, voorraad en nacalculatie komen eraan.
 
 ## Wat eraan komt
 
-Voorraad, bestellen rechtstreeks bij de groothandel, planning, meer boekhoudpakketten (Exact Online, SnelStart, e-Boekhouden.nl), nacalculatie (wat je dacht te verdienen naast wat de klus echt opleverde), vergunningen en certificaten bij een klus.
+Voorraad, bestellen rechtstreeks bij de leverancier, planning, meer boekhoudpakketten (Exact Online, SnelStart, e-Boekhouden.nl), nacalculatie (wat je dacht te verdienen naast wat de klus echt opleverde), vergunningen en certificaten bij een klus.
 
 ## Veelgestelde vragen (kort)
 

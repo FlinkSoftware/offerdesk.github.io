@@ -3,7 +3,7 @@ title: "Marge berekenen op een offerte: weet wat je verdient vóór je verstuurt
 description: "Opslag of marge, inkoop of verkoop: zo reken je per offerteregel uit wat je aan een klus overhoudt, en waarom dat vóór het versturen moet."
 topic: Marge en winst
 image: /images/offerdesk/crop-winst.webp
-image_alt: "De kaart Winstgevendheid in OfferDesk met inkoop, verkoop en marge van een offerte"
+image_alt: "De kaart Wat je overhoudt in OfferDesk met inkoop, verkoop, opslag en marge van een offerte"
 ---
 Veel vakbedrijven weten pas na de klus of hij iets heeft opgeleverd. De offerte is dan al lang getekend, de materialen zijn besteld en de uren gemaakt. Wie de marge vóór het versturen kent, kan nog bijsturen: een regel duurder maken, een merk wisselen of bewust scherp inschrijven.
 
@@ -35,8 +35,8 @@ Zet daarom per regel neer:
 3. wat er dus overblijft.
 
 <figure>
-  <img src="{{ '/images/offerdesk/crop-regels.webp' | relative_url }}" alt="Offerteregels in OfferDesk met inkoop en marge per regel" loading="lazy">
-  <figcaption>Per offerteregel inkoop, verkoopprijs en marge.</figcaption>
+  <img src="{{ '/images/offerdesk/crop-regels.webp' | relative_url }}" alt="Offerteregels in OfferDesk met inkoop, opslag en wat je per regel overhoudt" loading="lazy">
+  <figcaption>Per offerteregel inkoop, opslag, verkoopprijs en wat je overhoudt.</figcaption>
 </figure>
 
 ## Vergeet je eigen uren niet
@@ -45,15 +45,15 @@ Uren hebben ook een kostprijs: loon, auto, gereedschap, verzekering en de uren d
 
 ## Hoe OfferDesk het bijhoudt
 
-In OfferDesk hangen je producten aan je leveranciers, met hun inkoopprijs. Kies je een product op een offerteregel, dan rekent OfferDesk de verkoopprijs uit met je marge. Die marge rekent OfferDesk over de inkoop, zoals een opslag: 30% op € 100 inkoop geeft € 130. Wat je overhoudt zie je daarnaast gewoon in euro's. Rechts op de offerte telt de kaart **Winstgevendheid** alles op: totale inkoop, verkoop en wat je overhoudt, terwijl je de offerte opstelt.
+In OfferDesk hangen je producten aan je leveranciers, met hun inkoopprijs. Kies je een product op een offerteregel, dan rekent OfferDesk de verkoopprijs uit met je **opslag**: 30% op € 100 inkoop geeft € 130. Wat je per regel overhoudt zie je daarnaast in euro's. Rechts op de offerte telt de kaart **Wat je overhoudt** alles op terwijl je de offerte opstelt: totale inkoop, verkoop, wat je overhoudt, je gemiddelde opslag en je **marge**. Zo werk je met opslag, en zie je toch meteen welke marge je haalt.
 
 Pas je een regel aan, een andere prijs, een korting of een extra uur, dan zie je meteen wat dat met je winst doet. Zo verstuur je geen offerte meer waar je achteraf spijt van hebt.
 
-> Tip: stel een standaardmarge in voor je bedrijf, en waar nodig per leverancier. Dan begint elke regel met de marge die je wilt halen, en wijk je alleen bewust af.
+> Tip: stel een vaste opslag in voor je bedrijf, en waar nodig per leverancier. Dan begint elke regel met de opslag die je wilt halen, en wijk je alleen bewust af. Zakt de offerte onder je doel, dan waarschuwt OfferDesk je.
 
 ## Samengevat
 
-- Opslag gaat over inkoop, marge over verkoop. Kies er één.
+- Opslag gaat over inkoop, marge over verkoop. Weet welke je bedoelt: in OfferDesk vul je opslag in en zie je de marge die eruit komt.
 - Reken per regel, zodat je ziet waar je verdient.
 - Geef je eigen uren een kostprijs.
 - Bekijk de winst vóór je de offerte verstuurt, niet erna.
