@@ -45,7 +45,19 @@ Uren hebben ook een kostprijs: loon, auto, gereedschap, verzekering en de uren d
 
 ## Hoe OfferDesk het bijhoudt
 
-In OfferDesk hangen je producten aan je leveranciers, met hun inkoopprijs. Kies je een product op een offerteregel, dan rekent OfferDesk de verkoopprijs uit met je **opslag**: 30% op € 100 inkoop geeft € 130. Wat je per regel overhoudt zie je daarnaast in euro's. Rechts op de offerte telt de kaart **Wat je overhoudt** alles op terwijl je de offerte opstelt: totale inkoop, verkoop, wat je overhoudt, je gemiddelde opslag en je **marge**. Zo werk je met opslag, en zie je toch meteen welke marge je haalt.
+In OfferDesk hangen je producten aan je leveranciers, met hun inkoopprijs. Kies je een product op een offerteregel, dan rekent OfferDesk de verkoopprijs uit met je **opslag**: 30% op € 100 inkoop geeft € 130. Welke opslag dat is:
+
+- de opslag van het product zelf;
+- heeft het product er geen, dan de vaste opslag van de leverancier;
+- heeft de leverancier er ook geen, dan je eigen winstdoel;
+- heb je bij het product zelf een verkoopprijs ingevuld, dan gebruikt OfferDesk die prijs, en zie je welke opslag dat is.
+
+Terwijl je de offerte opstelt, zie je meteen:
+
+- onder elke regel in euro's wat je eraan overhoudt;
+- in de kaart **Wat je overhoudt**, naast je offertegegevens: totale inkoop, verkoop, wat je overhoudt, je gemiddelde opslag en je **marge**.
+
+Zo werk je met opslag, en zie je toch meteen welke marge je haalt.
 
 Pas je een regel aan, een andere prijs, een korting of een extra uur, dan zie je meteen wat dat met je winst doet. Zo verstuur je geen offerte meer waar je achteraf spijt van hebt.
 
