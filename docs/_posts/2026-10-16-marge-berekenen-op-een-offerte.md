@@ -1,7 +1,7 @@
 ---
 title: "Marge berekenen op een offerte: weet wat je verdient vóór je verstuurt"
 description: "Opslag of marge, inkoop of verkoop: zo reken je per offerteregel uit wat je aan een klus overhoudt, en waarom dat vóór het versturen moet."
-topic: Marge en winst
+topic: Marge en opslag
 image: /images/offerdesk/crop-winst.webp
 image_alt: "De kaart Resultaat in OfferDesk met inkoop, verkoop, opslag en marge van een offerte"
 ---
@@ -55,17 +55,19 @@ In OfferDesk hangen je producten aan je leveranciers, met hun inkoopprijs. Kies 
 Terwijl je de offerte opstelt, zie je meteen:
 
 - onder elke regel in euro's wat je eraan overhoudt;
-- in de kaart **Resultaat**, naast je offertegegevens: de prijs voor de klant (met of zonder btw, zoals op de offerte), de totale inkoop, je winst in euro's en als **percentage van de prijs** (zonder btw), en je gemiddelde opslag.
+- in de kaart **Resultaat**, naast je offertegegevens: de prijs voor de klant (met of zonder btw, zoals op de offerte), de totale inkoop, je **marge** in euro's, je **marge %** (als percentage van de prijs zonder btw) en je gemiddelde opslag.
 
 Zo werk je met opslag, en zie je toch meteen hoeveel procent van de prijs je overhoudt: je marge.
 
-Pas je een regel aan, een andere prijs, een korting of een extra uur, dan zie je meteen wat dat met je winst doet. Zo verstuur je geen offerte meer waar je achteraf spijt van hebt.
+Dat is je brutomarge: wat er na de inkoop overblijft. Je andere kosten, zoals huur, je bus en de uren die je niet kunt factureren, zitten er nog niet in. Daar moet je marge dus ook voor betalen.
 
-> Tip: stel een vaste opslag in voor je bedrijf, en waar nodig per leverancier. Dan begint elke regel met de opslag die je wilt halen, en wijk je alleen bewust af. Stel ook een winstdoel per offerte in: zakt de winst onder dat percentage, dan waarschuwt OfferDesk je.
+Pas je een regel aan, een andere prijs, een korting of een extra uur, dan zie je meteen wat dat met je marge doet. Zo verstuur je geen offerte meer waar je achteraf spijt van hebt.
+
+> Tip: stel een vaste opslag in voor je bedrijf, en waar nodig per leverancier. Dan begint elke regel met de opslag die je wilt halen, en wijk je alleen bewust af. Stel ook een margedoel per offerte in: zakt de marge onder dat percentage, dan waarschuwt OfferDesk je.
 
 ## Samengevat
 
-- Opslag gaat over inkoop, marge over verkoop. Weet welke je bedoelt: in OfferDesk vul je opslag in en zie je je winst als percentage van de prijs.
+- Opslag gaat over inkoop, marge over verkoop. Weet welke je bedoelt: in OfferDesk vul je opslag in en zie je je marge % van de prijs.
 - Reken per regel, zodat je ziet waar je verdient.
 - Geef je eigen uren een kostprijs.
-- Bekijk de winst vóór je de offerte verstuurt, niet erna.
+- Bekijk je marge vóór je de offerte verstuurt, niet erna.

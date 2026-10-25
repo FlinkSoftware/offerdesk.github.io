@@ -95,7 +95,7 @@ for (const mode of ['light', 'dark']) {
 
   await open(base)
   await shot('regels', mode, await boxOf('Regels'))
-  await shot('winst', mode, await boxOf('Wat je overhoudt'))
+  await shot('winst', mode, await boxOf('Resultaat'))
 
   await open(`${APP}/products`)
   await shot('producten', mode, await boxOf('Producten', 'table') || await page.evaluate(() => { const t = document.querySelector('main table'); const r = t?.getBoundingClientRect(); return r ? { x: r.left, y: r.top + scrollY, width: r.width, height: r.height } : null }))
@@ -121,10 +121,15 @@ for (const mode of ['light', 'dark']) {
     return { x: left - 16, y: top + scrollY - 16, width: right - left + 32, height: bottom - top + 32 }
   }))
 
-  await open(`${base}/history`)
+  // The changes are on Activiteiten now (the tab Historie is gone): the timeline with everything shown, cut
+  // after the last entry that fits in about 1000px, so a long history does not make a strip
+  await page.evaluate(() => localStorage.setItem('offerdesk.activities.system', 'shown'))
+  await open(`${base}/activities`)
   await shot('historie', mode, await page.evaluate(() => {
-    const main = document.querySelector('main'); const list = main.querySelector('ol, ul'); const r = list?.getBoundingClientRect()
-    return r ? { x: r.left, y: r.top + scrollY, width: r.width, height: r.height } : null
+    const list = document.querySelector('main ol'); if (!list) return null
+    const r = list.getBoundingClientRect()
+    const ends = [...list.children].map(li => li.getBoundingClientRect().bottom - r.top).filter(b => b <= 1000)
+    return { x: r.left, y: r.top + scrollY, width: r.width, height: ends.length ? Math.max(...ends) : Math.min(r.height, 1000) }
   }))
 
   // The three designs: the top of the A4 sheet, as the crops on the site show it

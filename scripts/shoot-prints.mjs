@@ -57,6 +57,10 @@ async function setMode(mode) {
   await page.evaluate(m => localStorage.setItem('nuxt-color-mode', m), mode)
 }
 
+async function setSystemEntries(shown) {
+  await page.evaluate(v => localStorage.setItem('offerdesk.activities.system', v), shown)
+}
+
 async function open(url, readySelector) {
   await page.goto(url, { waitUntil: 'networkidle0' })
   if (readySelector) await page.waitForSelector(readySelector, { timeout: 30000 })
@@ -109,16 +113,13 @@ for (const mode of ['light', 'dark']) {
   await open(`${base}/purchase`, 'main'); await shot('inkooplijst', mode, 'main')
   await open(`${base}/payments`, 'main'); await shot('betalingen', mode, 'main')
   await open(`${base}/files`, 'main'); await shot('bestanden', mode, 'main')
-  await open(`${base}/history`, 'main'); await shot('historie', mode, 'main')
+  // The changes have no tab of their own any more (Historie): they are on Activiteiten, with everything shown.
+  // The switch "Ook wat OfferDesk zelf deed" keeps its choice in localStorage, so it is set there, not clicked.
+  await setSystemEntries('shown')
+  await open(`${base}/activities`, 'main'); await shot('historie', mode, 'main')
   // Activities without OfferDesk's own entries: the question and the answer are what this print is about
-  await open(`${base}/activities`, 'main')
-  await page.evaluate(() => {
-    const label = [...document.querySelectorAll('span,label,p')].find(e => e.childElementCount === 0 && e.textContent.trim() === 'Ook wat OfferDesk zelf deed')
-    const sw = label?.parentElement?.querySelector('button[role=switch],input[type=checkbox],button')
-    if (sw) sw.click()
-  })
-  await sleep(600)
-  await shot('activiteit', mode, 'main')
+  await setSystemEntries('hidden')
+  await open(`${base}/activities`, 'main'); await shot('activiteit', mode, 'main')
 
   // The three designs: the offer's own design decides what the preview shows
   for (const key of ['CLASSIC', 'MODERN', 'COMPACT']) {
