@@ -470,7 +470,7 @@ nl:
       - name: "Starter"
         key: "starter"
         description: "Voor wie alleen werkt."
-        price: "€9,99"
+        price: "€10"
         billing_period: "per maand ex. btw"
         bullets:
           - "1 gebruiker"
@@ -485,7 +485,7 @@ nl:
       - name: "Professional"
         key: "professional"
         description: "Voor een bedrijf met een paar man."
-        price: "€19,99"
+        price: "€20"
         billing_period: "per maand ex. btw"
         highlighted: true
         bullets:
@@ -504,7 +504,7 @@ nl:
       - name: "Business"
         key: "business"
         description: "Voor een bedrijf met een ploeg."
-        price: "€29,99"
+        price: "€30"
         billing_period: "per maand ex. btw"
         bullets:
           - "Alles van Professional"
@@ -1186,7 +1186,7 @@ en:
       - name: "Starter"
         key: "starter"
         description: "For working on your own."
-        price: "€9.99"
+        price: "€10"
         billing_period: "per month ex. VAT"
         bullets:
           - "1 user"
@@ -1201,7 +1201,7 @@ en:
       - name: "Professional"
         key: "professional"
         description: "For a business with a few people."
-        price: "€19.99"
+        price: "€20"
         billing_period: "per month ex. VAT"
         highlighted: true
         bullets:
@@ -1220,7 +1220,7 @@ en:
       - name: "Business"
         key: "business"
         description: "For a business with a crew."
-        price: "€29.99"
+        price: "€30"
         billing_period: "per month ex. VAT"
         bullets:
           - "Everything in Professional"
