@@ -5,6 +5,7 @@
 Website: https://offerdesk.nl (Nederlands), https://offerdesk.nl/en/ (English)
 App: https://app.offerdesk.nl
 Maker: Flink Software B.V., Nederland. Contact: info@offerdesk.com
+Algemene voorwaarden: https://offerdesk.nl/algemene-voorwaarden/ · Privacyverklaring: https://offerdesk.nl/privacyverklaring/
 
 ## Wat is OfferDesk
 

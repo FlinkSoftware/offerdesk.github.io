@@ -30,6 +30,12 @@
     <link rel="alternate" hreflang="en" href="{{ '/en/example-quote/' | absolute_url }}">
     <link rel="alternate" hreflang="x-default" href="{{ '/voorbeeld-offerte/' | absolute_url }}">
     {% endif %}
+    {% comment %}A page in both languages names its twin in its front matter ("alternate: {nl: /x/, en: /en/x/}"){% endcomment %}
+    {% if page.alternate %}
+    <link rel="alternate" hreflang="nl" href="{{ page.alternate.nl | absolute_url }}">
+    <link rel="alternate" hreflang="en" href="{{ page.alternate.en | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ page.alternate.nl | absolute_url }}">
+    {% endif %}
     <link rel="alternate" type="application/atom+xml" title="OfferDesk blog" href="{{ '/blog/feed.xml' | relative_url }}">
 
     <!-- The four text weights of the first screen (body, eyebrow, buttons, headings), so none waits behind the stylesheet -->
@@ -343,6 +349,9 @@
                 <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600">
                     <p>&copy; {{ site.time | date: "%Y" }} OfferDesk · {{ i18n.footer.made_by }}</p>
                     <div class="flex flex-wrap items-center gap-6">
+                        {% for link in i18n.footer.legal %}
+                        <a href="{{ link.href | relative_url }}" class="hover:text-primary transition-colors">{{ link.label }}</a>
+                        {% endfor %}
                         {% comment %}A mailto link alone does nothing for people without a mail app (webmail users): a small window
                         shows the address to copy, the mail app and Gmail{% endcomment %}
                         {% assign ideas = i18n.footer.ideas %}

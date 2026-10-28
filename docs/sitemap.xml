@@ -100,4 +100,44 @@ layout: null
         <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/wat-eraan-komt/" />
     </url>
 
+    <url>
+        <loc>https://offerdesk.nl/algemene-voorwaarden/</loc>
+        <lastmod>2026-10-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://offerdesk.nl/algemene-voorwaarden/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://offerdesk.nl/en/terms/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/algemene-voorwaarden/" />
+    </url>
+
+    <url>
+        <loc>https://offerdesk.nl/en/terms/</loc>
+        <lastmod>2026-10-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://offerdesk.nl/algemene-voorwaarden/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://offerdesk.nl/en/terms/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/algemene-voorwaarden/" />
+    </url>
+
+    <url>
+        <loc>https://offerdesk.nl/privacyverklaring/</loc>
+        <lastmod>2026-10-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://offerdesk.nl/privacyverklaring/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://offerdesk.nl/en/privacy/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/privacyverklaring/" />
+    </url>
+
+    <url>
+        <loc>https://offerdesk.nl/en/privacy/</loc>
+        <lastmod>2026-10-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://offerdesk.nl/privacyverklaring/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://offerdesk.nl/en/privacy/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://offerdesk.nl/privacyverklaring/" />
+    </url>
+
 </urlset>
