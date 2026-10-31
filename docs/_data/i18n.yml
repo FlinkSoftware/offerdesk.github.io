@@ -673,7 +673,7 @@ nl:
 
   footer:
     copy: "Weet wat je overhoudt. Bewaar hoe je het hebt berekend."
-    made_by: "OfferDesk is een product van Flink Software B.V."
+    made_by: "OfferDesk is een product van"
     email: "info@offerdesk.com"
     legal:
       - label: "Algemene voorwaarden"
@@ -1393,7 +1393,7 @@ en:
 
   footer:
     copy: "Know what you keep. Remember how you worked it out."
-    made_by: "OfferDesk is a product of Flink Software B.V."
+    made_by: "OfferDesk is a product of"
     email: "info@offerdesk.com"
     legal:
       - label: "Terms and conditions"

@@ -237,6 +237,7 @@
       "@id": "https://offerdesk.nl/#organization",
       "name": "OfferDesk",
       "legalName": "Flink Software B.V.",
+      "parentOrganization": { "@type": "Organization", "name": "Flink Software B.V.", "url": "https://flinksoftware.com" },
       "url": "https://offerdesk.nl",
       "logo": "https://offerdesk.nl/images/logo-v2.svg",
       "description": "{% if lang == 'en' %}Quoting software for trade businesses. You know what a job leaves you before you send the quote.{% else %}Offertesoftware voor vakbedrijven. Je weet wat je aan een klus overhoudt vóórdat je de offerte verstuurt.{% endif %}",
@@ -347,7 +348,7 @@
                 </div>
 
                 <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600">
-                    <p>&copy; {{ site.time | date: "%Y" }} OfferDesk · {{ i18n.footer.made_by }}</p>
+                    <p>&copy; {{ site.time | date: "%Y" }} OfferDesk · {{ i18n.footer.made_by }} <a href="https://flinksoftware.com" class="hover:text-primary transition-colors">Flink Software B.V.</a></p>
                     <div class="flex flex-wrap items-center gap-6">
                         {% for link in i18n.footer.legal %}
                         <a href="{{ link.href | relative_url }}" class="hover:text-primary transition-colors">{{ link.label }}</a>
