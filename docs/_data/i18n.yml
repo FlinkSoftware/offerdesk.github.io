@@ -146,7 +146,7 @@ nl:
     items:
       - lead: "Foto's gemaakt bij de klant. Maten op een briefje."
         questions: "Een week later: waar staan ze ook alweer? Telefoon, groepsapp, de bus?"
-        answer: "Je zet ze bij de klus, vanaf je telefoon. Daar blijven ze."
+        answer: "Je vult bij de klant een vaste lijst in op je telefoon, met de maten en foto's erbij. Alles staat bij de klus, en je vergeet niets."
       - lead: "Vier weken later zegt de klant ja."
         questions: "Welke leverancier was het? Wat verdien je eraan? Wat moet je bestellen? Wanneer betaalt hij?"
         answer: "Het staat allemaal bij de offerte. Je bestellijst staat klaar."
@@ -167,6 +167,32 @@ nl:
     title_highlight: "niets in je hoofd"
     intro: "Van de eerste foto tot het geld op je rekening: alles van een klus staat bij elkaar."
     sections:
+      - eyebrow: "Opname"
+        title: "Kijk bij de klant met een vaste {words}"
+        title_words:
+          - "opnamelijst."
+          - "inmeetlijst."
+          - "schouwlijst."
+          - "werklijst."
+          - "checklist."
+        body: "Je loopt bij de klant een vaste lijst langs op je telefoon: wat er moet gebeuren, de maten, de meterkast, en een foto bij elke vraag. Elk antwoord wordt meteen bewaard, ook als je even geen bereik hebt. Er zijn lijsten voor laadpalen, zonnepanelen, warmtepompen, vloeren en tegelwerk. Je past ze aan op hoe jij werkt."
+        bullets:
+          - "Een kant-en-klare lijst voor jouw vak"
+          - "Vragen uitzetten en je eigen vragen erbij"
+          - "De klant tekent op je scherm, als je dat wilt"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-opname.webp"
+            src_dark: "/images/offerdesk/crop-opname-dark.webp"
+            full: "/images/offerdesk/app-opname.webp"
+            full_dark: "/images/offerdesk/app-opname-dark.webp"
+            alt: "Het tabblad Opname van een offerte: de opname voor een laadpaal met de meterkast, de afstand en foto's"
+          - src: "/images/offerdesk/crop-opnamelijst.webp"
+            src_dark: "/images/offerdesk/crop-opnamelijst-dark.webp"
+            full: "/images/offerdesk/app-opnamelijst.webp"
+            full_dark: "/images/offerdesk/app-opnamelijst-dark.webp"
+            alt: "Een opnamelijst aanpassen: vragen aan- en uitzetten, met ernaast hoe de vakman de lijst op zijn telefoon ziet"
+
       - eyebrow: "Foto's"
         title: "Begin bij de klant, met je telefoon."
         body: "Maak foto's van de meterkast, het dak of de tuin en zet ze bij de klus. Maten en schetsen erbij. Een collega ziet later precies hoe het zat. Moet de klant iets zien, zoals de folder van een product? Eén tik."
@@ -534,6 +560,8 @@ nl:
       - question: "Waar begin ik?"
         answer: "Zet eerst je materiaal en je uren erin, met je inkoopprijzen. Dan maak je je eerste offerte: regels kiezen, aantallen aanpassen, en je ziet meteen wat je overhoudt. Versturen kan online of als PDF. Begin je met de voorbeelddata, dan staat er al een klant en een offerte om mee te spelen."
         home: true
+      - question: "Kan ik bij de klant een opname doen, met een vaste lijst?"
+        answer: "Ja. Bij elke offerte zit een tabblad Opname. Je loopt bij de klant een vaste lijst langs op je telefoon: wat er moet gebeuren, de maten, en een foto bij elke vraag. Elk antwoord wordt meteen bewaard, ook als je even geen bereik hebt. Je begint met een lijst van OfferDesk en past hem aan op hoe jij werkt: vragen uitzetten, eigen vragen erbij. Wil je het zwart op wit? Dan tekent de klant op je scherm."
       - question: "Ik weet later niet meer bij welke leverancier ik wilde kopen. Helpt OfferDesk daarbij?"
         answer: "Ja. Bij elk product staat de leverancier, het artikelnummer en je inkoopprijs. Open je de offerte over een maand, dan zie je precies waar je het wilde halen, voor welke prijs, en wat je eraan overhoudt."
       - question: "Hoeveel offertes kan ik maken?"
@@ -867,7 +895,7 @@ en:
     items:
       - lead: "Photos taken at the customer. Measurements on a note."
         questions: "A week later: where are they again? Phone, group chat, the van?"
-        answer: "You put them with the job, from your phone. That is where they stay."
+        answer: "You fill in a fixed list on your phone at the customer's, with the measurements and photos. It all stays with the job, and nothing is forgotten."
       - lead: "Four weeks later the customer says yes."
         questions: "Which supplier was it? What do you make on it? What do you order? When does he pay?"
         answer: "It is all on the quote. Your order list is ready."
@@ -888,6 +916,31 @@ en:
     title_highlight: "nothing in your head"
     intro: "From the first photo to the money on your account: everything about a job stays together."
     sections:
+      - eyebrow: "Intake"
+        title: "Look at the job with a fixed {words}"
+        title_words:
+          - "intake list."
+          - "checklist."
+          - "survey sheet."
+          - "measuring list."
+        body: "At the customer's you go through a fixed list on your phone: what needs doing, the measurements, the meter cupboard, and a photo with every question. Each answer is saved straight away, even when you have no signal for a moment. There are lists for charge points, solar panels, heat pumps, floors and tiling. You adjust them to how you work."
+        bullets:
+          - "A ready-made list for your trade"
+          - "Switch questions off and add your own"
+          - "The customer signs on your screen, if you want"
+        layout: "overlap"
+        images:
+          - src: "/images/offerdesk/crop-opname.webp"
+            src_dark: "/images/offerdesk/crop-opname-dark.webp"
+            full: "/images/offerdesk/app-opname.webp"
+            full_dark: "/images/offerdesk/app-opname-dark.webp"
+            alt: "The Intake tab of a quote: the intake for a charge point with the meter cupboard, the distance and photos"
+          - src: "/images/offerdesk/crop-opnamelijst.webp"
+            src_dark: "/images/offerdesk/crop-opnamelijst-dark.webp"
+            full: "/images/offerdesk/app-opnamelijst.webp"
+            full_dark: "/images/offerdesk/app-opnamelijst-dark.webp"
+            alt: "Adjusting an intake list: switching questions on and off, beside how the tradesperson sees the list on a phone"
+
       - eyebrow: "Photos"
         title: "Start at the customer, with your phone."
         body: "Take photos of the meter cupboard, the roof or the garden and put them with the job. Measurements and sketches too. A colleague sees later exactly how it was. Does the customer need to see something, like a product leaflet? One tap."
@@ -1255,6 +1308,8 @@ en:
       - question: "Where do I start?"
         answer: "Put your materials and your hours in first, with your purchase prices. Then make your first quote: pick lines, change quantities, and you see right away what you keep. Send it online or as PDF. Start with the example data and there is already a customer and a quote to play with."
         home: true
+      - question: "Can I do an intake at the customer's, with a fixed list?"
+        answer: "Yes. Every quote has an Intake tab. At the customer's you go through a fixed list on your phone: what needs doing, the measurements, and a photo with every question. Each answer is saved straight away, even when you have no signal for a moment. You start from an OfferDesk list and adjust it to how you work: switch questions off, add your own. Want it in black and white? The customer signs on your screen."
       - question: "Later I forget which supplier I wanted to buy from. Does OfferDesk help?"
         answer: "Yes. Every product carries the supplier, the item number and your purchase price. Open the quote a month later and you see exactly where you wanted to get it, at what price, and what you keep."
       - question: "How many quotes can I make?"

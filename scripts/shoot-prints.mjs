@@ -3,6 +3,7 @@
 // OfferDesk/data/local-test-account.env (TEST3_*). See docs/images/offerdesk/app-*.webp for the results.
 // Full-page prints of the local OfferDesk app for the landing page, 1600 CSS px wide at 2x, light and dark.
 // Usage: node shoot.mjs  (expects the app on http://localhost:8080 and data/local-test-account.env with TEST3_*)
+// ONLY=opname,opnamelijst node shoot.mjs takes just those prints.
 import puppeteer from 'puppeteer-core'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -12,6 +13,8 @@ const OFFER_ID = 'b5e4bb10-eada-4414-9e5c-11c719971a94'
 const SHARE_TOKEN = '51cb0bc7b1db4f49b8ea5547090d13319e23e0aa'
 const ACCESS_CODE = 'MD2F-NT5S'
 const OUT = path.resolve('out')
+const ONLY = process.env.ONLY?.split(',')
+const wanted = name => !ONLY || ONLY.includes(name)
 fs.mkdirSync(OUT, { recursive: true })
 
 const env = Object.fromEntries(
@@ -27,6 +30,8 @@ const page = await browser.newPage()
 // 1840 wide: the app's sidebar takes 240, which leaves the content area the 1600 the other prints have
 await page.setViewport({ width: 1840, height: 1200, deviceScaleFactor: 2 })
 await page.setCookie({ name: 'cookie-consent', value: 'declined', domain: 'localhost', path: '/' })
+// A page with unsaved changes (a list with a question switched off) asks before it is left: leave without saving
+page.on('dialog', dialog => dialog.accept())
 
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a)
@@ -57,6 +62,12 @@ async function setMode(mode) {
   await page.evaluate(m => localStorage.setItem('nuxt-color-mode', m), mode)
 }
 
+/** Switches a question of the list off in the settings editor, so the print shows one that is off. */
+async function switchOff(label) {
+  await page.evaluate(l => document.querySelector(`[role=switch][aria-label="${l} gebruiken"]`)?.click(), label)
+  await sleep(400)
+}
+
 async function setSystemEntries(shown) {
   await page.evaluate(v => localStorage.setItem('offerdesk.activities.system', v), shown)
 }
@@ -72,6 +83,7 @@ async function open(url, readySelector) {
 // The content area is a scroll box as tall as the window: give the window the content's height first, then
 // clip the shot to the lowest element plus a margin, so a short tab does not come with a screen of white.
 async function shot(name, mode, selector) {
+  if (!wanted(name)) return
   if (fs.existsSync(path.join(OUT, `${name}-${mode}.png`))) { log('have', name, mode); return }
   if (selector === 'page') {
     await page.setViewport({ width: 1600, height: 1200, deviceScaleFactor: 2 })
@@ -103,26 +115,72 @@ async function shot(name, mode, selector) {
   log('shot', name, mode, Math.round(box.width) + 'x' + Math.round(box.height))
 }
 
+/**
+ * The test offer's intake: the charge point list, filled in as on a visit to Fam. Jansen, with two of the offer's
+ * photos at the meter cupboard and the spot of the charger. Only when the offer has no intake yet.
+ */
+async function ensureIntake() {
+  const lists = JSON.parse((await api('GET', `/offers/${OFFER_ID}/checklists`)).body)
+  if (lists.some(l => l.kind === 'intake')) return
+  const started = await api('POST', `/offers/${OFFER_ID}/checklists`, { kind: 'intake', checklistKey: 'installatie-laadpaal-opname' })
+  if (started.status >= 300) throw new Error('start intake: ' + started.body.slice(0, 200))
+  const intake = JSON.parse(started.body)
+  const answers = {
+    auto: 'Tesla Model 3', vermogen: 'kw_11', montage: 'muur', kabel: 'vast', slim_laden: true,
+    bouwjaar: 1998, asbest: 'nee', verdieping: 'buiten', parkeren: true,
+    aansluiting: 'drie_fase', hoofdzekering: 25, hoofdschakelaar: true, vrije_groep: 'ruimte', aardlek_type: 'a', meterkast_in_orde: true,
+    afstand: 14.5, kabelroute: ['binnen', 'kruipruimte'], kruipruimte_ok: true, doorvoeren: 1, nieuwe_aardlek: true,
+    drie_fase_aanvragen: false, loadbalancing: true,
+  }
+  const answered = await api('PATCH', `/offers/${OFFER_ID}/checklists/${intake.id}`, { answers })
+  if (answered.status >= 300) throw new Error('answer intake: ' + answered.body.slice(0, 200))
+  const photos = await page.evaluate(async (offerId, checklistId) => {
+    const u = JSON.parse(sessionStorage.getItem('oidc.user:http://localhost:8080:offerdesk-web'))
+    const t = Object.keys(sessionStorage).filter(k => k.startsWith('offerdesk.tenant:')).map(k => sessionStorage.getItem(k)).find(v => /^[0-9a-f-]{36}$/.test(v || '')) || 'ecb15327-719b-49b9-bc67-8150c54d6fff'
+    const h = { Authorization: 'Bearer ' + u.access_token, 'X-Tenant-Id': t }
+    const files = (await (await fetch(`/api/v1/offers/${offerId}/files`, { headers: h })).json()).files.filter(f => f.image && !f.checklistId)
+    const done = []
+    for (const [file, fieldKey] of [[files[0], 'meterkast_fotos'], [files[1] ?? files[0], 'plek_fotos']]) {
+      if (!file) continue
+      const blob = await (await fetch(`/api/v1/offers/${offerId}/files/${file.id}/content`, { headers: h })).blob()
+      const form = new FormData(); form.append('file', blob, file.name)
+      const r = await fetch(`/api/v1/offers/${offerId}/files?shared=false&checklistId=${checklistId}&fieldKey=${fieldKey}`, { method: 'POST', headers: h, body: form })
+      done.push(`${file.name} → ${fieldKey}: ${r.status}`)
+    }
+    return done
+  }, OFFER_ID, intake.id)
+  log('intake filled in', photos.join(', '))
+}
+if (wanted('opname')) await ensureIntake()
+
 const base = `${APP}/offers/${OFFER_ID}`
 for (const mode of ['light', 'dark']) {
   await setMode(mode)
   // The four screens that already have a light print on the site, for their dark counterparts
-  await open(`${APP}/`, 'main'); await shot('dashboard', mode, 'main')
-  await open(`${base}`, 'main'); await shot('offerte-marge', mode, 'main')
-  await open(`${APP}/products`, 'main'); await shot('producten-leveranciers', mode, 'main')
-  await open(`${base}/purchase`, 'main'); await shot('inkooplijst', mode, 'main')
-  await open(`${base}/payments`, 'main'); await shot('betalingen', mode, 'main')
-  await open(`${base}/files`, 'main'); await shot('bestanden', mode, 'main')
+  if (wanted('dashboard')) { await open(`${APP}/`, 'main'); await shot('dashboard', mode, 'main') }
+  if (wanted('offerte-marge')) { await open(`${base}`, 'main'); await shot('offerte-marge', mode, 'main') }
+  if (wanted('producten-leveranciers')) { await open(`${APP}/products`, 'main'); await shot('producten-leveranciers', mode, 'main') }
+  if (wanted('inkooplijst')) { await open(`${base}/purchase`, 'main'); await shot('inkooplijst', mode, 'main') }
+  if (wanted('betalingen')) { await open(`${base}/payments`, 'main'); await shot('betalingen', mode, 'main') }
+  if (wanted('bestanden')) { await open(`${base}/files`, 'main'); await shot('bestanden', mode, 'main') }
+  // The intake: the charge point list as filled in by ensureIntake, and adjusting that list in the settings
+  if (wanted('opname')) { await open(`${base}/intake`, 'main'); await shot('opname', mode, 'main') }
+  if (wanted('opnamelijst')) {
+    await open(`${APP}/settings/checklists/new?base=installatie-laadpaal-opname`, 'main')
+    await switchOff('Is loadbalancing nodig?')
+    await shot('opnamelijst', mode, 'main')
+  }
   // The changes have no tab of their own any more (Historie): they are on Activiteiten, with everything shown.
   // The switch "Ook wat OfferDesk zelf deed" keeps its choice in localStorage, so it is set there, not clicked.
   await setSystemEntries('shown')
-  await open(`${base}/activities`, 'main'); await shot('historie', mode, 'main')
+  if (wanted('historie')) { await open(`${base}/activities`, 'main'); await shot('historie', mode, 'main') }
   // Activities without OfferDesk's own entries: the question and the answer are what this print is about
   await setSystemEntries('hidden')
-  await open(`${base}/activities`, 'main'); await shot('activiteit', mode, 'main')
+  if (wanted('activiteit')) { await open(`${base}/activities`, 'main'); await shot('activiteit', mode, 'main') }
 
   // The three designs: the offer's own design decides what the preview shows
   for (const key of ['CLASSIC', 'MODERN', 'COMPACT']) {
+    if (!wanted('template-' + key.toLowerCase()) && !wanted('voorbeeld-' + key.toLowerCase())) continue
     const offer = JSON.parse((await api('GET', `/offers/${OFFER_ID}`)).body)
     const r = await api('PUT', `/offers/${OFFER_ID}`, { ...offer, pdfTemplate: key })
     if (r.status >= 300) throw new Error('set template ' + key + ': ' + r.body.slice(0, 200))
@@ -133,6 +191,7 @@ for (const mode of ['light', 'dark']) {
   }
 
   // The customer's page: access code first, then the offer with the payment block and the question
+  if (!wanted('klantpagina')) continue
   await page.goto(`${APP}/offerte/${SHARE_TOKEN}`, { waitUntil: 'networkidle0' })
   await sleep(800)
   const codeInput = await page.$('input')

@@ -525,6 +525,7 @@ html {
 .typed-slot > * { grid-area: 1 / 1; }
 .typed-slot > .typed-sizer { visibility: hidden; }
 .typed-slot > .typed-text { justify-self: center; }
+.typed-slot.typed-start > .typed-text { justify-self: start; }
 .typed-text {
   background-image: linear-gradient(var(--color-dark-blue), var(--color-dark-blue));
   background-repeat: no-repeat;

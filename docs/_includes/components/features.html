@@ -25,7 +25,14 @@ sections marked page: more in i18n.yml{% endcomment %}
                     <div class="eyebrow inline-block px-4 py-1.5 bg-primary/10 rounded-full w-fit">
                         {{ feature.eyebrow }}
                     </div>
+                    {% if feature.title_words %}
+                    {% comment %}One word of the title is typed in turn ("opnamelijst", "inmeetlijst" …) into a slot as wide as the
+                    longest, so the heading does not move; without the effect the first word stays.{% endcomment %}
+                    {% assign title_parts = feature.title | split: '{words}' %}
+                    <h3 class="mt-3 heading-3">{{ title_parts[0] }}<span class="typed-slot typed-start text-primary">{% for word in feature.title_words %}<span class="typed-sizer" aria-hidden="true">{{ word }}|</span>{% endfor %}<span class="typed-text" data-type-words="{{ feature.title_words | jsonify | escape }}">{{ feature.title_words | first }}</span></span>{{ title_parts[1] }}</h3>
+                    {% else %}
                     <h3 class="mt-3 heading-3">{{ feature.title }}</h3>
+                    {% endif %}
                     <p class="mt-4 body-large text-gray-700">{{ feature.body }}</p>
                     <ul class="mt-6 space-y-2 body-large text-gray-700">
                         {% for bullet in feature.bullets %}

@@ -4,6 +4,7 @@
 // The inline crops of the landing page, light and dark, from the same test offer as the full prints: each one
 // is an element screenshot (a card, a table, a column) at 2x, found by the heading it carries.
 // Usage: node crops.mjs  (the local app on http://localhost:8080, account from data/local-test-account.env)
+// ONLY=opname,opnamelijst node crops.mjs takes just those crops.
 import puppeteer from 'puppeteer-core'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -13,6 +14,8 @@ const OFFER_ID = 'b5e4bb10-eada-4414-9e5c-11c719971a94'
 const SHARE_TOKEN = '51cb0bc7b1db4f49b8ea5547090d13319e23e0aa'
 const ACCESS_CODE = 'MD2F-NT5S'
 const OUT = path.resolve('crops')
+const ONLY = process.env.ONLY?.split(',')
+const wanted = name => !ONLY || ONLY.includes(name)
 fs.mkdirSync(OUT, { recursive: true })
 
 const env = Object.fromEntries(
@@ -27,6 +30,8 @@ const browser = await puppeteer.launch({
 const page = await browser.newPage()
 await page.setViewport({ width: 1840, height: 1400, deviceScaleFactor: 2 })
 await page.setCookie({ name: 'cookie-consent', value: 'declined', domain: 'localhost', path: '/' })
+// A page with unsaved changes (a list with a question switched off) asks before it is left: leave without saving
+page.on('dialog', dialog => dialog.accept())
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a)
 
@@ -79,6 +84,7 @@ async function boxOf(heading, pick = 'card') {
 }
 
 async function shot(name, mode, box) {
+  if (!wanted(name)) return
   if (!box) { log('MISSING', name, mode); return }
   const clip = { x: Math.max(0, box.x), y: Math.max(0, box.y), width: Math.round(box.width), height: Math.round(box.height) }
   const need = clip.y + clip.height + 40
@@ -93,47 +99,71 @@ const base = `${APP}/offers/${OFFER_ID}`
 for (const mode of ['light', 'dark']) {
   await setMode(mode)
 
-  await open(base)
-  await shot('regels', mode, await boxOf('Regels'))
-  await shot('winst', mode, await boxOf('Resultaat'))
+  if (!ONLY) {
+    await open(base)
+    await shot('regels', mode, await boxOf('Regels'))
+    await shot('winst', mode, await boxOf('Resultaat'))
 
-  await open(`${APP}/products`)
-  await shot('producten', mode, await boxOf('Producten', 'table') || await page.evaluate(() => { const t = document.querySelector('main table'); const r = t?.getBoundingClientRect(); return r ? { x: r.left, y: r.top + scrollY, width: r.width, height: r.height } : null }))
+    await open(`${APP}/products`)
+    await shot('producten', mode, await boxOf('Producten', 'table') || await page.evaluate(() => { const t = document.querySelector('main table'); const r = t?.getBoundingClientRect(); return r ? { x: r.left, y: r.top + scrollY, width: r.width, height: r.height } : null }))
 
-  await open(`${base}/purchase`)
-  await shot('inkoop', mode, await page.evaluate(() => {
-    // The purchase tab: from the first card below the tab bar to the bottom of the content
-    const main = document.querySelector('main'); const tabs = main.querySelector('[role=tablist], nav'); const top = tabs ? tabs.getBoundingClientRect().bottom + scrollY + 16 : main.getBoundingClientRect().top + scrollY
-    let bottom = 0; main.querySelectorAll('*').forEach(n => { const r = n.getBoundingClientRect(); if (r.width > 0 && r.height > 0) bottom = Math.max(bottom, r.bottom + scrollY) })
-    const r = main.getBoundingClientRect(); return { x: r.left + 24, y: top, width: r.width - 48, height: bottom - top + 8 }
-  }))
+    await open(`${base}/purchase`)
+    await shot('inkoop', mode, await page.evaluate(() => {
+      // The purchase tab: from the first card below the tab bar to the bottom of the content
+      const main = document.querySelector('main'); const tabs = main.querySelector('[role=tablist], nav'); const top = tabs ? tabs.getBoundingClientRect().bottom + scrollY + 16 : main.getBoundingClientRect().top + scrollY
+      let bottom = 0; main.querySelectorAll('*').forEach(n => { const r = n.getBoundingClientRect(); if (r.width > 0 && r.height > 0) bottom = Math.max(bottom, r.bottom + scrollY) })
+      const r = main.getBoundingClientRect(); return { x: r.left + 24, y: top, width: r.width - 48, height: bottom - top + 8 }
+    }))
 
-  await open(`${base}/payments`)
-  await shot('betalingen', mode, await boxOf('Betalen in delen'))
+    await open(`${base}/payments`)
+    await shot('betalingen', mode, await boxOf('Betalen in delen'))
+  }
 
-  await open(`${base}/files`)
-  // Only the photo cards: the grid has room for four, and its empty column made the crop too wide on the site
-  await shot('bestanden', mode, await page.evaluate(() => {
-    // each photo's card: the largest ancestor that holds no other photo
-    const rs = [...document.querySelectorAll('main img')].map(c => { while (c.parentElement.querySelectorAll('img').length === 1) c = c.parentElement; return c.getBoundingClientRect() })
-    if (!rs.length) return null
-    const left = Math.min(...rs.map(r => r.left)), top = Math.min(...rs.map(r => r.top)), right = Math.max(...rs.map(r => r.right)), bottom = Math.max(...rs.map(r => r.bottom))
-    return { x: left - 16, y: top + scrollY - 16, width: right - left + 32, height: bottom - top + 32 }
-  }))
+  // The intake (filled in by shoot-prints.mjs): the card with the spot and the cable, and in the settings the
+  // questions beside the phone preview, cut at about 900px
+  if (wanted('opname')) {
+    // cut after the cable route: the photo, the distance and the route, in a wide shape like the other crops
+    await open(`${base}/intake`)
+    const box = await boxOf('Plek en kabel')
+    const cut = await page.evaluate(() => { const l = [...document.querySelectorAll('main span')].find(e => e.textContent.trim() === 'Kabelroute'); const g = l?.closest('[role=group]'); return g ? g.getBoundingClientRect().bottom + scrollY + 24 : null })
+    await shot('opname', mode, box && cut ? { ...box, height: Math.min(box.height, cut - box.y) } : box)
+  }
+  if (wanted('opnamelijst')) {
+    await open(`${APP}/settings/checklists/new?base=installatie-laadpaal-opname`)
+    await page.evaluate(() => document.querySelector('[role=switch][aria-label="Is loadbalancing nodig? gebruiken"]')?.click())
+    await sleep(400)
+    await shot('opnamelijst', mode, await page.evaluate(() => {
+      const grid = document.querySelector('main .grid.items-start'); if (!grid) return null
+      const r = grid.getBoundingClientRect(); return { x: r.left - 8, y: r.top + scrollY - 8, width: r.width + 16, height: Math.min(r.height, 900) + 16 }
+    }))
+  }
 
-  // The changes are on Activiteiten now (the tab Historie is gone): the timeline with everything shown, cut
-  // after the last entry that fits in about 1000px, so a long history does not make a strip
-  await page.evaluate(() => localStorage.setItem('offerdesk.activities.system', 'shown'))
-  await open(`${base}/activities`)
-  await shot('historie', mode, await page.evaluate(() => {
-    const list = document.querySelector('main ol'); if (!list) return null
-    const r = list.getBoundingClientRect()
-    const ends = [...list.children].map(li => li.getBoundingClientRect().bottom - r.top).filter(b => b <= 1000)
-    return { x: r.left, y: r.top + scrollY, width: r.width, height: ends.length ? Math.max(...ends) : Math.min(r.height, 1000) }
-  }))
+  if (!ONLY) {
+    await open(`${base}/files`)
+    // Only the photo cards: the grid has room for four, and its empty column made the crop too wide on the site
+    await shot('bestanden', mode, await page.evaluate(() => {
+      // each photo's card: the largest ancestor that holds no other photo
+      const rs = [...document.querySelectorAll('main img')].map(c => { while (c.parentElement.querySelectorAll('img').length === 1) c = c.parentElement; return c.getBoundingClientRect() })
+      if (!rs.length) return null
+      const left = Math.min(...rs.map(r => r.left)), top = Math.min(...rs.map(r => r.top)), right = Math.max(...rs.map(r => r.right)), bottom = Math.max(...rs.map(r => r.bottom))
+      return { x: left - 16, y: top + scrollY - 16, width: right - left + 32, height: bottom - top + 32 }
+    }))
+
+    // The changes are on Activiteiten now (the tab Historie is gone): the timeline with everything shown, cut
+    // after the last entry that fits in about 1000px, so a long history does not make a strip
+    await page.evaluate(() => localStorage.setItem('offerdesk.activities.system', 'shown'))
+    await open(`${base}/activities`)
+    await shot('historie', mode, await page.evaluate(() => {
+      const list = document.querySelector('main ol'); if (!list) return null
+      const r = list.getBoundingClientRect()
+      const ends = [...list.children].map(li => li.getBoundingClientRect().bottom - r.top).filter(b => b <= 1000)
+      return { x: r.left, y: r.top + scrollY, width: r.width, height: ends.length ? Math.max(...ends) : Math.min(r.height, 1000) }
+    }))
+  }
 
   // The three designs: the top of the A4 sheet, as the crops on the site show it
   for (const key of ['CLASSIC', 'MODERN', 'COMPACT']) {
+    if (!wanted('template-' + key.toLowerCase())) continue
     const offer = await page.evaluate(async (id) => { const u = JSON.parse(sessionStorage.getItem('oidc.user:http://localhost:8080:offerdesk-web')); const h = { Authorization: 'Bearer ' + u.access_token, 'X-Tenant-Id': 'ecb15327-719b-49b9-bc67-8150c54d6fff', 'Content-Type': 'application/json' }; const o = await (await fetch('/api/v1/offers/' + id, { headers: h })).json(); return o }, OFFER_ID)
     await page.evaluate(async (o, key) => { const u = JSON.parse(sessionStorage.getItem('oidc.user:http://localhost:8080:offerdesk-web')); const h = { Authorization: 'Bearer ' + u.access_token, 'X-Tenant-Id': 'ecb15327-719b-49b9-bc67-8150c54d6fff', 'Content-Type': 'application/json' }; await fetch('/api/v1/offers/' + o.offerId, { method: 'PUT', headers: h, body: JSON.stringify({ ...o, pdfTemplate: key }) }) }, offer, key)
     await open(`${base}/pdf`, 'iframe')
@@ -143,6 +173,7 @@ for (const mode of ['light', 'dark']) {
   }
 
   // The customer's page: the payment card, the questions card and the whole right column
+  if (!['klant-betaling', 'vraag', 'klant-voor'].some(wanted)) continue
   await page.goto(`${APP}/offerte/${SHARE_TOKEN}`, { waitUntil: 'networkidle0' })
   await sleep(800)
   const codeInput = await page.$('input')

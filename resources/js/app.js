@@ -305,6 +305,53 @@
   }
 })();
 
+// Feature titles with words in turn: "Kijk bij de klant met een vaste opnamelijst." The word is erased and the next
+// one typed, each left to read for a moment; only while the title is on screen. With reduced motion, or without
+// JavaScript, the first word stays as the page shows it.
+(function(){
+  const TYPE = 55, DELETE = 28, READ = 2200;
+  function setupWordTyping(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('[data-type-words]').forEach((el) => {
+      let words;
+      try { words = JSON.parse(el.dataset.typeWords); } catch (error) { return; }
+      if (!Array.isArray(words) || words.length < 2) return;
+      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+      let visible = false;
+      const shown = () => new Promise((resolve) => {
+        if (visible && !document.hidden) return resolve();
+        const check = setInterval(() => { if (visible && !document.hidden) { clearInterval(check); resolve(); } }, 300);
+      });
+      new IntersectionObserver((entries) => { visible = entries.some((entry) => entry.isIntersecting); }).observe(el);
+
+      async function erase(){
+        el.classList.add('is-typing');
+        const chars = Array.from(el.textContent);
+        for (let i = chars.length - 1; i >= 0; i--) { el.textContent = chars.slice(0, i).join(''); await wait(DELETE); }
+      }
+      async function type(text){
+        const chars = Array.from(text);
+        for (let i = 1; i <= chars.length; i++) { el.textContent = chars.slice(0, i).join(''); await wait(TYPE); }
+        el.classList.remove('is-typing');
+      }
+      async function run(){
+        for (let i = 1; ; i = (i + 1) % words.length) {
+          await shown();
+          await wait(READ);
+          await erase();
+          await type(words[i]);
+        }
+      }
+      run();
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupWordTyping);
+  } else {
+    setupWordTyping();
+  }
+})();
+
 // Referrals and where visitors come from. A referral code (?ref=K7M2Q) is kept for 30 days; the first source
 // (utm_source, else the site that linked here) is kept for good, first touch wins. Both go along on every sign-up
 // link, so the new company knows who sent it (half price for its first month) and how it found OfferDesk.
