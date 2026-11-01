@@ -33,9 +33,9 @@ bundle exec jekyll serve
 # Open http://127.0.0.1:4000
 ```
 
-Without Ruby on the Mac, Docker works too (gems are kept in the `offerdesk-site-gems` volume):
+Without Ruby on the Mac, Docker works too. It uses Ruby 3.1: on Linux the locked nokogiri has no build for 3.3. The gems are kept in the `offerdesk-site-gems` volume:
 ```bash
-docker run --rm -p 4000:4000 -v "$PWD":/srv -v offerdesk-site-gems:/usr/local/bundle -w /srv ruby:3.3 bash -c "gem install bundler:2.5.22 -N && bundle install && bundle exec jekyll serve --host 0.0.0.0"
+docker run --rm -p 4000:4000 -v "$PWD":/srv -v offerdesk-site-gems:/usr/local/bundle -w /srv ruby:3.1 bash -c "gem install bundler:2.5.22 -N && bundle _2.5.22_ install && bundle _2.5.22_ exec jekyll serve --host 0.0.0.0"
 ```
 
 ### CSS (Tailwind via Tailwind CLI v4)
