@@ -99,7 +99,8 @@ const base = `${APP}/offers/${OFFER_ID}`
 for (const mode of ['light', 'dark']) {
   await setMode(mode)
 
-  if (!ONLY) {
+  // The offer's pages; with ONLY, only the crops asked for are taken (shot() skips the others)
+  if (!ONLY || ['regels', 'winst', 'producten', 'inkoop', 'betalingen'].some(wanted)) {
     await open(base)
     await shot('regels', mode, await boxOf('Regels'))
     await shot('winst', mode, await boxOf('Resultaat'))

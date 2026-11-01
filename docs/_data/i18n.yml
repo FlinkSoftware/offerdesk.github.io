@@ -175,11 +175,11 @@ nl:
           - "schouwlijst."
           - "werklijst."
           - "checklist."
-        body: "Je loopt bij de klant een vaste lijst langs op je telefoon: wat er moet gebeuren, de maten, de meterkast, en een foto bij elke vraag. Elk antwoord wordt meteen bewaard, ook als je even geen bereik hebt. Er zijn lijsten voor laadpalen, zonnepanelen, warmtepompen, vloeren en tegelwerk. Je past ze aan op hoe jij werkt."
+        body: "Je loopt bij de klant een vaste lijst langs op je telefoon: wat er moet gebeuren, de maten, de meterkast, en een foto bij elke vraag. Elk antwoord wordt meteen bewaard, ook als je even geen bereik hebt. Er zijn lijsten voor laadpalen, zonnepanelen, warmtepompen, vloeren en tegelwerk. Je past ze aan op hoe jij werkt. Is het werk klaar, dan loop je het samen met de klant na met een opleverlijst. Wat nog moet gebeuren, zet je meteen als taak klaar."
         bullets:
           - "Een kant-en-klare lijst voor jouw vak"
           - "Vragen uitzetten en je eigen vragen erbij"
-          - "De klant tekent op je scherm, als je dat wilt"
+          - "De klant tekent op je scherm, of je rondt af zonder handtekening"
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-opname.webp"
@@ -210,11 +210,11 @@ nl:
 
       - eyebrow: "Wat houd ik eraan over?"
         title: "Zie per regel wat je eraan overhoudt."
-        body: "Bij elke regel staat wat je inkoopt, wat je vraagt en wat je overhoudt. Verander je de prijs, dan zie je het meteen. Zo weet je vóór het versturen of de klus loont."
+        body: "Bij elke regel staat wat je inkoopt, wat je vraagt en wat je overhoudt. Verander je de prijs, dan zie je het meteen. Ook kit, tape of een gehuurde machine tellen mee. Zo weet je vóór het versturen of de klus loont."
         bullets:
           - "Inkoop, prijs en wat je overhoudt, per regel"
-          - "Wat je aan de hele klus overhoudt"
-          - "Iets nieuws ingetypt? Bewaar het met één tik voor de volgende keer"
+          - "Wat de klant betaalt, verdeeld: inkoop, wat je overhoudt en btw"
+          - "Kit, tape en huur: in je uurprijs, of als regel klein materiaal"
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-regels.webp"
@@ -268,7 +268,7 @@ nl:
         bullets:
           - "Bestellijst per leverancier"
           - "Niets overtypen"
-          - "Sneller aan de slag"
+          - "Wat je uit je eigen voorraad pakt, staat apart"
         images:
           - src: "/images/offerdesk/crop-inkoop.webp"
             src_dark: "/images/offerdesk/crop-inkoop-dark.webp"
@@ -923,11 +923,11 @@ en:
           - "checklist."
           - "survey sheet."
           - "measuring list."
-        body: "At the customer's you go through a fixed list on your phone: what needs doing, the measurements, the meter cupboard, and a photo with every question. Each answer is saved straight away, even when you have no signal for a moment. There are lists for charge points, solar panels, heat pumps, floors and tiling. You adjust them to how you work."
+        body: "At the customer's you go through a fixed list on your phone: what needs doing, the measurements, the meter cupboard, and a photo with every question. Each answer is saved straight away, even when you have no signal for a moment. There are lists for charge points, solar panels, heat pumps, floors and tiling. You adjust them to how you work. When the work is done, you go through it with the customer on a handover list. What still needs doing becomes a task right away."
         bullets:
           - "A ready-made list for your trade"
           - "Switch questions off and add your own"
-          - "The customer signs on your screen, if you want"
+          - "The customer signs on your screen, or you finish without a signature"
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-opname.webp"
@@ -958,11 +958,11 @@ en:
 
       - eyebrow: "What do I keep?"
         title: "See per line what you keep."
-        body: "Every line shows what you buy for, what you charge and what you keep. Change the price and you see it right away. So you know before sending whether the job pays."
+        body: "Every line shows what you buy for, what you charge and what you keep. Change the price and you see it right away. Sealant, tape or a rented machine count too. So you know before sending whether the job pays."
         bullets:
           - "Purchase price, selling price and what you keep, per line"
-          - "What the whole job leaves you"
-          - "Typed something new? Save it with one tap for next time"
+          - "What the customer pays, split: purchase, what you keep and VAT"
+          - "Sealant, tape and rental: in your hourly rate, or as a small materials line"
         layout: "overlap"
         images:
           - src: "/images/offerdesk/crop-regels.webp"
@@ -1016,7 +1016,7 @@ en:
         bullets:
           - "Order list per supplier"
           - "Nothing to retype"
-          - "Start sooner"
+          - "What you take from your own stock is listed apart"
         images:
           - src: "/images/offerdesk/crop-inkoop.webp"
             src_dark: "/images/offerdesk/crop-inkoop-dark.webp"
