@@ -5,3 +5,6 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-seo-tag"
 end
+
+# Ruby 3 no longer ships webrick, which `jekyll serve` needs
+gem "webrick"

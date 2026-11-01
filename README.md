@@ -11,14 +11,31 @@ This repository hosts a Jekyll site for GitHub Pages.
 ## Local development
 
 ### Prerequisites
-- Ruby and Bundler installed
+- Ruby 3.3, the same as the GitHub Actions build. Not the Ruby that comes with macOS (2.6): it can't
+  install the Bundler version in `Gemfile.lock`. On a Mac: `brew install ruby@3.3`.
 - Node.js
 
 ### Install and run Jekyll
+Put Homebrew's Ruby first on the PATH (add the line to `~/.zshrc` to keep it):
 ```bash
+export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+```
+
+Once:
+```bash
+gem install bundler:2.5.22
 bundle install
+```
+
+Then:
+```bash
 bundle exec jekyll serve
 # Open http://127.0.0.1:4000
+```
+
+Without Ruby on the Mac, Docker works too (gems are kept in the `offerdesk-site-gems` volume):
+```bash
+docker run --rm -p 4000:4000 -v "$PWD":/srv -v offerdesk-site-gems:/usr/local/bundle -w /srv ruby:3.3 bash -c "gem install bundler:2.5.22 -N && bundle install && bundle exec jekyll serve --host 0.0.0.0"
 ```
 
 ### CSS (Tailwind via Tailwind CLI v4)
@@ -63,13 +80,6 @@ For production, use the GitHub Actions workflow in `.github/workflows/pages.yml`
 - Do not set `destination:` in `_config.yml`; Jekyll will build into `_site/` automatically.
 - You don’t need to commit any build output. Just commit the source files.
 
-If you want to preview locally, run:
-```bash
-bundle install
-bundle exec jekyll serve
-# Open http://127.0.0.1:4000/
-```
-
-Then visit:
+To preview locally, run Jekyll as under [Install and run Jekyll](#install-and-run-jekyll), then visit:
 - `http://127.0.0.1:4000/` for Dutch
 - `http://127.0.0.1:4000/en/` for English

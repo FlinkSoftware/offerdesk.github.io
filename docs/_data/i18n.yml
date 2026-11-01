@@ -29,6 +29,8 @@ nl:
     cta: "Meld je snel aan!"
 
   hero:
+    announcement_badge: "Binnenkort"
+    announcement: "De OfferDesk-app voor iPhone en Android"
     kicker: "OFFERTES VOOR VAKMENSEN"
     title: "Foto's maken bij de klant. Offerte sturen vanuit de bus."
     subtitle: "Je prijzen van de leverancier staan er al in. Je ziet wat je aan de klus overhoudt. De klant zegt ja op zijn telefoon en betaalt vooraf, en jij weet wat je moet bestellen."
@@ -134,6 +136,14 @@ nl:
         profit: "€ 1.253,72"
         margin: "43,1% marge"
         purchase: "Bestellijst klaar · 2 leveranciers"
+
+  app_band:
+    eyebrow: "BINNENKORT · IPHONE EN ANDROID"
+    title: "Je offertes in je broekzak."
+    body: "In de bus of bij de klant zie je meteen wat je aan een klus overhoudt. Je logt in met hetzelfde account als op je computer."
+    note: "Tot de app er is, werkt OfferDesk gewoon in de browser van je telefoon."
+    link: "Lees meer over de app"
+    image_alt: "De OfferDesk-app op drie telefoons: het overzicht van vandaag, een offerte met wat je eraan overhoudt, en de foto's bij een offerte"
 
 
   process:
@@ -596,6 +606,9 @@ nl:
         home: true
       - question: "Kan ik kiezen hoe mijn offerte eruitziet?"
         answer: "Ja. Je offerte krijgt je eigen logo en je eigen tekst boven en onder de regels. In Professional en Business kies je uit drie opmaken: Klassiek, Modern en Compact, voor alles of per offerte."
+      - question: "Is er een app voor mijn telefoon?"
+        answer: "Binnenkort, voor iPhone en Android. Je logt in met hetzelfde account en ziet je offertes en wat je aan een klus overhoudt, ook in de bus of bij de klant. Tot de app er is, werkt OfferDesk gewoon in de browser van je telefoon. Je hoeft niets te installeren."
+        home: true
     all_link: "Meer vragen en antwoorden"
     page_title: "Veelgestelde vragen"
     page_intro: "Wat mensen ons vragen voordat ze beginnen. Staat jouw vraag er niet bij? Mail ons."
@@ -614,6 +627,9 @@ nl:
       - title: "Veilig betalen via Mollie"
         body: "Je abonnement betaal je via Mollie met iDEAL, creditcard of automatische incasso. Direct, of pas na je proefperiode."
     later_title: "Wat eraan komt"
+    app_badge: "Binnenkort"
+    app_title: "De app voor iPhone en Android"
+    app_body: "Je offertes op zak. In de bus of bij de klant zie je meteen wat je aan een klus overhoudt. Je logt in met hetzelfde account als nu, en alles staat ook gewoon op je computer. Tot de app er is, werkt OfferDesk in de browser van je telefoon."
     cards:
       - title: "Voorraad"
         body: "Zie wat je op de plank hebt liggen en wat het waard is."
@@ -778,6 +794,8 @@ en:
     cta: "Sign up now!"
 
   hero:
+    announcement_badge: "Coming soon"
+    announcement: "The OfferDesk app for iPhone and Android"
     kicker: "QUOTES FOR TRADESPEOPLE"
     title: "Take photos at the customer. Send the quote from the van."
     subtitle: "Your supplier's prices are already in. You see what the job leaves you. The customer says yes on their phone and pays up front, and you know what to order."
@@ -883,6 +901,14 @@ en:
         profit: "€ 1,253.72"
         margin: "43.1% margin"
         purchase: "Order list ready · 2 suppliers"
+
+  app_band:
+    eyebrow: "COMING SOON · IPHONE AND ANDROID"
+    title: "Your quotes in your pocket."
+    body: "In the van or at the customer's, you see right away what a job leaves you. You sign in with the same account as on your computer."
+    note: "Until the app is out, OfferDesk works fine in your phone's browser."
+    link: "More about the app"
+    image_alt: "The OfferDesk app on three phones: today's overview, a quote with what it leaves you, and the photos with a quote"
 
 
   process:
@@ -1344,6 +1370,9 @@ en:
         home: true
       - question: "Can I choose how my quote looks?"
         answer: "Yes. Your quote gets your own logo and your own text above and below the lines. On Professional and Business you choose from three layouts: Classic, Modern and Compact, for everything or per quote."
+      - question: "Is there an app for my phone?"
+        answer: "Soon, for iPhone and Android. You sign in with the same account and see your quotes and what a job leaves you, in the van or at the customer's too. Until the app is out, OfferDesk works fine in your phone's browser. You don't need to install anything."
+        home: true
     all_link: "More questions and answers"
     page_title: "Frequently asked questions"
     page_intro: "What people ask us before they start. Is your question not here? Email us."
@@ -1362,6 +1391,9 @@ en:
       - title: "Secure payments via Mollie"
         body: "You pay your subscription through Mollie by iDEAL, credit card or direct debit. Right away, or only after your trial."
     later_title: "What is coming"
+    app_badge: "Coming soon"
+    app_title: "The app for iPhone and Android"
+    app_body: "Your quotes in your pocket. In the van or at the customer's, you see right away what a job leaves you. You sign in with the same account as now, and everything is still on your computer too. Until the app is out, OfferDesk works in your phone's browser."
     cards:
       - title: "Stock"
         body: "See what you have on the shelf and what it is worth."

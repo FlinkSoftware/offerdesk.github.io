@@ -58,12 +58,12 @@ Per maand, zonder btw, maandelijks opzegbaar, geen kosten vooraf. Elk pakket beg
 
 ## Wat eraan komt
 
-Voorraad, bestellen rechtstreeks bij de leverancier, planning, meer boekhoudpakketten (Exact Online, SnelStart, e-Boekhouden.nl), nacalculatie (wat je dacht te verdienen naast wat de klus echt opleverde), vergunningen en certificaten bij een klus.
+Binnenkort de OfferDesk-app voor iPhone en Android (inloggen met hetzelfde account; je offertes en wat je overhoudt). Daarna: voorraad, bestellen rechtstreeks bij de leverancier, planning, meer boekhoudpakketten (Exact Online, SnelStart, e-Boekhouden.nl), nacalculatie (wat je dacht te verdienen naast wat de klus echt opleverde), vergunningen en certificaten bij een klus.
 
 ## Veelgestelde vragen (kort)
 
 - Is OfferDesk zo'n zwaar systeem als SAP of AFAS? Nee. Het doet alleen het stuk van offerte tot bestellen. Boekhouding en facturen blijven in je eigen pakket (bijvoorbeeld via Moneybird).
-- Moet ik iets installeren? Nee, OfferDesk werkt in de browser op elk apparaat.
+- Moet ik iets installeren? Nee, OfferDesk werkt in de browser op elk apparaat. Een app voor iPhone en Android komt binnenkort.
 - Kan ik mijn eigen prijslijst gebruiken? Ja, producten met inkoopprijzen lees je in uit een bestand.
 - Hoe ziet mijn klant de offerte? Hij krijgt een mail met de PDF en een link met een code; daar leest hij de offerte, stelt een vraag en zegt ja met zijn naam.
 - Wat gebeurt er na de proefperiode? Je kiest zelf een pakket. Je zit nergens aan vast en kunt elke maand opzeggen.

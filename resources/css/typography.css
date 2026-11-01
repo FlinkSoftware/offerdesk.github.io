@@ -123,6 +123,11 @@
   color: var(--color-gray-500);
 }
 
+/* On a blue band */
+.eyebrow.text-white {
+  color: rgb(255 255 255 / 0.85);
+}
+
 /* ============================================
    BODY TEXT - MAIN CONTENT
    ============================================ */
