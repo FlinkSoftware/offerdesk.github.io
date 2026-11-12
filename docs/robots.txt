@@ -1,5 +1,7 @@
-# offerdesk.nl: everything may be crawled
+# offerdesk.nl: everything may be crawled, except the documents folder. The PDF of the NLdigital terms there
+# is NLdigital's own document, which Google already knows from nldigital.nl; it would only count as a duplicate.
 User-agent: *
 Allow: /
+Disallow: /documenten/
 
 Sitemap: https://offerdesk.nl/sitemap.xml
